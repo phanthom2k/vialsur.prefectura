@@ -22,6 +22,7 @@ namespace vialsur.prefectura.Vehiculos
             try
             {
                 uc_VehiculoColor1.CargarDatos();
+                uc_VehiculoMarca1.CargarDatos();
 
 
             }

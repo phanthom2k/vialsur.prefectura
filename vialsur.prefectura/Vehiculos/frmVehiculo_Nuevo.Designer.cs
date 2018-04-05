@@ -46,6 +46,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.uc_VehiculoColor1 = new vialsur.prefectura.uc.uc_VehiculoColor();
+            this.uc_VehiculoMarca1 = new vialsur.prefectura.uc.uc_VehiculoMarca();
             this.SuspendLayout();
             // 
             // button1
@@ -212,11 +213,23 @@
             this.uc_VehiculoColor1.Size = new System.Drawing.Size(121, 24);
             this.uc_VehiculoColor1.TabIndex = 23;
             // 
+            // uc_VehiculoMarca1
+            // 
+            this.uc_VehiculoMarca1.Ancho = 121;
+            this.uc_VehiculoMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_VehiculoMarca1.DropDownWidth = 121;
+            this.uc_VehiculoMarca1.FormattingEnabled = true;
+            this.uc_VehiculoMarca1.Location = new System.Drawing.Point(94, 127);
+            this.uc_VehiculoMarca1.Name = "uc_VehiculoMarca1";
+            this.uc_VehiculoMarca1.Size = new System.Drawing.Size(121, 24);
+            this.uc_VehiculoMarca1.TabIndex = 24;
+            // 
             // frmVehiculo_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 467);
+            this.Controls.Add(this.uc_VehiculoMarca1);
             this.Controls.Add(this.uc_VehiculoColor1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -263,5 +276,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private uc.uc_VehiculoColor uc_VehiculoColor1;
+        private uc.uc_VehiculoMarca uc_VehiculoMarca1;
     }
 }
