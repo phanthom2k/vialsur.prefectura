@@ -111,6 +111,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\logica.vialsur.prefectura\logica.vialsur.prefectura.csproj">
+      <Project>{9e9da170-921d-4b68-9e14-4f7f0be5300c}</Project>
+      <Name>logica.vialsur.prefectura</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -8,6 +8,7 @@ namespace vialsur.prefectura.uc
 {
     using System.Windows.Forms;
     using System.Drawing;
+    using logica.vialsur.prefectura;
 
     public class uc_VehiculoColor : ComboBox
     {
@@ -41,7 +42,10 @@ namespace vialsur.prefectura.uc
         {
             try
             {
-
+                this.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo_color().UX_Consulta_Todos_Registros();
+                this.ValueMember = "id";
+                this.DisplayMember = "nombre_especifico";
+                this.SelectedIndex = 0;
             }
             catch (Exception ex)
             {

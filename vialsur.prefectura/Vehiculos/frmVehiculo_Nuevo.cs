@@ -16,5 +16,19 @@ namespace vialsur.prefectura.Vehiculos
         {
             InitializeComponent();
         }
+
+        private void frmVehiculo_Nuevo_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                uc_VehiculoColor1.CargarDatos();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show( "Ocrrio un error: "+ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error,MessageBoxDefaultButton.Button1);
+            }
+        }
     }
 }

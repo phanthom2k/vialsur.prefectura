@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace datos.vialsur.prefectura
+{
+    using System.Data;
+    using System.Configuration;
+    using System.Data.SqlClient;
+    using Microsoft.ApplicationBlocks.Data;
+
+    public class cls_data_ve_vehiculo_color
+    {
+        private string _con = String.Empty;
+        public cls_data_ve_vehiculo_color()
+        {
+            this._con =  ConfigurationManager.ConnectionStrings["db_mantenimiento"].ConnectionString;
+        }
+        ~cls_data_ve_vehiculo_color()
+        {
+            this._con = String.Empty;
+        }
+
+        private string sql_Consulta = "select id, codigo, nombre_especifico, nombre_comun from ve_vehiculo_color order by nombre_especifico;";
+
+        public void Insertar()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            finally
+            {
+
+            }
+
+        }
+        public bool Actualizar()
+        {
+            return true;
+        }
+        public SqlDataReader Consultar()
+        {            
+            try
+            {
+                return SqlHelper.ExecuteReader(_con, CommandType.Text, sql_Consulta);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("cls_data_ve_vehiculo_color:" + ex.Message, ex);
+            }
+            finally
+            {
+
+            }
+        }
+    }
+}

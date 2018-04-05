@@ -45,6 +45,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.uc_VehiculoColor1 = new vialsur.prefectura.uc.uc_VehiculoColor();
             this.SuspendLayout();
             // 
             // button1
@@ -200,11 +201,23 @@
             this.label15.TabIndex = 22;
             this.label15.Text = "SERIE MOTOR:";
             // 
+            // uc_VehiculoColor1
+            // 
+            this.uc_VehiculoColor1.Ancho = 121;
+            this.uc_VehiculoColor1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_VehiculoColor1.DropDownWidth = 121;
+            this.uc_VehiculoColor1.FormattingEnabled = true;
+            this.uc_VehiculoColor1.Location = new System.Drawing.Point(90, 220);
+            this.uc_VehiculoColor1.Name = "uc_VehiculoColor1";
+            this.uc_VehiculoColor1.Size = new System.Drawing.Size(121, 24);
+            this.uc_VehiculoColor1.TabIndex = 23;
+            // 
             // frmVehiculo_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 467);
+            this.Controls.Add(this.uc_VehiculoColor1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -224,6 +237,7 @@
             this.Controls.Add(this.btn_Guardar);
             this.Name = "frmVehiculo_Nuevo";
             this.Text = "frmVehiculo_Nuevo";
+            this.Load += new System.EventHandler(this.frmVehiculo_Nuevo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +262,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private uc.uc_VehiculoColor uc_VehiculoColor1;
     }
 }
