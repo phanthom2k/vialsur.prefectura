@@ -16,9 +16,9 @@ namespace logica.vialsur.prefectura.Catalogos
         {
             try
             {
-                SqlDataReader datos_para_control = new cls_data_ve_vehiculo_color().Consultar();
+                SqlDataReader datos_para_control = new cls_data_ve_vehiculo_marca().Consultar();
 
-                DataTable dt_datos = new DataTable("ve_vehiculo_color");
+                DataTable dt_datos = new DataTable("ve_vehiculo_marca");
                 dt_datos.Load(datos_para_control);                
                 DataRow dr0 = dt_datos.NewRow();
                 dr0["id"] = 0;

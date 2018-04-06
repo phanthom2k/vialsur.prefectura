@@ -54,7 +54,7 @@ namespace datos.vialsur.prefectura
             }
             catch (Exception ex)
             {
-                throw new Exception("cls_data_ve_vehiculo_color:" + ex.Message, ex);
+                throw new Exception("cls_data_ve_vehiculo_marca:" + ex.Message, ex);
             }
             finally
             {
