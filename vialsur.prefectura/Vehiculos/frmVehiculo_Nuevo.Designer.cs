@@ -45,8 +45,21 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.uc_VehiculoColor1 = new vialsur.prefectura.uc.uc_VehiculoColor();
+            this.uc_Pais1 = new vialsur.prefectura.uc.uc_Pais();
+            this.uc_VehiculoModelo1 = new vialsur.prefectura.uc.uc_VehiculoModelo();
             this.uc_VehiculoMarca1 = new vialsur.prefectura.uc.uc_VehiculoMarca();
+            this.uc_VehiculoColor1 = new vialsur.prefectura.uc.uc_VehiculoColor();
+            this.uc_NumericUpDown1 = new vialsur.prefectura.uc.uc_NumericUpDown();
+            this.uc_NumericUpDown2 = new vialsur.prefectura.uc.uc_NumericUpDown();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.decimalTextBox1 = new Vivaldi.UserControls.DecimalTextBox();
+            this.alfaTextBox1 = new Vivaldi.AlfaTextBox();
+            this.alfaTextBox2 = new Vivaldi.AlfaTextBox();
+            this.alfaTextBox3 = new Vivaldi.AlfaTextBox();
+            this.alfaTextBox4 = new Vivaldi.AlfaTextBox();
+            this.alfaTextBox5 = new Vivaldi.AlfaTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.uc_NumericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uc_NumericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -57,6 +70,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Salir";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Guardar
             // 
@@ -202,6 +216,40 @@
             this.label15.TabIndex = 22;
             this.label15.Text = "SERIE MOTOR:";
             // 
+            // uc_Pais1
+            // 
+            this.uc_Pais1.Ancho = 121;
+            this.uc_Pais1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_Pais1.DropDownWidth = 121;
+            this.uc_Pais1.FormattingEnabled = true;
+            this.uc_Pais1.Location = new System.Drawing.Point(169, 192);
+            this.uc_Pais1.Name = "uc_Pais1";
+            this.uc_Pais1.Size = new System.Drawing.Size(121, 24);
+            this.uc_Pais1.TabIndex = 26;
+            // 
+            // uc_VehiculoModelo1
+            // 
+            this.uc_VehiculoModelo1.Ancho = 121;
+            this.uc_VehiculoModelo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_VehiculoModelo1.DropDownWidth = 121;
+            this.uc_VehiculoModelo1.FormattingEnabled = true;
+            this.uc_VehiculoModelo1.Location = new System.Drawing.Point(94, 165);
+            this.uc_VehiculoModelo1.Name = "uc_VehiculoModelo1";
+            this.uc_VehiculoModelo1.Size = new System.Drawing.Size(121, 24);
+            this.uc_VehiculoModelo1.TabIndex = 25;
+            // 
+            // uc_VehiculoMarca1
+            // 
+            this.uc_VehiculoMarca1.Ancho = 121;
+            this.uc_VehiculoMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_VehiculoMarca1.DropDownWidth = 121;
+            this.uc_VehiculoMarca1.FormattingEnabled = true;
+            this.uc_VehiculoMarca1.Location = new System.Drawing.Point(94, 133);
+            this.uc_VehiculoMarca1.Name = "uc_VehiculoMarca1";
+            this.uc_VehiculoMarca1.Size = new System.Drawing.Size(121, 24);
+            this.uc_VehiculoMarca1.TabIndex = 24;
+            this.uc_VehiculoMarca1.SelectedIndexChanged += new System.EventHandler(this.uc_VehiculoMarca1_SelectedIndexChanged);
+            // 
             // uc_VehiculoColor1
             // 
             this.uc_VehiculoColor1.Ancho = 121;
@@ -213,22 +261,120 @@
             this.uc_VehiculoColor1.Size = new System.Drawing.Size(121, 24);
             this.uc_VehiculoColor1.TabIndex = 23;
             // 
-            // uc_VehiculoMarca1
+            // uc_NumericUpDown1
             // 
-            this.uc_VehiculoMarca1.Ancho = 121;
-            this.uc_VehiculoMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_VehiculoMarca1.DropDownWidth = 121;
-            this.uc_VehiculoMarca1.FormattingEnabled = true;
-            this.uc_VehiculoMarca1.Location = new System.Drawing.Point(94, 127);
-            this.uc_VehiculoMarca1.Name = "uc_VehiculoMarca1";
-            this.uc_VehiculoMarca1.Size = new System.Drawing.Size(121, 24);
-            this.uc_VehiculoMarca1.TabIndex = 24;
+            this.uc_NumericUpDown1.Location = new System.Drawing.Point(169, 311);
+            this.uc_NumericUpDown1.Maximum = new decimal(new int[] {
+            2018,
+            0,
+            0,
+            0});
+            this.uc_NumericUpDown1.Minimum = new decimal(new int[] {
+            1930,
+            0,
+            0,
+            0});
+            this.uc_NumericUpDown1.Name = "uc_NumericUpDown1";
+            this.uc_NumericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.uc_NumericUpDown1.TabIndex = 27;
+            this.uc_NumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.uc_NumericUpDown1.Value = new decimal(new int[] {
+            2008,
+            0,
+            0,
+            0});
+            // 
+            // uc_NumericUpDown2
+            // 
+            this.uc_NumericUpDown2.Location = new System.Drawing.Point(569, 311);
+            this.uc_NumericUpDown2.Maximum = new decimal(new int[] {
+            2018,
+            0,
+            0,
+            0});
+            this.uc_NumericUpDown2.Minimum = new decimal(new int[] {
+            1930,
+            0,
+            0,
+            0});
+            this.uc_NumericUpDown2.Name = "uc_NumericUpDown2";
+            this.uc_NumericUpDown2.Size = new System.Drawing.Size(120, 22);
+            this.uc_NumericUpDown2.TabIndex = 28;
+            this.uc_NumericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.uc_NumericUpDown2.Value = new decimal(new int[] {
+            2008,
+            0,
+            0,
+            0});
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(94, 397);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(68, 21);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.Text = "Activo";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // decimalTextBox1
+            // 
+            this.decimalTextBox1.Location = new System.Drawing.Point(95, 368);
+            this.decimalTextBox1.Name = "decimalTextBox1";
+            this.decimalTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.decimalTextBox1.TabIndex = 29;
+            // 
+            // alfaTextBox1
+            // 
+            this.alfaTextBox1.Location = new System.Drawing.Point(509, 69);
+            this.alfaTextBox1.Name = "alfaTextBox1";
+            this.alfaTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox1.TabIndex = 31;
+            // 
+            // alfaTextBox2
+            // 
+            this.alfaTextBox2.Location = new System.Drawing.Point(508, 98);
+            this.alfaTextBox2.Name = "alfaTextBox2";
+            this.alfaTextBox2.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox2.TabIndex = 32;
+            // 
+            // alfaTextBox3
+            // 
+            this.alfaTextBox3.Location = new System.Drawing.Point(148, 254);
+            this.alfaTextBox3.Name = "alfaTextBox3";
+            this.alfaTextBox3.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox3.TabIndex = 33;
+            // 
+            // alfaTextBox4
+            // 
+            this.alfaTextBox4.Location = new System.Drawing.Point(148, 277);
+            this.alfaTextBox4.Name = "alfaTextBox4";
+            this.alfaTextBox4.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox4.TabIndex = 34;
+            // 
+            // alfaTextBox5
+            // 
+            this.alfaTextBox5.Location = new System.Drawing.Point(90, 341);
+            this.alfaTextBox5.Name = "alfaTextBox5";
+            this.alfaTextBox5.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox5.TabIndex = 35;
             // 
             // frmVehiculo_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 467);
+            this.ClientSize = new System.Drawing.Size(739, 437);
+            this.Controls.Add(this.alfaTextBox5);
+            this.Controls.Add(this.alfaTextBox4);
+            this.Controls.Add(this.alfaTextBox3);
+            this.Controls.Add(this.alfaTextBox2);
+            this.Controls.Add(this.alfaTextBox1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.decimalTextBox1);
+            this.Controls.Add(this.uc_NumericUpDown2);
+            this.Controls.Add(this.uc_NumericUpDown1);
+            this.Controls.Add(this.uc_Pais1);
+            this.Controls.Add(this.uc_VehiculoModelo1);
             this.Controls.Add(this.uc_VehiculoMarca1);
             this.Controls.Add(this.uc_VehiculoColor1);
             this.Controls.Add(this.label15);
@@ -251,6 +397,8 @@
             this.Name = "frmVehiculo_Nuevo";
             this.Text = "frmVehiculo_Nuevo";
             this.Load += new System.EventHandler(this.frmVehiculo_Nuevo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.uc_NumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uc_NumericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +425,16 @@
         private System.Windows.Forms.Label label15;
         private uc.uc_VehiculoColor uc_VehiculoColor1;
         private uc.uc_VehiculoMarca uc_VehiculoMarca1;
+        private uc.uc_VehiculoModelo uc_VehiculoModelo1;
+        private uc.uc_Pais uc_Pais1;
+        private uc.uc_NumericUpDown uc_NumericUpDown1;
+        private uc.uc_NumericUpDown uc_NumericUpDown2;
+        private Vivaldi.UserControls.DecimalTextBox decimalTextBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private Vivaldi.AlfaTextBox alfaTextBox1;
+        private Vivaldi.AlfaTextBox alfaTextBox2;
+        private Vivaldi.AlfaTextBox alfaTextBox3;
+        private Vivaldi.AlfaTextBox alfaTextBox4;
+        private Vivaldi.AlfaTextBox alfaTextBox5;
     }
 }

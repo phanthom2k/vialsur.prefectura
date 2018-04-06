@@ -11,41 +11,20 @@ namespace datos.vialsur.prefectura
     using System.Data.SqlClient;
     using Microsoft.ApplicationBlocks.Data;
 
-    public class cls_data_ve_vehiculo_marca
+    public class cls_data_pais
     {
-
         private string _con = String.Empty;
-        public cls_data_ve_vehiculo_marca()
+        public cls_data_pais()
         {
             this._con = ConfigurationManager.ConnectionStrings["db_mantenimiento"].ConnectionString;
         }
-        ~cls_data_ve_vehiculo_marca()
+        ~cls_data_pais()
         {
             this._con = String.Empty;
         }
 
-        private string sql_Consulta = "SELECT id, nombre, obserbacion FROM ve_vehiculo_marca where activo=1 order by nombre asc;";
+        private string sql_Consulta = "select PaisCodigo, PaisNombre from Pais order by PaisNombre asc";
 
-        public void Insertar()
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-            finally
-            {
-
-            }
-
-        }
-        public bool Actualizar()
-        {
-            return true;
-        }
         public SqlDataReader Consultar()
         {
             try
@@ -54,13 +33,14 @@ namespace datos.vialsur.prefectura
             }
             catch (Exception ex)
             {
-                throw new Exception("cls_data_ve_vehiculo_marca:" + ex.Message, ex);
+                throw new Exception("cls_data_pais:" + ex.Message, ex);
             }
             finally
             {
 
             }
         }
+
 
     }
 }

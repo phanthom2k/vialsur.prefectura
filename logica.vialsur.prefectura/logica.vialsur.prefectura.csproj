@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\cls_logica_pais.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_color.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_marca.cs" />
+    <Compile Include="Catalogos\cls_logica_ve_vehiculo_modelo.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,12 +10,13 @@ namespace vialsur.prefectura.uc
     using System.Drawing;
     using logica.vialsur.prefectura;
 
-    public class uc_VehiculoModelo : ComboBox
+    public class uc_Pais : ComboBox
     {
         #region UI
-        public uc_VehiculoModelo()
+        public uc_Pais()
         {
             this.DropDownStyle = ComboBoxStyle.DropDownList;
+            
             this.DropDownWidth = Ancho;
         }
         protected override void OnPaint(PaintEventArgs e)
@@ -38,21 +39,20 @@ namespace vialsur.prefectura.uc
         }
         #endregion
 
-        public void CargarDatos(int id = 0)
+        public void CargarDatos()
         {
             try
             {
-                this.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo_modelo().UX_Consulta_Todos_Registros(id);
-                this.ValueMember = "id";
-                this.DisplayMember = "modelo";
-                this.SelectedIndex = 0;
+                this.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_pais().UX_Consulta_Todos_Registros();
+                this.ValueMember = "PaisCodigo";
+                this.DisplayMember = "PaisNombre";
+                this.SelectedValue = "ECU";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERR-uc_VehiculoModelo" + ex.Message);
             }
         }
-
 
     }
 }
