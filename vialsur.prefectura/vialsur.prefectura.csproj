@@ -120,6 +120,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\entidades.prefectura\entidades.prefectura.csproj">
+      <Project>{a3871108-252e-4ea2-93fb-78674d6981ba}</Project>
+      <Name>entidades.prefectura</Name>
+    </ProjectReference>
     <ProjectReference Include="..\logica.vialsur.prefectura\logica.vialsur.prefectura.csproj">
       <Project>{9e9da170-921d-4b68-9e14-4f7f0be5300c}</Project>
       <Name>logica.vialsur.prefectura</Name>

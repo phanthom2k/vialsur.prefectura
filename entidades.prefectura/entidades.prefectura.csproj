@@ -7,8 +7,8 @@
     <ProjectGuid>{A3871108-252E-4EA2-93FB-78674D6981BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>entidades.prefectura</RootNamespace>
-    <AssemblyName>entidades.prefectura</AssemblyName>
+    <RootNamespace>entidades.vialsur.prefectura</RootNamespace>
+    <AssemblyName>entidades.vialsur.prefectura</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -52,6 +52,10 @@
       <Project>{856cfefe-f571-42c9-a254-87302e056623}</Project>
       <Name>datos.vialsur.prefectura</Name>
     </ProjectReference>
+    <ProjectReference Include="..\entidades.prefectura\entidades.prefectura.csproj">
+      <Project>{a3871108-252e-4ea2-93fb-78674d6981ba}</Project>
+      <Name>entidades.prefectura</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Vehiculos\" />

@@ -49,6 +49,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLHelper.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\entidades.prefectura\entidades.prefectura.csproj">
+      <Project>{a3871108-252e-4ea2-93fb-78674d6981ba}</Project>
+      <Name>entidades.prefectura</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication1
+namespace entidades.vialsur.prefectura
 {
     using System;
     using System.Collections.Generic;
