@@ -58,6 +58,8 @@
             this.alfaTextBox3 = new Vivaldi.AlfaTextBox();
             this.alfaTextBox4 = new Vivaldi.AlfaTextBox();
             this.alfaTextBox5 = new Vivaldi.AlfaTextBox();
+            this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
+            this.alfaTextBox6 = new Vivaldi.AlfaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.uc_NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uc_NumericUpDown2)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 136);
+            this.label1.Location = new System.Drawing.Point(27, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 8;
@@ -93,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 168);
+            this.label2.Location = new System.Drawing.Point(27, 160);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 9;
@@ -102,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 223);
+            this.label3.Location = new System.Drawing.Point(27, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 10;
@@ -111,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 313);
+            this.label4.Location = new System.Drawing.Point(27, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 17);
             this.label4.TabIndex = 11;
@@ -138,7 +140,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(435, 75);
+            this.label7.Location = new System.Drawing.Point(27, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 14;
@@ -156,7 +158,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 368);
+            this.label9.Location = new System.Drawing.Point(27, 346);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 17);
             this.label9.TabIndex = 16;
@@ -165,7 +167,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 398);
+            this.label10.Location = new System.Drawing.Point(27, 377);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 17);
             this.label10.TabIndex = 17;
@@ -174,7 +176,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(27, 195);
+            this.label11.Location = new System.Drawing.Point(27, 187);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(136, 17);
             this.label11.TabIndex = 18;
@@ -192,7 +194,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 341);
+            this.label13.Location = new System.Drawing.Point(27, 323);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 17);
             this.label13.TabIndex = 20;
@@ -201,7 +203,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 282);
+            this.label14.Location = new System.Drawing.Point(27, 272);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(105, 17);
             this.label14.TabIndex = 21;
@@ -210,7 +212,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(27, 254);
+            this.label15.Location = new System.Drawing.Point(27, 244);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(108, 17);
             this.label15.TabIndex = 22;
@@ -222,7 +224,7 @@
             this.uc_Pais1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_Pais1.DropDownWidth = 121;
             this.uc_Pais1.FormattingEnabled = true;
-            this.uc_Pais1.Location = new System.Drawing.Point(169, 192);
+            this.uc_Pais1.Location = new System.Drawing.Point(169, 184);
             this.uc_Pais1.Name = "uc_Pais1";
             this.uc_Pais1.Size = new System.Drawing.Size(121, 24);
             this.uc_Pais1.TabIndex = 26;
@@ -233,9 +235,9 @@
             this.uc_VehiculoModelo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_VehiculoModelo1.DropDownWidth = 121;
             this.uc_VehiculoModelo1.FormattingEnabled = true;
-            this.uc_VehiculoModelo1.Location = new System.Drawing.Point(94, 165);
+            this.uc_VehiculoModelo1.Location = new System.Drawing.Point(95, 157);
             this.uc_VehiculoModelo1.Name = "uc_VehiculoModelo1";
-            this.uc_VehiculoModelo1.Size = new System.Drawing.Size(121, 24);
+            this.uc_VehiculoModelo1.Size = new System.Drawing.Size(195, 24);
             this.uc_VehiculoModelo1.TabIndex = 25;
             // 
             // uc_VehiculoMarca1
@@ -244,9 +246,9 @@
             this.uc_VehiculoMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_VehiculoMarca1.DropDownWidth = 121;
             this.uc_VehiculoMarca1.FormattingEnabled = true;
-            this.uc_VehiculoMarca1.Location = new System.Drawing.Point(94, 133);
+            this.uc_VehiculoMarca1.Location = new System.Drawing.Point(94, 128);
             this.uc_VehiculoMarca1.Name = "uc_VehiculoMarca1";
-            this.uc_VehiculoMarca1.Size = new System.Drawing.Size(121, 24);
+            this.uc_VehiculoMarca1.Size = new System.Drawing.Size(196, 24);
             this.uc_VehiculoMarca1.TabIndex = 24;
             this.uc_VehiculoMarca1.SelectedIndexChanged += new System.EventHandler(this.uc_VehiculoMarca1_SelectedIndexChanged);
             // 
@@ -256,14 +258,14 @@
             this.uc_VehiculoColor1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_VehiculoColor1.DropDownWidth = 121;
             this.uc_VehiculoColor1.FormattingEnabled = true;
-            this.uc_VehiculoColor1.Location = new System.Drawing.Point(90, 220);
+            this.uc_VehiculoColor1.Location = new System.Drawing.Point(134, 212);
             this.uc_VehiculoColor1.Name = "uc_VehiculoColor1";
-            this.uc_VehiculoColor1.Size = new System.Drawing.Size(121, 24);
+            this.uc_VehiculoColor1.Size = new System.Drawing.Size(156, 24);
             this.uc_VehiculoColor1.TabIndex = 23;
             // 
             // uc_NumericUpDown1
             // 
-            this.uc_NumericUpDown1.Location = new System.Drawing.Point(169, 311);
+            this.uc_NumericUpDown1.Location = new System.Drawing.Point(169, 294);
             this.uc_NumericUpDown1.Maximum = new decimal(new int[] {
             2018,
             0,
@@ -286,7 +288,7 @@
             // 
             // uc_NumericUpDown2
             // 
-            this.uc_NumericUpDown2.Location = new System.Drawing.Point(569, 311);
+            this.uc_NumericUpDown2.Location = new System.Drawing.Point(590, 311);
             this.uc_NumericUpDown2.Maximum = new decimal(new int[] {
             2018,
             0,
@@ -298,7 +300,7 @@
             0,
             0});
             this.uc_NumericUpDown2.Name = "uc_NumericUpDown2";
-            this.uc_NumericUpDown2.Size = new System.Drawing.Size(120, 22);
+            this.uc_NumericUpDown2.Size = new System.Drawing.Size(137, 22);
             this.uc_NumericUpDown2.TabIndex = 28;
             this.uc_NumericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.uc_NumericUpDown2.Value = new decimal(new int[] {
@@ -310,7 +312,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(94, 397);
+            this.checkBox1.Location = new System.Drawing.Point(109, 376);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(68, 21);
             this.checkBox1.TabIndex = 30;
@@ -319,51 +321,68 @@
             // 
             // decimalTextBox1
             // 
-            this.decimalTextBox1.Location = new System.Drawing.Point(95, 368);
+            this.decimalTextBox1.Location = new System.Drawing.Point(95, 346);
             this.decimalTextBox1.Name = "decimalTextBox1";
-            this.decimalTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.decimalTextBox1.Size = new System.Drawing.Size(116, 22);
             this.decimalTextBox1.TabIndex = 29;
             // 
             // alfaTextBox1
             // 
-            this.alfaTextBox1.Location = new System.Drawing.Point(509, 69);
+            this.alfaTextBox1.Location = new System.Drawing.Point(95, 101);
             this.alfaTextBox1.Name = "alfaTextBox1";
-            this.alfaTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox1.Size = new System.Drawing.Size(195, 22);
             this.alfaTextBox1.TabIndex = 31;
             // 
             // alfaTextBox2
             // 
-            this.alfaTextBox2.Location = new System.Drawing.Point(508, 98);
+            this.alfaTextBox2.Location = new System.Drawing.Point(578, 101);
             this.alfaTextBox2.Name = "alfaTextBox2";
-            this.alfaTextBox2.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox2.Size = new System.Drawing.Size(149, 22);
             this.alfaTextBox2.TabIndex = 32;
             // 
             // alfaTextBox3
             // 
-            this.alfaTextBox3.Location = new System.Drawing.Point(148, 254);
+            this.alfaTextBox3.Location = new System.Drawing.Point(141, 241);
             this.alfaTextBox3.Name = "alfaTextBox3";
-            this.alfaTextBox3.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox3.Size = new System.Drawing.Size(271, 22);
             this.alfaTextBox3.TabIndex = 33;
             // 
             // alfaTextBox4
             // 
-            this.alfaTextBox4.Location = new System.Drawing.Point(148, 277);
+            this.alfaTextBox4.Location = new System.Drawing.Point(141, 267);
             this.alfaTextBox4.Name = "alfaTextBox4";
-            this.alfaTextBox4.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox4.Size = new System.Drawing.Size(271, 22);
             this.alfaTextBox4.TabIndex = 34;
             // 
             // alfaTextBox5
             // 
-            this.alfaTextBox5.Location = new System.Drawing.Point(90, 341);
+            this.alfaTextBox5.Location = new System.Drawing.Point(95, 318);
             this.alfaTextBox5.Name = "alfaTextBox5";
-            this.alfaTextBox5.Size = new System.Drawing.Size(100, 22);
+            this.alfaTextBox5.Size = new System.Drawing.Size(116, 22);
             this.alfaTextBox5.TabIndex = 35;
+            // 
+            // numericTextBox1
+            // 
+            this.numericTextBox1.AllowSpace = false;
+            this.numericTextBox1.Location = new System.Drawing.Point(565, 220);
+            this.numericTextBox1.Name = "numericTextBox1";
+            this.numericTextBox1.Size = new System.Drawing.Size(162, 22);
+            this.numericTextBox1.TabIndex = 36;
+            // 
+            // alfaTextBox6
+            // 
+            this.alfaTextBox6.Location = new System.Drawing.Point(589, 338);
+            this.alfaTextBox6.Name = "alfaTextBox6";
+            this.alfaTextBox6.Size = new System.Drawing.Size(138, 22);
+            this.alfaTextBox6.TabIndex = 37;
             // 
             // frmVehiculo_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 437);
+            this.ClientSize = new System.Drawing.Size(739, 416);
+            this.Controls.Add(this.alfaTextBox6);
+            this.Controls.Add(this.numericTextBox1);
             this.Controls.Add(this.alfaTextBox5);
             this.Controls.Add(this.alfaTextBox4);
             this.Controls.Add(this.alfaTextBox3);
@@ -395,6 +414,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Guardar);
             this.Name = "frmVehiculo_Nuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVehiculo_Nuevo";
             this.Load += new System.EventHandler(this.frmVehiculo_Nuevo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uc_NumericUpDown1)).EndInit();
@@ -436,5 +456,7 @@
         private Vivaldi.AlfaTextBox alfaTextBox3;
         private Vivaldi.AlfaTextBox alfaTextBox4;
         private Vivaldi.AlfaTextBox alfaTextBox5;
+        private Vivaldi.UserControls.NumericTextBox numericTextBox1;
+        private Vivaldi.AlfaTextBox alfaTextBox6;
     }
 }

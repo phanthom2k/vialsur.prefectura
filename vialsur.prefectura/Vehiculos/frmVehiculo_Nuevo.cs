@@ -16,6 +16,8 @@ namespace vialsur.prefectura.Vehiculos
         {
             InitializeComponent();
         }
+        public bool EsNuevo  { get; set; }
+        public int Id { get; set; }
 
         private void frmVehiculo_Nuevo_Load(object sender, EventArgs e)
         {
@@ -27,8 +29,15 @@ namespace vialsur.prefectura.Vehiculos
                 uc_VehiculoModelo1.CargarDatos();
                 uc_VehiculoModelo1.Ancho = 300;
                 uc_Pais1.CargarDatos();
-                uc_Pais1.Ancho = 500;
+                uc_Pais1.Ancho = 300;
 
+                if(!EsNuevo)
+                {
+
+
+
+
+                }
 
             }
             catch (Exception ex)
