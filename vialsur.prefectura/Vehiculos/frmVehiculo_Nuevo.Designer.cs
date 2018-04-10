@@ -239,7 +239,6 @@
             this.dtxt_costo.Name = "dtxt_costo";
             this.dtxt_costo.Size = new System.Drawing.Size(116, 22);
             this.dtxt_costo.TabIndex = 29;
-            this.dtxt_costo.Text = "22250";
             // 
             // atxt_codigo
             // 
@@ -247,7 +246,6 @@
             this.atxt_codigo.Name = "atxt_codigo";
             this.atxt_codigo.Size = new System.Drawing.Size(195, 22);
             this.atxt_codigo.TabIndex = 31;
-            this.atxt_codigo.Text = "codigo123";
             // 
             // atxt_codigoanterior
             // 
@@ -255,7 +253,6 @@
             this.atxt_codigoanterior.Name = "atxt_codigoanterior";
             this.atxt_codigoanterior.Size = new System.Drawing.Size(149, 22);
             this.atxt_codigoanterior.TabIndex = 32;
-            this.atxt_codigoanterior.Text = "codigo anterior";
             // 
             // atxt_seriemotor
             // 
@@ -263,7 +260,6 @@
             this.atxt_seriemotor.Name = "atxt_seriemotor";
             this.atxt_seriemotor.Size = new System.Drawing.Size(271, 22);
             this.atxt_seriemotor.TabIndex = 33;
-            this.atxt_seriemotor.Text = "seria motor 123";
             // 
             // atxt_seriechasis
             // 
@@ -271,7 +267,6 @@
             this.atxt_seriechasis.Name = "atxt_seriechasis";
             this.atxt_seriechasis.Size = new System.Drawing.Size(271, 22);
             this.atxt_seriechasis.TabIndex = 34;
-            this.atxt_seriechasis.Text = "serie chasis 123";
             // 
             // atxt_placa
             // 
@@ -279,7 +274,6 @@
             this.atxt_placa.Name = "atxt_placa";
             this.atxt_placa.Size = new System.Drawing.Size(116, 22);
             this.atxt_placa.TabIndex = 35;
-            this.atxt_placa.Text = "lbl1234";
             // 
             // ntxt_cilindraje
             // 
@@ -296,7 +290,6 @@
             this.atxt_placaprovisional.Name = "atxt_placaprovisional";
             this.atxt_placaprovisional.Size = new System.Drawing.Size(138, 22);
             this.atxt_placaprovisional.TabIndex = 37;
-            this.atxt_placaprovisional.Text = "lea4444";
             // 
             // error_Provider1
             // 

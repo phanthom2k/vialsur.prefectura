@@ -124,10 +124,6 @@ namespace vialsur.prefectura.Vehiculos
                     atxt_placaprovisional.Text = obj_vehiculo.placa_provisional;
                     dtxt_costo.Text = obj_vehiculo.costo.ToString();
                     ntxt_cilindraje.Text = obj_vehiculo.cilindraje;
-
-
-
-
                 }
 
             }
@@ -161,7 +157,7 @@ namespace vialsur.prefectura.Vehiculos
         {
             try
             {
-
+                bool _f = false;
                 if( VerificarCampos() )
                 {
                     obj_vehiculo.codigo = atxt_codigo.Text;
@@ -179,10 +175,23 @@ namespace vialsur.prefectura.Vehiculos
                     obj_vehiculo.estado = chk_activo.Checked;
                     obj_vehiculo.costo = dtxt_costo.DecimalValue;
 
-                    bool _f = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().Nuevo(obj_vehiculo);
-                }
-                
+                    if(EsNuevo)
+                    {
+                        _f = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().Nuevo(obj_vehiculo);
+                        Freeze();
+                        MessageBox.Show("Datos registrados","Nuevo",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1);
+                    }
+                    else
+                    {
+                        _f = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ActualizarPorId(obj_vehiculo);
+                        MessageBox.Show("Datos actualizados con exito", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        this.Close();
+                    }
 
+
+                    
+                    
+                }               
             }
             catch (Exception ex)
             {

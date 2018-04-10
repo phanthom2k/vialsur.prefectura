@@ -35,6 +35,24 @@ namespace logica.vialsur.prefectura.Catalogos
         }
 
         /// <summary>
+        /// Actualiza la informacion del vehiculo
+        /// </summary>
+        /// <param name="_ve_vehiculo"></param>
+        /// <returns></returns>
+        public bool ActualizarPorId(ve_vehiculo _ve_vehiculo)
+        {
+            
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ActualizarVehiculo(_ve_vehiculo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+        }
+
+        /// <summary>
         /// Verifica si la placa esta registrada
         /// </summary>
         /// <param name="placa">PLACA A BUSCAR</param>

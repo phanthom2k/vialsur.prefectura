@@ -173,10 +173,10 @@ GO
         }
 
 
-        private string _sql_verificar_serie_chasis = "select serie_chasis from ve_vehiculo where UPPER(serie_chasis) = UPPER(@parametroBusqueda)";
-        private string _sql_verificar_serie_motor = "select serie_motor from ve_vehiculo where UPPER(serie_motor) = UPPER(@parametroBusqueda)";
-        private string _sql_verificar_placa = "select placa from ve_vehiculo where UPPER(placa) = UPPER(@parametroBusqueda)";
-        private string _sql_verificar_placa_provisional = "select placa_provisional from ve_vehiculo where UPPER(placa_provisional) = UPPER(@parametroBusqueda)";
+        //private string _sql_verificar_serie_chasis = "select serie_chasis from ve_vehiculo where UPPER(serie_chasis) = UPPER(@parametroBusqueda)";
+        //private string _sql_verificar_serie_motor = "select serie_motor from ve_vehiculo where UPPER(serie_motor) = UPPER(@parametroBusqueda)";
+        //private string _sql_verificar_placa = "select placa from ve_vehiculo where UPPER(placa) = UPPER(@parametroBusqueda)";
+       // private string _sql_verificar_placa_provisional = "select placa_provisional from ve_vehiculo where UPPER(placa_provisional) = UPPER(@parametroBusqueda)";
 
 
         public bool VerificarExistencia(TipoVerificacion tipo, string parametroBusqueda )
@@ -190,15 +190,19 @@ GO
                 switch(tipo)
                 {
                     case TipoVerificacion.SerieChasis:
+                        string _sql_verificar_serie_chasis = "select serie_chasis from ve_vehiculo where UPPER(serie_chasis) = UPPER(@parametroBusqueda)";
                         f = SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_serie_chasis, parametro).ToString() != String.Empty ? true : false;
                         break;
                     case TipoVerificacion.SerieMotor:
+                        string _sql_verificar_serie_motor = "select serie_motor from ve_vehiculo where UPPER(serie_motor) = UPPER(@parametroBusqueda)";
                         f = SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_serie_motor,parametro).ToString() != String.Empty ? true : false;
                         break;
-                    case TipoVerificacion.Placa:                        
+                    case TipoVerificacion.Placa:
+                        string _sql_verificar_placa = "select placa from ve_vehiculo where UPPER(placa) = UPPER(@parametroBusqueda)";
                         f = SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_placa, parametro).ToString() != String.Empty ? true : false;
                         break;
                     case TipoVerificacion.PlacaProvisional:
+                        string _sql_verificar_placa_provisional = "select placa_provisional from ve_vehiculo where UPPER(placa_provisional) = UPPER(@parametroBusqueda)";
                         f = SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_placa_provisional,parametro).ToString() != String.Empty ? true : false;
                         break;
                     default: break;
@@ -259,6 +263,101 @@ GO
             {
                 throw new Exception("Error al consultar los datos del vehiculo: "+ex.Message); 
             }
+        }
+
+
+        public bool ActualizarVehiculo(entidades.vialsur.prefectura.ve_vehiculo _ve_vehiculo)
+        {
+            bool _f = false;
+            try
+            {
+                string _sql_update = "UPDATE[dbo].[ve_vehiculo] " +
+                                "SET[ve_vehiculo_modelo_id] = @ve_vehiculo_modelo_id," +
+                               "[ve_vehiculo_color_id] = @ve_vehiculo_color_id," +
+                               "[anio_fabricacion] = @anio_fabricacion, [anio_compra] = @anio_compra, " +
+                              "[cilindraje] = @cilindraje, [codigo] = @codigo,[codigo_anterior] = @codigo_anterior," +
+                              /*"[color] = @color,*/ " [costo] = @costo, [estado] = @estado," +
+                              "[PaisCodigo] = @PaisCodigo, " +
+                              "[placa] = @placa, [placa_provisional] = @placa_provisional, " +
+                              "[serie_chasis] = @serie_chasis, [serie_motor] = @serie_motor " +
+                              "WHERE[id] = @id";
+
+                List < SqlParameter > parameters = new List<SqlParameter>();
+
+                #region parametros
+                SqlParameter _id = new SqlParameter("@id", SqlDbType.Int);
+                _id.Value = _ve_vehiculo.id;
+                _id.Direction = ParameterDirection.Input;
+                parameters.Add(_id);
+
+                SqlParameter _codigo = new SqlParameter("@codigo", SqlDbType.VarChar, 20);
+                _codigo.Value = _ve_vehiculo.codigo;
+                parameters.Add(_codigo);
+
+                SqlParameter _codigo_anterior = new SqlParameter("@codigo_anterior", SqlDbType.VarChar, 20);
+                _codigo_anterior.Value = _ve_vehiculo.codigo_anterior;
+                parameters.Add(_codigo_anterior);
+
+                SqlParameter _costo = new SqlParameter("@costo", SqlDbType.Decimal);
+                _costo.Value = _ve_vehiculo.costo;
+                parameters.Add(_costo);
+
+                SqlParameter _ve_vehiculo_modelo_id = new SqlParameter("@ve_vehiculo_modelo_id", SqlDbType.Int);
+                _ve_vehiculo_modelo_id.Value = _ve_vehiculo.ve_vehiculo_modelo_id;
+                parameters.Add(_ve_vehiculo_modelo_id);
+
+                SqlParameter _PaisCodigo = new SqlParameter("@PaisCodigo", SqlDbType.Char, 3);
+                _PaisCodigo.Value = _ve_vehiculo.PaisCodigo;
+                parameters.Add(_PaisCodigo);
+
+                SqlParameter _ve_vehiculo_color_id = new SqlParameter("@ve_vehiculo_color_id", SqlDbType.Int);
+                _ve_vehiculo_color_id.Value = _ve_vehiculo.ve_vehiculo_color_id;
+                parameters.Add(_ve_vehiculo_color_id);
+
+                SqlParameter _serie_motor = new SqlParameter("@serie_motor", SqlDbType.VarChar, 500);
+                _serie_motor.Value = _ve_vehiculo.serie_motor;
+                parameters.Add(_serie_motor);
+
+                SqlParameter _serie_chasis = new SqlParameter("@serie_chasis", SqlDbType.VarChar, 500);
+                _serie_chasis.Value = _ve_vehiculo.serie_chasis;
+                parameters.Add(_serie_chasis);
+
+                SqlParameter _anio_fabricacion = new SqlParameter("@anio_fabricacion", SqlDbType.Int);
+                _anio_fabricacion.Value = _ve_vehiculo.anio_fabricacion;
+                parameters.Add(_anio_fabricacion);
+
+                SqlParameter _anio_compra = new SqlParameter("@anio_compra", SqlDbType.Int);
+                _anio_compra.Value = _ve_vehiculo.anio_compra;
+                parameters.Add(_anio_compra);
+
+                SqlParameter _placa = new SqlParameter("@placa", SqlDbType.VarChar, 50);
+                _placa.Value = _ve_vehiculo.placa;
+                parameters.Add(_placa);
+
+                SqlParameter _placa_provisional = new SqlParameter("@placa_provisional", SqlDbType.VarChar, 50);
+                _placa_provisional.Value = _ve_vehiculo.placa_provisional;
+                parameters.Add(_placa_provisional);
+
+                SqlParameter _cilindraje = new SqlParameter("@cilindraje", SqlDbType.VarChar, 50);
+                _cilindraje.Value = _ve_vehiculo.cilindraje;
+                parameters.Add(_cilindraje);
+
+                SqlParameter _estado = new SqlParameter("@estado", SqlDbType.VarChar, 50);
+                _estado.Value = _ve_vehiculo.estado;
+                parameters.Add(_estado);
+
+
+                #endregion
+
+                int customerId = SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_update, parameters.ToArray());
+                _f = customerId > 0 ? true : false;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al intentar actualizar los campos.", ex);
+            }
+            return _f;
         }
 
     }
