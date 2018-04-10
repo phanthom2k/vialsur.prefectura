@@ -211,7 +211,55 @@ GO
             return f;
         }
 
+        /// <summary>
+        /// Consulta los datos de un vehiculo
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.ve_vehiculo ConsultarVerhiculo(int id)
+        {
+            try
+            {
+                string consulta =   "SELECT [id],[ve_vehiculo_modelo_id],[ve_vehiculo_color_id],[anio_fabricacion],[anio_compra]" +
+                                    ",[cilindraje],[codigo],[codigo_anterior],[color],[costo],[estado],[PaisCodigo],[placa]" +
+                                    ",[placa_provisional],[serie_chasis],[serie_motor] " +
+                                    "FROM[dbo].[ve_vehiculo] WHERE ID = @id";
 
+                SqlParameter parametro = new SqlParameter("@id",SqlDbType.Int );
+                parametro.Value = id;
+
+                entidades.vialsur.prefectura.ve_vehiculo obj_vehiculo = new entidades.vialsur.prefectura.ve_vehiculo();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+                while(dr_datos.Read())
+                {
+                    obj_vehiculo.id = int.Parse(dr_datos["id"].ToString());
+                    obj_vehiculo.ve_vehiculo_modelo_id = int.Parse(dr_datos["ve_vehiculo_modelo_id"].ToString());
+                    obj_vehiculo.ve_vehiculo_color_id = int.Parse(dr_datos["ve_vehiculo_color_id"].ToString());
+                    obj_vehiculo.anio_fabricacion = int.Parse(dr_datos["anio_fabricacion"].ToString());
+                    obj_vehiculo.anio_compra = int.Parse(dr_datos["anio_compra"].ToString());
+                    obj_vehiculo.cilindraje = dr_datos["cilindraje"].ToString();
+                    obj_vehiculo.codigo = dr_datos["codigo"].ToString();
+                    obj_vehiculo.codigo_anterior = dr_datos["codigo_anterior"].ToString();
+                    obj_vehiculo.color = dr_datos["color"].ToString();
+                    obj_vehiculo.costo = decimal.Parse(dr_datos["costo"].ToString());
+                    obj_vehiculo.estado = (bool)dr_datos["estado"];
+                    obj_vehiculo.PaisCodigo = dr_datos["PaisCodigo"].ToString();
+                    obj_vehiculo.placa = dr_datos["placa"].ToString();
+                    obj_vehiculo.placa_provisional = dr_datos["placa_provisional"].ToString();
+                    obj_vehiculo.serie_chasis = dr_datos["serie_chasis"].ToString();
+                    obj_vehiculo.serie_motor = dr_datos["serie_motor"].ToString();
+                }
+                obj_vehiculo.ve_vehiculo_marca_id = (int) new cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(obj_vehiculo.ve_vehiculo_modelo_id).ve_vehiculo_marca_id;
+
+
+                return obj_vehiculo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos del vehiculo: "+ex.Message); 
+            }
+        }
 
     }
 }

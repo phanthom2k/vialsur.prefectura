@@ -100,7 +100,7 @@ namespace vialsur.prefectura.Vehiculos
         {
             try
             {
-                
+                EsNuevo = false;
                 if(EsNuevo)
                 {
                     obj_vehiculo = new entidades.vialsur.prefectura.ve_vehiculo();
@@ -109,6 +109,24 @@ namespace vialsur.prefectura.Vehiculos
                 }
                 else //actualizacion
                 {
+                    obj_vehiculo = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ConsultarDatosVehiculoPorId(10);
+                    atxt_codigo.Text = obj_vehiculo.codigo;
+                    atxt_codigoanterior.Text = obj_vehiculo.codigo_anterior;
+                    cmb_Marca.SelectedValue = obj_vehiculo.ve_vehiculo_marca_id;
+                    cmb_modelo.SelectedValue = obj_vehiculo.ve_vehiculo_modelo_id;
+                    cmb_pais.SelectedValue = obj_vehiculo.PaisCodigo;
+                    cmb_color.SelectedValue = obj_vehiculo.ve_vehiculo_color_id;
+                    atxt_seriemotor.Text = obj_vehiculo.serie_motor;
+                    atxt_seriechasis.Text = obj_vehiculo.serie_chasis;
+                    nud_anofabricacion.Value = (decimal)obj_vehiculo.anio_fabricacion;
+                    nud_anocompra.Value = (decimal)obj_vehiculo.anio_compra;
+                    atxt_placa.Text = obj_vehiculo.placa;
+                    atxt_placaprovisional.Text = obj_vehiculo.placa_provisional;
+                    dtxt_costo.Text = obj_vehiculo.costo.ToString();
+                    ntxt_cilindraje.Text = obj_vehiculo.cilindraje;
+
+
+
 
                 }
 

@@ -89,5 +89,19 @@ namespace logica.vialsur.prefectura.Catalogos
         }
 
 
+        public ve_vehiculo ConsultarDatosVehiculoPorId(int id)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(id);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

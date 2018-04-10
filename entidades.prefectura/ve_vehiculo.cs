@@ -15,6 +15,7 @@ namespace entidades.vialsur.prefectura
     public partial class ve_vehiculo
     {
         public int id { get; set; }
+        public int ve_vehiculo_marca_id { get; set; }
         public int ve_vehiculo_modelo_id { get; set; }
         public int ve_vehiculo_color_id { get; set; }
         public Nullable<int> anio_fabricacion { get; set; }
