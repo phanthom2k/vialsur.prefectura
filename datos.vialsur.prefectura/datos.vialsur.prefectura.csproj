@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="cls_data_pais.cs" />
+    <Compile Include="cls_data_ve_vehiculo.cs" />
     <Compile Include="cls_data_ve_vehiculo_color.cs" />
     <Compile Include="cls_data_ve_vehiculo_marca.cs" />
     <Compile Include="cls_data_ve_vehiculo_modelo.cs" />

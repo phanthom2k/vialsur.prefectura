@@ -24,7 +24,7 @@ namespace entidades.vialsur.prefectura
         public string codigo_anterior { get; set; }
         public string color { get; set; }
         public Nullable<decimal> costo { get; set; }
-        public Nullable<int> estado { get; set; }
+        public Nullable<bool> estado { get; set; }
         public string PaisCodigo { get; set; }
         public string placa { get; set; }
         public string placa_provisional { get; set; }

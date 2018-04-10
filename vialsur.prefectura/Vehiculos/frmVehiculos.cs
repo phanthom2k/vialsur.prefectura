@@ -21,7 +21,10 @@ namespace vialsur.prefectura.Vehiculos
         {
             try
             {
-                new frmVehiculo_Nuevo().ShowDialog();
+                frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
+                frm_Vehiculo.EsNuevo = true;
+                frm_Vehiculo.ShowDialog();
+
             }
             catch (Exception ex)
             {
