@@ -360,5 +360,24 @@ GO
             return _f;
         }
 
+        /// <summary>
+        /// Retorna el numero de registros de vehiculos sin importar si estan activos o no
+        /// </summary>
+        /// <returns></returns>
+        public int ContarVehiculos()
+        {
+            try
+            {
+                string _sql_consulta = "SELECT count([id]) [id] FROM [dbo].[ve_vehiculo]";
+
+                return (int)SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_consulta);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar el numero de vehiculos registrados",ex);
+            }
+        }
+
+
     }
 }

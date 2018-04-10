@@ -99,13 +99,10 @@ namespace vialsur.prefectura.Vehiculos
         private void frmVehiculo_Nuevo_Load(object sender, EventArgs e)
         {
             try
-            {
-                EsNuevo = false;
+            {                
                 if(EsNuevo)
                 {
                     obj_vehiculo = new entidades.vialsur.prefectura.ve_vehiculo();
-
-
                 }
                 else //actualizacion
                 {
@@ -155,10 +152,25 @@ namespace vialsur.prefectura.Vehiculos
         entidades.vialsur.prefectura.ve_vehiculo obj_vehiculo;
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void nud_anocompra_ValueChanged(object sender, EventArgs e)
+        {
+            nud_anocompra.Minimum = nud_anofabricacion.Value;
+        }
+
+        private void nud_anofabricacion_ValueChanged(object sender, EventArgs e)
+        {
+            nud_anocompra.Minimum = nud_anofabricacion.Value;
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
             try
             {
                 bool _f = false;
-                if( VerificarCampos() )
+                if (VerificarCampos())
                 {
                     obj_vehiculo.codigo = atxt_codigo.Text;
                     obj_vehiculo.codigo_anterior = atxt_codigoanterior.Text.ToUpper();
@@ -175,11 +187,11 @@ namespace vialsur.prefectura.Vehiculos
                     obj_vehiculo.estado = chk_activo.Checked;
                     obj_vehiculo.costo = dtxt_costo.DecimalValue;
 
-                    if(EsNuevo)
+                    if (EsNuevo)
                     {
                         _f = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().Nuevo(obj_vehiculo);
                         Freeze();
-                        MessageBox.Show("Datos registrados","Nuevo",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Datos registrados", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     }
                     else
                     {
@@ -187,26 +199,17 @@ namespace vialsur.prefectura.Vehiculos
                         MessageBox.Show("Datos actualizados con exito", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         this.Close();
                     }
-
-
-                    
-                    
-                }               
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error: "+ex.Message.ToUpper(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ocurrio un error: " + ex.Message.ToUpper(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
-        private void nud_anocompra_ValueChanged(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            nud_anocompra.Minimum = nud_anofabricacion.Value;
-        }
-
-        private void nud_anofabricacion_ValueChanged(object sender, EventArgs e)
-        {
-            nud_anocompra.Minimum = nud_anofabricacion.Value;
+            this.Close();
         }
     }
 }

@@ -120,6 +120,21 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+        /// <summary>
+        /// obtiene el numero de registros de vehiculso registrados sin importar si estan activos o inactivos
+        /// </summary>
+        /// <returns></returns>
+        public int ContarVehiculos()
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ContarVehiculos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar el numero de vehiculos registrados", ex);
+            }
+        }
 
     }
 }
