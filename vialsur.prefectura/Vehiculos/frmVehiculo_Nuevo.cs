@@ -39,10 +39,11 @@ namespace vialsur.prefectura.Vehiculos
         /// <param name="congelar">TRUE por defecto, FALSE para habilitarlos</param>
         void Freeze (bool congelar=true)
         {
-            atxt_codigo.ReadOnly = atxt_codigoanterior.ReadOnly = atxt_seriemotor.ReadOnly = atxt_seriechasis.ReadOnly = nud_anofabricacion.ReadOnly = nud_anocompra.ReadOnly =
+            atxt_codigo.ReadOnly = atxt_codigoanterior.ReadOnly = atxt_seriemotor.ReadOnly = atxt_seriechasis.ReadOnly = 
             atxt_placa.ReadOnly = atxt_placaprovisional.ReadOnly = ntxt_cilindraje.ReadOnly = dtxt_costo.ReadOnly = congelar;
 
             cmb_Marca.Enabled = cmb_modelo.Enabled = cmb_pais.Enabled = cmb_color.Enabled = !congelar;
+            nud_anofabricacion.ReadOnly = nud_anocompra.ReadOnly = !congelar;
 
         }
         bool VerificarCampos()
@@ -150,10 +151,6 @@ namespace vialsur.prefectura.Vehiculos
             this.Close();
         }
         entidades.vialsur.prefectura.ve_vehiculo obj_vehiculo;
-        private void btn_Guardar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void nud_anocompra_ValueChanged(object sender, EventArgs e)
         {

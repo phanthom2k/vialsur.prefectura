@@ -185,25 +185,29 @@ GO
             int _r = 0;
             try
             {
+                List<SqlParameter> parametros = new List<SqlParameter>();
+                
                 SqlParameter parametro = new SqlParameter("@parametroBusqueda", SqlDbType.VarChar);
                 parametro.Value = parametroBusqueda;
-                switch(tipo)
+                parametros.Add(parametro);
+                switch (tipo)
                 {
                     case TipoVerificacion.SerieChasis:
-                        string _sql_verificar_serie_chasis = "select serie_chasis from ve_vehiculo where UPPER(serie_chasis) = UPPER(@parametroBusqueda)";
-                        f = SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_serie_chasis, parametro).ToString() != String.Empty ? true : false;
+                        string _sql_verificar_serie_chasis = "select count(serie_chasis) serie_chasis from ve_vehiculo where UPPER(serie_chasis) = UPPER(@parametroBusqueda)";
+                        f = int.Parse(SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_serie_chasis, parametros.ToArray()).ToString()) > 0 ? true : false;
                         break;
                     case TipoVerificacion.SerieMotor:
-                        string _sql_verificar_serie_motor = "select serie_motor from ve_vehiculo where UPPER(serie_motor) = UPPER(@parametroBusqueda)";
-                        f = SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_serie_motor,parametro).ToString() != String.Empty ? true : false;
+                        string _sql_verificar_serie_motor = "select count(serie_motor) serie_motor from ve_vehiculo where UPPER(serie_motor) = UPPER(@parametroBusqueda)";
+                        f = int.Parse( SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_serie_motor,parametros.ToArray()).ToString()) > 0 ? true : false;
                         break;
                     case TipoVerificacion.Placa:
-                        string _sql_verificar_placa = "select placa from ve_vehiculo where UPPER(placa) = UPPER(@parametroBusqueda)";
-                        f = SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_placa, parametro).ToString() != String.Empty ? true : false;
+                        string _sql_verificar_placa = "select count(placa) placa from ve_vehiculo where UPPER(placa) = UPPER(@parametroBusqueda)";
+                        
+                        f = int.Parse( SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_placa, parametros.ToArray()).ToString())  >0  ? true : false;
                         break;
                     case TipoVerificacion.PlacaProvisional:
-                        string _sql_verificar_placa_provisional = "select placa_provisional from ve_vehiculo where UPPER(placa_provisional) = UPPER(@parametroBusqueda)";
-                        f = SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_placa_provisional,parametro).ToString() != String.Empty ? true : false;
+                        string _sql_verificar_placa_provisional = "select count(placa_provisional) placa_provisional from ve_vehiculo where UPPER(placa_provisional) = UPPER(@parametroBusqueda)";
+                        f = int.Parse(SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_verificar_placa_provisional,parametros.ToArray()).ToString()) > 0 ? true : false;
                         break;
                     default: break;
                 }

@@ -17,7 +17,7 @@ namespace logica.vialsur.prefectura.Catalogos
             {
                 if (VerificarPlacasRegistrada(_ve_vehiculo.placa))
                     throw new Exception("Placa de vehiculo ya registrada");
-                if (VerificarPlacasRegistrada(_ve_vehiculo.placa_provisional,true))
+                if (VerificarPlacasRegistrada(_ve_vehiculo.placa_provisional, true))
                     throw new Exception("Placa provisional de vehiculo ya registrada");
                 if (VerificarSerieRegistrada(_ve_vehiculo.serie_chasis))
                     throw new Exception("Serie del chasis ya registrada");
