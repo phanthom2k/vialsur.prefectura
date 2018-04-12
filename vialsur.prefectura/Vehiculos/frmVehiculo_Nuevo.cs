@@ -25,6 +25,7 @@ namespace vialsur.prefectura.Vehiculos
                 cmb_modelo.Ancho = 300;
                 cmb_pais.CargarDatos();
                 cmb_pais.Ancho = 300;
+                
             }
             catch (Exception ex)
             {
@@ -96,12 +97,16 @@ namespace vialsur.prefectura.Vehiculos
 
         public bool EsNuevo  { get; set; }
         public int Id { get; set; }
-
+        public bool EsVer { get; set; }
         private void frmVehiculo_Nuevo_Load(object sender, EventArgs e)
         {
             try
-            {                
-                if(EsNuevo)
+            {
+                if (EsVer)
+                    toolStripButton2.Enabled = false;
+                else toolStripButton2.Enabled = true;
+
+                if (EsNuevo)
                 {
                     obj_vehiculo = new entidades.vialsur.prefectura.ve_vehiculo();
                 }

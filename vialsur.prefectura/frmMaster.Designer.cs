@@ -68,7 +68,7 @@
             // nuevaToolStripMenuItem
             // 
             this.nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
-            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.nuevaToolStripMenuItem.Text = "Nueva";
             // 
             // administraciónToolStripMenuItem
@@ -83,14 +83,14 @@
             // vehiculosToolStripMenuItem
             // 
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.vehiculosToolStripMenuItem.Text = "Vehiculos";
             this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             // 
             // frmMaster
@@ -103,6 +103,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMaster";
             this.Text = "frmMaster";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

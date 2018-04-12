@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace logica.vialsur.prefectura.Catalogos
 {
     using entidades.vialsur.prefectura;
+
     public class cls_logica_ve_vehiculo
     {
 
-        public bool Nuevo(ve_vehiculo _ve_vehiculo )
+        public bool Nuevo(ve_vehiculo _ve_vehiculo)
         {
             bool _f = false;
             try
@@ -21,10 +22,10 @@ namespace logica.vialsur.prefectura.Catalogos
                     throw new Exception("Placa provisional de vehiculo ya registrada");
                 if (VerificarSerieRegistrada(_ve_vehiculo.serie_chasis))
                     throw new Exception("Serie del chasis ya registrada");
-                if (VerificarSerieRegistrada(_ve_vehiculo.serie_motor,false))
+                if (VerificarSerieRegistrada(_ve_vehiculo.serie_motor, false))
                     throw new Exception("Serie del motor ya registrada");
 
-                 _f = new datos.vialsur.prefectura.cls_data_ve_vehiculo().Insertar(_ve_vehiculo);
+                _f = new datos.vialsur.prefectura.cls_data_ve_vehiculo().Insertar(_ve_vehiculo);
 
             }
             catch (Exception ex)
@@ -41,7 +42,7 @@ namespace logica.vialsur.prefectura.Catalogos
         /// <returns></returns>
         public bool ActualizarPorId(ve_vehiculo _ve_vehiculo)
         {
-            
+
             try
             {
                 return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ActualizarVehiculo(_ve_vehiculo);
@@ -49,7 +50,7 @@ namespace logica.vialsur.prefectura.Catalogos
             catch (Exception ex)
             {
                 throw ex;
-            }            
+            }
         }
 
         /// <summary>
@@ -62,14 +63,14 @@ namespace logica.vialsur.prefectura.Catalogos
         {
             bool _f = false;
             try
-            {                
-                if(PlacaPrvisional==true )
+            {
+                if (PlacaPrvisional == true)
                 {
                     _f = new datos.vialsur.prefectura.cls_data_ve_vehiculo().VerificarExistencia(datos.vialsur.prefectura.TipoVerificacion.PlacaProvisional, placa);
                 }
                 else
                 {
-                   _f = new datos.vialsur.prefectura.cls_data_ve_vehiculo().VerificarExistencia(datos.vialsur.prefectura.TipoVerificacion.Placa, placa);
+                    _f = new datos.vialsur.prefectura.cls_data_ve_vehiculo().VerificarExistencia(datos.vialsur.prefectura.TipoVerificacion.Placa, placa);
                 }
             }
             catch (Exception ex)
@@ -85,7 +86,7 @@ namespace logica.vialsur.prefectura.Catalogos
         /// <param name="serie">SERIE A BUSCAR</param>
         /// <param name="SerieChasis">TRUE por defecto para buscar en si existe el chasis registrado, FLASE buscar serie del motor</param>
         /// <returns></returns>
-        public bool VerificarSerieRegistrada(string serie, bool SerieChasis = true )
+        public bool VerificarSerieRegistrada(string serie, bool SerieChasis = true)
         {
             bool _f = false;
             try
@@ -135,6 +136,26 @@ namespace logica.vialsur.prefectura.Catalogos
                 throw new Exception("Error al consultar el numero de vehiculos registrados", ex);
             }
         }
+
+        /// <summary>
+        /// Permite listar todos los vehiculos registrados (consulta personalizada solo para el listado)
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
+        public System.Data.DataTable ListarVehiculos_UX(string parametro = "")
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ListarVehiculos_UX(parametro);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrio un problema al realizar la busqueda",ex);
+            }
+
+        }
+
+
 
     }
 }

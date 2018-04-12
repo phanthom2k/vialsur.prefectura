@@ -383,5 +383,47 @@ GO
         }
 
 
+
+        /// <summary>
+        /// Permite listar todos los vehiculos registrados
+        /// </summary>
+        /// <param name="parametroBusqueda"></param>
+        /// <returns></returns>
+        public DataTable ListarVehiculos_UX(string parametroBusqueda="")
+        {
+            try
+            {
+
+                string _sql_consulta_lista_vehiculos =
+                    "SELECT v.[id],v.[codigo],[codigo_anterior], mar.nombre MARCA, m.modelo,[placa],[placa_provisional], [anio_fabricacion],[anio_compra],[cilindraje]," +
+                    " [costo],[estado],[PaisCodigo] ,[serie_chasis],[serie_motor] , c.nombre_comun COLOR " +
+                    "FROM[dbo].[ve_vehiculo] v, ve_vehiculo_color c, ve_vehiculo_modelo m, ve_vehiculo_marca mar " +
+                    "where(v.ve_vehiculo_color_id = c.id AND v.ve_vehiculo_modelo_id = m.id " +
+                    "and m.ve_vehiculo_marca_id = mar.id) ";
+
+                DataTable dt = new DataTable();
+                if(parametroBusqueda == String.Empty)
+                {
+                    _sql_consulta_lista_vehiculos += "ORDER BY MARCA, M.modelo";
+                    dt.Load(SqlHelper.ExecuteReader(_con, CommandType.Text, _sql_consulta_lista_vehiculos), LoadOption.PreserveChanges);
+                }
+                else
+                {
+                    _sql_consulta_lista_vehiculos += "AND(V.placa = @parametroBusqueda OR V.placa_provisional= @parametroBusqueda OR V.serie_chasis = @parametroBusqueda OR " +
+                                                    "V.serie_motor =@parametroBusqueda OR V.codigo=@parametroBusqueda OR V.codigo_anterior=@parametroBusqueda OR V.anio_compra= TRY_PARSE(@parametroBusqueda AS INT)) " +
+                                                    "ORDER BY MARCA, M.modelo ";
+                    SqlParameter parametro = new SqlParameter("@parametroBusqueda", SqlDbType.VarChar);
+                    parametro.Value = parametroBusqueda;
+                    dt.Load(SqlHelper.ExecuteReader(_con, CommandType.Text, _sql_consulta_lista_vehiculos, parametro), LoadOption.PreserveChanges);
+                }
+                return dt;                         
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();                
+            }
+
+        }
+
     }
 }
