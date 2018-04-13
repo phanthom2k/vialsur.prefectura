@@ -28,11 +28,8 @@ namespace vialsur.prefectura
                     var vehiculos = new Vehiculos.frmVehiculos();
                     vehiculos.MdiParent = this;
                     vehiculos.WindowState = FormWindowState.Maximized;
-                    vehiculos.Show();
-                    
-                }
-                    
-
+                    vehiculos.Show();                    
+                }                    
                 /*if (vehiculos == null  )
                 {
                     vehiculos = new frm_Master_Vehiculos();
@@ -47,10 +44,27 @@ namespace vialsur.prefectura
             {
 
             }
-            finally
+
+        }
+
+        private void personalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form activeChild = this.ActiveMdiChild;
+                if (activeChild == null)
+                {
+                    var vehiculos = new Personal.frmPersonal();
+                    vehiculos.MdiParent = this;
+                    vehiculos.WindowState = FormWindowState.Maximized;
+                    vehiculos.Show();
+                }
+            }
+            catch (Exception ex)
             {
 
             }
+
         }
     }
 }
