@@ -36,14 +36,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
+            this.ntxt_Cedula = new Vivaldi.UserControls.NumericTextBox();
             this.lettersTextBox1 = new Vivaldi.UserControls.LettersTextBox();
             this.lettersTextBox2 = new Vivaldi.UserControls.LettersTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chk_EsUsuario = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
+            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.alfaTextBox1 = new Vivaldi.AlfaTextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
-            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -93,6 +93,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(66, 49);
             this.toolStripButton2.Text = "&Guardar";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // label1
             // 
@@ -130,14 +131,14 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "FECHA DE NACIMIENTO:";
             // 
-            // numericTextBox1
+            // ntxt_Cedula
             // 
-            this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(104, 11);
-            this.numericTextBox1.MaxLength = 10;
-            this.numericTextBox1.Name = "numericTextBox1";
-            this.numericTextBox1.Size = new System.Drawing.Size(180, 22);
-            this.numericTextBox1.TabIndex = 44;
+            this.ntxt_Cedula.AllowSpace = false;
+            this.ntxt_Cedula.Location = new System.Drawing.Point(104, 11);
+            this.ntxt_Cedula.MaxLength = 10;
+            this.ntxt_Cedula.Name = "ntxt_Cedula";
+            this.ntxt_Cedula.Size = new System.Drawing.Size(180, 22);
+            this.ntxt_Cedula.TabIndex = 44;
             // 
             // lettersTextBox1
             // 
@@ -178,7 +179,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.checkBox1);
+            this.tabPage1.Controls.Add(this.chk_EsUsuario);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.label2);
@@ -186,7 +187,7 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.lettersTextBox1);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.numericTextBox1);
+            this.tabPage1.Controls.Add(this.ntxt_Cedula);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -195,22 +196,23 @@
             this.tabPage1.Text = "Datos Persona";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chk_EsUsuario
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(16, 118);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox1.Size = new System.Drawing.Size(312, 21);
-            this.checkBox1.TabIndex = 48;
-            this.checkBox1.Text = "FUNCIONARIO TIENE ACCESO AL SISTEMA";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chk_EsUsuario.AutoSize = true;
+            this.chk_EsUsuario.Location = new System.Drawing.Point(16, 118);
+            this.chk_EsUsuario.Name = "chk_EsUsuario";
+            this.chk_EsUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chk_EsUsuario.Size = new System.Drawing.Size(312, 21);
+            this.chk_EsUsuario.TabIndex = 48;
+            this.chk_EsUsuario.Text = "FUNCIONARIO TIENE ACCESO AL SISTEMA";
+            this.chk_EsUsuario.UseVisualStyleBackColor = true;
+            this.chk_EsUsuario.CheckedChanged += new System.EventHandler(this.chk_EsUsuario_CheckedChanged);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.checkBox2);
-            this.tabPage2.Controls.Add(this.uc_CARGO1);
             this.tabPage2.Controls.Add(this.uc_TIPOUSUARIO1);
+            this.tabPage2.Controls.Add(this.uc_CARGO1);
+            this.tabPage2.Controls.Add(this.checkBox2);
             this.tabPage2.Controls.Add(this.alfaTextBox1);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label11);
@@ -227,6 +229,28 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // uc_TIPOUSUARIO1
+            // 
+            this.uc_TIPOUSUARIO1.Ancho = 121;
+            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
+            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
+            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 119);
+            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
+            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(121, 24);
+            this.uc_TIPOUSUARIO1.TabIndex = 16;
+            // 
+            // uc_CARGO1
+            // 
+            this.uc_CARGO1.Ancho = 121;
+            this.uc_CARGO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_CARGO1.DropDownWidth = 121;
+            this.uc_CARGO1.FormattingEnabled = true;
+            this.uc_CARGO1.Location = new System.Drawing.Point(129, 7);
+            this.uc_CARGO1.Name = "uc_CARGO1";
+            this.uc_CARGO1.Size = new System.Drawing.Size(121, 24);
+            this.uc_CARGO1.TabIndex = 15;
             // 
             // checkBox2
             // 
@@ -319,28 +343,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CARGO:";
             // 
-            // uc_CARGO1
-            // 
-            this.uc_CARGO1.Ancho = 121;
-            this.uc_CARGO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_CARGO1.DropDownWidth = 121;
-            this.uc_CARGO1.FormattingEnabled = true;
-            this.uc_CARGO1.Location = new System.Drawing.Point(129, 13);
-            this.uc_CARGO1.Name = "uc_CARGO1";
-            this.uc_CARGO1.Size = new System.Drawing.Size(121, 24);
-            this.uc_CARGO1.TabIndex = 13;
-            // 
-            // uc_TIPOUSUARIO1
-            // 
-            this.uc_TIPOUSUARIO1.Ancho = 121;
-            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
-            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
-            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 125);
-            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
-            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(121, 24);
-            this.uc_TIPOUSUARIO1.TabIndex = 12;
-            // 
             // frmPersonal_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -376,13 +378,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Vivaldi.UserControls.NumericTextBox numericTextBox1;
+        private Vivaldi.UserControls.NumericTextBox ntxt_Cedula;
         private Vivaldi.UserControls.LettersTextBox lettersTextBox1;
         private Vivaldi.UserControls.LettersTextBox lettersTextBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chk_EsUsuario;
         private System.Windows.Forms.TabPage tabPage2;
         private Vivaldi.AlfaTextBox alfaTextBox1;
         private System.Windows.Forms.Label label12;
@@ -393,8 +395,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        
+        
+        private System.Windows.Forms.CheckBox checkBox2;
         private uc.uc_TIPOUSUARIO uc_TIPOUSUARIO1;
         private uc.uc_CARGO uc_CARGO1;
-        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
