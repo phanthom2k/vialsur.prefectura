@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="emp_empleado.cs" />
+    <Compile Include="per_persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ve_vehiculo.cs" />
     <Compile Include="ve_vehiculo_color.cs" />

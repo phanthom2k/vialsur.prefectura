@@ -44,6 +44,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.alfaTextBox1 = new Vivaldi.AlfaTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,8 +54,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
             this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
+            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -70,7 +71,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(682, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(644, 52);
             this.toolStrip1.TabIndex = 39;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -172,7 +173,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 65);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(648, 402);
+            this.tabControl1.Size = new System.Drawing.Size(629, 341);
             this.tabControl1.TabIndex = 48;
             // 
             // tabPage1
@@ -189,7 +190,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(640, 373);
+            this.tabPage1.Size = new System.Drawing.Size(621, 312);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Persona";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -207,6 +208,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.checkBox2);
             this.tabPage2.Controls.Add(this.uc_CARGO1);
             this.tabPage2.Controls.Add(this.uc_TIPOUSUARIO1);
             this.tabPage2.Controls.Add(this.alfaTextBox1);
@@ -221,10 +223,20 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(640, 373);
+            this.tabPage2.Size = new System.Drawing.Size(621, 312);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(129, 45);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(98, 21);
+            this.checkBox2.TabIndex = 14;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // alfaTextBox1
             // 
@@ -307,17 +319,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CARGO:";
             // 
-            // uc_TIPOUSUARIO1
-            // 
-            this.uc_TIPOUSUARIO1.Ancho = 121;
-            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
-            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
-            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 125);
-            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
-            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(121, 24);
-            this.uc_TIPOUSUARIO1.TabIndex = 12;
-            // 
             // uc_CARGO1
             // 
             this.uc_CARGO1.Ancho = 121;
@@ -329,13 +330,27 @@
             this.uc_CARGO1.Size = new System.Drawing.Size(121, 24);
             this.uc_CARGO1.TabIndex = 13;
             // 
+            // uc_TIPOUSUARIO1
+            // 
+            this.uc_TIPOUSUARIO1.Ancho = 121;
+            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
+            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
+            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 125);
+            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
+            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(121, 24);
+            this.uc_TIPOUSUARIO1.TabIndex = 12;
+            // 
             // frmPersonal_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 500);
+            this.ClientSize = new System.Drawing.Size(644, 413);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPersonal_Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPersonal_Nuevo";
@@ -380,5 +395,6 @@
         private System.Windows.Forms.Label label5;
         private uc.uc_TIPOUSUARIO uc_TIPOUSUARIO1;
         private uc.uc_CARGO uc_CARGO1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

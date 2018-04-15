@@ -25,6 +25,7 @@ namespace vialsur.prefectura.Personal
         private void frmPersonal_Nuevo_Load(object sender, EventArgs e)
         {
             uc_CARGO1.CargarDatos();
+            uc_TIPOUSUARIO1.CargarDatos();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
