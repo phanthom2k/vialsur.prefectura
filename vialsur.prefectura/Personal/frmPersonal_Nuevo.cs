@@ -15,7 +15,7 @@ namespace vialsur.prefectura.Personal
         public frmPersonal_Nuevo()
         {
             InitializeComponent();
-            tabPage2.Enabled = false;
+            
         }
 
 
@@ -34,21 +34,48 @@ namespace vialsur.prefectura.Personal
             this.Close();
         }
 
+        entidades.vialsur.prefectura.per_persona persona;
+        entidades.vialsur.prefectura.emp_empleado empleado;
+
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            try
+            try   
             {
-                if(new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().ExisteCedula(ntxt_Cedula.Text) |
-                   new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ExisteCedula(ntxt_Cedula.Text) )
+                
+                if (new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().ExisteCedula(ntxt_Cedula.Text) &
+                    new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ExisteCedula(ntxt_Cedula.Text))
+
                 {
                     throw new Exception("Cedula del usuario ya registrada");
                 }
-                entidades.vialsur.prefectura.per_persona persona = new entidades.vialsur.prefectura.per_persona();
-                entidades.vialsur.prefectura.emp_empleado empleadi = new entidades.vialsur.prefectura.emp_empleado();
+                
+                persona = new entidades.vialsur.prefectura.per_persona();
+                persona.cedula = ntxt_Cedula.Text;
+                persona.nombres = ltxt_Nombres.Text.ToUpper();
+                persona.apellidos = ltxt_Apellidos.Text.ToUpper();
+                persona.fecha_nacimiento = dtp_FechaNacimiento.Value;
 
+                empleado = new entidades.vialsur.prefectura.emp_empleado();
+                empleado.cedula = persona.cedula;
+                empleado.cargo_id = Convert.ToInt32(uc_CARGO1.SelectedValue);
+                empleado.pwd = empleado.cedula;
+                empleado.activo = chk_Activo.Checked;
+                empleado.fecha_activacion = dtp_FechaActivacion.Value;
 
+                if(chk_Activo.Checked )
+                {
+                    empleado.fecha_desactivacion = dtp_FechaDesactivacion.Value;
+                }
+                empleado.tipo_usuario = Convert.ToInt32( uc_TIPOUSUARIO1.SelectedValue );
 
+                empleado.per_persona_cedula_activacion = "1104126626";
+                empleado.observaciones_activacion = empleado.observaciones_desactivacion =
+                                                    atxt_Observaciones.Text.ToUpper();
 
+                new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Nueva_Per_Persona(persona);
+                new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().Nuevo_Emp_Empleado(empleado);
+
+                MessageBox.Show("Se registro los datos correctamente","",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -57,9 +84,9 @@ namespace vialsur.prefectura.Personal
             }
         }
 
-        private void chk_EsUsuario_CheckedChanged(object sender, EventArgs e)
+        private void chk_Activo_CheckedChanged(object sender, EventArgs e)
         {
-            tabPage2.Enabled = chk_EsUsuario.Checked;
+            dtp_FechaDesactivacion.Enabled = !chk_Activo.Checked;
         }
     }
 }

@@ -39,30 +39,21 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_codigo_anterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_ve_vehiculo_modelo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_placa_provisional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_anio_fabricacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_anio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_cilindraje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_serie_chasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_serie_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_PaisCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_activacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -148,6 +139,7 @@
             this.button5.TabIndex = 28;
             this.button5.Text = "Siguiente >>";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -157,6 +149,7 @@
             this.button4.TabIndex = 27;
             this.button4.Text = "<< Anterior";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 
@@ -169,22 +162,13 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl_ver,
             this.cl_modificar,
+            this.cedula,
+            this.nombres,
+            this.apellidos,
             this.id,
-            this.cl_codigo,
-            this.cl_codigo_anterior,
-            this.cl_ve_vehiculo_modelo_id,
-            this.cl_marca,
-            this.cl_placa,
-            this.cl_placa_provisional,
-            this.cl_anio_fabricacion,
-            this.cl_anio_compra,
-            this.cl_cilindraje,
-            this.cl_serie_chasis,
-            this.cl_serie_motor,
-            this.cl_color,
-            this.cl_costo,
-            this.cl_estado,
-            this.cl_PaisCodigo});
+            this.activo,
+            this.fecha_activacion,
+            this.tipo_usuario});
             this.dataGridView1.Location = new System.Drawing.Point(12, 146);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -192,180 +176,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1324, 495);
             this.dataGridView1.TabIndex = 26;
-            // 
-            // cl_ver
-            // 
-            this.cl_ver.DataPropertyName = "id";
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 55;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Width = 55;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.DataPropertyName = "id";
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modificar";
-            this.cl_modificar.MinimumWidth = 55;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Width = 55;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // cl_codigo
-            // 
-            this.cl_codigo.DataPropertyName = "codigo";
-            this.cl_codigo.HeaderText = "CODIGO";
-            this.cl_codigo.Name = "cl_codigo";
-            this.cl_codigo.ReadOnly = true;
-            // 
-            // cl_codigo_anterior
-            // 
-            this.cl_codigo_anterior.DataPropertyName = "codigo_anterior";
-            this.cl_codigo_anterior.HeaderText = "codigo_anterior";
-            this.cl_codigo_anterior.Name = "cl_codigo_anterior";
-            this.cl_codigo_anterior.ReadOnly = true;
-            this.cl_codigo_anterior.Visible = false;
-            // 
-            // cl_ve_vehiculo_modelo_id
-            // 
-            this.cl_ve_vehiculo_modelo_id.DataPropertyName = "modelo";
-            this.cl_ve_vehiculo_modelo_id.FillWeight = 150F;
-            this.cl_ve_vehiculo_modelo_id.HeaderText = "MODELO";
-            this.cl_ve_vehiculo_modelo_id.MaxInputLength = 125;
-            this.cl_ve_vehiculo_modelo_id.MinimumWidth = 150;
-            this.cl_ve_vehiculo_modelo_id.Name = "cl_ve_vehiculo_modelo_id";
-            this.cl_ve_vehiculo_modelo_id.ReadOnly = true;
-            this.cl_ve_vehiculo_modelo_id.Width = 150;
-            // 
-            // cl_marca
-            // 
-            this.cl_marca.DataPropertyName = "MARCA";
-            this.cl_marca.FillWeight = 150F;
-            this.cl_marca.HeaderText = "MARCA";
-            this.cl_marca.MaxInputLength = 150;
-            this.cl_marca.MinimumWidth = 150;
-            this.cl_marca.Name = "cl_marca";
-            this.cl_marca.ReadOnly = true;
-            this.cl_marca.Width = 150;
-            // 
-            // cl_placa
-            // 
-            this.cl_placa.DataPropertyName = "placa";
-            this.cl_placa.FillWeight = 80F;
-            this.cl_placa.HeaderText = "PLACA";
-            this.cl_placa.MaxInputLength = 10;
-            this.cl_placa.MinimumWidth = 80;
-            this.cl_placa.Name = "cl_placa";
-            this.cl_placa.ReadOnly = true;
-            this.cl_placa.Width = 80;
-            // 
-            // cl_placa_provisional
-            // 
-            this.cl_placa_provisional.DataPropertyName = "placa_provisional";
-            this.cl_placa_provisional.FillWeight = 80F;
-            this.cl_placa_provisional.HeaderText = "PLACA PROV.";
-            this.cl_placa_provisional.MaxInputLength = 10;
-            this.cl_placa_provisional.MinimumWidth = 80;
-            this.cl_placa_provisional.Name = "cl_placa_provisional";
-            this.cl_placa_provisional.ReadOnly = true;
-            this.cl_placa_provisional.Width = 80;
-            // 
-            // cl_anio_fabricacion
-            // 
-            this.cl_anio_fabricacion.DataPropertyName = "anio_fabricacion";
-            this.cl_anio_fabricacion.DividerWidth = 1;
-            this.cl_anio_fabricacion.FillWeight = 60F;
-            this.cl_anio_fabricacion.HeaderText = "A. FAB";
-            this.cl_anio_fabricacion.MaxInputLength = 4;
-            this.cl_anio_fabricacion.MinimumWidth = 60;
-            this.cl_anio_fabricacion.Name = "cl_anio_fabricacion";
-            this.cl_anio_fabricacion.ReadOnly = true;
-            this.cl_anio_fabricacion.Width = 60;
-            // 
-            // cl_anio_compra
-            // 
-            this.cl_anio_compra.DataPropertyName = "anio_compra";
-            this.cl_anio_compra.DividerWidth = 1;
-            this.cl_anio_compra.FillWeight = 60F;
-            this.cl_anio_compra.HeaderText = "A. COMP";
-            this.cl_anio_compra.MaxInputLength = 4;
-            this.cl_anio_compra.MinimumWidth = 60;
-            this.cl_anio_compra.Name = "cl_anio_compra";
-            this.cl_anio_compra.ReadOnly = true;
-            this.cl_anio_compra.Width = 60;
-            // 
-            // cl_cilindraje
-            // 
-            this.cl_cilindraje.DataPropertyName = "cilindraje";
-            this.cl_cilindraje.FillWeight = 75F;
-            this.cl_cilindraje.HeaderText = "CILINDRAJE";
-            this.cl_cilindraje.MaxInputLength = 5;
-            this.cl_cilindraje.MinimumWidth = 75;
-            this.cl_cilindraje.Name = "cl_cilindraje";
-            this.cl_cilindraje.ReadOnly = true;
-            this.cl_cilindraje.Width = 75;
-            // 
-            // cl_serie_chasis
-            // 
-            this.cl_serie_chasis.DataPropertyName = "serie_chasis";
-            this.cl_serie_chasis.FillWeight = 250F;
-            this.cl_serie_chasis.HeaderText = "serie_chasis";
-            this.cl_serie_chasis.MaxInputLength = 100;
-            this.cl_serie_chasis.MinimumWidth = 250;
-            this.cl_serie_chasis.Name = "cl_serie_chasis";
-            this.cl_serie_chasis.ReadOnly = true;
-            this.cl_serie_chasis.Width = 250;
-            // 
-            // cl_serie_motor
-            // 
-            this.cl_serie_motor.DataPropertyName = "serie_motor";
-            this.cl_serie_motor.FillWeight = 200F;
-            this.cl_serie_motor.HeaderText = "serie_motor";
-            this.cl_serie_motor.MaxInputLength = 100;
-            this.cl_serie_motor.MinimumWidth = 200;
-            this.cl_serie_motor.Name = "cl_serie_motor";
-            this.cl_serie_motor.ReadOnly = true;
-            this.cl_serie_motor.Width = 200;
-            // 
-            // cl_color
-            // 
-            this.cl_color.DataPropertyName = "COLOR";
-            this.cl_color.HeaderText = "color";
-            this.cl_color.Name = "cl_color";
-            this.cl_color.ReadOnly = true;
-            // 
-            // cl_costo
-            // 
-            this.cl_costo.DataPropertyName = "costo";
-            this.cl_costo.HeaderText = "costo";
-            this.cl_costo.Name = "cl_costo";
-            this.cl_costo.ReadOnly = true;
-            this.cl_costo.Visible = false;
-            // 
-            // cl_estado
-            // 
-            this.cl_estado.DataPropertyName = "estado";
-            this.cl_estado.HeaderText = "estado";
-            this.cl_estado.Name = "cl_estado";
-            this.cl_estado.ReadOnly = true;
-            // 
-            // cl_PaisCodigo
-            // 
-            this.cl_PaisCodigo.DataPropertyName = "PaisCodigo";
-            this.cl_PaisCodigo.HeaderText = "PaisCodigo";
-            this.cl_PaisCodigo.Name = "cl_PaisCodigo";
-            this.cl_PaisCodigo.ReadOnly = true;
-            this.cl_PaisCodigo.Visible = false;
             // 
             // button2
             // 
@@ -424,6 +234,87 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // cl_ver
+            // 
+            this.cl_ver.DataPropertyName = "id";
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.DataPropertyName = "id";
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modificar";
+            this.cl_modificar.MinimumWidth = 75;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "modificar";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 75;
+            // 
+            // cedula
+            // 
+            this.cedula.DataPropertyName = "cedula";
+            this.cedula.HeaderText = "cedula";
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
+            this.cedula.Visible = false;
+            // 
+            // nombres
+            // 
+            this.nombres.DataPropertyName = "nombres";
+            this.nombres.FillWeight = 200F;
+            this.nombres.HeaderText = "nombres";
+            this.nombres.MaxInputLength = 150;
+            this.nombres.MinimumWidth = 220;
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            this.nombres.Width = 220;
+            // 
+            // apellidos
+            // 
+            this.apellidos.DataPropertyName = "apellidos";
+            this.apellidos.FillWeight = 200F;
+            this.apellidos.HeaderText = "apellidos";
+            this.apellidos.MinimumWidth = 220;
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            this.apellidos.Width = 220;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "emp_empleado.id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // activo
+            // 
+            this.activo.DataPropertyName = "activo";
+            this.activo.HeaderText = "activo";
+            this.activo.Name = "activo";
+            this.activo.ReadOnly = true;
+            // 
+            // fecha_activacion
+            // 
+            this.fecha_activacion.DataPropertyName = "fecha_activacion";
+            this.fecha_activacion.HeaderText = "fecha_activacion";
+            this.fecha_activacion.Name = "fecha_activacion";
+            this.fecha_activacion.ReadOnly = true;
+            // 
+            // tipo_usuario
+            // 
+            this.tipo_usuario.DataPropertyName = "tipo_usuario";
+            this.tipo_usuario.HeaderText = "tipo_usuario";
+            this.tipo_usuario.Name = "tipo_usuario";
+            this.tipo_usuario.ReadOnly = true;
+            // 
             // frmPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -444,6 +335,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmPersonal";
             this.Text = "frmPersonal";
+            this.Load += new System.EventHandler(this.frmPersonal_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -466,29 +358,20 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_codigo_anterior;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_ve_vehiculo_modelo_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_placa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_placa_provisional;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_anio_fabricacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_anio_compra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_cilindraje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_serie_chasis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_serie_motor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_costo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_PaisCodigo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.TextBox txt_input;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_activacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_usuario;
     }
 }

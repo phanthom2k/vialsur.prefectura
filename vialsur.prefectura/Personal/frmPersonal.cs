@@ -32,5 +32,57 @@ namespace vialsur.prefectura.Personal
                 MessageBox.Show("Error al intentar registrar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void frmPersonal_Load(object sender, EventArgs e)
+        {
+            CargarDatosGrilla();
+        }
+
+        int pivote = 0;
+        private void CargarDatosGrilla(string cedula ="" , bool BusquedaFrontal=true)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                if(cedula=="" & BusquedaFrontal)
+                {
+                    dt = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ListarPersonas_UX(ref pivote);
+                }
+                else
+                {
+
+                    dt = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ListarPersonas_UX(ref pivote, true, cedula);
+                }
+                    
+
+
+
+                //  DataTable dt = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ListarPersonas_UX(ref pivote);
+                dataGridView1.DataSource = dt;
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(pivote>=0)
+            {
+                lblPagActual.Text = pivote.ToString();
+                pivote -= 25;
+                CargarDatosGrilla("", false);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            lblPagFinal.Text = (pivote + 25).ToString();
+            pivote += 25;
+            CargarDatosGrilla("", true);
+
+        }
     }
 }

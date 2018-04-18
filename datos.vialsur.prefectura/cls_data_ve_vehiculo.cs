@@ -420,7 +420,7 @@ GO
             }
             catch (Exception ex)
             {
-                throw new Exception();                
+                throw new Exception("Error al intentar consultar el listado",ex );                
             }
 
         }

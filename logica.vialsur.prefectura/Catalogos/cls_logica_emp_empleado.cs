@@ -37,5 +37,40 @@ namespace logica.vialsur.prefectura.Catalogos
         }
 
 
+        public System.Data.DataTable ListarPersonas_UX(ref int pivoteBase, bool busquedaFrontal=true,  string cedula = "")
+        {
+            try
+            {
+                int pivoteProyectado = 0;
+                //es para generar el conjunto de busqueda bassado en el id bajo y alto
+                if (cedula=="")
+                {
+                    if (busquedaFrontal)
+                        pivoteProyectado = pivoteBase + 25;
+                    else
+
+                    {
+                        pivoteBase -= 25;
+                        pivoteProyectado = pivoteBase + 25;
+                    }
+                }
+                if (pivoteBase < 0)
+                {
+                    pivoteBase = 0;
+                    pivoteProyectado = 25;
+                }
+
+                return new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonas_UX(pivoteBase, pivoteProyectado, cedula);
+                
+
+                
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
     }
 }
