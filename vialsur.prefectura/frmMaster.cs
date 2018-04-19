@@ -66,5 +66,40 @@ namespace vialsur.prefectura
             }
 
         }
+
+        private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMaster_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var ordenes = new Ordenes.frmOrdenes();
+                ordenes.MdiParent = this;
+                ordenes.WindowState = FormWindowState.Maximized;
+                ordenes.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void ordenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ordenes = new Ordenes.frmOrdenes();
+                ordenes.MdiParent = this;
+                ordenes.WindowState = FormWindowState.Maximized;
+                ordenes.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
     }
 }

@@ -64,12 +64,14 @@
             this.ordenesToolStripMenuItem.Name = "ordenesToolStripMenuItem";
             this.ordenesToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.ordenesToolStripMenuItem.Text = "Ordenes";
+            this.ordenesToolStripMenuItem.Click += new System.EventHandler(this.ordenesToolStripMenuItem_Click);
             // 
             // nuevaToolStripMenuItem
             // 
             this.nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
-            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.nuevaToolStripMenuItem.Text = "Nueva";
+            this.nuevaToolStripMenuItem.Click += new System.EventHandler(this.nuevaToolStripMenuItem_Click);
             // 
             // administraciónToolStripMenuItem
             // 
@@ -83,14 +85,14 @@
             // vehiculosToolStripMenuItem
             // 
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.vehiculosToolStripMenuItem.Text = "Vehiculos";
             this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
             // 
@@ -105,6 +107,7 @@
             this.Name = "frmMaster";
             this.Text = "frmMaster";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMaster_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
