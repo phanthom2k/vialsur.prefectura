@@ -24,6 +24,31 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+        public emp_empleado Consultar_Emp_Empleado(string cedula)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_emp_empleado().ConsultarEmpEmpleado(cedula);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Actualizar_Emp_Empleado(emp_empleado empleado)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_emp_empleado().ActalizarPer_persona(empleado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public bool ExisteCedula(string cedula)
         {
             try

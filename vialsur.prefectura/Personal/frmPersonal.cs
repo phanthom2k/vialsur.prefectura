@@ -26,6 +26,7 @@ namespace vialsur.prefectura.Personal
                 frm_Personal.EsVer = false;
                 frm_Personal.ShowDialog();
                 frm_Personal.Dispose();
+                CargarDatosGrilla();
             }
             catch (Exception ex)
             {
@@ -54,9 +55,6 @@ namespace vialsur.prefectura.Personal
                     dt = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ListarPersonas_UX(ref pivote, true, cedula);
                 }
                     
-
-
-
                 //  DataTable dt = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ListarPersonas_UX(ref pivote);
                 dataGridView1.DataSource = dt;
                 
@@ -90,13 +88,14 @@ namespace vialsur.prefectura.Personal
             try
             {
                 frmPersonal_Nuevo frm_personal = new frmPersonal_Nuevo();
-                if ((dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
                 {
-
                     
                     frm_personal.EsVer = true;
                     frm_personal.EsNuevo = false;
-                    frm_personal.EsModificar = false;
+                    frm_personal.EsModificar = true;
+                    frm_personal.Cedula = dataGridView1.Rows[e.RowIndex].Cells["cedula"].Value.ToString();
+                    
 
                     //frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
                     //frm_Vehiculo.EsNuevo = false;
@@ -112,11 +111,10 @@ namespace vialsur.prefectura.Personal
                     frm_personal.EsVer = false;
                     frm_personal.EsNuevo = false;
                     frm_personal.EsModificar = true;
-
-
-
-
+                    frm_personal.Cedula = dataGridView1.Rows[e.RowIndex].Cells["cedula"].Value.ToString();
                 }
+                if( frm_personal.ShowDialog() == DialogResult.Yes)
+                    CargarDatosGrilla();
 
 
             }

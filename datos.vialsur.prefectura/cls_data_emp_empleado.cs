@@ -107,6 +107,119 @@ namespace datos.vialsur.prefectura
             return k;
         }
 
+        public entidades.vialsur.prefectura.emp_empleado ConsultarEmpEmpleado(string cedula)
+        {
+            try
+            {
+                string consulta =   "SELECT[id],[cedula],[cargo_id],[pwd],[activo],[fecha_activacion],[fecha_desactivacion],[per_persona_cedula_activacion]," +
+                                    "[tipo_usuario],[observaciones_activacion],[observaciones_desactivacion] " +
+                                    "FROM[dbo].[emp_empleado] WHERE[cedula] = @cedula";
+
+                SqlParameter parametro = new SqlParameter("@cedula", SqlDbType.VarChar);
+                parametro.Value = cedula;
+
+                entidades.vialsur.prefectura.emp_empleado obj_emp_empleado = new entidades.vialsur.prefectura.emp_empleado();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+
+                while (dr_datos.Read())
+                {
+                    obj_emp_empleado.id = Convert.ToInt32(dr_datos["id"]);
+                    obj_emp_empleado.cedula = dr_datos["cedula"].ToString();
+                    obj_emp_empleado.cargo_id = Convert.ToInt32(dr_datos["cargo_id"]);
+                    obj_emp_empleado.pwd = dr_datos["pwd"].ToString();
+                    obj_emp_empleado.activo = Convert.ToBoolean(dr_datos["activo"]);
+                    obj_emp_empleado.fecha_activacion = Convert.ToDateTime(dr_datos["fecha_activacion"]);
+                    obj_emp_empleado.fecha_desactivacion = Convert.ToDateTime(dr_datos["fecha_desactivacion"]);
+                    obj_emp_empleado.per_persona_cedula_activacion = dr_datos["per_persona_cedula_activacion"].ToString();
+                    obj_emp_empleado.tipo_usuario = Convert.ToInt32(dr_datos["tipo_usuario"]);
+                    obj_emp_empleado.observaciones_activacion = dr_datos["observaciones_activacion"].ToString();
+                    obj_emp_empleado.observaciones_desactivacion = dr_datos["observaciones_desactivacion"].ToString();                    
+                }
+                dr_datos.Close();
+                return obj_emp_empleado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos de la persona: " + ex.Message);
+            }
+        }
+
+        public bool ActalizarPer_persona(entidades.vialsur.prefectura.emp_empleado _emp_empleado)
+        {
+            bool k = false;
+            try
+            {
+                if (VerificarExistenciaCedula(_emp_empleado.cedula))
+                {
+                    List<SqlParameter> parameters = new List<SqlParameter>();
+
+                    #region parametros
+
+                    SqlParameter _cedula = new SqlParameter("@cedula", SqlDbType.VarChar, 10);
+                    _cedula.Value = _emp_empleado.cedula;
+                    parameters.Add(_cedula);
+
+                    SqlParameter _cargo_id = new SqlParameter("@cargo_id", SqlDbType.Int);
+                    _cargo_id.Value = _emp_empleado.cargo_id;
+                    parameters.Add(_cargo_id);
+
+                    SqlParameter _pwd = new SqlParameter("@pwd", SqlDbType.Text);
+                    _pwd.Value = _emp_empleado.pwd;
+                    parameters.Add(_pwd);
+
+                    SqlParameter _activo = new SqlParameter("@activo", SqlDbType.Bit);
+                    _activo.Value = _emp_empleado.activo;
+                    parameters.Add(_activo);
+
+                    SqlParameter _fecha_activacion = new SqlParameter("@fecha_activacion", SqlDbType.DateTime);
+                    _fecha_activacion.Value = _emp_empleado.fecha_activacion;
+                    parameters.Add(_fecha_activacion);
+
+
+                    SqlParameter _fecha_desactivacion = new SqlParameter("@fecha_desactivacion", SqlDbType.DateTime);
+                    _fecha_desactivacion.Value = _emp_empleado.fecha_activacion;
+                    parameters.Add(_fecha_desactivacion);
+
+
+                    SqlParameter _per_persona_cedula_activacion = new SqlParameter("@per_persona_cedula_activacion", SqlDbType.VarChar, 10);
+                    _per_persona_cedula_activacion.Value = _emp_empleado.per_persona_cedula_activacion;
+                    parameters.Add(_per_persona_cedula_activacion);
+
+                    SqlParameter _tipo_usuario = new SqlParameter("@tipo_usuario", SqlDbType.Int);
+                    _tipo_usuario.Value = _emp_empleado.tipo_usuario;
+                    parameters.Add(_tipo_usuario);
+
+                    SqlParameter _observaciones_activacion = new SqlParameter("@observaciones_activacion", SqlDbType.Text);
+                    _observaciones_activacion.Value = _emp_empleado.observaciones_activacion;
+                    parameters.Add(_observaciones_activacion);
+
+                    SqlParameter _observaciones_desactivacion = new SqlParameter("@observaciones_desactivacion", SqlDbType.Text);
+                    _observaciones_desactivacion.Value = _emp_empleado.observaciones_desactivacion;
+                    parameters.Add(_observaciones_desactivacion);
+
+                    #endregion
+
+                    string _sql_update =    "UPDATE[dbo].[emp_empleado] " +
+                                            "SET[cargo_id] = @cargo_id, [pwd] = @pwd, [activo] = @activo,[fecha_activacion] = @fecha_activacion, [fecha_desactivacion] = @fecha_desactivacion, " +
+                                            "[per_persona_cedula_activacion] = @per_persona_cedula_activacion, [tipo_usuario] = @tipo_usuario,[observaciones_activacion] = @observaciones_activacion," +
+                                            "[observaciones_desactivacion] = @observaciones_desactivacion " +
+                                            "WHERE[cedula] = @cedula ";
+
+                    int customerId = SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_update, parameters.ToArray());
+
+                    k = customerId > 0 ? true : false;
+                }
+                else
+                    throw new Exception("Cédula no registrada");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo registrar los datos de la persona", ex);
+            }
+            return k;
+        }
+
         /// <summary>
         /// Verifica si existe la cedula ya registrada en la tabla
         /// Retorna FALSE en el caso de que no este registrada

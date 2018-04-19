@@ -39,6 +39,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.txt_input = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,12 +54,6 @@
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_activacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.txt_input = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -178,87 +178,6 @@
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // cl_ver
-            // 
-            this.cl_ver.DataPropertyName = "id";
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 57;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "ver";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 57;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.DataPropertyName = "id";
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modificar";
-            this.cl_modificar.MinimumWidth = 75;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "modificar";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 75;
-            // 
-            // cedula
-            // 
-            this.cedula.DataPropertyName = "cedula";
-            this.cedula.HeaderText = "cedula";
-            this.cedula.Name = "cedula";
-            this.cedula.ReadOnly = true;
-            this.cedula.Visible = false;
-            // 
-            // nombres
-            // 
-            this.nombres.DataPropertyName = "nombres";
-            this.nombres.FillWeight = 200F;
-            this.nombres.HeaderText = "nombres";
-            this.nombres.MaxInputLength = 150;
-            this.nombres.MinimumWidth = 220;
-            this.nombres.Name = "nombres";
-            this.nombres.ReadOnly = true;
-            this.nombres.Width = 220;
-            // 
-            // apellidos
-            // 
-            this.apellidos.DataPropertyName = "apellidos";
-            this.apellidos.FillWeight = 200F;
-            this.apellidos.HeaderText = "apellidos";
-            this.apellidos.MinimumWidth = 220;
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            this.apellidos.Width = 220;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "emp_empleado.id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // activo
-            // 
-            this.activo.DataPropertyName = "activo";
-            this.activo.HeaderText = "activo";
-            this.activo.Name = "activo";
-            this.activo.ReadOnly = true;
-            // 
-            // fecha_activacion
-            // 
-            this.fecha_activacion.DataPropertyName = "fecha_activacion";
-            this.fecha_activacion.HeaderText = "fecha_activacion";
-            this.fecha_activacion.Name = "fecha_activacion";
-            this.fecha_activacion.ReadOnly = true;
-            // 
-            // tipo_usuario
-            // 
-            this.tipo_usuario.DataPropertyName = "tipo_usuario";
-            this.tipo_usuario.HeaderText = "tipo_usuario";
-            this.tipo_usuario.Name = "tipo_usuario";
-            this.tipo_usuario.ReadOnly = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(701, 66);
@@ -315,6 +234,86 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // cl_ver
+            // 
+            this.cl_ver.DataPropertyName = "id";
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.DataPropertyName = "id";
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modificar";
+            this.cl_modificar.MinimumWidth = 75;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Modificar";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 75;
+            // 
+            // cedula
+            // 
+            this.cedula.DataPropertyName = "cedula";
+            this.cedula.HeaderText = "cedula";
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
+            // 
+            // nombres
+            // 
+            this.nombres.DataPropertyName = "nombres";
+            this.nombres.FillWeight = 200F;
+            this.nombres.HeaderText = "nombres";
+            this.nombres.MaxInputLength = 150;
+            this.nombres.MinimumWidth = 220;
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            this.nombres.Width = 220;
+            // 
+            // apellidos
+            // 
+            this.apellidos.DataPropertyName = "apellidos";
+            this.apellidos.FillWeight = 200F;
+            this.apellidos.HeaderText = "apellidos";
+            this.apellidos.MinimumWidth = 220;
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            this.apellidos.Width = 220;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "emp_empleado.id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // activo
+            // 
+            this.activo.DataPropertyName = "activo";
+            this.activo.HeaderText = "activo";
+            this.activo.Name = "activo";
+            this.activo.ReadOnly = true;
+            // 
+            // fecha_activacion
+            // 
+            this.fecha_activacion.DataPropertyName = "fecha_activacion";
+            this.fecha_activacion.HeaderText = "fecha_activacion";
+            this.fecha_activacion.Name = "fecha_activacion";
+            this.fecha_activacion.ReadOnly = true;
+            // 
+            // tipo_usuario
+            // 
+            this.tipo_usuario.DataPropertyName = "tipo_usuario";
+            this.tipo_usuario.HeaderText = "tipo_usuario";
+            this.tipo_usuario.Name = "tipo_usuario";
+            this.tipo_usuario.ReadOnly = true;
             // 
             // frmPersonal
             // 

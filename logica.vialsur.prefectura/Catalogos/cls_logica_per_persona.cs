@@ -22,6 +22,30 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+        public per_persona Consultar_Per_Persona(string cedula)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_per_persona().ConsultarPerPersona(cedula);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Actualizar_Per_Persona(per_persona _per_persona)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_per_persona().ActualizarPerPersona(_per_persona);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool ExisteCedula(string cedula)
         {
             try
