@@ -11,7 +11,20 @@ namespace entidades.vialsur.prefectura
 {
     using System;
     using System.Collections.Generic;
-    
+
+    public enum Estado_catalogo_parte_secundiaria
+    {
+        INACTIVO = 0,
+        ACTIVO = 1
+    }
+
+    public enum TipoSubParte__catalogo_parte_secundiaria
+    {
+        PESADOS = 1,
+        LIVIANOS = 2,
+        MIXTO = 3
+    }
+
     public partial class catalogo_parte_secundaria
     {
         public int id { get; set; }

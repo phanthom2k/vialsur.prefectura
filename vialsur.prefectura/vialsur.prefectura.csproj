@@ -87,6 +87,9 @@
     <Compile Include="uc\uc_Catalogo_Parte_Principal.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="uc\uc_Catalogo_Parte_Secundaria.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uc\uc_NumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>

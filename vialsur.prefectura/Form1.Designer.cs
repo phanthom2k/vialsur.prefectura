@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.uc_Catalogo_Parte_Principal1 = new vialsur.prefectura.uc.uc_Catalogo_Parte_Principal();
+            this.uc_Catalogo_Parte_Secundaria1 = new vialsur.prefectura.uc.uc_Catalogo_Parte_Secundaria();
             this.SuspendLayout();
             // 
             // uc_Catalogo_Parte_Principal1
@@ -41,12 +42,22 @@
             this.uc_Catalogo_Parte_Principal1.Name = "uc_Catalogo_Parte_Principal1";
             this.uc_Catalogo_Parte_Principal1.Size = new System.Drawing.Size(121, 24);
             this.uc_Catalogo_Parte_Principal1.TabIndex = 0;
+            this.uc_Catalogo_Parte_Principal1.SelectedIndexChanged += new System.EventHandler(this.uc_Catalogo_Parte_Principal1_SelectedIndexChanged);
+            // 
+            // uc_Catalogo_Parte_Secundaria1
+            // 
+            this.uc_Catalogo_Parte_Secundaria1.FormattingEnabled = true;
+            this.uc_Catalogo_Parte_Secundaria1.Location = new System.Drawing.Point(55, 123);
+            this.uc_Catalogo_Parte_Secundaria1.Name = "uc_Catalogo_Parte_Secundaria1";
+            this.uc_Catalogo_Parte_Secundaria1.Size = new System.Drawing.Size(276, 24);
+            this.uc_Catalogo_Parte_Secundaria1.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 255);
+            this.ClientSize = new System.Drawing.Size(724, 450);
+            this.Controls.Add(this.uc_Catalogo_Parte_Secundaria1);
             this.Controls.Add(this.uc_Catalogo_Parte_Principal1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -58,6 +69,7 @@
         #endregion
 
         private uc.uc_Catalogo_Parte_Principal uc_Catalogo_Parte_Principal1;
+        private uc.uc_Catalogo_Parte_Secundaria uc_Catalogo_Parte_Secundaria1;
     }
 }
 

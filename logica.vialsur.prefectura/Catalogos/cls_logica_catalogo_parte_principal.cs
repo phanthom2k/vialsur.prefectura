@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace logica.vialsur.prefectura.Catalogos
 {
     using entidades.vialsur.prefectura;
+
     public class cls_logica_catalogo_parte_principal
     {
         /// <summary>
