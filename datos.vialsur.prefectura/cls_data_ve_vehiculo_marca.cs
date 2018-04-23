@@ -62,5 +62,38 @@ namespace datos.vialsur.prefectura
             }
         }
 
+        /// <summary>
+        /// Consulta los datos de la Marca segun el ID
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.ve_vehiculo_marca Consultar_Marca(int id )
+        {
+            try
+            {
+
+                string consulta = "SELECT [id],[nombre],[obserbacion],[activo] FROM [ve_vehiculo_marca] WHERE id = @id";
+                
+                SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
+                parametro.Value = id;
+
+                entidades.vialsur.prefectura.ve_vehiculo_marca obj_marca = new entidades.vialsur.prefectura.ve_vehiculo_marca();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+                while (dr_datos.Read())
+                {
+                    obj_marca.id = (int)dr_datos["id"];
+                    obj_marca.nombre = dr_datos["nombre"].ToString();
+                    obj_marca.obserbacion = dr_datos["obserbacion"].ToString();
+                    obj_marca.activo = (bool) dr_datos["activo"];                   
+                }
+                dr_datos.Close();
+                return obj_marca;                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -16,8 +16,9 @@ namespace entidades.vialsur.prefectura
     {
         public int id { get; set; }
         public int ve_vehiculo_marca_id { get; set; }
-        public int ve_vehiculo_modelo_id { get; set; }
-        public int ve_vehiculo_color_id { get; set; }
+        //public string ve_vehiculo_marca { get; set; }
+        public int ve_vehiculo_modelo_id { get; set; }        
+        public int ve_vehiculo_color_id { get; set; }        
         public Nullable<int> anio_fabricacion { get; set; }
         public int anio_compra { get; set; }
         public string cilindraje { get; set; }

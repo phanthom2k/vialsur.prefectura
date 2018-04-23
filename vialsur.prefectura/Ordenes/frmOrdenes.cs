@@ -16,5 +16,18 @@ namespace vialsur.prefectura.Ordenes
         {
             InitializeComponent();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            ///NUEVA ORDERDEN
+            ///
+            frmSeleccionarVehiculo Paso_1 = new frmSeleccionarVehiculo();
+
+            Paso_1.ShowDialog();
+
+
+
+
+        }
     }
 }

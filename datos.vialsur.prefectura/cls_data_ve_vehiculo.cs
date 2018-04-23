@@ -220,9 +220,9 @@ GO
         }
 
         /// <summary>
-        /// Consulta los datos de un vehiculo
+        /// Consulta los datos de un vehiculo por el ID
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id"> </param>
         /// <returns></returns>
         public entidades.vialsur.prefectura.ve_vehiculo ConsultarVerhiculo(int id)
         {
@@ -266,6 +266,90 @@ GO
             catch (Exception ex)
             {
                 throw new Exception("Error al consultar los datos del vehiculo: "+ex.Message); 
+            }
+        }
+
+        /// <summary>
+        /// Consulta los datos de un vehiculo por su PLACA, PLACA PROVISIONAL, CODIGO Y CODIGO ANTERIOR
+        /// </summary>
+        /// <param name="muestra"></param>
+        /// <param name="tipoBusqueda">0 <= PLACA, 1 <= PLACA PROVISIONAL, 2<= CODIGO, 3<=CODIGO ANTERIOR</param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.ve_vehiculo ConsultarVerhiculo(string muestra, int tipoBusqueda)
+        {
+            try
+            {
+                string consulta = "SELECT [id],[ve_vehiculo_modelo_id],[ve_vehiculo_color_id],[anio_fabricacion],[anio_compra]" +
+                                    ",[cilindraje],[codigo],[codigo_anterior],[color],[costo],[estado],[PaisCodigo],[placa]" +
+                                    ",[placa_provisional],[serie_chasis],[serie_motor] " +
+                                    "FROM [ve_vehiculo] WHERE ";
+
+                if(tipoBusqueda==0 )
+                {
+                    consulta += "placa = @muestra ";
+                }
+                if(tipoBusqueda==1)
+                {
+                    consulta += "[placa_provisional] = @muestra ";
+                }
+                if(tipoBusqueda==2)
+                {
+                    consulta += "[codigo] = @muestra ";
+                }
+                if (tipoBusqueda == 3)
+                {
+                    consulta += "[codigo_anterior] = @muestra ";
+                }
+
+                SqlParameter parametro = new SqlParameter("@muestra", SqlDbType.VarChar );
+                parametro.Value = muestra;
+
+                entidades.vialsur.prefectura.ve_vehiculo obj_vehiculo = new entidades.vialsur.prefectura.ve_vehiculo();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+                if(dr_datos.HasRows)
+                {
+                    while (dr_datos.Read())
+                    {
+                        obj_vehiculo.id = int.Parse(dr_datos["id"].ToString());
+                        obj_vehiculo.ve_vehiculo_modelo_id = int.Parse(dr_datos["ve_vehiculo_modelo_id"].ToString());
+                        obj_vehiculo.ve_vehiculo_color_id = int.Parse(dr_datos["ve_vehiculo_color_id"].ToString());
+                        obj_vehiculo.anio_fabricacion = int.Parse(dr_datos["anio_fabricacion"].ToString());
+                        obj_vehiculo.anio_compra = int.Parse(dr_datos["anio_compra"].ToString());
+                        obj_vehiculo.cilindraje = dr_datos["cilindraje"].ToString();
+                        obj_vehiculo.codigo = dr_datos["codigo"].ToString();
+                        obj_vehiculo.codigo_anterior = dr_datos["codigo_anterior"].ToString();
+                        obj_vehiculo.color = dr_datos["color"].ToString();
+                        obj_vehiculo.costo = decimal.Parse(dr_datos["costo"].ToString());
+                        obj_vehiculo.estado = (bool)dr_datos["estado"];
+                        obj_vehiculo.PaisCodigo = dr_datos["PaisCodigo"].ToString();
+                        obj_vehiculo.placa = dr_datos["placa"].ToString();
+                        obj_vehiculo.placa_provisional = dr_datos["placa_provisional"].ToString();
+                        obj_vehiculo.serie_chasis = dr_datos["serie_chasis"].ToString();
+                        obj_vehiculo.serie_motor = dr_datos["serie_motor"].ToString();
+                    }
+                    obj_vehiculo.ve_vehiculo_marca_id = (int)new cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(obj_vehiculo.ve_vehiculo_modelo_id).ve_vehiculo_marca_id;
+                    dr_datos.Close();
+
+                    //modelo
+                    entidades.vialsur.prefectura.ve_vehiculo_modelo modelo = new vialsur.prefectura.cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(obj_vehiculo.ve_vehiculo_modelo_id);
+
+                    //marca
+                    entidades.vialsur.prefectura.ve_vehiculo_marca marca = new vialsur.prefectura.cls_data_ve_vehiculo_marca().Consultar_Marca(obj_vehiculo.ve_vehiculo_marca_id);
+                    modelo.ve_vehiculo_marca = marca;
+
+                    obj_vehiculo.ve_vehiculo_modelo = modelo;
+
+                    entidades.vialsur.prefectura.ve_vehiculo_color color = new vialsur.prefectura.cls_data_ve_vehiculo_color().Consultar_Color(obj_vehiculo.ve_vehiculo_color_id);
+                    obj_vehiculo.ve_vehiculo_color = color;
+
+                }
+                
+                return obj_vehiculo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos del vehiculo: " + ex.Message);
             }
         }
 

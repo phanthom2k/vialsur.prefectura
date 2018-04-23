@@ -67,6 +67,12 @@
     <Compile Include="Ordenes\frmOrdenes.Designer.cs">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordenes\frmSeleccionarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes\frmSeleccionarVehiculo.Designer.cs">
+      <DependentUpon>frmSeleccionarVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personal\frmPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmOrdenes.resx">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes\frmSeleccionarVehiculo.resx">
+      <DependentUpon>frmSeleccionarVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personal\frmPersonal.resx">
       <DependentUpon>frmPersonal.cs</DependentUpon>

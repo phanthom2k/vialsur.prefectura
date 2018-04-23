@@ -122,6 +122,26 @@ namespace logica.vialsur.prefectura.Catalogos
         }
 
         /// <summary>
+        /// Consulta los datos de un vehiculo por su PLACA, PLACA PROVISIONAL, CODIGO Y CODIGO ANTERIOR
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <param name="tipoBusqueda">0 <= PLACA, 1 <= PLACA PROVISIONAL, 2<= CODIGO, 3<=CODIGO ANTERIOR</param>
+        /// <returns></returns>
+        public ve_vehiculo ConsultarDatosVehiculo(string parametro, int tipoBusqueda)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(parametro, tipoBusqueda);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        /// <summary>
         /// obtiene el numero de registros de vehiculso registrados sin importar si estan activos o inactivos
         /// </summary>
         /// <returns></returns>

@@ -68,7 +68,7 @@ namespace datos.vialsur.prefectura
             {
                 string consulta =   "SELECT [id],[modelo],[observacion],[ve_vehiculo_marca_id],[tipo_combustible],[traccion]" +
                                     ",[imagen],[tipo_motor],[ve_vehiculo_tipo_id],[clase_vehiculo] " +
-                                    "FROM[dbo].[ve_vehiculo_modelo] WHERE ID =@id";
+                                    "FROM [ve_vehiculo_modelo] WHERE ID =@id";
 ;
                 SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
                 parametro.Value = id;

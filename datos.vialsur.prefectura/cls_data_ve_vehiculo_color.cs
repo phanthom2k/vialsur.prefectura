@@ -60,5 +60,36 @@ namespace datos.vialsur.prefectura
 
             }
         }
+
+
+        public entidades.vialsur.prefectura.ve_vehiculo_color Consultar_Color(int id)
+        {
+            try
+            {
+
+                string consulta = "SELECT[id],[codigo],[nombre_especifico],[nombre_comun] FROM [ve_vehiculo_color] where id=@id";
+
+                SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
+                parametro.Value = id;
+
+                entidades.vialsur.prefectura.ve_vehiculo_color obj_color = new entidades.vialsur.prefectura.ve_vehiculo_color();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+                while (dr_datos.Read())
+                {
+                     obj_color.id = (int)dr_datos["id"];
+                    obj_color.codigo = dr_datos["codigo"].ToString();
+                    obj_color.nombre_especifico =  dr_datos["nombre_especifico"].ToString();
+                    obj_color.nombre_comun = dr_datos["nombre_comun"].ToString();
+                }
+                dr_datos.Close();
+                return obj_color;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
