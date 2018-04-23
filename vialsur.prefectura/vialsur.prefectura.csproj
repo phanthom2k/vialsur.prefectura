@@ -84,6 +84,9 @@
     <Compile Include="uc\uc_CARGO.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="uc\uc_Catalogo_Parte_Principal.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uc\uc_NumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -96,7 +99,9 @@
     <Compile Include="uc\uc_VehiculoColor.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="uc\uc_VehiculoMarca.cs" />
+    <Compile Include="uc\uc_VehiculoMarca.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uc\uc_VehiculoModelo.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -112,6 +117,9 @@
     <Compile Include="Vehiculos\frmVehiculo_Nuevo.Designer.cs">
       <DependentUpon>frmVehiculo_Nuevo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMaster.resx">
       <DependentUpon>frmMaster.cs</DependentUpon>
     </EmbeddedResource>

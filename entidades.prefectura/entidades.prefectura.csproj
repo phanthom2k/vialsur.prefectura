@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="catalogo_parte_principal.cs" />
+    <Compile Include="catalogo_parte_secundaria.cs" />
     <Compile Include="emp_empleado.cs" />
     <Compile Include="per_persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\cls_logica_catalogo_parte_principal.cs" />
     <Compile Include="Catalogos\cls_logica_emp_empleado.cs" />
     <Compile Include="Catalogos\cls_logica_pais.cs" />
     <Compile Include="Catalogos\cls_logica_per_persona.cs" />

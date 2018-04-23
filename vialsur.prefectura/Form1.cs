@@ -16,5 +16,10 @@ namespace vialsur.prefectura
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            uc_Catalogo_Parte_Principal1.CargarDatos();
+        }
     }
 }
