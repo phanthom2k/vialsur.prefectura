@@ -108,6 +108,9 @@
     <Compile Include="uc\uc_Pais.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="uc\uc_TipoMantenimiento.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uc\uc_TIPOUSUARIO.cs">
       <SubType>Component</SubType>
     </Compile>
