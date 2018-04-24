@@ -305,6 +305,12 @@ GO
                 parametro.Value = muestra;
 
                 entidades.vialsur.prefectura.ve_vehiculo obj_vehiculo = new entidades.vialsur.prefectura.ve_vehiculo();
+                entidades.vialsur.prefectura.ve_vehiculo_modelo modelo = new entidades.vialsur.prefectura.ve_vehiculo_modelo();
+                entidades.vialsur.prefectura.ve_vehiculo_marca marca = new entidades.vialsur.prefectura.ve_vehiculo_marca();
+                entidades.vialsur.prefectura.ve_vehiculo_color color = new entidades.vialsur.prefectura.ve_vehiculo_color();
+                modelo.ve_vehiculo_marca = marca;
+                obj_vehiculo.ve_vehiculo_modelo = modelo;
+                obj_vehiculo.ve_vehiculo_color = color;
 
                 SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
                 if(dr_datos.HasRows)
@@ -332,17 +338,19 @@ GO
                     dr_datos.Close();
 
                     //modelo
-                    entidades.vialsur.prefectura.ve_vehiculo_modelo modelo = new vialsur.prefectura.cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(obj_vehiculo.ve_vehiculo_modelo_id);
+                   // entidades.vialsur.prefectura.ve_vehiculo_modelo modelo = new vialsur.prefectura.cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(obj_vehiculo.ve_vehiculo_modelo_id);
+                    modelo = new vialsur.prefectura.cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(obj_vehiculo.ve_vehiculo_modelo_id);
 
                     //marca
-                    entidades.vialsur.prefectura.ve_vehiculo_marca marca = new vialsur.prefectura.cls_data_ve_vehiculo_marca().Consultar_Marca(obj_vehiculo.ve_vehiculo_marca_id);
+                   // entidades.vialsur.prefectura.ve_vehiculo_marca marca = new vialsur.prefectura.cls_data_ve_vehiculo_marca().Consultar_Marca(obj_vehiculo.ve_vehiculo_marca_id);
+                    marca = new vialsur.prefectura.cls_data_ve_vehiculo_marca().Consultar_Marca(obj_vehiculo.ve_vehiculo_marca_id);
                     modelo.ve_vehiculo_marca = marca;
 
                     obj_vehiculo.ve_vehiculo_modelo = modelo;
 
-                    entidades.vialsur.prefectura.ve_vehiculo_color color = new vialsur.prefectura.cls_data_ve_vehiculo_color().Consultar_Color(obj_vehiculo.ve_vehiculo_color_id);
+                   // entidades.vialsur.prefectura.ve_vehiculo_color color = new vialsur.prefectura.cls_data_ve_vehiculo_color().Consultar_Color(obj_vehiculo.ve_vehiculo_color_id);
+                    color = new vialsur.prefectura.cls_data_ve_vehiculo_color().Consultar_Color(obj_vehiculo.ve_vehiculo_color_id);
                     obj_vehiculo.ve_vehiculo_color = color;
-
                 }
                 
                 return obj_vehiculo;
