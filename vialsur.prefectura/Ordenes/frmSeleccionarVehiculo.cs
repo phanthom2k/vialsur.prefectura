@@ -95,5 +95,10 @@ namespace vialsur.prefectura.Ordenes
             txt_ParametroABuscar.Text = string.Empty;
             limpiar();
         }
+
+        private void btn_Siguiente_Click(object sender, EventArgs e)
+        {
+            new frmDesignacionMantenimientoRespondable().ShowDialog();
+        }
     }
 }

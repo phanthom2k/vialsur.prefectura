@@ -33,7 +33,6 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.txt_ParametroABuscar = new Vivaldi.AlfaTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
@@ -66,6 +65,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Siguiente = new System.Windows.Forms.Button();
+            this.txt_ParametroABuscar = new Vivaldi.AlfaTextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -131,15 +132,6 @@
             this.radioButton1.Tag = "0";
             this.radioButton1.Text = "PLACA";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // txt_ParametroABuscar
-            // 
-            this.txt_ParametroABuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_ParametroABuscar.Location = new System.Drawing.Point(224, 32);
-            this.txt_ParametroABuscar.MaxLength = 50;
-            this.txt_ParametroABuscar.Name = "txt_ParametroABuscar";
-            this.txt_ParametroABuscar.Size = new System.Drawing.Size(382, 22);
-            this.txt_ParametroABuscar.TabIndex = 1;
             // 
             // label1
             // 
@@ -455,7 +447,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(591, 368);
+            this.btn_Cancelar.Location = new System.Drawing.Point(518, 368);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
             this.btn_Cancelar.TabIndex = 6;
@@ -470,12 +462,32 @@
             this.btn_Siguiente.TabIndex = 7;
             this.btn_Siguiente.Text = "Siguiente";
             this.btn_Siguiente.UseVisualStyleBackColor = true;
+            this.btn_Siguiente.Click += new System.EventHandler(this.btn_Siguiente_Click);
+            // 
+            // txt_ParametroABuscar
+            // 
+            this.txt_ParametroABuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_ParametroABuscar.Location = new System.Drawing.Point(224, 32);
+            this.txt_ParametroABuscar.MaxLength = 50;
+            this.txt_ParametroABuscar.Name = "txt_ParametroABuscar";
+            this.txt_ParametroABuscar.Size = new System.Drawing.Size(382, 22);
+            this.txt_ParametroABuscar.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(594, 368);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 75);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmSeleccionarVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 452);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_Siguiente);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.groupBox2);
@@ -540,5 +552,6 @@
         private System.Windows.Forms.Label lbl_placa;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Button btn_Siguiente;
+        private System.Windows.Forms.Button button2;
     }
 }
