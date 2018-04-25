@@ -15,6 +15,15 @@ namespace vialsur.prefectura.Ordenes
         public frmDesignacionMantenimientoRespondable()
         {
             InitializeComponent();
+
+            uc_TipoMantenimiento1.CargarDatos();
+            uc_Empleados1.CargarDatos(entidades.vialsur.prefectura.TipoUsuario.MECANICO, true);
+
+        }
+
+        private void frmDesignacionMantenimientoRespondable_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

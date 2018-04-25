@@ -51,11 +51,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lettersTextBox1 = new Vivaldi.UserControls.LettersTextBox();
-            this.uc_Mecanicos1 = new vialsur.prefectura.uc.uc_Mecanicos();
-            this.uc_TipoMantenimiento1 = new vialsur.prefectura.uc.uc_TipoMantenimiento();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Siguiente = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.uc_TipoMantenimiento1 = new vialsur.prefectura.uc.uc_TipoMantenimiento();
+            this.uc_Empleados1 = new vialsur.prefectura.uc.uc_Empleados();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -297,28 +297,6 @@
             this.lettersTextBox1.Size = new System.Drawing.Size(518, 80);
             this.lettersTextBox1.TabIndex = 12;
             // 
-            // uc_Mecanicos1
-            // 
-            this.uc_Mecanicos1.Ancho = 121;
-            this.uc_Mecanicos1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_Mecanicos1.DropDownWidth = 121;
-            this.uc_Mecanicos1.FormattingEnabled = true;
-            this.uc_Mecanicos1.Location = new System.Drawing.Point(225, 214);
-            this.uc_Mecanicos1.Name = "uc_Mecanicos1";
-            this.uc_Mecanicos1.Size = new System.Drawing.Size(518, 24);
-            this.uc_Mecanicos1.TabIndex = 10;
-            // 
-            // uc_TipoMantenimiento1
-            // 
-            this.uc_TipoMantenimiento1.Ancho = 121;
-            this.uc_TipoMantenimiento1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_TipoMantenimiento1.DropDownWidth = 121;
-            this.uc_TipoMantenimiento1.FormattingEnabled = true;
-            this.uc_TipoMantenimiento1.Location = new System.Drawing.Point(225, 184);
-            this.uc_TipoMantenimiento1.Name = "uc_TipoMantenimiento1";
-            this.uc_TipoMantenimiento1.Size = new System.Drawing.Size(518, 24);
-            this.uc_TipoMantenimiento1.TabIndex = 9;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(589, 336);
@@ -346,17 +324,39 @@
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
             // 
+            // uc_TipoMantenimiento1
+            // 
+            this.uc_TipoMantenimiento1.Ancho = 121;
+            this.uc_TipoMantenimiento1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_TipoMantenimiento1.DropDownWidth = 121;
+            this.uc_TipoMantenimiento1.FormattingEnabled = true;
+            this.uc_TipoMantenimiento1.Location = new System.Drawing.Point(225, 184);
+            this.uc_TipoMantenimiento1.Name = "uc_TipoMantenimiento1";
+            this.uc_TipoMantenimiento1.Size = new System.Drawing.Size(518, 24);
+            this.uc_TipoMantenimiento1.TabIndex = 9;
+            // 
+            // uc_Empleados1
+            // 
+            this.uc_Empleados1.Ancho = 121;
+            this.uc_Empleados1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_Empleados1.DropDownWidth = 121;
+            this.uc_Empleados1.FormattingEnabled = true;
+            this.uc_Empleados1.Location = new System.Drawing.Point(225, 214);
+            this.uc_Empleados1.Name = "uc_Empleados1";
+            this.uc_Empleados1.Size = new System.Drawing.Size(518, 24);
+            this.uc_Empleados1.TabIndex = 16;
+            // 
             // frmDesignacionMantenimientoRespondable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 422);
+            this.Controls.Add(this.uc_Empleados1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_Siguiente);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.lettersTextBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.uc_Mecanicos1);
             this.Controls.Add(this.uc_TipoMantenimiento1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -367,6 +367,7 @@
             this.Name = "frmDesignacionMantenimientoRespondable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDesignacionMantenimientoRespondable";
+            this.Load += new System.EventHandler(this.frmDesignacionMantenimientoRespondable_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -398,11 +399,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private uc.uc_TipoMantenimiento uc_TipoMantenimiento1;
-        private uc.uc_Mecanicos uc_Mecanicos1;
         private System.Windows.Forms.Label label6;
         private Vivaldi.UserControls.LettersTextBox lettersTextBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_Siguiente;
         private System.Windows.Forms.Button btn_Cancelar;
+        private uc.uc_Empleados uc_Empleados1;
     }
 }

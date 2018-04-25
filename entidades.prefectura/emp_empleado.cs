@@ -11,7 +11,15 @@ namespace entidades.vialsur.prefectura
 {
     using System;
     using System.Collections.Generic;
-    
+
+    public enum TipoUsuario
+    {
+        ADMINISTRADOR = 1,
+        CHOFER = 2,
+        MECANICO = 3,
+        ADMINISTRATIVO = 4
+    }
+
     public partial class emp_empleado
     {
         public int id { get; set; }

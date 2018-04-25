@@ -96,6 +96,33 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+        /// <summary>
+        /// Retorna concatenado apellido con nombres, cedula y emp_empleado.id
+        /// </summary>
+        /// <param name="tu"></param>
+        /// <param name="activo"></param>
+        /// <returns></returns>
+        public System.Data.DataTable ListarPersonasPorTipoUsuario_UX(entidades.vialsur.prefectura.TipoUsuario tu, bool activo = true)
+        {
+            try
+            {
+
+                //return new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonasPorTipoUsuario_UX(tu, activo);
+                System.Data.DataTable dt_empleados = new System.Data.DataTable("emp_empleado");
+                dt_empleados  = new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonasPorTipoUsuario_UX(tu, activo);
+                              
+                System.Data.DataRow  dr0 = dt_empleados.NewRow();
+                dr0["cedula"] = 0;
+                dr0["nombre"] = "Seleccione";
+                dr0["emp_empleado_id"] = 0;
+                dt_empleados.Rows.InsertAt(dr0, 0);
+                return dt_empleados;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
     }
 }

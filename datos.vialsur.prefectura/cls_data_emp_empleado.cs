@@ -11,6 +11,9 @@ namespace datos.vialsur.prefectura
     using System.Data.SqlClient;
     using Microsoft.ApplicationBlocks.Data;
 
+  
+
+
     public class cls_data_emp_empleado
     {
         private string _con = String.Empty;
@@ -295,6 +298,43 @@ namespace datos.vialsur.prefectura
                 throw;
             }
         }
+
+        /// <summary>
+        /// Lista los usuarios registrados en el sistema, concatenado el apellido y nombre con el numero de cedula
+        /// </summary>
+        /// <param name="tu"></param>
+        /// <param name="activo"></param>
+        /// <returns></returns>
+        public DataTable ListarPersonasPorTipoUsuario_UX(entidades.vialsur.prefectura.TipoUsuario tu, bool activo = true)
+        {
+            try
+            {
+                string _sql_consulta = "SELECT CONCAT(per_persona.apellidos,' ', per_persona.nombres) nombre, per_persona.cedula, emp_empleado.id emp_empleado_id  " +
+                                        "FROM per_persona INNER JOIN emp_empleado ON per_persona.cedula = emp_empleado.cedula " +
+                                        "WHERE emp_empleado.activo = @activo " +
+                                        "AND emp_empleado.tipo_usuario = @tipo_usuario ";
+
+                List<SqlParameter> parameters = new List<SqlParameter>();
+                SqlParameter _activo = new SqlParameter("@activo", SqlDbType.Bit);
+                _activo.Value = activo;
+                parameters.Add(_activo);
+
+                SqlParameter _tipo_usuario = new SqlParameter("@tipo_usuario", SqlDbType.Int);
+                _tipo_usuario.Value = tu;
+                parameters.Add(_tipo_usuario);
+
+                DataTable dt = new DataTable();
+
+                dt.Load(SqlHelper.ExecuteReader(_con, CommandType.Text, _sql_consulta, parameters.ToArray()), LoadOption.PreserveChanges);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
 
     }
 }
