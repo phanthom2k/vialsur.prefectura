@@ -43,12 +43,15 @@
     <Compile Include="catalogo_parte_principal.cs" />
     <Compile Include="catalogo_parte_secundaria.cs" />
     <Compile Include="emp_empleado.cs" />
+    <Compile Include="orden.cs" />
+    <Compile Include="orde_detalle.cs" />
     <Compile Include="per_persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ve_vehiculo.cs" />
     <Compile Include="ve_vehiculo_color.cs" />
     <Compile Include="ve_vehiculo_marca.cs" />
     <Compile Include="ve_vehiculo_modelo.cs" />
+    <Compile Include="ve_vehiculo_responsable.cs" />
     <Compile Include="ve_vehiculo_tipo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

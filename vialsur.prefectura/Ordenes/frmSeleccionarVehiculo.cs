@@ -67,7 +67,25 @@ namespace vialsur.prefectura.Ordenes
             lbl_seriechasis.Text = lbl_anofab.Text = lbl_anocomp.Text =
             lbl_placa.Text = lbl_placa_prov.Text = lbl_estado.Text = string.Empty;
         }
+
         entidades.vialsur.prefectura.ve_vehiculo obj_vehiculo;
+        /// <summary>
+        /// Obtiene o establece la informacion del vehiculo que se usara
+        /// </summary>
+        public entidades.vialsur.prefectura.ve_vehiculo Obj_vehiculo
+        {
+            get
+            {
+                return obj_vehiculo;
+            }
+
+            set
+            {
+                obj_vehiculo = value;
+            }
+        }
+
+
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
             try
@@ -80,7 +98,6 @@ namespace vialsur.prefectura.Ordenes
                     if (obj_vehiculo != null & obj_vehiculo.estado != null)
                         MostrarInformacionVehiculo(obj_vehiculo);
                 }
-
 //int.Parse(groupBox1.Controls.OfType<RadioButton>().Where(r => r.Checked).FirstOrDefault().Tag.ToString());
 
             }
@@ -98,7 +115,13 @@ namespace vialsur.prefectura.Ordenes
 
         private void btn_Siguiente_Click(object sender, EventArgs e)
         {
-            new frmDesignacionMantenimientoRespondable().ShowDialog();
+            
+            frmDesignacionMantenimientoRespondable frm_designacion = new frmDesignacionMantenimientoRespondable();
+            frm_designacion.Obj_vehiculo = Obj_vehiculo;
+            this.Hide();
+            frm_designacion.ShowDialog();
+            this.Close();
+
         }
     }
 }
