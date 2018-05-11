@@ -472,6 +472,7 @@
             this.txt_ParametroABuscar.Name = "txt_ParametroABuscar";
             this.txt_ParametroABuscar.Size = new System.Drawing.Size(382, 22);
             this.txt_ParametroABuscar.TabIndex = 1;
+            this.txt_ParametroABuscar.Text = "LLL1111";
             // 
             // button2
             // 
@@ -501,7 +502,7 @@
             this.MinimizeBox = false;
             this.Name = "frmSeleccionarVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSeleccionarVehiculo";
+            this.Text = "1 frmSeleccionarVehiculo";
             this.Load += new System.EventHandler(this.frmSeleccionarVehiculo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

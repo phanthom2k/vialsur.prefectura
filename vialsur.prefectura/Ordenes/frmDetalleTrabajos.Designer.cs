@@ -1,6 +1,6 @@
 ﻿namespace vialsur.prefectura.Ordenes
 {
-    partial class frmDesignacionMantenimientoRespondable
+    partial class frmDetalleTrabajos
     {
         /// <summary>
         /// Required designer variable.
@@ -51,21 +51,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lettersTextBox1 = new Vivaldi.UserControls.LettersTextBox();
-            this.btnAtras = new System.Windows.Forms.Button();
-            this.btn_Siguiente = new System.Windows.Forms.Button();
-            this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.uc_Empleados2 = new vialsur.prefectura.uc.uc_Empleados();
-            this.uc_Empleados1 = new vialsur.prefectura.uc.uc_Empleados();
-            this.uc_TipoMantenimiento1 = new vialsur.prefectura.uc.uc_TipoMantenimiento();
-            this.label16 = new System.Windows.Forms.Label();
-            this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSubParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -92,10 +87,10 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(4, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(731, 200);
-            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INFORMACIÓN DEL VEHICULO";
             // 
@@ -308,182 +303,122 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "MARCA:";
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 221);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "TIPO DE MANTENIMIENTO:";
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cl_ver,
+            this.cl_modificar,
+            this.clParte,
+            this.clSubParte,
+            this.clCantidad,
+            this.clEstado,
+            this.clObservacion});
+            this.dataGridView1.Location = new System.Drawing.Point(4, 238);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(734, 428);
+            this.dataGridView1.TabIndex = 38;
             // 
-            // label4
+            // cl_ver
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 251);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "TRABAJO ASIGNADO A:";
+            this.cl_ver.DataPropertyName = "id";
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 45;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 45;
             // 
-            // label6
+            // cl_modificar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 333);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 17);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "OBSERVACIONES";
+            this.cl_modificar.DataPropertyName = "id";
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modif.";
+            this.cl_modificar.MinimumWidth = 55;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Modificar";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 55;
             // 
-            // lettersTextBox1
+            // clParte
             // 
-            this.lettersTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.lettersTextBox1.Location = new System.Drawing.Point(225, 333);
-            this.lettersTextBox1.MaxLength = 500;
-            this.lettersTextBox1.Multiline = true;
-            this.lettersTextBox1.Name = "lettersTextBox1";
-            this.lettersTextBox1.Size = new System.Drawing.Size(518, 80);
-            this.lettersTextBox1.TabIndex = 12;
+            this.clParte.HeaderText = "PARTE";
+            this.clParte.MinimumWidth = 100;
+            this.clParte.Name = "clParte";
+            this.clParte.ReadOnly = true;
+            this.clParte.Width = 125;
             // 
-            // btnAtras
+            // clSubParte
             // 
-            this.btnAtras.Location = new System.Drawing.Point(589, 419);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(75, 75);
-            this.btnAtras.TabIndex = 15;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
+            this.clSubParte.HeaderText = "Sub Parte";
+            this.clSubParte.MinimumWidth = 110;
+            this.clSubParte.Name = "clSubParte";
+            this.clSubParte.ReadOnly = true;
+            this.clSubParte.Width = 165;
             // 
-            // btn_Siguiente
+            // clCantidad
             // 
-            this.btn_Siguiente.Location = new System.Drawing.Point(665, 419);
-            this.btn_Siguiente.Name = "btn_Siguiente";
-            this.btn_Siguiente.Size = new System.Drawing.Size(75, 75);
-            this.btn_Siguiente.TabIndex = 14;
-            this.btn_Siguiente.Text = "Siguiente";
-            this.btn_Siguiente.UseVisualStyleBackColor = true;
-            this.btn_Siguiente.Click += new System.EventHandler(this.btn_Siguiente_Click);
+            this.clCantidad.HeaderText = "Cantidad";
+            this.clCantidad.MinimumWidth = 50;
+            this.clCantidad.Name = "clCantidad";
+            this.clCantidad.ReadOnly = true;
+            this.clCantidad.Width = 75;
             // 
-            // btn_Cancelar
+            // clEstado
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(513, 419);
-            this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
-            this.btn_Cancelar.TabIndex = 13;
-            this.btn_Cancelar.Text = "Cancelar";
-            this.btn_Cancelar.UseVisualStyleBackColor = true;
-            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            this.clEstado.HeaderText = "Estado";
+            this.clEstado.MinimumWidth = 65;
+            this.clEstado.Name = "clEstado";
+            this.clEstado.ReadOnly = true;
+            this.clEstado.Width = 65;
             // 
-            // label11
+            // clObservacion
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 280);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(210, 17);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "CUSTODIO DEL VEHICULO:";
+            this.clObservacion.HeaderText = "Observacion";
+            this.clObservacion.MinimumWidth = 175;
+            this.clObservacion.Name = "clObservacion";
+            this.clObservacion.ReadOnly = true;
+            this.clObservacion.Width = 200;
             // 
-            // uc_Empleados2
-            // 
-            this.uc_Empleados2.Ancho = 121;
-            this.uc_Empleados2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_Empleados2.DropDownWidth = 121;
-            this.uc_Empleados2.FormattingEnabled = true;
-            this.uc_Empleados2.Location = new System.Drawing.Point(225, 277);
-            this.uc_Empleados2.Name = "uc_Empleados2";
-            this.uc_Empleados2.Size = new System.Drawing.Size(518, 24);
-            this.uc_Empleados2.TabIndex = 18;
-            // 
-            // uc_Empleados1
-            // 
-            this.uc_Empleados1.Ancho = 121;
-            this.uc_Empleados1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_Empleados1.DropDownWidth = 121;
-            this.uc_Empleados1.FormattingEnabled = true;
-            this.uc_Empleados1.Location = new System.Drawing.Point(225, 248);
-            this.uc_Empleados1.Name = "uc_Empleados1";
-            this.uc_Empleados1.Size = new System.Drawing.Size(518, 24);
-            this.uc_Empleados1.TabIndex = 16;
-            // 
-            // uc_TipoMantenimiento1
-            // 
-            this.uc_TipoMantenimiento1.Ancho = 121;
-            this.uc_TipoMantenimiento1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_TipoMantenimiento1.DropDownWidth = 121;
-            this.uc_TipoMantenimiento1.FormattingEnabled = true;
-            this.uc_TipoMantenimiento1.Location = new System.Drawing.Point(225, 218);
-            this.uc_TipoMantenimiento1.Name = "uc_TipoMantenimiento1";
-            this.uc_TipoMantenimiento1.Size = new System.Drawing.Size(518, 24);
-            this.uc_TipoMantenimiento1.TabIndex = 9;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 307);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(220, 17);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "KILOMETRAJE DE INGRESO:";
-            // 
-            // numericTextBox1
-            // 
-            this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(225, 304);
-            this.numericTextBox1.Name = "numericTextBox1";
-            this.numericTextBox1.Size = new System.Drawing.Size(115, 22);
-            this.numericTextBox1.TabIndex = 20;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(339, 308);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(28, 17);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "Km";
-            // 
-            // frmDesignacionMantenimientoRespondable
+            // frmDetalleTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 564);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.numericTextBox1);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.uc_Empleados2);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.uc_Empleados1);
-            this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.btn_Siguiente);
-            this.Controls.Add(this.btn_Cancelar);
-            this.Controls.Add(this.lettersTextBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.uc_TipoMantenimiento1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(747, 678);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmDesignacionMantenimientoRespondable";
+            this.Name = "frmDetalleTrabajos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2 frmDesignacionMantenimientoRespondable";
-            this.Load += new System.EventHandler(this.frmDesignacionMantenimientoRespondable_Load);
+            this.Text = "frmDetalleTrabajos";
+            this.Load += new System.EventHandler(this.frmDetalleTrabajos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lbl_TipoVehiculo;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_TipoCombustible;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_estado;
         private System.Windows.Forms.Label lbl_placa_prov;
         private System.Windows.Forms.Label lbl_placa;
@@ -502,23 +437,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private uc.uc_TipoMantenimiento uc_TipoMantenimiento1;
-        private System.Windows.Forms.Label label6;
-        private Vivaldi.UserControls.LettersTextBox lettersTextBox1;
-        private System.Windows.Forms.Button btnAtras;
-        private System.Windows.Forms.Button btn_Siguiente;
-        private System.Windows.Forms.Button btn_Cancelar;
-        private uc.uc_Empleados uc_Empleados1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lbl_TipoCombustible;
-        private System.Windows.Forms.Label lbl_TipoVehiculo;
-        private System.Windows.Forms.Label label9;
-        private uc.uc_Empleados uc_Empleados2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label16;
-        private Vivaldi.UserControls.NumericTextBox numericTextBox1;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clParte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSubParte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clObservacion;
     }
 }

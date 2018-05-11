@@ -13,14 +13,21 @@ namespace entidades.vialsur.prefectura
     using System;
     using System.Collections.Generic;
 
-    
+    public enum Orden_TipoEstado
+    {
+        CREADO = 1,
+        AUTORIZADO = 2,
+        FINALIZADO = 3
+    }
     public partial class orden
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public orden()
         {
             this.orde_detalle = new HashSet<orde_detalle>();
+            this.ve_vehiculo_responsable = new HashSet<ve_vehiculo_responsable>();
         }
+
     
         public string id { get; set; }
         public int tipo_oden { get; set; }
@@ -28,13 +35,16 @@ namespace entidades.vialsur.prefectura
         public Nullable<System.TimeSpan> hora { get; set; }
         public Nullable<int> estado { get; set; }
         public Nullable<int> ve_vehiculo_responsable_id { get; set; }
-        public Nullable<int> emp_empleado_id { get; set; }
+        //public Nullable<int> emp_empleado_id { get; set; }
+        public string per_persona_numero_cedula { get; set; }
         public string observacion { get; set; }
         public Nullable<int> km_ingreso { get; set; }
         public Nullable<int> km_egreso { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orde_detalle> orde_detalle { get; set; }
-        public virtual ve_vehiculo_responsable ve_vehiculo_responsable { get; set; }
+        //public virtual ve_vehiculo_responsable ve_vehiculo_responsable { get; set; }
+        public virtual ICollection<ve_vehiculo_responsable> ve_vehiculo_responsable { get; set; }
+        public virtual per_persona per_persona_cedula { get; set; }
     }
 }

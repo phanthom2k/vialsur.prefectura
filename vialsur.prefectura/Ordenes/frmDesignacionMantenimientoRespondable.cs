@@ -19,9 +19,9 @@ namespace vialsur.prefectura.Ordenes
 
             uc_TipoMantenimiento1.CargarDatos();
             uc_Empleados1.CargarDatos(entidades.vialsur.prefectura.TipoUsuario.MECANICO, true);
+            uc_Empleados2.CargarDatos(entidades.vialsur.prefectura.TipoUsuario.CHOFER, true);
             
         }
-
 
         void MostrarInformacionVehiculo(entidades.vialsur.prefectura.ve_vehiculo vehiculo)
         {
@@ -82,14 +82,6 @@ namespace vialsur.prefectura.Ordenes
             }
         }
 
-        
-
-        private void frmDesignacionMantenimientoRespondable_Load(object sender, EventArgs e)
-        {
-            MostrarInformacionVehiculo(obj_vehiculo);
-
-        }
-
         orden obj_orden = new orden();
         public orden Obj_orden
         {
@@ -104,11 +96,68 @@ namespace vialsur.prefectura.Ordenes
             }
         }
 
+        private void frmDesignacionMantenimientoRespondable_Load(object sender, EventArgs e)
+        {
+            MostrarInformacionVehiculo(obj_vehiculo);
 
-
+        }
+        
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Siguiente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //FALTA IMPLEMENTAR CONTROLES EN DDBOX
+
+
+                ve_vehiculo_responsable _mecanico = new ve_vehiculo_responsable();
+                _mecanico.per_persona_cedula = uc_Empleados1.SelectedValue.ToString();
+                _mecanico.ve_vehiculo_id = obj_vehiculo.id;
+                _mecanico.estado = true;
+                _mecanico.fecha = DateTime.Today;
+                _mecanico.tipo_responsable = (int)TipoResponsable.MECANICO;
+
+                ve_vehiculo_responsable _custodio = new ve_vehiculo_responsable();
+                _custodio.per_persona_cedula = uc_Empleados2.SelectedValue.ToString();
+                _custodio.ve_vehiculo_id = obj_vehiculo.id;
+                _custodio.estado = true;
+                _custodio.fecha = DateTime.Today;
+                _custodio.tipo_responsable = (int)TipoResponsable.CUSTODIO;
+
+                obj_orden.tipo_oden = (int)uc_TipoMantenimiento1.SelectedValue;
+                obj_orden.fecha = DateTime.Today;
+                obj_orden.hora = DateTime.Now.TimeOfDay;
+                obj_orden.estado = (int)Orden_TipoEstado.CREADO;
+                obj_orden.observacion = lettersTextBox1.Text.ToUpper();
+                obj_orden.km_ingreso = int.Parse(numericTextBox1.Text);
+                obj_orden.ve_vehiculo_responsable.Add(_mecanico);
+                obj_orden.ve_vehiculo_responsable.Add(_custodio);
+
+                frmDetalleTrabajos frm_detalles = new frmDetalleTrabajos();
+                frm_detalles.Obj_vehiculo = Obj_vehiculo;
+                frm_detalles.Obj_orden = Obj_orden;
+                this.Hide();
+                frm_detalles.ShowDialog();
+                this.Close();
+
+
+                //frmDesignacionMantenimientoRespondable frm_designacion = new frmDesignacionMantenimientoRespondable();
+                //frm_designacion.Obj_vehiculo = Obj_vehiculo;
+                //this.Hide();
+                //frm_designacion.ShowDialog();
+                //this.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Existio el siguiente error: "+ex.Message);
+            }
         }
     }
 }
