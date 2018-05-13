@@ -14,6 +14,22 @@ namespace entidades.vialsur.prefectura
     
     public partial class per_persona
     {
+        /// <summary>
+        /// Retorna los apellidos y nombres completos
+        /// </summary>
+        public string GetFullName
+        {
+            get
+            {
+                string r = string.Empty;
+                if (string.IsNullOrEmpty(apellidos) | string.IsNullOrEmpty(nombres))
+                    r = "---";
+                else
+                    r=  apellidos + ", " + nombres;
+                return r;
+            }
+        }
+
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public per_persona()
         {

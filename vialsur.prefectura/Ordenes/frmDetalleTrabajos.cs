@@ -73,11 +73,25 @@ namespace vialsur.prefectura.Ordenes
                     lbl_placa_prov.Text = vehiculo.placa_provisional;
                     if (vehiculo.estado != null)
                         lbl_estado.Text = (bool)vehiculo.estado ? "Activo" : "Inactivo";
-                    lbl_TipoCombustible.Text = (int)mod.tipo_combustible == 1 ? "GASOLINA" : "DIESEL";
-                    lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
-                                            (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
+                    //lbl_TipoCombustible.Text = (int)mod.tipo_combustible == 1 ? "GASOLINA" : "DIESEL";
+                    lbl_TipoCombustible.Text = ((TipoCombustible)mod.tipo_combustible).ToString();
+                    //lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
+                    //                        (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
+                    lbl_TipoVehiculo.Text = ((TipoClaseVehiculo)mod.clase_vehiculo).ToString();
 
+                    lblNombresMecanicoResponsable.Text =
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                            obj_orden.ve_vehiculo_responsable.Where(r => r.tipo_responsable == (int)TipoResponsable.MECANICO).FirstOrDefault().per_persona_cedula
+                            ).GetFullName;
 
+                    lblNombresCustodioVehiculo.Text =
+                                        new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                                            obj_orden.ve_vehiculo_responsable.Where(r => r.tipo_responsable == (int)TipoResponsable.CUSTODIO).FirstOrDefault().per_persona_cedula
+                                            ).GetFullName;
+
+                    lblTipoMantenimiento.Text = ((Orden_TipoMantenimiento)obj_orden.tipo_oden).ToString();
+
+                    //groupBox1.Controls.OfType<RadioButton>().Where(r => r.Checked).FirstOrDefault().Tag.ToString()));
                 }
 
 

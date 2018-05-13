@@ -12,6 +12,21 @@ namespace entidades.vialsur.prefectura
     using System;
     using System.Collections.Generic;
     
+    public enum TipoCombustible
+    {
+        GASOLINA=1,
+        DIESEL = 2
+    }
+    /// <summary>
+    /// Define LIVIANO, PESADO Y NO_DEFINIDO
+    /// </summary>
+    public enum TipoClaseVehiculo
+    {
+        LIVIANO = 1,
+        PESADO=2,
+        NO_DEFINIDO = 3
+    }
+
     public partial class ve_vehiculo_modelo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

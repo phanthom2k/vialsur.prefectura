@@ -19,6 +19,12 @@ namespace entidades.vialsur.prefectura
         AUTORIZADO = 2,
         FINALIZADO = 3
     }
+
+    public enum Orden_TipoMantenimiento
+    {
+        PREVENTIVO = 1,
+        CORRECTIVO = 2
+    }
     public partial class orden
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
