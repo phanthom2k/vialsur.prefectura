@@ -20,8 +20,8 @@ namespace entidades.vialsur.prefectura
 
     public enum TipoSubParte__catalogo_parte_secundiaria
     {
-        PESADOS = 1,
-        LIVIANOS = 2,
+        LIVIANOS = 1,
+        PESADOS = 2,
         MIXTO = 3
     }
 

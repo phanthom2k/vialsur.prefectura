@@ -40,7 +40,12 @@ namespace vialsur.prefectura.uc
         }
         #endregion
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id">ID DEL CATALOGO PRINCIPAL</param>
+        /// <param name="tipo_sub_parte"></param>
+        /// <param name="estado"></param>
         public void CargarDatos(    int id,
                                     entidades.vialsur.prefectura.TipoSubParte__catalogo_parte_secundiaria tipo_sub_parte,
                                     entidades.vialsur.prefectura.Estado_catalogo_parte_secundiaria estado ) 
@@ -68,6 +73,29 @@ namespace vialsur.prefectura.uc
             }
         }
 
+        public void CargarDatos()
+        {
+            try
+            {
+                DataTable dt_Catalogo = new DataTable();
+                DataColumn dc1 = new DataColumn("id", typeof(int) );                
+                DataColumn dc2 = new DataColumn("nombre", typeof(string));
+                dt_Catalogo.Columns.Add(dc1);
+                dt_Catalogo.Columns.Add(dc2);
+                DataRow dr_0 = dt_Catalogo.NewRow();
+                dr_0["id"] = 0;
+                dr_0["nombre"] = "Seleccione";
+                dt_Catalogo.Rows.InsertAt(dr_0, 0);
+                this.ValueMember = "id";
+                this.DisplayMember = "nombre";
+                //this.SelectedValue = "ECU";
+                this.DataSource = dt_Catalogo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERR-uc_Catalogo_Parte_Principal" + ex.Message);
+            }
+        }
 
     }
 }

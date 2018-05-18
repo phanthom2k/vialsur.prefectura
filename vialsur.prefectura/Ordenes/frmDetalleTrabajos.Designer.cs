@@ -493,6 +493,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
             this.toolStripButton2.Text = "&Nueva";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // frmDetalleTrabajos
             // 

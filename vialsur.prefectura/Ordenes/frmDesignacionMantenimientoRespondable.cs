@@ -46,9 +46,10 @@ namespace vialsur.prefectura.Ordenes
                     lbl_placa_prov.Text = vehiculo.placa_provisional;
                     if (vehiculo.estado != null)
                         lbl_estado.Text = (bool)vehiculo.estado ? "Activo" : "Inactivo";
-                    lbl_TipoCombustible.Text = (int)mod.tipo_combustible == 1 ? "GASOLINA" : "DIESEL";
-                    lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
-                                            (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
+                    lbl_TipoCombustible.Text = ((TipoCombustible)mod.tipo_combustible).ToString(); // == 1 ? "GASOLINA" : "DIESEL";
+                    //lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
+                    //                        (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
+                    lbl_TipoVehiculo.Text = ((TipoClaseVehiculo)mod.clase_vehiculo).ToString();
 
 
                 }
@@ -113,7 +114,6 @@ namespace vialsur.prefectura.Ordenes
             {
 
                 //FALTA IMPLEMENTAR CONTROLES EN DDBOX
-
 
                 ve_vehiculo_responsable _mecanico = new ve_vehiculo_responsable();
                 _mecanico.per_persona_cedula = uc_Empleados1.SelectedValue.ToString();

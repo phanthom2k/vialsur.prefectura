@@ -117,5 +117,13 @@ namespace vialsur.prefectura.Ordenes
                 MessageBox.Show("Error:"+ex.Message);                
             }
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+            frmSeleccionadorTrabajo obj = new frmSeleccionadorTrabajo();
+            obj.Obj_vehiculo = this.obj_vehiculo;
+            obj.ShowDialog();
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace entidades.vialsur.prefectura
     public enum TipoClaseVehiculo
     {
         LIVIANO = 1,
-        PESADO=2,
+        PESADO = 2,
         NO_DEFINIDO = 3
     }
 

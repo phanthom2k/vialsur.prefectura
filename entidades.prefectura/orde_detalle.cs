@@ -12,7 +12,9 @@ namespace entidades.vialsur.prefectura
 
     using System;
     using System.Collections.Generic;
-    
+
+
+
     public partial class orde_detalle
     {
         public string id { get; set; }

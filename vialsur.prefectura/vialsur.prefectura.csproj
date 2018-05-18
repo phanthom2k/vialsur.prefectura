@@ -79,6 +79,12 @@
     <Compile Include="Ordenes\frmOrdenes.Designer.cs">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordenes\frmSeleccionadorTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes\frmSeleccionadorTrabajo.Designer.cs">
+      <DependentUpon>frmSeleccionadorTrabajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ordenes\frmSeleccionarVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uc\uc_Accion.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uc\uc_CARGO.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -161,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmOrdenes.resx">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes\frmSeleccionadorTrabajo.resx">
+      <DependentUpon>frmSeleccionadorTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmSeleccionarVehiculo.resx">
       <DependentUpon>frmSeleccionarVehiculo.cs</DependentUpon>
