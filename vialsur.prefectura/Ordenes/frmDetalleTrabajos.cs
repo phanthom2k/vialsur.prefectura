@@ -50,6 +50,10 @@ namespace vialsur.prefectura.Ordenes
             }
         }
 
+        //List<Part> parts = new List<Part>();
+
+        List<orde_detalle> detalle = new List<orde_detalle>();
+
         void MostrarInformacionVehiculo(entidades.vialsur.prefectura.ve_vehiculo vehiculo)
         {
             try
@@ -94,7 +98,6 @@ namespace vialsur.prefectura.Ordenes
                     //groupBox1.Controls.OfType<RadioButton>().Where(r => r.Checked).FirstOrDefault().Tag.ToString()));
                 }
 
-
             }
             catch (Exception ex)
             {
@@ -124,6 +127,51 @@ namespace vialsur.prefectura.Ordenes
             frmSeleccionadorTrabajo obj = new frmSeleccionadorTrabajo();
             obj.Obj_vehiculo = this.obj_vehiculo;
             obj.ShowDialog();
+            detalle.Add(obj.Obj_orden_detalle);
+            dataGridView1.DataSource = detalle;
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "clParte")
+            {
+                if (e.Value != null)
+                {
+                    e.Value = new logica.vialsur.prefectura.Catalogos.cls_logica_catalogo_parte_principal().Parte_Principal_Get((int)e.Value).nombre;
+
+                    #region comentado
+
+                    // Check for the string "pink" in the cell.
+                    //string stringValue = (string)e.Value;
+                    //stringValue = stringValue.ToLower();
+                    //if ((stringValue.IndexOf("pink") > -1))
+                    //{
+                    //    e.CellStyle.BackColor = Color.Pink;
+                    //}
+                    #endregion
+                }
+            }
+            else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "clSubParte")
+            {
+                if (e.Value != null)
+                {
+                    e.Value = new logica.vialsur.prefectura.Catalogos.cls_logica_catalogo_parte_secundaria().Parte_Secundaria_Get((int)e.Value).nombre;
+                }
+            }
+            //else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "clCantidad")
+            //{
+            //    if (e.Value != null)
+            //    {
+
+            //    }
+            //}
+            else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "clEstado")
+            {
+                if (e.Value != null)
+                {
+
+                }
+            }
         }
     }
 }

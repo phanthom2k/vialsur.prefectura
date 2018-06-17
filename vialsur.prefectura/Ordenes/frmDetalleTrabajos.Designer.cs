@@ -53,13 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.clParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSubParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -69,6 +62,13 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSubParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -337,70 +337,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(734, 335);
             this.dataGridView1.TabIndex = 38;
-            // 
-            // cl_ver
-            // 
-            this.cl_ver.DataPropertyName = "id";
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 45;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Ver";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 45;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.DataPropertyName = "id";
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modif.";
-            this.cl_modificar.MinimumWidth = 55;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Modificar";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 55;
-            // 
-            // clParte
-            // 
-            this.clParte.HeaderText = "PARTE";
-            this.clParte.MinimumWidth = 100;
-            this.clParte.Name = "clParte";
-            this.clParte.ReadOnly = true;
-            this.clParte.Width = 125;
-            // 
-            // clSubParte
-            // 
-            this.clSubParte.HeaderText = "Sub Parte";
-            this.clSubParte.MinimumWidth = 110;
-            this.clSubParte.Name = "clSubParte";
-            this.clSubParte.ReadOnly = true;
-            this.clSubParte.Width = 165;
-            // 
-            // clCantidad
-            // 
-            this.clCantidad.HeaderText = "Cantidad";
-            this.clCantidad.MinimumWidth = 50;
-            this.clCantidad.Name = "clCantidad";
-            this.clCantidad.ReadOnly = true;
-            this.clCantidad.Width = 75;
-            // 
-            // clEstado
-            // 
-            this.clEstado.HeaderText = "Estado";
-            this.clEstado.MinimumWidth = 65;
-            this.clEstado.Name = "clEstado";
-            this.clEstado.ReadOnly = true;
-            this.clEstado.Width = 65;
-            // 
-            // clObservacion
-            // 
-            this.clObservacion.HeaderText = "Observacion";
-            this.clObservacion.MinimumWidth = 175;
-            this.clObservacion.Name = "clObservacion";
-            this.clObservacion.ReadOnly = true;
-            this.clObservacion.Width = 200;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // label1
             // 
@@ -495,6 +432,75 @@
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // cl_ver
+            // 
+            this.cl_ver.DataPropertyName = "id";
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 45;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 45;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.DataPropertyName = "id";
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modif.";
+            this.cl_modificar.MinimumWidth = 55;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Modificar";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 55;
+            // 
+            // clParte
+            // 
+            this.clParte.DataPropertyName = "catalogo_parte_principal_id";
+            this.clParte.HeaderText = "PARTE";
+            this.clParte.MinimumWidth = 100;
+            this.clParte.Name = "clParte";
+            this.clParte.ReadOnly = true;
+            this.clParte.Width = 125;
+            // 
+            // clSubParte
+            // 
+            this.clSubParte.DataPropertyName = "catalogo_parte_secundaria_id";
+            this.clSubParte.HeaderText = "Sub Parte";
+            this.clSubParte.MinimumWidth = 110;
+            this.clSubParte.Name = "clSubParte";
+            this.clSubParte.ReadOnly = true;
+            this.clSubParte.Width = 165;
+            // 
+            // clCantidad
+            // 
+            this.clCantidad.DataPropertyName = "cantidad";
+            this.clCantidad.HeaderText = "Cantidad";
+            this.clCantidad.MinimumWidth = 50;
+            this.clCantidad.Name = "clCantidad";
+            this.clCantidad.ReadOnly = true;
+            this.clCantidad.Width = 75;
+            // 
+            // clEstado
+            // 
+            this.clEstado.DataPropertyName = "estado";
+            this.clEstado.HeaderText = "Estado";
+            this.clEstado.MinimumWidth = 65;
+            this.clEstado.Name = "clEstado";
+            this.clEstado.ReadOnly = true;
+            this.clEstado.Width = 65;
+            // 
+            // clObservacion
+            // 
+            this.clObservacion.DataPropertyName = "observacion";
+            this.clObservacion.HeaderText = "Observacion";
+            this.clObservacion.MinimumWidth = 175;
+            this.clObservacion.Name = "clObservacion";
+            this.clObservacion.ReadOnly = true;
+            this.clObservacion.Width = 200;
+            // 
             // frmDetalleTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -552,13 +558,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clParte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSubParte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clEstado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clObservacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
@@ -568,5 +567,12 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clParte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSubParte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clObservacion;
     }
 }

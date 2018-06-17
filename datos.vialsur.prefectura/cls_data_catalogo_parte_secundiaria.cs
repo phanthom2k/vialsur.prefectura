@@ -87,5 +87,43 @@ namespace datos.vialsur.prefectura
         }
 
 
+        /// <summary>
+        /// Obtiene el registro de una determinada parte principal
+        /// </summary>
+        /// <param name="ById"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.catalogo_parte_secundaria Parte_Secundaria_Get(int ById)
+        {
+            try
+            {
+                string _sql_consulta = "SELECT[id],[nombre], [catalogo_parte_principal_id],[estado],[tipo_sub_parte] FROM[catalogo_parte_secundaria] where id=@ById; ";
+
+                SqlParameter parametro = new SqlParameter("@ById", SqlDbType.Int);
+                parametro.Value = ById;
+
+                entidades.vialsur.prefectura.catalogo_parte_secundaria obj_partesecundaria = new entidades.vialsur.prefectura.catalogo_parte_secundaria();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, _sql_consulta, parametro);
+
+                while (dr_datos.Read())
+                {
+                    obj_partesecundaria.id = Convert.ToInt32(dr_datos["id"]);
+                    obj_partesecundaria.nombre = dr_datos["nombre"].ToString();
+                    obj_partesecundaria.catalogo_parte_principal_id = Convert.ToInt32(dr_datos["catalogo_parte_principal_id"]);
+                    obj_partesecundaria.estado = Convert.ToInt32(dr_datos["estado"]);
+                    obj_partesecundaria.tipo_sub_parte = Convert.ToInt32(dr_datos["tipo_sub_parte"]);
+
+                }
+                dr_datos.Close();
+                return obj_partesecundaria;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar el detalle de la parte", ex);
+            }
+        }
+
+
     }
 }

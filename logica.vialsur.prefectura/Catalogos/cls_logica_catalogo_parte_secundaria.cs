@@ -32,6 +32,23 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+        /// <summary>
+        /// Consulta la parte secundaria segun su id
+        /// </summary>
+        /// <param name="ById"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.catalogo_parte_secundaria Parte_Secundaria_Get(int ById)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_catalogo_parte_secundiaria().Parte_Secundaria_Get(ById);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrio un problema al realizar la busqueda", ex);
+            }
+        }
+
 
     }
 }

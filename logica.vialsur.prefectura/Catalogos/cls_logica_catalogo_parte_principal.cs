@@ -26,6 +26,25 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+        /// <summary>
+        /// Consulta la parte principal segun su ID
+        /// </summary>
+        /// <param name="ById"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.catalogo_parte_principal Parte_Principal_Get(int ById)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_catalogo_parte_principal().Parte_Principal_Get(ById);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrio un problema al realizar la busqueda", ex);
+            }
+        }
+
+
+        
 
     }
 }
