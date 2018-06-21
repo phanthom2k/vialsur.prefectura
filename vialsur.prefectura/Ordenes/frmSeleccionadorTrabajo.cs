@@ -71,7 +71,7 @@ namespace vialsur.prefectura.Ordenes
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-
+            obj_orden_detalle.id = DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
             obj_orden_detalle.catalogo_parte_principal_id = (int) uc_Catalogo_Parte_Principal1.SelectedValue;
             obj_orden_detalle.catalogo_parte_secundaria_id = (int)uc_Catalogo_Parte_Secundaria1.SelectedValue;
             obj_orden_detalle.accion_requerida = (int)uc_Accion1.SelectedValue;

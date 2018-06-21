@@ -134,7 +134,8 @@ namespace vialsur.prefectura.Ordenes
 
             // if(detalle.FirstOrDefault( x, y =>x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id   )==null )
 
-            if (detalle.Where(x => x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id & x.catalogo_parte_secundaria_id == _det_tmp.catalogo_parte_secundaria_id).FirstOrDefault() == null)
+            if (detalle.Where(x => x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id &
+                              x.catalogo_parte_secundaria_id == _det_tmp.catalogo_parte_secundaria_id).FirstOrDefault() == null)
                 detalle.Add(obj.Obj_orden_detalle);
             else
                 MessageBox.Show("Actividad ya registrada","Error",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1);
@@ -193,6 +194,45 @@ namespace vialsur.prefectura.Ordenes
                 {
 
                 }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
+                {
+                    var objfrmDesignadorTrabajo = new frmSeleccionadorTrabajo();
+                    objfrmDesignadorTrabajo.Obj_orden_detalle = detalle.FirstOrDefault(x => x.id == dataGridView1.Rows[e.RowIndex].Cells["cl_id"].Value.ToString());
+
+                    //var frmpol = new frmPoligonosFichaUnipropiedad2();
+                    //frmpol.Est_Piso_ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["est_piso_ID"].Value.ToString());
+                    //frmpol.Est_Unidad_ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["est_unidad_ID"].Value.ToString());
+                    //if (frmpol.ShowDialog() == DialogResult.Yes)
+                    //{
+                    //    DataTable dt = new lib.Unipropiedad.clsUnipropieadLote().Consultar_ID_POLIGONO_by_est_poligono_id(ID_CUP);
+                    //    dataGridView1.DataSource = dt;
+                    //    PersonalisarGrid(dt);
+                    //}
+                }
+                else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
+                {
+                    //var frmpol = new frmPoligonosFichaUnipropiedad2();
+                    //frmpol.Est_Piso_ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["est_piso_ID"].Value.ToString());
+                    //frmpol.Est_Unidad_ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["est_unidad_ID"].Value.ToString());
+                    //if (frmpol.ShowDialog() == DialogResult.Yes)
+                    //{
+                    //    DataTable dt = new lib.Unipropiedad.clsUnipropieadLote().Consultar_ID_POLIGONO_by_est_poligono_id(ID_CUP);
+                    //    dataGridView1.DataSource = dt;
+                    //    PersonalisarGrid(dt);
+                    //}
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un problema: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
