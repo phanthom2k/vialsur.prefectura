@@ -18,7 +18,6 @@ namespace vialsur.prefectura.Ordenes
             InitializeComponent();
         }
 
-
         ve_vehiculo obj_vehiculo;
         /// <summary>
         /// Obtiene o establece la informacion del vehiculo que se usara
@@ -123,13 +122,27 @@ namespace vialsur.prefectura.Ordenes
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-
             frmSeleccionadorTrabajo obj = new frmSeleccionadorTrabajo();
             obj.Obj_vehiculo = this.obj_vehiculo;
             obj.ShowDialog();
-            detalle.Add(obj.Obj_orden_detalle);
-            dataGridView1.DataSource = detalle;
+
+            var _det_tmp = obj.Obj_orden_detalle;
+
+            // if (objLoteLoteVia.FirstOrDefault(x=>x.via_via_id== obj_lote_lote_via.via_via_id)== null)
+            //objLoteLoteVia.Add(obj_lote_lote_via);
+            //        else  MessageBox.Show("No puede registrar dos veces la misma via.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // if(detalle.FirstOrDefault( x, y =>x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id   )==null )
+
+            if (detalle.Where(x => x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id & x.catalogo_parte_secundaria_id == _det_tmp.catalogo_parte_secundaria_id).FirstOrDefault() == null)
+                detalle.Add(obj.Obj_orden_detalle);
+            else
+                MessageBox.Show("Actividad ya registrada","Error",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1);
+            
+            dataGridView1.DataSource = new BindingSource(detalle, null);            
+            obj.Close();
         }
+
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -158,13 +171,22 @@ namespace vialsur.prefectura.Ordenes
                     e.Value = new logica.vialsur.prefectura.Catalogos.cls_logica_catalogo_parte_secundaria().Parte_Secundaria_Get((int)e.Value).nombre;
                 }
             }
-            //else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "clCantidad")
-            //{
-            //    if (e.Value != null)
-            //    {
-
-            //    }
-            //}
+            else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "ClAccionRealizada")
+            {
+                //if (e.Value != null)
+                {
+                    e.Value = "No Aplica";
+                    e.FormattingApplied = true;
+                }
+            }
+            else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "ClAccionRequerida")
+            {
+                //if (e.Value != null)
+                {                   
+                    e.Value = ((int)e.Value) == 1 ? "CAMBIO" : ((int)e.Value) == 2 ? "LIMPIEZA" : ((int)e.Value) == 3 ? "REVISION" : "OTRO";
+                   // e.FormattingApplied = true;
+                }
+            }
             else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "clEstado")
             {
                 if (e.Value != null)

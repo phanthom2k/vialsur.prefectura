@@ -159,5 +159,31 @@ namespace vialsur.prefectura.Ordenes
                 MessageBox.Show("Existio el siguiente error: "+ex.Message);
             }
         }
+
+        //Verifica que el kilometraje ingresado sea mayor al ultimo
+        private void numericTextBox1_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (int.Parse(numericTextBox1.Text) < new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa))
+                {
+                    MessageBox.Show("El kilometraje ingresado es inferior al registrado");
+                    numericTextBox1.BackColor = Color.Red;
+                }
+                else
+                    numericTextBox1.BackColor = Color.White;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("El kilometraje ingresado es inferior al registrado","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+        }
+
+        
+
     }
 }

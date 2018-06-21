@@ -66,9 +66,13 @@
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSubParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClAccionRequerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClAccionRealizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClOrdenId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -327,9 +331,13 @@
             this.cl_modificar,
             this.clParte,
             this.clSubParte,
+            this.ClAccionRequerida,
+            this.ClAccionRealizada,
             this.clCantidad,
+            this.clObservacion,
             this.clEstado,
-            this.clObservacion});
+            this.ClOrdenId,
+            this.ClOrden});
             this.dataGridView1.Location = new System.Drawing.Point(4, 331);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -459,7 +467,7 @@
             // clParte
             // 
             this.clParte.DataPropertyName = "catalogo_parte_principal_id";
-            this.clParte.HeaderText = "PARTE";
+            this.clParte.HeaderText = "Parte Principal";
             this.clParte.MinimumWidth = 100;
             this.clParte.Name = "clParte";
             this.clParte.ReadOnly = true;
@@ -469,10 +477,28 @@
             // 
             this.clSubParte.DataPropertyName = "catalogo_parte_secundaria_id";
             this.clSubParte.HeaderText = "Sub Parte";
+            this.clSubParte.MaxInputLength = 20;
             this.clSubParte.MinimumWidth = 110;
             this.clSubParte.Name = "clSubParte";
             this.clSubParte.ReadOnly = true;
             this.clSubParte.Width = 165;
+            // 
+            // ClAccionRequerida
+            // 
+            this.ClAccionRequerida.DataPropertyName = "accion_requerida";
+            this.ClAccionRequerida.HeaderText = "Acción Requerida";
+            this.ClAccionRequerida.MaxInputLength = 100;
+            this.ClAccionRequerida.Name = "ClAccionRequerida";
+            this.ClAccionRequerida.ReadOnly = true;
+            this.ClAccionRequerida.Width = 150;
+            // 
+            // ClAccionRealizada
+            // 
+            this.ClAccionRealizada.DataPropertyName = "accion_realizada";
+            this.ClAccionRealizada.HeaderText = "Acción Realizada";
+            this.ClAccionRealizada.Name = "ClAccionRealizada";
+            this.ClAccionRealizada.ReadOnly = true;
+            this.ClAccionRealizada.Width = 90;
             // 
             // clCantidad
             // 
@@ -483,6 +509,15 @@
             this.clCantidad.ReadOnly = true;
             this.clCantidad.Width = 75;
             // 
+            // clObservacion
+            // 
+            this.clObservacion.DataPropertyName = "observacion";
+            this.clObservacion.HeaderText = "Observacion";
+            this.clObservacion.MinimumWidth = 175;
+            this.clObservacion.Name = "clObservacion";
+            this.clObservacion.ReadOnly = true;
+            this.clObservacion.Width = 200;
+            // 
             // clEstado
             // 
             this.clEstado.DataPropertyName = "estado";
@@ -492,14 +527,21 @@
             this.clEstado.ReadOnly = true;
             this.clEstado.Width = 65;
             // 
-            // clObservacion
+            // ClOrdenId
             // 
-            this.clObservacion.DataPropertyName = "observacion";
-            this.clObservacion.HeaderText = "Observacion";
-            this.clObservacion.MinimumWidth = 175;
-            this.clObservacion.Name = "clObservacion";
-            this.clObservacion.ReadOnly = true;
-            this.clObservacion.Width = 200;
+            this.ClOrdenId.DataPropertyName = "orden_id";
+            this.ClOrdenId.HeaderText = "Orden Id";
+            this.ClOrdenId.Name = "ClOrdenId";
+            this.ClOrdenId.ReadOnly = true;
+            this.ClOrdenId.Visible = false;
+            // 
+            // ClOrden
+            // 
+            this.ClOrden.DataPropertyName = "orden";
+            this.ClOrden.HeaderText = "Orden";
+            this.ClOrden.Name = "ClOrden";
+            this.ClOrden.ReadOnly = true;
+            this.ClOrden.Visible = false;
             // 
             // frmDetalleTrabajos
             // 
@@ -571,8 +613,12 @@
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn clParte;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSubParte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClAccionRequerida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClAccionRealizada;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn clObservacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClOrdenId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClOrden;
     }
 }

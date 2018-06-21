@@ -59,12 +59,12 @@
             this.btn_Siguiente = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.uc_Empleados2 = new vialsur.prefectura.uc.uc_Empleados();
-            this.uc_Empleados1 = new vialsur.prefectura.uc.uc_Empleados();
-            this.uc_TipoMantenimiento1 = new vialsur.prefectura.uc.uc_TipoMantenimiento();
             this.label16 = new System.Windows.Forms.Label();
             this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.uc_Empleados2 = new vialsur.prefectura.uc.uc_Empleados();
+            this.uc_Empleados1 = new vialsur.prefectura.uc.uc_Empleados();
+            this.uc_TipoMantenimiento1 = new vialsur.prefectura.uc.uc_TipoMantenimiento();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -387,6 +387,35 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "CUSTODIO DEL VEHICULO:";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(12, 307);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(220, 17);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "KILOMETRAJE DE INGRESO:";
+            // 
+            // numericTextBox1
+            // 
+            this.numericTextBox1.AllowSpace = false;
+            this.numericTextBox1.Location = new System.Drawing.Point(225, 304);
+            this.numericTextBox1.MaxLength = 10;
+            this.numericTextBox1.Name = "numericTextBox1";
+            this.numericTextBox1.Size = new System.Drawing.Size(115, 22);
+            this.numericTextBox1.TabIndex = 20;
+            this.numericTextBox1.Leave += new System.EventHandler(this.numericTextBox1_Leave);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(339, 308);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(28, 17);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "Km";
+            // 
             // uc_Empleados2
             // 
             this.uc_Empleados2.Ancho = 121;
@@ -419,33 +448,6 @@
             this.uc_TipoMantenimiento1.Name = "uc_TipoMantenimiento1";
             this.uc_TipoMantenimiento1.Size = new System.Drawing.Size(518, 24);
             this.uc_TipoMantenimiento1.TabIndex = 9;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 307);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(220, 17);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "KILOMETRAJE DE INGRESO:";
-            // 
-            // numericTextBox1
-            // 
-            this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(225, 304);
-            this.numericTextBox1.Name = "numericTextBox1";
-            this.numericTextBox1.Size = new System.Drawing.Size(115, 22);
-            this.numericTextBox1.TabIndex = 20;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(339, 308);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(28, 17);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "Km";
             // 
             // frmDesignacionMantenimientoRespondable
             // 

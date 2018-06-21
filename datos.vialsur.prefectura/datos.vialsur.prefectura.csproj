@@ -44,6 +44,7 @@
     <Compile Include="cls_data_catalogo_parte_principal.cs" />
     <Compile Include="cls_data_catalogo_parte_secundiaria.cs" />
     <Compile Include="cls_data_emp_empleado.cs" />
+    <Compile Include="cls_data_orden.cs" />
     <Compile Include="cls_data_pais.cs" />
     <Compile Include="cls_data_per_persona.cs" />
     <Compile Include="cls_data_ve_vehiculo.cs" />
