@@ -124,24 +124,29 @@ namespace vialsur.prefectura.Ordenes
         {
             frmSeleccionadorTrabajo obj = new frmSeleccionadorTrabajo();
             obj.Obj_vehiculo = this.obj_vehiculo;
-            obj.ShowDialog();
+            obj.EsLectura = false;
+            if (obj.ShowDialog() == DialogResult.Yes)
+            {
+                var _det_tmp = obj.Obj_orden_detalle;
 
-            var _det_tmp = obj.Obj_orden_detalle;
+                // if (objLoteLoteVia.FirstOrDefault(x=>x.via_via_id== obj_lote_lote_via.via_via_id)== null)
+                //objLoteLoteVia.Add(obj_lote_lote_via);
+                //        else  MessageBox.Show("No puede registrar dos veces la misma via.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // if (objLoteLoteVia.FirstOrDefault(x=>x.via_via_id== obj_lote_lote_via.via_via_id)== null)
-            //objLoteLoteVia.Add(obj_lote_lote_via);
-            //        else  MessageBox.Show("No puede registrar dos veces la misma via.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // if(detalle.FirstOrDefault( x, y =>x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id   )==null )
 
-            // if(detalle.FirstOrDefault( x, y =>x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id   )==null )
+                if (detalle.Where(x => x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id &
+                                  x.catalogo_parte_secundaria_id == _det_tmp.catalogo_parte_secundaria_id).FirstOrDefault() == null)
+                    detalle.Add(obj.Obj_orden_detalle);
+                else
+                    MessageBox.Show("Actividad ya registrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 
-            if (detalle.Where(x => x.catalogo_parte_principal_id == _det_tmp.catalogo_parte_principal_id &
-                              x.catalogo_parte_secundaria_id == _det_tmp.catalogo_parte_secundaria_id).FirstOrDefault() == null)
-                detalle.Add(obj.Obj_orden_detalle);
-            else
-                MessageBox.Show("Actividad ya registrada","Error",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button1);
+                dataGridView1.DataSource = new BindingSource(detalle, null);
+                obj.Close();
+
+            }
             
-            dataGridView1.DataSource = new BindingSource(detalle, null);            
-            obj.Close();
+                       
         }
 
 
@@ -201,32 +206,27 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
                 {
                     var objfrmDesignadorTrabajo = new frmSeleccionadorTrabajo();
+                    objfrmDesignadorTrabajo.Obj_vehiculo = this.obj_vehiculo;
                     objfrmDesignadorTrabajo.Obj_orden_detalle = detalle.FirstOrDefault(x => x.id == dataGridView1.Rows[e.RowIndex].Cells["cl_id"].Value.ToString());
-
-                    //var frmpol = new frmPoligonosFichaUnipropiedad2();
-                    //frmpol.Est_Piso_ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["est_piso_ID"].Value.ToString());
-                    //frmpol.Est_Unidad_ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["est_unidad_ID"].Value.ToString());
-                    //if (frmpol.ShowDialog() == DialogResult.Yes)
-                    //{
-                    //    DataTable dt = new lib.Unipropiedad.clsUnipropieadLote().Consultar_ID_POLIGONO_by_est_poligono_id(ID_CUP);
-                    //    dataGridView1.DataSource = dt;
-                    //    PersonalisarGrid(dt);
-                    //}
+                    objfrmDesignadorTrabajo.EsActualizacion = true;
+                    if( objfrmDesignadorTrabajo.ShowDialog() ==DialogResult.Yes) //si guardo
+                    {
+                        detalle.Remove(detalle.FirstOrDefault(x => x.id == dataGridView1.Rows[e.RowIndex].Cells["cl_id"].Value.ToString()));
+                        detalle.Add(objfrmDesignadorTrabajo.Obj_orden_detalle);
+                    }
+                    
                 }
-                else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
+                else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
                 {
-                    //var frmpol = new frmPoligonosFichaUnipropiedad2();
-                    //frmpol.Est_Piso_ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["est_piso_ID"].Value.ToString());
-                    //frmpol.Est_Unidad_ID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["est_unidad_ID"].Value.ToString());
-                    //if (frmpol.ShowDialog() == DialogResult.Yes)
-                    //{
-                    //    DataTable dt = new lib.Unipropiedad.clsUnipropieadLote().Consultar_ID_POLIGONO_by_est_poligono_id(ID_CUP);
-                    //    dataGridView1.DataSource = dt;
-                    //    PersonalisarGrid(dt);
-                    //}
+                    var objfrmDesignadorTrabajo = new frmSeleccionadorTrabajo();
+                    objfrmDesignadorTrabajo.Obj_vehiculo = this.obj_vehiculo;
+                    objfrmDesignadorTrabajo.Obj_orden_detalle = detalle.FirstOrDefault(x => x.id == dataGridView1.Rows[e.RowIndex].Cells["cl_id"].Value.ToString());
+                    objfrmDesignadorTrabajo.EsLectura = true;
+                    objfrmDesignadorTrabajo.ShowDialog();
+
                 }
 
             }

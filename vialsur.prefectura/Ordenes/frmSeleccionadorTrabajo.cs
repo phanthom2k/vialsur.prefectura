@@ -17,6 +17,16 @@ namespace vialsur.prefectura.Ordenes
         public frmSeleccionadorTrabajo()
         {
             InitializeComponent();
+            EsActualizacion = false;
+            EsLectura = false;
+        }
+        
+        public bool EsActualizacion { get; set; }
+        public bool EsLectura { get; set; }
+
+        void Congelar()
+        {
+            toolStripButton2.Enabled = !EsLectura;
         }
 
         ve_vehiculo obj_vehiculo;
@@ -52,11 +62,23 @@ namespace vialsur.prefectura.Ordenes
 
         private void frmSeleccionadorTrabajo_Load(object sender, EventArgs e)
         {
+            
             uc_Catalogo_Parte_Principal1.CargarDatos();
             uc_Catalogo_Parte_Secundaria1.CargarDatos();
             uc_Accion1.CargarDatos();
+            if (obj_orden_detalle != null )  //para mostrar para modificar
+            {
+                uc_Catalogo_Parte_Principal1.SelectedValue = obj_orden_detalle.catalogo_parte_principal_id;
+                uc_Catalogo_Parte_Secundaria1.SelectedValue = obj_orden_detalle.catalogo_parte_secundaria_id;
+                uc_Accion1.SelectedValue = obj_orden_detalle.accion_requerida;
+                numericUpDown1.Value = Convert.ToInt32(obj_orden_detalle.cantidad);
+                lettersTextBox1.Text = obj_orden_detalle.observacion;
+                checkBox1.Checked = (bool)obj_orden_detalle.estado;
+            }
+            else  //en el caso de que sea nueva
+                    obj_orden_detalle = new orde_detalle();
 
-            obj_orden_detalle = new orde_detalle();
+            Congelar();
         }
 
 
@@ -71,13 +93,19 @@ namespace vialsur.prefectura.Ordenes
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            obj_orden_detalle.id = DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
-            obj_orden_detalle.catalogo_parte_principal_id = (int) uc_Catalogo_Parte_Principal1.SelectedValue;
+            if(!EsActualizacion) //si es nuevo
+            {
+                obj_orden_detalle.id = DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
+            }
+                        
+            obj_orden_detalle.catalogo_parte_principal_id = (int)uc_Catalogo_Parte_Principal1.SelectedValue;
             obj_orden_detalle.catalogo_parte_secundaria_id = (int)uc_Catalogo_Parte_Secundaria1.SelectedValue;
             obj_orden_detalle.accion_requerida = (int)uc_Accion1.SelectedValue;
             obj_orden_detalle.cantidad = (int)numericUpDown1.Value;
             obj_orden_detalle.observacion = lettersTextBox1.Text;
             obj_orden_detalle.estado = checkBox1.Enabled;
+
+            this.DialogResult = DialogResult.Yes;
             this.Close();
 
 

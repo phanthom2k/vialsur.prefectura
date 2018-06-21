@@ -53,17 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.clParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSubParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClAccionRequerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClAccionRealizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClOrdenId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,6 +62,18 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSubParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClAccionRequerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClAccionRealizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClOrdenId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -329,6 +330,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl_ver,
             this.cl_modificar,
+            this.cl_id,
             this.clParte,
             this.clSubParte,
             this.ClAccionRequerida,
@@ -343,113 +345,10 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 335);
+            this.dataGridView1.Size = new System.Drawing.Size(830, 335);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // cl_ver
-            // 
-            this.cl_ver.DataPropertyName = "id";
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 45;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Ver";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 45;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.DataPropertyName = "id";
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modif.";
-            this.cl_modificar.MinimumWidth = 55;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Modificar";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 55;
-            // 
-            // clParte
-            // 
-            this.clParte.DataPropertyName = "catalogo_parte_principal_id";
-            this.clParte.HeaderText = "Parte Principal";
-            this.clParte.MinimumWidth = 100;
-            this.clParte.Name = "clParte";
-            this.clParte.ReadOnly = true;
-            this.clParte.Width = 125;
-            // 
-            // clSubParte
-            // 
-            this.clSubParte.DataPropertyName = "catalogo_parte_secundaria_id";
-            this.clSubParte.HeaderText = "Sub Parte";
-            this.clSubParte.MaxInputLength = 20;
-            this.clSubParte.MinimumWidth = 110;
-            this.clSubParte.Name = "clSubParte";
-            this.clSubParte.ReadOnly = true;
-            this.clSubParte.Width = 165;
-            // 
-            // ClAccionRequerida
-            // 
-            this.ClAccionRequerida.DataPropertyName = "accion_requerida";
-            this.ClAccionRequerida.HeaderText = "Acción Requerida";
-            this.ClAccionRequerida.MaxInputLength = 100;
-            this.ClAccionRequerida.Name = "ClAccionRequerida";
-            this.ClAccionRequerida.ReadOnly = true;
-            this.ClAccionRequerida.Width = 150;
-            // 
-            // ClAccionRealizada
-            // 
-            this.ClAccionRealizada.DataPropertyName = "accion_realizada";
-            this.ClAccionRealizada.HeaderText = "Acción Realizada";
-            this.ClAccionRealizada.Name = "ClAccionRealizada";
-            this.ClAccionRealizada.ReadOnly = true;
-            this.ClAccionRealizada.Width = 90;
-            // 
-            // clCantidad
-            // 
-            this.clCantidad.DataPropertyName = "cantidad";
-            this.clCantidad.HeaderText = "Cantidad";
-            this.clCantidad.MinimumWidth = 50;
-            this.clCantidad.Name = "clCantidad";
-            this.clCantidad.ReadOnly = true;
-            this.clCantidad.Width = 75;
-            // 
-            // clObservacion
-            // 
-            this.clObservacion.DataPropertyName = "observacion";
-            this.clObservacion.HeaderText = "Observacion";
-            this.clObservacion.MinimumWidth = 175;
-            this.clObservacion.Name = "clObservacion";
-            this.clObservacion.ReadOnly = true;
-            this.clObservacion.Width = 200;
-            // 
-            // clEstado
-            // 
-            this.clEstado.DataPropertyName = "estado";
-            this.clEstado.HeaderText = "Estado";
-            this.clEstado.MinimumWidth = 65;
-            this.clEstado.Name = "clEstado";
-            this.clEstado.ReadOnly = true;
-            this.clEstado.Width = 65;
-            // 
-            // ClOrdenId
-            // 
-            this.ClOrdenId.DataPropertyName = "orden_id";
-            this.ClOrdenId.HeaderText = "Orden Id";
-            this.ClOrdenId.Name = "ClOrdenId";
-            this.ClOrdenId.ReadOnly = true;
-            this.ClOrdenId.Visible = false;
-            // 
-            // ClOrden
-            // 
-            this.ClOrden.DataPropertyName = "orden";
-            this.ClOrden.HeaderText = "Orden";
-            this.ClOrden.Name = "ClOrden";
-            this.ClOrden.ReadOnly = true;
-            this.ClOrden.Visible = false;
             // 
             // label1
             // 
@@ -521,7 +420,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(747, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(843, 52);
             this.toolStrip1.TabIndex = 60;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -544,11 +443,125 @@
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // cl_ver
+            // 
+            this.cl_ver.DataPropertyName = "id";
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 45;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 45;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.DataPropertyName = "id";
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modif.";
+            this.cl_modificar.MinimumWidth = 55;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Modif.";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 55;
+            // 
+            // cl_id
+            // 
+            this.cl_id.DataPropertyName = "id";
+            this.cl_id.HeaderText = "cl_id";
+            this.cl_id.MaxInputLength = 10;
+            this.cl_id.Name = "cl_id";
+            this.cl_id.ReadOnly = true;
+            this.cl_id.Visible = false;
+            // 
+            // clParte
+            // 
+            this.clParte.DataPropertyName = "catalogo_parte_principal_id";
+            this.clParte.HeaderText = "Parte Principal";
+            this.clParte.MinimumWidth = 100;
+            this.clParte.Name = "clParte";
+            this.clParte.ReadOnly = true;
+            this.clParte.Width = 125;
+            // 
+            // clSubParte
+            // 
+            this.clSubParte.DataPropertyName = "catalogo_parte_secundaria_id";
+            this.clSubParte.HeaderText = "Sub Parte";
+            this.clSubParte.MaxInputLength = 20;
+            this.clSubParte.MinimumWidth = 110;
+            this.clSubParte.Name = "clSubParte";
+            this.clSubParte.ReadOnly = true;
+            this.clSubParte.Width = 165;
+            // 
+            // ClAccionRequerida
+            // 
+            this.ClAccionRequerida.DataPropertyName = "accion_requerida";
+            this.ClAccionRequerida.HeaderText = "Acción Requerida";
+            this.ClAccionRequerida.MaxInputLength = 100;
+            this.ClAccionRequerida.Name = "ClAccionRequerida";
+            this.ClAccionRequerida.ReadOnly = true;
+            this.ClAccionRequerida.Width = 150;
+            // 
+            // ClAccionRealizada
+            // 
+            this.ClAccionRealizada.DataPropertyName = "accion_realizada";
+            this.ClAccionRealizada.HeaderText = "Acción Realizada";
+            this.ClAccionRealizada.MaxInputLength = 100;
+            this.ClAccionRealizada.Name = "ClAccionRealizada";
+            this.ClAccionRealizada.ReadOnly = true;
+            this.ClAccionRealizada.Visible = false;
+            this.ClAccionRealizada.Width = 90;
+            // 
+            // clCantidad
+            // 
+            this.clCantidad.DataPropertyName = "cantidad";
+            this.clCantidad.HeaderText = "Cantidad";
+            this.clCantidad.MinimumWidth = 50;
+            this.clCantidad.Name = "clCantidad";
+            this.clCantidad.ReadOnly = true;
+            this.clCantidad.Width = 75;
+            // 
+            // clObservacion
+            // 
+            this.clObservacion.DataPropertyName = "observacion";
+            this.clObservacion.HeaderText = "Observacion";
+            this.clObservacion.MinimumWidth = 175;
+            this.clObservacion.Name = "clObservacion";
+            this.clObservacion.ReadOnly = true;
+            this.clObservacion.Width = 200;
+            // 
+            // clEstado
+            // 
+            this.clEstado.DataPropertyName = "estado";
+            this.clEstado.HeaderText = "Estado";
+            this.clEstado.MinimumWidth = 65;
+            this.clEstado.Name = "clEstado";
+            this.clEstado.ReadOnly = true;
+            this.clEstado.Width = 65;
+            // 
+            // ClOrdenId
+            // 
+            this.ClOrdenId.DataPropertyName = "orden_id";
+            this.ClOrdenId.HeaderText = "Orden Id";
+            this.ClOrdenId.Name = "ClOrdenId";
+            this.ClOrdenId.ReadOnly = true;
+            this.ClOrdenId.Visible = false;
+            // 
+            // ClOrden
+            // 
+            this.ClOrden.DataPropertyName = "orden";
+            this.ClOrden.HeaderText = "Orden";
+            this.ClOrden.Name = "ClOrden";
+            this.ClOrden.ReadOnly = true;
+            this.ClOrden.Visible = false;
+            // 
             // frmDetalleTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 678);
+            this.ClientSize = new System.Drawing.Size(843, 678);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblTipoMantenimiento);
             this.Controls.Add(this.lblNombresCustodioVehiculo);
@@ -612,6 +625,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn clParte;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSubParte;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClAccionRequerida;
