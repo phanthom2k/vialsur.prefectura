@@ -81,6 +81,71 @@ namespace datos.vialsur.prefectura
         }
 
 
+        public string Insertar_orden(entidades.vialsur.prefectura.orden _orden)
+        {
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>();
+
+                #region parametros
+                SqlParameter _id = new SqlParameter("@id", SqlDbType.NChar, 10 );
+                _id.Direction = ParameterDirection.Output;
+                _id.Value = _orden.id;
+                parameters.Add(_id);
+            
+                SqlParameter _tipo_oden = new SqlParameter("@tipo_oden", SqlDbType.Int);
+                _tipo_oden.Value = _orden.tipo_oden;
+                parameters.Add(_tipo_oden);
+
+                SqlParameter _fecha = new SqlParameter("@fecha", SqlDbType.Date);
+                _fecha.Value = _orden.fecha;
+                parameters.Add(_fecha);
+
+                SqlParameter _hora = new SqlParameter("@hora", SqlDbType.Time );
+                _hora.Value = _orden.hora;
+                parameters.Add(_hora);
+
+
+                SqlParameter _estado = new SqlParameter("@estado", SqlDbType.Int );
+                _estado.Value = _orden.estado;
+                parameters.Add(_estado);
+
+                SqlParameter _ve_vehiculo_responsable_id = new SqlParameter("@ve_vehiculo_responsable_id", SqlDbType.Int);
+                _ve_vehiculo_responsable_id.Value = _orden.ve_vehiculo_responsable_id;
+                parameters.Add(_ve_vehiculo_responsable_id);
+
+                SqlParameter _per_persona_cedula = new SqlParameter("@per_persona_cedula", SqlDbType.NChar, 10 );
+                _per_persona_cedula.Value = _orden.per_persona_numero_cedula;
+                parameters.Add(_per_persona_cedula);
+
+                SqlParameter _observacion = new SqlParameter("@observacion", SqlDbType.Text);
+                _observacion.Value = _orden.observacion;
+                parameters.Add(_observacion);
+
+                SqlParameter _km_ingreso = new SqlParameter("@km_ingreso", SqlDbType.Int);
+                _km_ingreso.Value = _orden.km_ingreso;
+                parameters.Add(_km_ingreso);
+
+                SqlParameter _km_egreso = new SqlParameter("@km_egreso", SqlDbType.Int);
+                _km_egreso.Value = _orden.km_egreso;
+                parameters.Add(_km_egreso);
+
+                #endregion
+
+                SqlHelper.ExecuteNonQuery(_con, CommandType.StoredProcedure, "dbo.ORDEN_SP_INSERT", parameters.ToArray());
+
+                return _id.Value.ToString();
+
+                //  int customerId = SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_insert, parameters.ToArray());                 
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo registrar los datos de la persona", ex);
+            }
+        }
+
+
 
 
     }
