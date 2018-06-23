@@ -205,7 +205,8 @@ namespace vialsur.prefectura.Ordenes
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {
+            {                
+
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
                 {
                     var objfrmDesignadorTrabajo = new frmSeleccionadorTrabajo();
@@ -234,6 +235,25 @@ namespace vialsur.prefectura.Ordenes
             {
                 MessageBox.Show("Ocurrio un problema: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {                                
+                var obj_logica_orden = new logica.vialsur.prefectura.Orden.cls_logica_orden();
+
+                string ID_ORDEN = obj_logica_orden.RegistrarOrdenMantenimiento(obj_vehiculo, obj_orden, detalle);
+
+                MessageBox.Show("ORden: "+ID_ORDEN);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERR: "+ex.Message);                
+            }
+
         }
     }
 }

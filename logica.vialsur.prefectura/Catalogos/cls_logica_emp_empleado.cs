@@ -120,7 +120,7 @@ namespace logica.vialsur.prefectura.Catalogos
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

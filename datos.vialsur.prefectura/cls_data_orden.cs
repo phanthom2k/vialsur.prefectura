@@ -80,7 +80,11 @@ namespace datos.vialsur.prefectura
             }
         }
 
-
+        /// <summary>
+        /// Inserta el registro en la tabla orden, retorna el ID de la orden
+        /// </summary>
+        /// <param name="_orden">Obj. Orden</param>
+        /// <returns></returns>
         public string Insertar_orden(entidades.vialsur.prefectura.orden _orden)
         {
             try
@@ -134,7 +138,7 @@ namespace datos.vialsur.prefectura
 
                 SqlHelper.ExecuteNonQuery(_con, CommandType.StoredProcedure, "dbo.ORDEN_SP_INSERT", parameters.ToArray());
 
-                return _id.Value.ToString();
+                return _id.Value.ToString().Trim();
 
                 //  int customerId = SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_insert, parameters.ToArray());                 
 
