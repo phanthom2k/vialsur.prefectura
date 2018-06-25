@@ -46,6 +46,25 @@ namespace logica.vialsur.prefectura.Orden
             }
         }
 
+        /// <summary>
+        /// Retorna un datatable para ser usado en la grilla del listado de ordenes
+        /// </summary>
+        /// <param name="Cedula"></param>
+        /// <param name="Placa"></param>
+        /// <param name="id_orden"></param>
+        /// <returns></returns>
+        public System.Data.DataTable ConnsultarOrdenesAsignadasTecnicosPorCedula_UI(string Cedula,string Placa, string id_orden)
+        {
+            try
+            {
+                return new cls_data_orden().ObtenerOrdenesByTecnicoAsignado_UI(Cedula,Placa, id_orden );
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
 
     }

@@ -168,7 +168,7 @@ namespace vialsur.prefectura.Ordenes
 
                 if (int.Parse(numericTextBox1.Text) < new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa))
                 {
-                    MessageBox.Show("El kilometraje ingresado es inferior al registrado");
+                    MessageBox.Show("El kilometraje ingresado es inferior al registrado"+ new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa));
                     numericTextBox1.BackColor = Color.Red;
                 }
                 else

@@ -150,6 +150,65 @@ namespace datos.vialsur.prefectura
         }
 
 
+        /// <summary>
+        /// Retorna las ordenes de determinado mecanico segun su cedula
+        /// </summary>
+        /// <param name="Cedula"></param>
+        /// <param name="Placa"></param>
+        /// <param name="id_orden"></param>
+        /// <returns></returns>
+        public DataTable ObtenerOrdenesByTecnicoAsignado_UI(string Cedula, string Placa, string id_orden)
+        {
+            string consulta_sql =
+                    //"SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
+                    //"orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, " +
+                    //"ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id," +
+                    //"ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
+                    //"ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
+                    //"FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
+                    //"WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula " +
+                    //"ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC ";
+
+                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
+                   "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso,  " +
+                   "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
+                   "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
+                   "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
+                    "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
+                    "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
+                    "WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula " +
+                    "OR ve_vehiculo.placa = @Placa  " +
+                    "OR orden.id = @id_orden " +
+                    "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
+
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>();
+
+                SqlParameter parametro1 = new SqlParameter("@Cedula", SqlDbType.NChar,10 );
+                parametro1.Value = Cedula;
+                parameters.Add(parametro1);
+
+                SqlParameter parametro2 = new SqlParameter("@Placa", SqlDbType.NChar, 10);
+                parametro2.Value = Placa;
+                parameters.Add(parametro2);
+
+                SqlParameter parametro3 = new SqlParameter("@id_orden", SqlDbType.NChar, 10);
+                parametro3.Value = id_orden;
+                parameters.Add(parametro3);
+
+
+                return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parameters.ToArray() ).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos del vehiculo: " + ex.Message);
+            }
+        }
+
+
+
+
 
 
     }

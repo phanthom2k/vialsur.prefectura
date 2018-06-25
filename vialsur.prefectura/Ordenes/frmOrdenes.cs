@@ -29,5 +29,30 @@ namespace vialsur.prefectura.Ordenes
 
 
         }
+
+        void CargarDatosGrilla(string cedula="", string Placa="", string id_orden="")
+        {
+            try
+            {
+                dataGridView1.DataSource = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI(cedula, Placa, id_orden);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void frmOrdenes_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                CargarDatosGrilla("1104126626");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

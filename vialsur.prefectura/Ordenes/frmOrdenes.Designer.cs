@@ -38,21 +38,29 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_activacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_oden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ve_vehiculo_responsable_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chofer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.km_ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.km_egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedula_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ve_vehiculo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ve_vehiculo_responsable_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ve_vehiculo_responsable_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -67,7 +75,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1035, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(1211, 52);
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -149,100 +157,28 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl_ver,
             this.cl_modificar,
-            this.cedula,
-            this.nombres,
-            this.apellidos,
             this.id,
-            this.activo,
-            this.fecha_activacion,
-            this.tipo_usuario});
+            this.tipo_oden,
+            this.fecha,
+            this.hora,
+            this.estado,
+            this.ve_vehiculo_responsable_id,
+            this.chofer,
+            this.observacion,
+            this.km_ingreso,
+            this.km_egreso,
+            this.cedula_responsable,
+            this.ve_vehiculo_id,
+            this.ve_vehiculo_responsable_estado,
+            this.ve_vehiculo_responsable_fecha,
+            this.tipo_responsable});
             this.dataGridView1.Location = new System.Drawing.Point(12, 151);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1324, 495);
+            this.dataGridView1.Size = new System.Drawing.Size(1177, 448);
             this.dataGridView1.TabIndex = 37;
-            // 
-            // cl_ver
-            // 
-            this.cl_ver.DataPropertyName = "id";
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 57;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Ver";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 57;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.DataPropertyName = "id";
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modificar";
-            this.cl_modificar.MinimumWidth = 75;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Modificar";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 75;
-            // 
-            // cedula
-            // 
-            this.cedula.DataPropertyName = "cedula";
-            this.cedula.HeaderText = "cedula";
-            this.cedula.Name = "cedula";
-            this.cedula.ReadOnly = true;
-            // 
-            // nombres
-            // 
-            this.nombres.DataPropertyName = "nombres";
-            this.nombres.FillWeight = 200F;
-            this.nombres.HeaderText = "nombres";
-            this.nombres.MaxInputLength = 150;
-            this.nombres.MinimumWidth = 220;
-            this.nombres.Name = "nombres";
-            this.nombres.ReadOnly = true;
-            this.nombres.Width = 220;
-            // 
-            // apellidos
-            // 
-            this.apellidos.DataPropertyName = "apellidos";
-            this.apellidos.FillWeight = 200F;
-            this.apellidos.HeaderText = "apellidos";
-            this.apellidos.MinimumWidth = 220;
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            this.apellidos.Width = 220;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "emp_empleado.id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // activo
-            // 
-            this.activo.DataPropertyName = "activo";
-            this.activo.HeaderText = "activo";
-            this.activo.Name = "activo";
-            this.activo.ReadOnly = true;
-            // 
-            // fecha_activacion
-            // 
-            this.fecha_activacion.DataPropertyName = "fecha_activacion";
-            this.fecha_activacion.HeaderText = "fecha_activacion";
-            this.fecha_activacion.Name = "fecha_activacion";
-            this.fecha_activacion.ReadOnly = true;
-            // 
-            // tipo_usuario
-            // 
-            this.tipo_usuario.DataPropertyName = "tipo_usuario";
-            this.tipo_usuario.HeaderText = "tipo_usuario";
-            this.tipo_usuario.Name = "tipo_usuario";
-            this.tipo_usuario.ReadOnly = true;
             // 
             // button2
             // 
@@ -291,7 +227,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 602);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1035, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(1211, 25);
             this.statusStrip1.TabIndex = 43;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -301,11 +237,140 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // cl_ver
+            // 
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modif.";
+            this.cl_modificar.MinimumWidth = 70;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Modif.";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 70;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // tipo_oden
+            // 
+            this.tipo_oden.DataPropertyName = "tipo_oden";
+            this.tipo_oden.HeaderText = "tipo_oden";
+            this.tipo_oden.MinimumWidth = 55;
+            this.tipo_oden.Name = "tipo_oden";
+            this.tipo_oden.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.DataPropertyName = "fecha";
+            this.fecha.HeaderText = "fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // hora
+            // 
+            this.hora.DataPropertyName = "hora";
+            this.hora.HeaderText = "hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
+            // ve_vehiculo_responsable_id
+            // 
+            this.ve_vehiculo_responsable_id.DataPropertyName = "ve_vehiculo_responsable_id";
+            this.ve_vehiculo_responsable_id.HeaderText = "ve_vehiculo_responsable_id";
+            this.ve_vehiculo_responsable_id.Name = "ve_vehiculo_responsable_id";
+            this.ve_vehiculo_responsable_id.ReadOnly = true;
+            // 
+            // chofer
+            // 
+            this.chofer.DataPropertyName = "chofer";
+            this.chofer.HeaderText = "chofer";
+            this.chofer.MinimumWidth = 55;
+            this.chofer.Name = "chofer";
+            this.chofer.ReadOnly = true;
+            // 
+            // observacion
+            // 
+            this.observacion.DataPropertyName = "observacion";
+            this.observacion.HeaderText = "observacion";
+            this.observacion.Name = "observacion";
+            this.observacion.ReadOnly = true;
+            // 
+            // km_ingreso
+            // 
+            this.km_ingreso.DataPropertyName = "km_ingreso";
+            this.km_ingreso.HeaderText = "km_ingreso";
+            this.km_ingreso.Name = "km_ingreso";
+            this.km_ingreso.ReadOnly = true;
+            // 
+            // km_egreso
+            // 
+            this.km_egreso.DataPropertyName = "km_egreso";
+            this.km_egreso.HeaderText = "km_egreso";
+            this.km_egreso.Name = "km_egreso";
+            this.km_egreso.ReadOnly = true;
+            // 
+            // cedula_responsable
+            // 
+            this.cedula_responsable.DataPropertyName = "cedula_responsable";
+            this.cedula_responsable.HeaderText = "cedula_responsable";
+            this.cedula_responsable.Name = "cedula_responsable";
+            this.cedula_responsable.ReadOnly = true;
+            // 
+            // ve_vehiculo_id
+            // 
+            this.ve_vehiculo_id.DataPropertyName = "ve_vehiculo_id";
+            this.ve_vehiculo_id.HeaderText = "ve_vehiculo_id";
+            this.ve_vehiculo_id.Name = "ve_vehiculo_id";
+            this.ve_vehiculo_id.ReadOnly = true;
+            // 
+            // ve_vehiculo_responsable_estado
+            // 
+            this.ve_vehiculo_responsable_estado.DataPropertyName = "ve_vehiculo_responsable_estado";
+            this.ve_vehiculo_responsable_estado.HeaderText = "ve_vehiculo_responsable_estado";
+            this.ve_vehiculo_responsable_estado.Name = "ve_vehiculo_responsable_estado";
+            this.ve_vehiculo_responsable_estado.ReadOnly = true;
+            // 
+            // ve_vehiculo_responsable_fecha
+            // 
+            this.ve_vehiculo_responsable_fecha.DataPropertyName = "ve_vehiculo_responsable_fecha";
+            this.ve_vehiculo_responsable_fecha.HeaderText = "ve_vehiculo_responsable_fecha";
+            this.ve_vehiculo_responsable_fecha.Name = "ve_vehiculo_responsable_fecha";
+            this.ve_vehiculo_responsable_fecha.ReadOnly = true;
+            // 
+            // tipo_responsable
+            // 
+            this.tipo_responsable.DataPropertyName = "tipo_responsable";
+            this.tipo_responsable.HeaderText = "tipo_responsable";
+            this.tipo_responsable.Name = "tipo_responsable";
+            this.tipo_responsable.ReadOnly = true;
+            // 
             // frmOrdenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 627);
+            this.ClientSize = new System.Drawing.Size(1211, 627);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.lblPagFinal);
             this.Controls.Add(this.label3);
@@ -320,6 +385,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmOrdenes";
             this.Text = "frmOrdenes";
+            this.Load += new System.EventHandler(this.frmOrdenes_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -341,20 +407,28 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_activacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_usuario;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.TextBox txt_input;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_oden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_responsable_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chofer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn km_ingreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn km_egreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedula_responsable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_responsable_estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_responsable_fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_responsable;
     }
 }

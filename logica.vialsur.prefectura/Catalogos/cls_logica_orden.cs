@@ -27,12 +27,15 @@ namespace logica.vialsur.prefectura.Catalogos
                 else
                 {
                     int ki = Convert.ToInt32(dt_Ordenes.Compute("Max(km_ingreso)", ""));
-                    int ks = Convert.ToInt32(dt_Ordenes.Compute("Max(km_egreso)", ""));
+                    int ks = 0;
+                    int.TryParse(dt_Ordenes.Compute("Max(km_egreso)", "").ToString(), out ks);
                     if (ki == ks)
                         klm =  ki;
                     else
                         if (ks > ki)
                         klm = ks;
+                    else if (ks < ki)
+                        klm = ki;
                 }
                 return klm;   
             }
@@ -58,12 +61,15 @@ namespace logica.vialsur.prefectura.Catalogos
                 else
                 {
                     int ki = Convert.ToInt32(dt_Ordenes.Compute("Max(km_ingreso)", ""));
-                    int ks = Convert.ToInt32(dt_Ordenes.Compute("Max(km_egreso)", ""));
+                    int ks = 0;
+                    int.TryParse(dt_Ordenes.Compute("Max(km_egreso)", "").ToString(), out ks);
                     if (ki == ks)
                         klm = ki;
                     else
                         if (ks > ki)
-                        klm = ks;
+                            klm = ks;
+                        else if (ks < ki)
+                            klm = ki;
                 }
                 return klm;
             }
