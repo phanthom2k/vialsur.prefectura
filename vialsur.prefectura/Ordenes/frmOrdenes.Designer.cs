@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -199,6 +204,7 @@
             this.btn_Buscar.TabIndex = 35;
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // txt_input
             // 
@@ -239,6 +245,10 @@
             // 
             // cl_ver
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
             this.cl_ver.FillWeight = 55F;
             this.cl_ver.HeaderText = "Ver";
             this.cl_ver.MinimumWidth = 57;
@@ -277,6 +287,9 @@
             // fecha
             // 
             this.fecha.DataPropertyName = "fecha";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
             this.fecha.HeaderText = "fecha";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
@@ -284,6 +297,9 @@
             // hora
             // 
             this.hora.DataPropertyName = "hora";
+            dataGridViewCellStyle3.Format = "T";
+            dataGridViewCellStyle3.NullValue = "00:00";
+            this.hora.DefaultCellStyle = dataGridViewCellStyle3;
             this.hora.HeaderText = "hora";
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
@@ -316,10 +332,14 @@
             this.observacion.HeaderText = "observacion";
             this.observacion.Name = "observacion";
             this.observacion.ReadOnly = true;
+            this.observacion.Visible = false;
             // 
             // km_ingreso
             // 
             this.km_ingreso.DataPropertyName = "km_ingreso";
+            dataGridViewCellStyle4.Format = "######### km";
+            dataGridViewCellStyle4.NullValue = "0 km";
+            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle4;
             this.km_ingreso.HeaderText = "km_ingreso";
             this.km_ingreso.Name = "km_ingreso";
             this.km_ingreso.ReadOnly = true;
@@ -327,6 +347,9 @@
             // km_egreso
             // 
             this.km_egreso.DataPropertyName = "km_egreso";
+            dataGridViewCellStyle5.Format = "######### km";
+            dataGridViewCellStyle5.NullValue = "0 km";
+            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle5;
             this.km_egreso.HeaderText = "km_egreso";
             this.km_egreso.Name = "km_egreso";
             this.km_egreso.ReadOnly = true;
@@ -335,6 +358,7 @@
             // 
             this.cedula_responsable.DataPropertyName = "cedula_responsable";
             this.cedula_responsable.HeaderText = "cedula_responsable";
+            this.cedula_responsable.MaxInputLength = 125;
             this.cedula_responsable.Name = "cedula_responsable";
             this.cedula_responsable.ReadOnly = true;
             // 

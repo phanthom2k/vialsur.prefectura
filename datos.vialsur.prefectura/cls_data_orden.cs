@@ -177,8 +177,8 @@ namespace datos.vialsur.prefectura
                     "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
                     "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
                     "WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula " +
-                    "OR ve_vehiculo.placa = @Placa  " +
-                    "OR orden.id = @id_orden " +
+                    "AND ( ve_vehiculo.placa = @Placa  " +
+                    "OR orden.id LIKE @id_orden )" +
                     "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
 
             try
@@ -194,7 +194,7 @@ namespace datos.vialsur.prefectura
                 parameters.Add(parametro2);
 
                 SqlParameter parametro3 = new SqlParameter("@id_orden", SqlDbType.NChar, 10);
-                parametro3.Value = id_orden;
+                parametro3.Value = id_orden+"%";
                 parameters.Add(parametro3);
 
 
