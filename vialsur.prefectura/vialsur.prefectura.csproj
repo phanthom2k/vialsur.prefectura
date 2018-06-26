@@ -73,6 +73,12 @@
     <Compile Include="Ordenes\frmDetalleTrabajos.Designer.cs">
       <DependentUpon>frmDetalleTrabajos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordenes\frmDetalleVistaControlador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes\frmDetalleVistaControlador.Designer.cs">
+      <DependentUpon>frmDetalleVistaControlador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ordenes\frmOrdenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmDetalleTrabajos.resx">
       <DependentUpon>frmDetalleTrabajos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes\frmDetalleVistaControlador.resx">
+      <DependentUpon>frmDetalleVistaControlador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmOrdenes.resx">
       <DependentUpon>frmOrdenes.cs</DependentUpon>

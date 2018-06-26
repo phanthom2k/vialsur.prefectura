@@ -86,6 +86,38 @@ namespace datos.vialsur.prefectura
             }
         }
 
+        /// <summary>
+        /// Retorna un DT con informacion para la UI
+        /// </summary>
+        /// <param name="id_orden"></param>
+        /// <returns></returns>
+        public DataTable ConsultarDetalleOrdenesByIdOrden_UI(string id_orden )
+        {
+            string consulta_sql = "SELECT orde_detalle.id, catalogo_parte_principal.nombre as nombrePP, catalogo_parte_secundaria.nombre AS nombrePS," +
+                                    "orde_detalle.accion_requerida, orde_detalle.accion_realizada, orde_detalle.cantidad, " +
+                                    "orde_detalle.observacion, orde_detalle.estado, orde_detalle.orden_id " +
+                                    "FROM     orde_detalle INNER JOIN " +
+                                    "catalogo_parte_principal ON orde_detalle.catalogo_parte_principal_id = catalogo_parte_principal.id INNER JOIN " +
+                                    "catalogo_parte_secundaria ON orde_detalle.catalogo_parte_secundaria_id = catalogo_parte_secundaria.id AND " +
+                                    "catalogo_parte_principal.id = catalogo_parte_secundaria.catalogo_parte_principal_id " +
+                                    "WHERE orde_detalle.orden_id = @id_orden " +
+                                    "order by orde_detalle.id asc";
+            try
+            {
+                
+
+                SqlParameter parametro1 = new SqlParameter("@id_orden", SqlDbType.NChar, 10);
+                parametro1.Value = id_orden;
+                
+                return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parametro1).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos del vehiculo: " + ex.Message);
+            }
+
+        }
+
 
 
     }

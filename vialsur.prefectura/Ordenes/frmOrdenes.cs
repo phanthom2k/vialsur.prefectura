@@ -31,10 +31,10 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
-                DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI(cedula, Placa, id_orden);
+                DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(cedula, Placa, id_orden);
                 dataGridView1.DataSource = dt;
-
-                if (dt.Rows.Count > 0)
+               // dataGridView1.Columns["tipo_oden"].ValueType = typeof(string);
+           /*     if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
@@ -47,7 +47,8 @@ namespace vialsur.prefectura.Ordenes
                         entidades.vialsur.prefectura.per_persona persona_chofer = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
                                                                                     dt.Rows[i]["chofer"].ToString());
                         this.dataGridView1.Rows[i].Cells["chofer"].Value = persona_chofer.apellidos + ", " + persona_chofer.nombres;
-
+                      //  string g = new logica.vialsur.prefectura.Orden.cls_logica_orden().Orden_TipoMantenimientoById(int.Parse(dt.Rows[i]["tipo_oden"].ToString()));
+                      //  this.dataGridView1.Rows[i].Cells["tipo_oden"].Value = g;
 
 
                         // if (string.IsNullOrEmpty(dt.Rows[i]["MARCA"].ToString()) & string.IsNullOrEmpty(dt.Rows[i]["modelo"].ToString()))
@@ -58,7 +59,7 @@ namespace vialsur.prefectura.Ordenes
                     }
 
                 }
-
+                */
             }
             catch (Exception ex)
             {
@@ -87,6 +88,53 @@ namespace vialsur.prefectura.Ordenes
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
+                {
+                    frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
+                    frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                    frmDetalle.ShowDialog();
+                    frmDetalle.Dispose();
+
+
+
+                }
+
+
+
+
+                /* frmPersonal_Nuevo frm_personal = new frmPersonal_Nuevo();
+                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
+                 {
+
+                     frm_personal.EsVer = true;
+                     frm_personal.EsNuevo = false;
+                     frm_personal.EsModificar = true;
+                     frm_personal.Cedula = dataGridView1.Rows[e.RowIndex].Cells["cedula"].Value.ToString();
+
+
+                     //frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
+                     //frm_Vehiculo.EsNuevo = false;
+                     //frm_Vehiculo.Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                     //frm_Vehiculo.EsVer = dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" ? true : false;
+                     //frm_Vehiculo.ShowDialog();
+                     //frm_Vehiculo.Dispose();
+                     //btn_Buscar_Click(sender, e);
+                 }  */
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
     }

@@ -13,11 +13,15 @@ namespace entidades.vialsur.prefectura
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// VERIFICAR CON CLS_LOGICA_ORDEN
+    /// </summary>
     public enum Orden_TipoEstado
     {
         CREADO = 1,
         AUTORIZADO = 2,
-        FINALIZADO = 3
+        FINALIZADO = 3,
+        DESCARTADO = 4
     }
 
     public enum Orden_TipoMantenimiento

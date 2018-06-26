@@ -65,7 +65,87 @@ namespace logica.vialsur.prefectura.Orden
             }
         }
 
+        /// <summary>
+        /// Retorna un DataTable personalizado para ser usado en la grilla de la UI
+        /// </summary>
+        /// <param name="Cedula"></param>
+        /// <param name="Placa"></param>
+        /// <param name="id_orden"></param>
+        /// <returns></returns>
+        public System.Data.DataTable ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(string Cedula, string Placa, string id_orden)
+        {
+            try
+            {
+                System.Data.DataTable dt =  new cls_data_orden().ObtenerOrdenesByTecnicoAsignado_UI(Cedula, Placa, id_orden);
+                //dataGridView1.Columns["tipo_oden"].ValueType = typeof(string);
+                // dt.Columns["tipo_oden"].DataType = typeof(string);
 
+                System.Data.DataTable dt_clodana = dt.Clone();
+                dt_clodana.Columns["tipo_oden"].DataType = typeof(string);
+                dt_clodana.Columns["ve_vehiculo_id"].DataType = typeof(string);
+                dt_clodana.Columns["estado"].DataType = typeof(string);
+                dt_clodana.Columns["hora"].DataType = typeof(string);
+
+                foreach (System.Data.DataRow dr in dt.Rows)
+                {
+                    dt_clodana.LoadDataRow(dr.ItemArray, false);
+                }
+                dt.Clear();
+                dt.Dispose();
+
+
+                for (int i = 0; i < dt_clodana.Rows.Count; i++)
+                {
+                    entidades.vialsur.prefectura.per_persona persona_responsable = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                                                                                dt_clodana.Rows[i]["cedula_responsable"].ToString());
+
+                    dt_clodana.Rows[i]["cedula_responsable"] = persona_responsable.apellidos + ", " + persona_responsable.nombres;
+                    
+                    entidades.vialsur.prefectura.per_persona persona_chofer = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                                                                                dt_clodana.Rows[i]["chofer"].ToString());
+
+                    dt_clodana.Rows[i]["chofer"] = persona_chofer.apellidos + ", " + persona_chofer.nombres;
+
+                    dt_clodana.Rows[i]["tipo_oden"] = Orden_TipoMantenimientoById(int.Parse(dt_clodana.Rows[i]["tipo_oden"].ToString()));
+
+                    dt_clodana.Rows[i]["ve_vehiculo_id"] = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().GetPlacaById(int.Parse(dt_clodana.Rows[i]["ve_vehiculo_id"].ToString()));
+
+                    dt_clodana.Rows[i]["estado"] = Orden_TipoEstadoById(int.Parse(dt_clodana.Rows[i]["estado"].ToString()));
+                    dt_clodana.Rows[i]["hora"] = dt_clodana.Rows[i]["hora"].ToString().Substring(0, 5);
+
+
+                }
+                return dt_clodana;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        /// <summary>
+        /// Transforma el equivalente numerico en el tipo de mantenimiento
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public  string Orden_TipoMantenimientoById(int i)
+        {
+            return i == 1 ? "PREVENTIVO" : "CORRECTIVO";
+        }
+
+        /// <summary>
+        /// Rtorna el equivalente numerico en el tipo de estado
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public string Orden_TipoEstadoById(int i)
+        {
+            return i == 1 ? "CREADO" : i == 2 ? "AUTORIZADO" : i == 3 ? "FINALIZADO" : "DESCARTADO";
+        }
+
+
+     
 
     }
 }

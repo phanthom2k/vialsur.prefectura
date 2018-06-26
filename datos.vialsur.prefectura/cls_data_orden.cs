@@ -202,7 +202,7 @@ namespace datos.vialsur.prefectura
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al consultar los datos del vehiculo: " + ex.Message);
+                throw new Exception("Error al consultar los datos de las ordenes: " + ex.Message);
             }
         }
 

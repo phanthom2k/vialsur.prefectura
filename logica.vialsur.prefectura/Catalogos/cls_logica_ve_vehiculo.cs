@@ -176,6 +176,24 @@ namespace logica.vialsur.prefectura.Catalogos
         }
 
 
+        /// <summary>
+        /// Retorna la placa o placa provisional de un determinado vehiculo segun el ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string GetPlacaById(int id)
+        {
+            try
+            {
+                ve_vehiculo v_tmp = ConsultarDatosVehiculoPorId(id);
+                return v_tmp.placa != null ? v_tmp.placa : v_tmp.placa_provisional;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
     }
 }
