@@ -77,6 +77,45 @@ namespace datos.vialsur.prefectura
             }            
         }
 
+        
+        /// <summary>
+        /// COnsulta un objeto VE_VEHICULO_RESPONSALE y retorna los datos del mismo acorde al ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.ve_vehiculo_responsable ConsultarVe_VehiculoResponsablePorId( int id)
+        {
+            try
+            {
+                string consulta = "SELECT id, per_persona_cedula, ve_vehiculo_id, estado, fecha, tipo_responsable "+
+                                  "FROM ve_vehiculo_responsable WHERE id=@id;";
+
+                SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
+                parametro.Value = id;
+
+                entidades.vialsur.prefectura.ve_vehiculo_responsable obj_resp_vehi = new entidades.vialsur.prefectura.ve_vehiculo_responsable();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+                while (dr_datos.Read())
+                {
+                    obj_resp_vehi.id = int.Parse(dr_datos["id"].ToString());
+                    obj_resp_vehi.per_persona_cedula = dr_datos["per_persona_cedula"].ToString();
+                    obj_resp_vehi.ve_vehiculo_id = Convert.ToInt32(dr_datos["ve_vehiculo_id"]);
+                    obj_resp_vehi.estado = (bool)dr_datos["estado"];
+                    obj_resp_vehi.fecha = Convert.ToDateTime(dr_datos["fecha"]);
+                    obj_resp_vehi.tipo_responsable = int.Parse(dr_datos["tipo_responsable"].ToString());
+
+             
+                }
+                return obj_resp_vehi;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
 
     }

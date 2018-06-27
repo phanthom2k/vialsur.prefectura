@@ -80,5 +80,26 @@ namespace logica.vialsur.prefectura.Catalogos
         }
 
 
+
+
+        public orden ConsultarOrdenPorId(string id_orden)
+        {
+            try
+            {
+                orden obj_orden = new datos.vialsur.prefectura.cls_data_orden().ConsultarOrdenPorId(id_orden);
+                ve_vehiculo_responsable obj_ve_responsable = new datos.vialsur.prefectura.cls_data_ve_vehiculo_responsable().ConsultarVe_VehiculoResponsablePorId((int)obj_orden.ve_vehiculo_responsable_id);                
+                ve_vehiculo obj_vehiculo = new cls_logica_ve_vehiculo().ConsultarDatosVehiculoPorId((int)obj_ve_responsable.ve_vehiculo_id);
+                obj_ve_responsable.ve_vehiculo = obj_vehiculo;
+                obj_orden.ve_vehiculo_responsable.Add(obj_ve_responsable);
+
+                return obj_orden;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_color.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_marca.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_modelo.cs" />
+    <Compile Include="Catalogos\cls_logica_ve_vehiculo_responsable.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Orden\cls_logica_orden.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

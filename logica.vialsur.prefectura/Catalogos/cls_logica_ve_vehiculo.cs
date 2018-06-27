@@ -107,13 +107,21 @@ namespace logica.vialsur.prefectura.Catalogos
             return _f;
         }
 
-
+        /// <summary>
+        /// COnsulta un objeto ve_vehiculo segun el ID del mismo
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ve_vehiculo ConsultarDatosVehiculoPorId(int id)
         {
             try
             {
-                return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(id);
+                ve_vehiculo obj_vehiculo =  new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(id);
+                ve_vehiculo_marca obj_marca = new datos.vialsur.prefectura.cls_data_ve_vehiculo_marca().Consultar_Marca(obj_vehiculo.ve_vehiculo_marca_id);
+                ve_vehiculo_modelo obj_modelo = new datos.vialsur.prefectura.cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(obj_vehiculo.ve_vehiculo_modelo_id);
 
+                //return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(id);
+                return obj_vehiculo;
             }
             catch (Exception ex)
             {

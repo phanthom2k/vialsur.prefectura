@@ -11,7 +11,22 @@ namespace logica.vialsur.prefectura.Orden
 
     public class cls_logica_orden
     {
-
+        /// <summary>
+        /// Consulta el objeto orden y entrega con los objetos dependientes
+        /// </summary>
+        /// <param name="Id_Orden"></param>
+        /// <returns></returns>
+        public orden ConsultarOrden(string Id_Orden)
+        {
+            try
+            {
+                return new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarOrdenPorId(Id_Orden);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
      
         /// <summary>
         /// Registra una orden y retorna el ID de la orden
@@ -45,6 +60,7 @@ namespace logica.vialsur.prefectura.Orden
                 throw ex;
             }
         }
+
 
         /// <summary>
         /// Retorna un datatable para ser usado en la grilla del listado de ordenes
