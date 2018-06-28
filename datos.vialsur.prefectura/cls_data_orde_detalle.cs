@@ -118,6 +118,48 @@ namespace datos.vialsur.prefectura
 
         }
 
+        /// <summary>
+        /// Retorna un objeto orde_detalle segun su ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.orde_detalle ConsultarOrde_DetalleById(string id)
+        {
+            try
+            {
+                string consulta = "SELECT id, catalogo_parte_principal_id, catalogo_parte_secundaria_id, accion_realizada, cantidad, observacion, estado, accion_requerida, orden_id " +
+                                  "FROM orde_detalle where id = @id";
+
+                SqlParameter parametro = new SqlParameter("@id", SqlDbType.NChar,10);
+                parametro.Value = id;
+
+                entidades.vialsur.prefectura.orde_detalle obj_orde_detalle = new entidades.vialsur.prefectura.orde_detalle();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+                while (dr_datos.Read())
+                {
+                    obj_orde_detalle.id = dr_datos["id"].ToString();
+                    obj_orde_detalle.catalogo_parte_principal_id = int.Parse(dr_datos["catalogo_parte_principal_id"].ToString());
+                    obj_orde_detalle.catalogo_parte_secundaria_id = int.Parse(dr_datos["catalogo_parte_secundaria_id"].ToString());
+                    int ar = 0;
+                    int.TryParse(dr_datos["accion_realizada"].ToString(), out ar);
+                    obj_orde_detalle.accion_realizada = ar;
+                    obj_orde_detalle.cantidad = decimal.Parse(dr_datos["cantidad"].ToString());
+                    obj_orde_detalle.observacion = dr_datos["observacion"].ToString();
+                    obj_orde_detalle.estado = (bool)dr_datos["estado"];
+                    obj_orde_detalle.accion_requerida = int.Parse(dr_datos["accion_requerida"].ToString());
+                    obj_orde_detalle.orden_id = dr_datos["orden_id"].ToString();                    
+                }                
+                return obj_orde_detalle;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos del ord_detalle: " + ex.Message);
+            }
+
+        }
+
+
 
 
     }

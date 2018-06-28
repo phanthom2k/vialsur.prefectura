@@ -43,5 +43,16 @@ namespace entidades.vialsur.prefectura
     
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<emp_empleado> emp_empleado { get; set; }
+
+        /// <summary>
+        /// Retorna una cadena con los apellidos y nombres de la persona
+        /// </summary>
+        public string ApellidosNombres
+        {
+            get
+            {
+                return apellidos + " " + nombres;
+            }
+        }
     }
 }

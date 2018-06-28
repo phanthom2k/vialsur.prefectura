@@ -24,9 +24,18 @@ namespace vialsur.prefectura.Ordenes
         public bool EsActualizacion { get; set; }
         public bool EsLectura { get; set; }
 
+        public bool EsMecanicoAtender { get; set; }
+
         void Congelar()
         {
             toolStripButton2.Enabled = !EsLectura;
+            if (EsMecanicoAtender)
+            {
+                uc_Catalogo_Parte_Principal1.Enabled = uc_Catalogo_Parte_Secundaria1.Enabled =
+                uc_Accion1.Enabled = numericUpDown1.Enabled = false;
+            }
+            else uc_Accion2.Enabled = false;
+
         }
 
         ve_vehiculo obj_vehiculo;
@@ -66,11 +75,14 @@ namespace vialsur.prefectura.Ordenes
             uc_Catalogo_Parte_Principal1.CargarDatos();
             uc_Catalogo_Parte_Secundaria1.CargarDatos();
             uc_Accion1.CargarDatos();
+            uc_Accion2.CargarDatos();
+
             if (obj_orden_detalle != null )  //para mostrar para modificar
             {
                 uc_Catalogo_Parte_Principal1.SelectedValue = obj_orden_detalle.catalogo_parte_principal_id;
                 uc_Catalogo_Parte_Secundaria1.SelectedValue = obj_orden_detalle.catalogo_parte_secundaria_id;
                 uc_Accion1.SelectedValue = obj_orden_detalle.accion_requerida;
+                uc_Accion2.SelectedValue = obj_orden_detalle.accion_realizada;
                 numericUpDown1.Value = Convert.ToInt32(obj_orden_detalle.cantidad);
                 lettersTextBox1.Text = obj_orden_detalle.observacion;
                 checkBox1.Checked = (bool)obj_orden_detalle.estado;
@@ -88,9 +100,7 @@ namespace vialsur.prefectura.Ordenes
                                                         (entidades.vialsur.prefectura.TipoSubParte__catalogo_parte_secundiaria)obj_vehiculo.ve_vehiculo_modelo.clase_vehiculo,
                                                         entidades.vialsur.prefectura.Estado_catalogo_parte_secundiaria.ACTIVO);
         }
-
         
-
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             if(!EsActualizacion) //si es nuevo
@@ -109,6 +119,9 @@ namespace vialsur.prefectura.Ordenes
             this.Close();
 
 
-        }
+        }      
+
+
+
     }
 }

@@ -30,6 +30,22 @@ namespace logica.vialsur.prefectura.Catalogos
 
         }
 
+        /// <summary>
+        /// COonsulta un objeto  orde_detalle segun su ID
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public orde_detalle ConsultarOrde_DetalleById(string ID)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_orde_detalle().ConsultarOrde_DetalleById( ID);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos del detalle: " + ex.Message);
+            }
+        }
 
 
     }

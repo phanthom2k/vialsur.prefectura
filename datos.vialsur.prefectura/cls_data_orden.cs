@@ -232,10 +232,15 @@ namespace datos.vialsur.prefectura
                     obj_orden.hora = (TimeSpan)dr_datos["hora"];
                     obj_orden.estado = int.Parse(dr_datos["estado"].ToString());
                     obj_orden.ve_vehiculo_responsable_id = int.Parse(dr_datos["ve_vehiculo_responsable_id"].ToString());
-                    obj_orden.per_persona_numero_cedula = dr_datos["per_persona_numero_cedula"].ToString();
+                    
+                    obj_orden.per_persona_numero_cedula = dr_datos["per_persona_cedula"] == null ? "" : dr_datos["per_persona_cedula"].ToString();
                     obj_orden.observacion = dr_datos["observacion"].ToString();
-                    obj_orden.km_ingreso = int.Parse(dr_datos["km_ingreso"].ToString());
-                    obj_orden.km_egreso = int.Parse(dr_datos["km_egreso"].ToString());                  
+                    int ki = 0, ke = 0;
+                    int.TryParse(dr_datos["km_ingreso"].ToString(),out ki);
+                    obj_orden.km_ingreso = ki;
+                    int.TryParse(dr_datos["km_egreso"].ToString(), out ke);
+                    obj_orden.km_egreso = ke;
+
                 }                
                 return obj_orden;
             }

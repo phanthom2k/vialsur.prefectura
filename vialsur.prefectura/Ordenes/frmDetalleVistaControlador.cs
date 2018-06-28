@@ -48,6 +48,10 @@ namespace vialsur.prefectura.Ordenes
             {
                 CargarDatosGrilla();
                 obj_orden = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConsultarOrden(OrdenID);
+                ve_vehiculo_responsable obj_ve_resp = obj_orden.ve_vehiculo_responsable.FirstOrDefault();
+                obj_vehiculo = obj_ve_resp.ve_vehiculo;
+
+                MostrarInformacionVehiculo(obj_vehiculo, obj_orden);
             }
             catch (Exception ex)
             {
@@ -56,7 +60,7 @@ namespace vialsur.prefectura.Ordenes
         }
 
 
-        void MostrarInformacionVehiculo(entidades.vialsur.prefectura.ve_vehiculo vehiculo)
+        void MostrarInformacionVehiculo(entidades.vialsur.prefectura.ve_vehiculo vehiculo, entidades.vialsur.prefectura.orden ord)
         {
             try
             {
@@ -83,6 +87,17 @@ namespace vialsur.prefectura.Ordenes
                     //lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
                     //                        (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
                     lbl_TipoVehiculo.Text = ((TipoClaseVehiculo)mod.clase_vehiculo).ToString();
+
+
+                    lblTipoMantenimiento.Text = ((Orden_TipoMantenimiento)ord.tipo_oden).ToString();
+                    per_persona per = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(ord.ve_vehiculo_responsable.FirstOrDefault().per_persona_cedula);
+                    lblNombresMecanicoResponsable.Text = per.ApellidosNombres;
+                    lblKmIn.Text = ord.km_ingreso + "Km";
+                    lblKmOut.Text = ord.km_egreso + "Km";
+                    lblFecha.Text = ((DateTime)ord.fecha).ToShortDateString();
+
+                    txtObservacion.Text = ord.observacion;
+
                 }
 
 
@@ -111,5 +126,56 @@ namespace vialsur.prefectura.Ordenes
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
+                {
+                    /* frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
+                     frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                     frmDetalle.ShowDialog();
+                     frmDetalle.Dispose();*/
+
+                    orde_detalle obj_ord_det_temp = new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ConsultarOrde_DetalleById(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                                        
+                    frmSeleccionadorTrabajo objSelecTrab = new frmSeleccionadorTrabajo();
+                    objSelecTrab.Obj_orden_detalle = obj_ord_det_temp;
+                    objSelecTrab.Obj_vehiculo = obj_vehiculo;
+                    objSelecTrab.EsMecanicoAtender = true;
+                    objSelecTrab.ShowDialog();
+
+
+                }
+
+
+
+
+                /* frmPersonal_Nuevo frm_personal = new frmPersonal_Nuevo();
+                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
+                 {
+
+                     frm_personal.EsVer = true;
+                     frm_personal.EsNuevo = false;
+                     frm_personal.EsModificar = true;
+                     frm_personal.Cedula = dataGridView1.Rows[e.RowIndex].Cells["cedula"].Value.ToString();
+
+
+                     //frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
+                     //frm_Vehiculo.EsNuevo = false;
+                     //frm_Vehiculo.Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                     //frm_Vehiculo.EsVer = dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" ? true : false;
+                     //frm_Vehiculo.ShowDialog();
+                     //frm_Vehiculo.Dispose();
+                     //btn_Buscar_Click(sender, e);
+                 }  */
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }
