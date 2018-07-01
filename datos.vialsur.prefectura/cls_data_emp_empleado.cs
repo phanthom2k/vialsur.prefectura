@@ -263,7 +263,6 @@ namespace datos.vialsur.prefectura
                 string _sql_consulta = "SELECT per_persona.cedula, per_persona.nombres, per_persona.apellidos, emp_empleado.id, emp_empleado.activo,emp_empleado.fecha_activacion, emp_empleado.tipo_usuario " +
                                         "FROM per_persona INNER JOIN emp_empleado ON per_persona.cedula = emp_empleado.cedula   ";
                                         
-
                 
                 List<SqlParameter> parameters = new List<SqlParameter>();
                 if (cedula =="")  //para buscar minimo y maximo

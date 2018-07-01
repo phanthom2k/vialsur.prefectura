@@ -132,19 +132,21 @@ namespace vialsur.prefectura.Ordenes
             {
 
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
-                {
-                    /* frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
-                     frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
-                     frmDetalle.ShowDialog();
-                     frmDetalle.Dispose();*/
-
-                    orde_detalle obj_ord_det_temp = new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ConsultarOrde_DetalleById(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
-                                        
+                {                    
+                    orde_detalle obj_ord_det_temp = new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ConsultarOrde_DetalleById(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());                                        
                     frmSeleccionadorTrabajo objSelecTrab = new frmSeleccionadorTrabajo();
                     objSelecTrab.Obj_orden_detalle = obj_ord_det_temp;
                     objSelecTrab.Obj_vehiculo = obj_vehiculo;
                     objSelecTrab.EsMecanicoAtender = true;
-                    objSelecTrab.ShowDialog();
+                    objSelecTrab.EsActualizacion = true;
+                    if (objSelecTrab.ShowDialog() == DialogResult.Yes)
+                    {
+                        entidades.vialsur.prefectura.orde_detalle obj_orden_detalle = objSelecTrab.Obj_orden_detalle;
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarOrde_Detalle(obj_orden_detalle);
+                        CargarDatosGrilla();
+
+
+                    }
 
 
                 }

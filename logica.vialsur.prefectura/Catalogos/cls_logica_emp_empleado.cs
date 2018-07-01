@@ -8,6 +8,8 @@ namespace logica.vialsur.prefectura.Catalogos
 {
     using entidades.vialsur.prefectura;
 
+
+
     public class cls_logica_emp_empleado
     {
 
@@ -84,15 +86,27 @@ namespace logica.vialsur.prefectura.Catalogos
                     pivoteBase = 0;
                     pivoteProyectado = 25;
                 }
+                System.Data.DataTable dt = new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonas_UX(pivoteBase, pivoteProyectado, cedula);
+                System.Data.DataTable dt_clonada = dt.Clone();
+                dt_clonada.Columns["tipo_usuario"].DataType = typeof(string);
 
-                return new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonas_UX(pivoteBase, pivoteProyectado, cedula);
-                
+                foreach(System.Data.DataRow dr in dt.Rows)
+                {
+                    dt_clonada.LoadDataRow(dr.ItemArray, false);
+                }
 
+                for (int i = 0; i < dt_clonada.Rows.Count; i++)
+                {
+
+                    dt_clonada.Rows[i]["tipo_usuario"] = ((TipoUsuario)int.Parse(dt_clonada.Rows[i]["tipo_usuario"].ToString())).ToString();
+                }
+
+                return dt_clonada;               
                 
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

@@ -114,6 +114,7 @@ namespace vialsur.prefectura.Ordenes
             obj_orden_detalle.cantidad = (int)numericUpDown1.Value;
             obj_orden_detalle.observacion = lettersTextBox1.Text;
             obj_orden_detalle.estado = checkBox1.Enabled;
+            if(EsMecanicoAtender) obj_orden_detalle.accion_realizada = (int)uc_Accion2.SelectedValue;
 
             this.DialogResult = DialogResult.Yes;
             this.Close();

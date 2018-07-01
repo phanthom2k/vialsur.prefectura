@@ -12,13 +12,19 @@ namespace entidades.vialsur.prefectura
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// ESPECIFICEL TIPO DE USUARIO
+    /// </summary>
     public enum TipoUsuario
     {
+        NO_DEFINIDO = 0,
         ADMINISTRADOR = 1,
         CHOFER = 2,
         MECANICO = 3,
         ADMINISTRATIVO = 4
     }
+
+
 
     public partial class emp_empleado
     {

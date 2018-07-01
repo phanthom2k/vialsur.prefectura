@@ -13,6 +13,15 @@ namespace entidades.vialsur.prefectura
     using System;
     using System.Collections.Generic;
 
+    public enum Orde_Detalle_ACCION
+    {
+        NO_DEFINIDO = 0,
+        CAMBIO = 1,
+        LIMPIEZA = 2,
+        REVISION = 3,
+        OTRO = 4
+    }
+
 
 
     public partial class orde_detalle
