@@ -119,8 +119,10 @@ namespace logica.vialsur.prefectura.Catalogos
                 ve_vehiculo obj_vehiculo =  new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(id);
                 ve_vehiculo_marca obj_marca = new datos.vialsur.prefectura.cls_data_ve_vehiculo_marca().Consultar_Marca(obj_vehiculo.ve_vehiculo_marca_id);
                 ve_vehiculo_modelo obj_modelo = new datos.vialsur.prefectura.cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(obj_vehiculo.ve_vehiculo_modelo_id);
+                ve_vehiculo_color obj_color = new datos.vialsur.prefectura.cls_data_ve_vehiculo_color().Consultar_Color(obj_vehiculo.ve_vehiculo_color_id);
                 obj_modelo.ve_vehiculo_marca = obj_marca;
                 obj_vehiculo.ve_vehiculo_modelo = obj_modelo;
+                obj_vehiculo.ve_vehiculo_color = obj_color;
                 //return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(id);
                 return obj_vehiculo;
             }

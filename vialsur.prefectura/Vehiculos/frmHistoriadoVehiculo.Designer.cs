@@ -39,7 +39,6 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
-            this.txt_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_TipoVehiculo = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,38 +120,30 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(700, 208);
+            this.button2.Location = new System.Drawing.Point(700, 197);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 28);
             this.button2.TabIndex = 25;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_Buscar
             // 
-            this.btn_Buscar.Location = new System.Drawing.Point(577, 208);
+            this.btn_Buscar.Location = new System.Drawing.Point(577, 197);
             this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(115, 28);
             this.btn_Buscar.TabIndex = 24;
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.UseVisualStyleBackColor = true;
-            // 
-            // txt_input
-            // 
-            this.txt_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_input.Location = new System.Drawing.Point(177, 208);
-            this.txt_input.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_input.MaxLength = 125;
-            this.txt_input.Name = "txt_input";
-            this.txt_input.Size = new System.Drawing.Size(379, 26);
-            this.txt_input.TabIndex = 23;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 214);
+            this.label1.Location = new System.Drawing.Point(10, 203);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 17);
@@ -184,7 +176,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(7, 57);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1063, 145);
+            this.groupBox2.Size = new System.Drawing.Size(1063, 128);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INFORMACIÓN DEL VEHICULO";
@@ -192,7 +184,7 @@
             // lbl_TipoVehiculo
             // 
             this.lbl_TipoVehiculo.AutoSize = true;
-            this.lbl_TipoVehiculo.Location = new System.Drawing.Point(495, 118);
+            this.lbl_TipoVehiculo.Location = new System.Drawing.Point(819, 99);
             this.lbl_TipoVehiculo.Name = "lbl_TipoVehiculo";
             this.lbl_TipoVehiculo.Size = new System.Drawing.Size(112, 17);
             this.lbl_TipoVehiculo.TabIndex = 53;
@@ -202,7 +194,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(339, 118);
+            this.label9.Location = new System.Drawing.Point(663, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 17);
             this.label9.TabIndex = 52;
@@ -211,7 +203,7 @@
             // lbl_TipoCombustible
             // 
             this.lbl_TipoCombustible.AutoSize = true;
-            this.lbl_TipoCombustible.Location = new System.Drawing.Point(172, 118);
+            this.lbl_TipoCombustible.Location = new System.Drawing.Point(496, 99);
             this.lbl_TipoCombustible.Name = "lbl_TipoCombustible";
             this.lbl_TipoCombustible.Size = new System.Drawing.Size(135, 17);
             this.lbl_TipoCombustible.TabIndex = 51;
@@ -221,7 +213,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(15, 118);
+            this.label8.Location = new System.Drawing.Point(339, 99);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(162, 17);
             this.label8.TabIndex = 50;
@@ -258,7 +250,7 @@
             // lbl_seriechasis
             // 
             this.lbl_seriechasis.AutoSize = true;
-            this.lbl_seriechasis.Location = new System.Drawing.Point(741, 64);
+            this.lbl_seriechasis.Location = new System.Drawing.Point(781, 64);
             this.lbl_seriechasis.Name = "lbl_seriechasis";
             this.lbl_seriechasis.Size = new System.Drawing.Size(101, 17);
             this.lbl_seriechasis.TabIndex = 44;
@@ -276,7 +268,7 @@
             // lbl_color
             // 
             this.lbl_color.AutoSize = true;
-            this.lbl_color.Location = new System.Drawing.Point(691, 46);
+            this.lbl_color.Location = new System.Drawing.Point(731, 46);
             this.lbl_color.Name = "lbl_color";
             this.lbl_color.Size = new System.Drawing.Size(61, 17);
             this.lbl_color.TabIndex = 41;
@@ -333,7 +325,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(623, 64);
+            this.label14.Location = new System.Drawing.Point(663, 64);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(118, 17);
             this.label14.TabIndex = 32;
@@ -373,7 +365,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(623, 46);
+            this.label3.Location = new System.Drawing.Point(663, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 17);
             this.label3.TabIndex = 25;
@@ -425,13 +417,21 @@
             this.ve_vehiculo_responsable_estado,
             this.ve_vehiculo_responsable_fecha,
             this.tipo_responsable});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 243);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 232);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1057, 401);
+            this.dataGridView1.Size = new System.Drawing.Size(1057, 412);
             this.dataGridView1.TabIndex = 38;
+            // 
+            // numericTextBox1
+            // 
+            this.numericTextBox1.AllowSpace = false;
+            this.numericTextBox1.Location = new System.Drawing.Point(182, 200);
+            this.numericTextBox1.Name = "numericTextBox1";
+            this.numericTextBox1.Size = new System.Drawing.Size(334, 22);
+            this.numericTextBox1.TabIndex = 39;
             // 
             // cl_ver
             // 
@@ -457,6 +457,7 @@
             this.cl_modificar.ReadOnly = true;
             this.cl_modificar.Text = "Modif.";
             this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Visible = false;
             this.cl_modificar.Width = 70;
             // 
             // id
@@ -592,11 +593,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 656);
+            this.Controls.Add(this.numericTextBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_Buscar);
-            this.Controls.Add(this.txt_input);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmHistoriadoVehiculo";
@@ -619,7 +620,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.TextBox txt_input;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbl_TipoVehiculo;
@@ -645,6 +645,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Vivaldi.UserControls.NumericTextBox numericTextBox1;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;

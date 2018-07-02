@@ -285,7 +285,7 @@ namespace datos.vialsur.prefectura
         public DataTable ObtenerOrdenesByIdVehiculoOIdOrden_UI( string Placa, string id_orden="")
         {
             string consulta_sql =
-              
+
                     "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
                    "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso,  " +
                    "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
@@ -293,9 +293,12 @@ namespace datos.vialsur.prefectura
                    "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
                     "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
                     "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
-                    "WHERE ve_vehiculo.placa = @Placa  " +
-                    "OR orden.id LIKE @id_orden " +
-                    "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
+                    "WHERE ve_vehiculo.placa = @Placa  ";
+
+            consulta_sql += id_orden != "" ? "AND orden.id LIKE @id_orden " : "";
+
+            consulta_sql += "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
+
             try
             {
                 List<SqlParameter> parameters = new List<SqlParameter>();                
