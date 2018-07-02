@@ -139,6 +139,66 @@ namespace logica.vialsur.prefectura.Orden
             }
         }
 
+        /// <summary>
+        /// Retorna un DataTable personalizado para ser usado en la grilla de la UI
+        /// </summary>
+        /// <param name="IdVehiculo"></param>
+        /// <param name="IdOrden"></param>
+        /// <returns></returns>
+        public System.Data.DataTable ConnsultarOrdenesAsignadasVehiculoPorIdVehiculo_UI_customized(int IdVehiculo, string IdOrden="")
+        {
+            try
+            {
+                ve_vehiculo obj_vehiculo = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ConsultarDatosVehiculoPorId(IdVehiculo);
+
+                System.Data.DataTable dt = new cls_data_orden().ObtenerOrdenesByIdVehiculoOIdOrden_UI(obj_vehiculo.placa, IdOrden);
+
+
+                System.Data.DataTable dt_clodana = dt.Clone();
+                dt_clodana.Columns["tipo_oden"].DataType = typeof(string);
+                dt_clodana.Columns["ve_vehiculo_id"].DataType = typeof(string);
+                dt_clodana.Columns["estado"].DataType = typeof(string);
+                dt_clodana.Columns["hora"].DataType = typeof(string);
+
+                foreach (System.Data.DataRow dr in dt.Rows)
+                {
+                    dt_clodana.LoadDataRow(dr.ItemArray, false);
+                }
+                dt.Clear();
+                dt.Dispose();
+
+
+                for (int i = 0; i < dt_clodana.Rows.Count; i++)
+                {
+                    entidades.vialsur.prefectura.per_persona persona_responsable = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                                                                                dt_clodana.Rows[i]["cedula_responsable"].ToString());
+
+                    dt_clodana.Rows[i]["cedula_responsable"] = persona_responsable.apellidos + ", " + persona_responsable.nombres;
+
+                    entidades.vialsur.prefectura.per_persona persona_chofer = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                                                                                dt_clodana.Rows[i]["chofer"].ToString());
+
+                    dt_clodana.Rows[i]["chofer"] = persona_chofer.apellidos + ", " + persona_chofer.nombres;
+
+                    dt_clodana.Rows[i]["tipo_oden"] = Orden_TipoMantenimientoById(int.Parse(dt_clodana.Rows[i]["tipo_oden"].ToString()));
+
+                    dt_clodana.Rows[i]["ve_vehiculo_id"] = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().GetPlacaById(int.Parse(dt_clodana.Rows[i]["ve_vehiculo_id"].ToString()));
+
+                    dt_clodana.Rows[i]["estado"] = Orden_TipoEstadoById(int.Parse(dt_clodana.Rows[i]["estado"].ToString()));
+                    dt_clodana.Rows[i]["hora"] = dt_clodana.Rows[i]["hora"].ToString().Substring(0, 5);
+
+
+                }
+                return dt_clodana;
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         /// <summary>
         /// Transforma el equivalente numerico en el tipo de mantenimiento
@@ -147,7 +207,8 @@ namespace logica.vialsur.prefectura.Orden
         /// <returns></returns>
         public  string Orden_TipoMantenimientoById(int i)
         {
-            return i == 1 ? "PREVENTIVO" : "CORRECTIVO";
+            return ((Orden_TipoMantenimiento)i).ToString();
+            //return i == 1 ? "PREVENTIVO" : "CORRECTIVO";
         }
 
         /// <summary>
@@ -157,11 +218,26 @@ namespace logica.vialsur.prefectura.Orden
         /// <returns></returns>
         public string Orden_TipoEstadoById(int i)
         {
-            return i == 1 ? "CREADO" : i == 2 ? "AUTORIZADO" : i == 3 ? "FINALIZADO" : "DESCARTADO";
+            return ((Orden_TipoEstado)i).ToString();
+            //return i == 1 ? "CREADO" : i == 2 ? "AUTORIZADO" : i == 3 ? "FINALIZADO" : "DESCARTADO";
+        }     
+
+        /// <summary>
+        /// Verifica que esten cumplidos los items del detalle de la orden
+        /// </summary>
+        /// <param name="Id_orden"></param>
+        /// <returns></returns>
+        public bool VerificarCumplimientoDetallesAsignados(string Id_orden)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_orde_detalle().VerificarCumplimientoDetallesAsignados(Id_orden) == 0 ? true : false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
-
-     
 
     }
 }

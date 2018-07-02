@@ -27,6 +27,12 @@ namespace vialsur.prefectura.Ordenes
 
         }
 
+        /// <summary>
+        /// OJO IMPLEMENTO SIMILAR EN EL HISTORIADO DE LOS VEHICULOS
+        /// </summary>
+        /// <param name="cedula"></param>
+        /// <param name="Placa"></param>
+        /// <param name="id_orden"></param>
         void CargarDatosGrilla(string cedula="", string Placa="", string id_orden="")
         {
             try
@@ -136,6 +142,11 @@ namespace vialsur.prefectura.Ordenes
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

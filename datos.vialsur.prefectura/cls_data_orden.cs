@@ -149,6 +149,75 @@ namespace datos.vialsur.prefectura
             }
         }
 
+        /// <summary>
+        /// Actualiza el estado de la orden. Ref. Orden_TipoEstado
+        /// </summary>
+        /// <param name="Id_Orden"></param>
+        /// <param name="tipo"></param>
+        public void ActualizarEstadoOrden(string Id_Orden, entidades.vialsur.prefectura.Orden_TipoEstado tipo)
+        {
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>();
+
+                #region parametros
+                SqlParameter _id = new SqlParameter("@id", SqlDbType.NChar, 10);
+                _id.Value = Id_Orden;
+                parameters.Add(_id);
+
+                SqlParameter _estado = new SqlParameter("@estado", SqlDbType.Int);
+                _estado.Value = (entidades.vialsur.prefectura.Orden_TipoEstado)tipo;
+                parameters.Add(_estado);
+               
+                #endregion
+
+                string _update_Sql = "UPDATE [dbo].[orden] SET[estado] = @estado WHERE[id] = @id;";
+                SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _update_Sql, parameters.ToArray());                               
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo actualizar el estado de la orden", ex);
+            }
+        }
+
+        /// <summary>
+        /// Actualiza el estado de una orden y tambien permite registrar el kilometraje de egreso
+        /// USADA PARA CERRAR EL ESTADO DE LA ORDEN
+        /// </summary>
+        /// <param name="Id_Orden"></param>
+        /// <param name="tipo"></param>
+        /// <param name="kegreso"></param>
+        public void ActualizarEstadoOrden(string Id_Orden, entidades.vialsur.prefectura.Orden_TipoEstado tipo, int kegreso)
+        {
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>();
+
+                #region parametros
+                SqlParameter _id = new SqlParameter("@id", SqlDbType.NChar, 10);
+                _id.Value = Id_Orden;
+                parameters.Add(_id);
+
+                SqlParameter _estado = new SqlParameter("@estado", SqlDbType.Int);
+                _estado.Value = (entidades.vialsur.prefectura.Orden_TipoEstado)tipo;
+                parameters.Add(_estado);
+
+                SqlParameter _kegreso = new SqlParameter("@km_egreso", SqlDbType.Int);
+                _kegreso.Value = kegreso;
+                parameters.Add(_kegreso);
+
+                #endregion
+
+                string _update_Sql = "UPDATE [dbo].[orden] SET [estado] = @estado, [km_egreso] = @km_egreso WHERE [id] = @id;";
+                SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _update_Sql, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo actualizar el estado de la orden", ex);
+            }
+        }
+
 
         /// <summary>
         /// Retorna las ordenes de determinado mecanico segun su cedula
@@ -205,6 +274,49 @@ namespace datos.vialsur.prefectura
                 throw new Exception("Error al consultar los datos de las ordenes: " + ex.Message);
             }
         }
+
+        /// <summary>
+        /// Retorna las ordenes de un determinado vehiculo segun su id y con la facilidad de filtrar por ir_orden
+        /// </summary>
+        /// <param name="Cedula"></param>
+        /// <param name="Placa"></param>
+        /// <param name="id_orden"></param>
+        /// <returns></returns>
+        public DataTable ObtenerOrdenesByIdVehiculoOIdOrden_UI( string Placa, string id_orden="")
+        {
+            string consulta_sql =
+              
+                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
+                   "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso,  " +
+                   "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
+                   "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
+                   "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
+                    "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
+                    "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
+                    "WHERE ve_vehiculo.placa = @Placa  " +
+                    "OR orden.id LIKE @id_orden " +
+                    "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>();                
+
+                SqlParameter parametro2 = new SqlParameter("@Placa", SqlDbType.NChar, 10);
+                parametro2.Value = Placa;
+                parameters.Add(parametro2);
+
+                SqlParameter parametro3 = new SqlParameter("@id_orden", SqlDbType.NChar, 10);
+                parametro3.Value = id_orden==""? id_orden :  id_orden + "%";
+                parameters.Add(parametro3);
+
+
+                return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parameters.ToArray()).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos de las ordenes: " + ex.Message);
+            }
+        }
+
 
         /// <summary>
         /// Retorna un objeto >> orden , con informacion segun el id de la orden

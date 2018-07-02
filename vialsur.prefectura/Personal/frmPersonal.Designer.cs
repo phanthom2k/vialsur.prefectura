@@ -80,6 +80,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
             this.toolStripButton1.Text = "&Salir";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 

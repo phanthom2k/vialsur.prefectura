@@ -150,6 +150,12 @@
     <Compile Include="uc\uc_VehiculoModelo.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Vehiculos\frmHistoriadoVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos\frmHistoriadoVehiculo.Designer.cs">
+      <DependentUpon>frmHistoriadoVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehiculos\frmVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vehiculos\frmHistoriadoVehiculo.resx">
+      <DependentUpon>frmHistoriadoVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vehiculos\frmVehiculos.resx">
       <DependentUpon>frmVehiculos.cs</DependentUpon>
     </EmbeddedResource>

@@ -47,6 +47,7 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_historiado = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_codigo_anterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,6 +122,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl_ver,
             this.cl_modificar,
+            this.cl_historiado,
             this.id,
             this.cl_codigo,
             this.cl_codigo_anterior,
@@ -277,6 +279,14 @@
             this.cl_modificar.Text = "Modificar";
             this.cl_modificar.UseColumnTextForButtonValue = true;
             this.cl_modificar.Width = 70;
+            // 
+            // cl_historiado
+            // 
+            this.cl_historiado.HeaderText = "Historiado";
+            this.cl_historiado.Name = "cl_historiado";
+            this.cl_historiado.ReadOnly = true;
+            this.cl_historiado.Text = "Historiado";
+            this.cl_historiado.UseColumnTextForButtonValue = true;
             // 
             // id
             // 
@@ -482,6 +492,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_historiado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_codigo_anterior;

@@ -50,7 +50,41 @@ namespace logica.vialsur.prefectura.Catalogos
 
         }
 
+        /// <summary>
+        /// Actualizar el estado de la orden
+        /// </summary>
+        /// <param name="Id_Orden"></param>
+        /// <param name="tipo"></param>
+        public void ActualizarEstadoOrden(string Id_Orden, entidades.vialsur.prefectura.Orden_TipoEstado tipo)
+        {
+            try
+            {
+                new datos.vialsur.prefectura.cls_data_orden().ActualizarEstadoOrden(Id_Orden, tipo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        /// <summary>
+        /// Actualiza el estado de la orden
+        /// USADA PARA CERRAR LA ORDEN ACTUALIZANDO EL KM EGRESO
+        /// </summary>
+        /// <param name="Id_Orden"></param>
+        /// <param name="tipo"></param>
+        /// <param name="kegreso"></param>
+        public void ActualizarEstadoOrden(string Id_Orden, entidades.vialsur.prefectura.Orden_TipoEstado tipo, int kegreso)
+        {
+            try
+            {
+                new datos.vialsur.prefectura.cls_data_orden().ActualizarEstadoOrden(Id_Orden, tipo, kegreso);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         /// <summary>
         /// COonsulta un objeto  orde_detalle segun su ID

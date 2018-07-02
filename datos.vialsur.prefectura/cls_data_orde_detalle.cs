@@ -227,7 +227,36 @@ namespace datos.vialsur.prefectura
 
         }
 
+        /// <summary>
+        /// Verifica el cumplimiento de las actividades designadas para la orden
+        /// </summary>
+        /// <param name="id_orden"></param>
+        /// <returns></returns>
+        public int VerificarCumplimientoDetallesAsignados(string id_orden)
+        {
+            try
+            {
+                string consulta = "SELECT count(accion_realizada) realizadas, count (accion_requerida) requeridas FROM  orde_detalle WHERE orden_id =@id";
 
+                SqlParameter parametro = new SqlParameter("@id", SqlDbType.NChar, 10);
+                parametro.Value = id_orden;
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+                int realizadas = 0, requeridas = 0;
+                while(dr_datos.Read())
+                {
+                    realizadas = int.Parse(dr_datos["realizadas"].ToString());
+                    requeridas = int.Parse(dr_datos["requeridas"].ToString());
+                }
+                dr_datos.Close();
+
+                return requeridas - realizadas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos del ord_detalle: " + ex.Message);
+            }
+        }
 
 
     }

@@ -35,6 +35,7 @@
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tareasAsignadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,8 @@
             // ordenesToolStripMenuItem
             // 
             this.ordenesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaToolStripMenuItem});
+            this.nuevaToolStripMenuItem,
+            this.tareasAsignadasToolStripMenuItem});
             this.ordenesToolStripMenuItem.Name = "ordenesToolStripMenuItem";
             this.ordenesToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.ordenesToolStripMenuItem.Text = "Ordenes";
@@ -69,7 +71,7 @@
             // nuevaToolStripMenuItem
             // 
             this.nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
-            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.nuevaToolStripMenuItem.Text = "Nueva";
             this.nuevaToolStripMenuItem.Click += new System.EventHandler(this.nuevaToolStripMenuItem_Click);
             // 
@@ -95,6 +97,13 @@
             this.personalToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
+            // 
+            // tareasAsignadasToolStripMenuItem
+            // 
+            this.tareasAsignadasToolStripMenuItem.Name = "tareasAsignadasToolStripMenuItem";
+            this.tareasAsignadasToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.tareasAsignadasToolStripMenuItem.Text = "Tareas Asignadas";
+            this.tareasAsignadasToolStripMenuItem.Click += new System.EventHandler(this.tareasAsignadasToolStripMenuItem_Click);
             // 
             // frmMaster
             // 
@@ -124,5 +133,6 @@
         private System.Windows.Forms.ToolStripMenuItem administraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tareasAsignadasToolStripMenuItem;
     }
 }

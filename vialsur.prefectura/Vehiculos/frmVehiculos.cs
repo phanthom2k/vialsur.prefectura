@@ -123,7 +123,24 @@ namespace vialsur.prefectura.Vehiculos
                     frm_Vehiculo.ShowDialog(); 
                     frm_Vehiculo.Dispose();
                     btn_Buscar_Click(sender, e);
-                }               
+                }
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_historiado" ) //| dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar") & dataGridView1.RowCount > 0)
+                {
+                    frmHistoriadoVehiculo frm_historiado = new frmHistoriadoVehiculo();
+                    frm_historiado.IdVehiculo = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+
+                    frm_historiado.Show();
+
+                    //frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
+                    //frm_Vehiculo.EsNuevo = false;
+                    //frm_Vehiculo.Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                    //frm_Vehiculo.EsVer = dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" ? true : false;
+                    //frm_Vehiculo.ShowDialog();
+                    //frm_Vehiculo.Dispose();
+                    //btn_Buscar_Click(sender, e);
+                }
+
+
             }
             catch (Exception ex)
             {

@@ -94,6 +94,7 @@ namespace vialsur.prefectura.Ordenes
                     lblNombresMecanicoResponsable.Text = per.ApellidosNombres;
                     lblKmIn.Text = ord.km_ingreso + "Km";
                     lblKmOut.Text = ord.km_egreso + "Km";
+                    numericTextBox1.Text = ord.km_egreso.ToString();
                     lblFecha.Text = ((DateTime)ord.fecha).ToShortDateString();
 
                     txtObservacion.Text = ord.observacion;
@@ -144,8 +145,7 @@ namespace vialsur.prefectura.Ordenes
                         entidades.vialsur.prefectura.orde_detalle obj_orden_detalle = objSelecTrab.Obj_orden_detalle;
                         new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarOrde_Detalle(obj_orden_detalle);
                         CargarDatosGrilla();
-
-
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, entidades.vialsur.prefectura.Orden_TipoEstado.EJECUCION);
                     }
 
 
@@ -177,6 +177,42 @@ namespace vialsur.prefectura.Ordenes
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(MessageBox.Show("¿Desea marcar la salida del vehiculo?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button1)==DialogResult.Yes)
+                {
+                    if (numericTextBox1.IntValue > 0 )
+                    {
+                        if( new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa) <= numericTextBox1.IntValue   )
+                        {
+                            if( new logica.vialsur.prefectura.Orden.cls_logica_orden().VerificarCumplimientoDetallesAsignados(OrdenID))
+                            {
+
+                                new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, Orden_TipoEstado.FINALIZADO, numericTextBox1.IntValue);
+                                this.Close();
+                            }
+                            else
+                                MessageBox.Show("Aun tiene pendientes trabajos que realizar en la orden");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Kilometraje de salida ingresado es inferior al registrado ("+ new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa)+"Km)");
+                        }                        
+                    }
+                    else
+                        MessageBox.Show("Kilometraje de salida es 0");                    
+
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error"+ex.Message);
             }
         }
     }
