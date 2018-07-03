@@ -64,7 +64,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +81,7 @@
             this.ve_vehiculo_responsable_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ve_vehiculo_responsable_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -424,14 +424,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1057, 412);
             this.dataGridView1.TabIndex = 38;
-            // 
-            // numericTextBox1
-            // 
-            this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(182, 200);
-            this.numericTextBox1.Name = "numericTextBox1";
-            this.numericTextBox1.Size = new System.Drawing.Size(334, 22);
-            this.numericTextBox1.TabIndex = 39;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cl_ver
             // 
@@ -587,6 +580,14 @@
             this.tipo_responsable.Name = "tipo_responsable";
             this.tipo_responsable.ReadOnly = true;
             this.tipo_responsable.Visible = false;
+            // 
+            // numericTextBox1
+            // 
+            this.numericTextBox1.AllowSpace = false;
+            this.numericTextBox1.Location = new System.Drawing.Point(182, 200);
+            this.numericTextBox1.Name = "numericTextBox1";
+            this.numericTextBox1.Size = new System.Drawing.Size(334, 22);
+            this.numericTextBox1.TabIndex = 39;
             // 
             // frmHistoriadoVehiculo
             // 

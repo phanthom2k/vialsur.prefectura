@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Catasto\Catastro\catastro.ui\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -85,6 +88,12 @@
     <Compile Include="Ordenes\frmOrdenes.Designer.cs">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordenes\frmOrdenesPendientesAprobacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes\frmOrdenesPendientesAprobacion.Designer.cs">
+      <DependentUpon>frmOrdenesPendientesAprobacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ordenes\frmSeleccionadorTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +105,12 @@
     </Compile>
     <Compile Include="Ordenes\frmSeleccionarVehiculo.Designer.cs">
       <DependentUpon>frmSeleccionarVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ordenes\frmVisorOrden_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes\frmVisorOrden_1.Designer.cs">
+      <DependentUpon>frmVisorOrden_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Personal\frmPersonal.cs">
       <SubType>Form</SubType>
@@ -111,6 +126,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rpt\cls_RPT_orden_individual.cs" />
     <Compile Include="uc\uc_Accion.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -186,11 +202,17 @@
     <EmbeddedResource Include="Ordenes\frmOrdenes.resx">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes\frmOrdenesPendientesAprobacion.resx">
+      <DependentUpon>frmOrdenesPendientesAprobacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmSeleccionadorTrabajo.resx">
       <DependentUpon>frmSeleccionadorTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmSeleccionarVehiculo.resx">
       <DependentUpon>frmSeleccionarVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes\frmVisorOrden_1.resx">
+      <DependentUpon>frmVisorOrden_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personal\frmPersonal.resx">
       <DependentUpon>frmPersonal.cs</DependentUpon>
@@ -246,6 +268,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\broom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

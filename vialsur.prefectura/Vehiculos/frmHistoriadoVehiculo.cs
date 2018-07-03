@@ -120,5 +120,39 @@ namespace vialsur.prefectura.Vehiculos
                 MessageBox.Show("Error" + ex.Message);
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
+                {
+
+                    rpt.cls_RPT_orden_individual obj_generador = new rpt.cls_RPT_orden_individual();
+                    obj_generador.Orden_Id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                    obj_generador.Generar();
+
+
+                    Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
+                    frmVisor.RutaArchivo = @"C:\Temp\1.pdf";
+                    frmVisor.ShowDialog();
+                    /*frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
+                    frm_Vehiculo.EsNuevo = false;
+                    frm_Vehiculo.Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                    frm_Vehiculo.EsVer = dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" ? true : false;
+                    frm_Vehiculo.ShowDialog();
+                    frm_Vehiculo.Dispose();
+                    btn_Buscar_Click(sender, e); */
+                }
+               
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar registrar el vehiculo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

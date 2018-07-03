@@ -276,6 +276,38 @@ namespace datos.vialsur.prefectura
         }
 
         /// <summary>
+        /// Consulta las ordenes segun el estado
+        /// </summary>
+        /// <param name="estado"></param>
+        /// <returns></returns>
+        public DataTable ObtenerOrdenesByEstado_UI(entidades.vialsur.prefectura.Orden_TipoEstado  estado)
+        {
+            string consulta_sql =
+                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, "+
+                    "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso,  "+
+                    "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id,  "+
+                    "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado,  "+
+                    "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable "+
+                    "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id  "+
+                    "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id "+
+                    "WHERE orden.estado = @estado "+
+                    "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC;";
+
+            try
+            {
+                SqlParameter parametro1 = new SqlParameter("@estado", SqlDbType.Int);
+                parametro1.Value = estado;
+                                
+
+                return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parametro1).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos de las ordenes: " + ex.Message);
+            }
+        }
+
+        /// <summary>
         /// Retorna las ordenes de un determinado vehiculo segun su id y con la facilidad de filtrar por ir_orden
         /// </summary>
         /// <param name="Cedula"></param>

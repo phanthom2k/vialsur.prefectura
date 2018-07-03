@@ -102,18 +102,18 @@ namespace vialsur.prefectura.Ordenes
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {
-
+            {           
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
                 {
+                   
                     frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
                     frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
                     frmDetalle.ShowDialog();
                     frmDetalle.Dispose();
 
-
-
                 }
+
+
 
 
 

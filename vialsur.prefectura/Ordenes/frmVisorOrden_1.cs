@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace vialsur.prefectura.Ordenes
+{
+    public partial class frmVisorOrden_1 : Form
+    {
+        public frmVisorOrden_1()
+        {
+            InitializeComponent();
+        }
+        
+        public string RutaArchivo { get; set; }
+
+        private void frmVisorOrden_1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+               // this.Text = NombreArchivo;
+                axAcroPDF1.src = RutaArchivo;
+                axAcroPDF1.setZoom(65);
+                //axAcroPDF1.setShowToolbar(true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un problema al intentar abir el documento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+}

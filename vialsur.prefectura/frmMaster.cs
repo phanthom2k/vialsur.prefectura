@@ -29,7 +29,7 @@ namespace vialsur.prefectura
                     vehiculos.MdiParent = this;
                     vehiculos.WindowState = FormWindowState.Maximized;
                     vehiculos.Show();                    
-                }                    
+                }
                 /*if (vehiculos == null  )
                 {
                     vehiculos = new frm_Master_Vehiculos();
@@ -38,6 +38,7 @@ namespace vialsur.prefectura
 
                     vehiculos.Show();
                 }*/
+                
                 
             }
             catch(Exception ex)
@@ -110,6 +111,23 @@ namespace vialsur.prefectura
                 ordenes.MdiParent = this;
                 ordenes.WindowState = FormWindowState.Maximized;
                 ordenes.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void tareasPendientesDeAprobarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Ordenes.frmOrdenesPendientesAprobacion objFrm = new Ordenes.frmOrdenesPendientesAprobacion();
+                objFrm.MdiParent = this;
+                objFrm.WindowState = FormWindowState.Maximized;
+                objFrm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                objFrm.Show();
+                
             }
             catch (Exception ex)
             {
