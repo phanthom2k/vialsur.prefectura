@@ -37,7 +37,8 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
-                DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(cedula, Placa, id_orden);
+                DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(cedula, Placa, id_orden,
+                                                                                                    (int) entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO );
                 dataGridView1.DataSource = dt;
                // dataGridView1.Columns["tipo_oden"].ValueType = typeof(string);
            /*     if (dt.Rows.Count > 0)

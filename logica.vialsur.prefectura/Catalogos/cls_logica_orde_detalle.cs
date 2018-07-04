@@ -52,10 +52,12 @@ namespace logica.vialsur.prefectura.Catalogos
 
         /// <summary>
         /// Actualizar el estado de la orden
+        /// OPCIONAL CEDULA DE QUIEN AUTORIZA
         /// </summary>
         /// <param name="Id_Orden"></param>
         /// <param name="tipo"></param>
-        public void ActualizarEstadoOrden(string Id_Orden, entidades.vialsur.prefectura.Orden_TipoEstado tipo)
+        /// <param name="cedula"></param>
+        public void ActualizarEstadoOrden(string Id_Orden, entidades.vialsur.prefectura.Orden_TipoEstado tipo, string cedula="")
         {
             try
             {

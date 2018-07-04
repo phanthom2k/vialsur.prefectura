@@ -143,11 +143,11 @@
             // cl_modificar
             // 
             this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modif.";
+            this.cl_modificar.HeaderText = "Aprobar";
             this.cl_modificar.MinimumWidth = 70;
             this.cl_modificar.Name = "cl_modificar";
             this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Modif.";
+            this.cl_modificar.Text = "Aprobar";
             this.cl_modificar.UseColumnTextForButtonValue = true;
             this.cl_modificar.Width = 70;
             // 

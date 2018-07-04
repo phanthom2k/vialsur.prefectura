@@ -68,12 +68,13 @@ namespace logica.vialsur.prefectura.Orden
         /// <param name="Cedula"></param>
         /// <param name="Placa"></param>
         /// <param name="id_orden"></param>
+        /// <param name="estado">-1 representa que no se tome en cuenta el estado durante la busqueda</param>
         /// <returns></returns>
-        public System.Data.DataTable ConnsultarOrdenesAsignadasTecnicosPorCedula_UI(string Cedula,string Placa, string id_orden)
+        public System.Data.DataTable ConnsultarOrdenesAsignadasTecnicosPorCedula_UI(string Cedula,string Placa, string id_orden, int estado)
         {
             try
             {
-                return new cls_data_orden().ObtenerOrdenesByTecnicoAsignado_UI(Cedula,Placa, id_orden );
+                return new cls_data_orden().ObtenerOrdenesByTecnicoAsignado_UI(Cedula,Placa, id_orden,estado );
             }
             catch (Exception ex)
             {
@@ -87,12 +88,13 @@ namespace logica.vialsur.prefectura.Orden
         /// <param name="Cedula"></param>
         /// <param name="Placa"></param>
         /// <param name="id_orden"></param>
+        /// <param name="estado">-1 representa que no busque segun el estado</param>
         /// <returns></returns>
-        public System.Data.DataTable ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(string Cedula, string Placa, string id_orden)
+        public System.Data.DataTable ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(string Cedula, string Placa, string id_orden, int estado)
         {
             try
             {
-                System.Data.DataTable dt =  new cls_data_orden().ObtenerOrdenesByTecnicoAsignado_UI(Cedula, Placa, id_orden);
+                System.Data.DataTable dt =  new cls_data_orden().ObtenerOrdenesByTecnicoAsignado_UI(Cedula, Placa, id_orden, estado);
                 //dataGridView1.Columns["tipo_oden"].ValueType = typeof(string);
                 // dt.Columns["tipo_oden"].DataType = typeof(string);
 

@@ -16,8 +16,10 @@ namespace vialsur.prefectura.Ordenes
         public frmDetalleVistaControlador()
         {
             InitializeComponent();
+            toolStripButton3.Visible = false;
         }
 
+        public bool EsCambioEstado { set { toolStripButton3.Visible = value;  } }
 
         public string OrdenID { get; set; }
 
@@ -213,6 +215,25 @@ namespace vialsur.prefectura.Ordenes
             catch (Exception ex)
             {
                 MessageBox.Show("Error"+ex.Message);
+            }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var objFrmCambioEstado = new frmOrdenesCambiarEstado();
+                objFrmCambioEstado.OrdenID = this.OrdenID;
+
+                objFrmCambioEstado.ShowDialog();
+
+
+                //frmDetalle
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error "+ex.Message);
             }
         }
     }

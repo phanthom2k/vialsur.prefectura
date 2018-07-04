@@ -151,10 +151,12 @@ namespace datos.vialsur.prefectura
 
         /// <summary>
         /// Actualiza el estado de la orden. Ref. Orden_TipoEstado
+        /// OPCIONAL: CEDULA DE QUIEN AUTORIZA ACTUALIZACIOn
         /// </summary>
         /// <param name="Id_Orden"></param>
         /// <param name="tipo"></param>
-        public void ActualizarEstadoOrden(string Id_Orden, entidades.vialsur.prefectura.Orden_TipoEstado tipo)
+        /// <param name="ced_autoriza"></param>
+        public void ActualizarEstadoOrden(string Id_Orden, entidades.vialsur.prefectura.Orden_TipoEstado tipo, string ced_autoriza="")
         {
             try
             {
@@ -168,10 +170,14 @@ namespace datos.vialsur.prefectura
                 SqlParameter _estado = new SqlParameter("@estado", SqlDbType.Int);
                 _estado.Value = (entidades.vialsur.prefectura.Orden_TipoEstado)tipo;
                 parameters.Add(_estado);
-               
+
+                SqlParameter _cedula = new SqlParameter("@cedula", SqlDbType.NChar, 10);
+                _cedula.Value = ced_autoriza;
+                parameters.Add(_cedula);
+
                 #endregion
 
-                string _update_Sql = "UPDATE [dbo].[orden] SET[estado] = @estado WHERE[id] = @id;";
+                string _update_Sql = "UPDATE [dbo].[orden] SET[estado] = @estado, [per_persona_cedula_autoriza]=@cedula WHERE[id] = @id;";
                 SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _update_Sql, parameters.ToArray());                               
 
             }
@@ -226,7 +232,7 @@ namespace datos.vialsur.prefectura
         /// <param name="Placa"></param>
         /// <param name="id_orden"></param>
         /// <returns></returns>
-        public DataTable ObtenerOrdenesByTecnicoAsignado_UI(string Cedula, string Placa, string id_orden)
+        public DataTable ObtenerOrdenesByTecnicoAsignado_UI(string Cedula, string Placa, string id_orden, int estado =-1)
         {
             string consulta_sql =
                     //"SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
@@ -247,8 +253,10 @@ namespace datos.vialsur.prefectura
                     "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
                     "WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula " +
                     "AND ( ve_vehiculo.placa = @Placa  " +
-                    "OR orden.id LIKE @id_orden )" +
-                    "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
+                    "OR orden.id LIKE @id_orden ) ";
+            if (estado != -1) //cuando no se tenga q poner el estado 
+                consulta_sql += " AND orden.estado>=@estado ";
+                    consulta_sql +=  "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
 
             try
             {
@@ -266,6 +274,9 @@ namespace datos.vialsur.prefectura
                 parametro3.Value = id_orden+"%";
                 parameters.Add(parametro3);
 
+                SqlParameter parametro4 = new SqlParameter("@estado", SqlDbType.Int);
+                parametro4.Value = estado;
+                parameters.Add(parametro4);
 
                 return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parameters.ToArray() ).Tables[0];
             }

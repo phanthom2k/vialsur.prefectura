@@ -58,6 +58,7 @@ namespace vialsur.prefectura.Ordenes
             {
                 frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
                 frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                frmDetalle.EsCambioEstado = true;
                 frmDetalle.ShowDialog();
                 frmDetalle.Dispose();
             }

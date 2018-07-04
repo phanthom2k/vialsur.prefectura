@@ -88,6 +88,12 @@
     <Compile Include="Ordenes\frmOrdenes.Designer.cs">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordenes\frmOrdenesCambiarEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes\frmOrdenesCambiarEstado.Designer.cs">
+      <DependentUpon>frmOrdenesCambiarEstado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ordenes\frmOrdenesPendientesAprobacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <Compile Include="uc\uc_Pais.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="uc\uc_TipoEstadosOrdenes.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uc\uc_TipoMantenimiento.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -201,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmOrdenes.resx">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes\frmOrdenesCambiarEstado.resx">
+      <DependentUpon>frmOrdenesCambiarEstado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmOrdenesPendientesAprobacion.resx">
       <DependentUpon>frmOrdenesPendientesAprobacion.cs</DependentUpon>
