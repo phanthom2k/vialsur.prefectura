@@ -15,6 +15,8 @@ namespace vialsur.prefectura.Ordenes
         public string OrdenID { set; get; }
         public string Cedula { set; get; }
 
+        public entidades.vialsur.prefectura.Orden_TipoEstado Estado { get; set; }
+
 
         public frmOrdenesCambiarEstado()
         {
@@ -43,7 +45,7 @@ namespace vialsur.prefectura.Ordenes
         {
             if(uc_TipoEstadosOrdenes1.SelectedIndex>0)
             {
-                if (ord.estado <= uc_TipoEstadosOrdenes1.SelectedIndex)
+                if (ord.estado >= uc_TipoEstadosOrdenes1.SelectedIndex)
                     MessageBox.Show("No puede cambiar a un estado igual o inferior","Cambio",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }            
         }
@@ -54,13 +56,11 @@ namespace vialsur.prefectura.Ordenes
             ////FALTA IMPLEMENTAR UN CONTROL QUE SOLO PERMITA CAMBIAR ACORDE AL FORMULARIO QUE LO SOLICITA EN ESTE CASO HAY Q INGRESAR UN SWITCH PARA QUE SOLO ALMACENE LA AUTORIZACION
             try
             {
-                if (uc_TipoEstadosOrdenes1.SelectedIndex > 0 &&   uc_TipoEstadosOrdenes1.SelectedIndex  > ord.estado)
+                if (uc_TipoEstadosOrdenes1.SelectedIndex > 0 &&   uc_TipoEstadosOrdenes1.SelectedIndex  > ord.estado && uc_TipoEstadosOrdenes1.SelectedIndex == (int)Estado)
                 {
                     if(MessageBox.Show("Desea registrar el cambio","Cambio de estado",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                     {
                         entidades.vialsur.prefectura.Orden_TipoEstado _ii = (entidades.vialsur.prefectura.Orden_TipoEstado)uc_TipoEstadosOrdenes1.SelectedIndex;
-
-
                         new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Cedula);                            
                     }
                     

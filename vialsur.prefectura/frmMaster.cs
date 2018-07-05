@@ -89,6 +89,9 @@ namespace vialsur.prefectura
             {
                 var ordenes = new Ordenes.frmOrdenes();
                 ordenes.MdiParent = this;
+
+                ordenes.Cedula = "1104126626";
+
                 ordenes.WindowState = FormWindowState.Maximized;
                 ordenes.Show();
             }
@@ -109,6 +112,10 @@ namespace vialsur.prefectura
             {
                 var ordenes = new Ordenes.frmOrdenes();
                 ordenes.MdiParent = this;
+
+                ordenes.Cedula = "1104126626";
+
+
                 ordenes.WindowState = FormWindowState.Maximized;
                 ordenes.Show();
             }

@@ -16,6 +16,9 @@ namespace vialsur.prefectura.Ordenes
         {
             InitializeComponent();
         }
+
+        public string Cedula { get; set; }
+
         public entidades.vialsur.prefectura.Orden_TipoEstado Estado { get; set; }
 
         private void frmOrdenesPendientesAprobacion_Load(object sender, EventArgs e)
@@ -59,8 +62,10 @@ namespace vialsur.prefectura.Ordenes
                 frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
                 frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
                 frmDetalle.EsCambioEstado = true;
+                frmDetalle.Cedula = this.Cedula;
                 frmDetalle.ShowDialog();
                 frmDetalle.Dispose();
+                CargarDatosGrilla();
             }
 
         }

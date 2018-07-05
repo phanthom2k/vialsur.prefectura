@@ -245,15 +245,20 @@ namespace vialsur.prefectura.Ordenes
 
                 string ID_ORDEN = obj_logica_orden.RegistrarOrdenMantenimiento(obj_vehiculo, obj_orden, detalle);
 
-                MessageBox.Show("ORden: "+ID_ORDEN);
-
-
+                MessageBox.Show("Orden creada: "+ID_ORDEN);
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERR: "+ex.Message);                
             }
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Desea cancelar.","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            this.Close();
         }
     }
 }

@@ -64,6 +64,12 @@
     <Compile Include="frmMaster.Designer.cs">
       <DependentUpon>frmMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="log\frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="log\frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ordenes\frmDesignacionMantenimientoRespondable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     <EmbeddedResource Include="frmMaster.resx">
       <DependentUpon>frmMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="log\frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ordenes\frmDesignacionMantenimientoRespondable.resx">
       <DependentUpon>frmDesignacionMantenimientoRespondable.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +308,10 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\logop_prefectura.png" />
+    <None Include="Resources\logop_prefectura1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

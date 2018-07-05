@@ -17,14 +17,17 @@ namespace vialsur.prefectura.Ordenes
             InitializeComponent();
         }
 
+        public string Cedula { get; set; }
+
+
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             ///NUEVA ORDERDEN
             ///
             frmSeleccionarVehiculo Paso_1 = new frmSeleccionarVehiculo();
-
             Paso_1.ShowDialog();
-
+            //llamar para refrescar la grilla
+            CargarDatosGrilla(Cedula);
         }
 
         /// <summary>
@@ -78,7 +81,7 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
-                CargarDatosGrilla("1104126626");
+                CargarDatosGrilla(Cedula);
             }
             catch (Exception ex)
             {
@@ -90,7 +93,7 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
-                CargarDatosGrilla("1104126626", txt_input.Text.ToUpper(), txt_input.Text.ToUpper());
+                CargarDatosGrilla(Cedula, txt_input.Text.ToUpper(), txt_input.Text.ToUpper());
             }
             catch (Exception ex)
             {
@@ -111,12 +114,9 @@ namespace vialsur.prefectura.Ordenes
                     frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
                     frmDetalle.ShowDialog();
                     frmDetalle.Dispose();
+                    CargarDatosGrilla(Cedula);
 
                 }
-
-
-
-
 
 
                 /* frmPersonal_Nuevo frm_personal = new frmPersonal_Nuevo();

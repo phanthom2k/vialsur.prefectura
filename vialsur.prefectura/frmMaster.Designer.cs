@@ -33,10 +33,10 @@
             this.ordenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tareasAsignadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tareasPendientesDeAprobarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tareasPendientesDeAprobarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,13 @@
             this.tareasAsignadasToolStripMenuItem.Text = "Tareas Asignadas";
             this.tareasAsignadasToolStripMenuItem.Click += new System.EventHandler(this.tareasAsignadasToolStripMenuItem_Click);
             // 
+            // tareasPendientesDeAprobarToolStripMenuItem
+            // 
+            this.tareasPendientesDeAprobarToolStripMenuItem.Name = "tareasPendientesDeAprobarToolStripMenuItem";
+            this.tareasPendientesDeAprobarToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
+            this.tareasPendientesDeAprobarToolStripMenuItem.Text = "Tareas Pendientes de Aprobar";
+            this.tareasPendientesDeAprobarToolStripMenuItem.Click += new System.EventHandler(this.tareasPendientesDeAprobarToolStripMenuItem_Click);
+            // 
             // administraciónToolStripMenuItem
             // 
             this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -107,19 +114,16 @@
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
             // 
-            // tareasPendientesDeAprobarToolStripMenuItem
-            // 
-            this.tareasPendientesDeAprobarToolStripMenuItem.Name = "tareasPendientesDeAprobarToolStripMenuItem";
-            this.tareasPendientesDeAprobarToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
-            this.tareasPendientesDeAprobarToolStripMenuItem.Text = "Tareas Pendientes de Aprobar";
-            this.tareasPendientesDeAprobarToolStripMenuItem.Click += new System.EventHandler(this.tareasPendientesDeAprobarToolStripMenuItem_Click);
-            // 
             // frmMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::vialsur.prefectura.Properties.Resources.logop_prefectura;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1160, 618);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMaster";

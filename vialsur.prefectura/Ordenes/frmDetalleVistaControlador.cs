@@ -18,6 +18,10 @@ namespace vialsur.prefectura.Ordenes
             InitializeComponent();
             toolStripButton3.Visible = false;
         }
+        /// <summary>
+        /// Num. CEdula del aprovador
+        /// </summary>
+        public string Cedula { get; set; }
 
         public bool EsCambioEstado { set { toolStripButton3.Visible = value;  } }
 
@@ -224,17 +228,20 @@ namespace vialsur.prefectura.Ordenes
             {
                 var objFrmCambioEstado = new frmOrdenesCambiarEstado();
                 objFrmCambioEstado.OrdenID = this.OrdenID;
-
-                objFrmCambioEstado.ShowDialog();
-
-
-                //frmDetalle
+                objFrmCambioEstado.Cedula = this.Cedula;
+                objFrmCambioEstado.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO;
+                objFrmCambioEstado.ShowDialog();                
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show("Error "+ex.Message);
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
