@@ -80,6 +80,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(196, 22);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.Text = "1104126626";
+            this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
             // 
             // txtContrasena
             // 
@@ -93,6 +94,8 @@
             this.txtContrasena.Size = new System.Drawing.Size(196, 22);
             this.txtContrasena.TabIndex = 4;
             this.txtContrasena.Text = "1104126626";
+            this.txtContrasena.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasena_KeyDown);
+            this.txtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasena_KeyPress);
             // 
             // button1
             // 
