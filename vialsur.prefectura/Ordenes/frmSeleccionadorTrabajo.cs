@@ -19,22 +19,51 @@ namespace vialsur.prefectura.Ordenes
             InitializeComponent();
             EsActualizacion = false;
             EsLectura = false;
+
+            Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
+            toolStrip1.ImageList = img.GetCatalog();
+            // img.SetImage48("Actions-document-save-icon.png", "disk");
+            img.SetImage48("blue-document-icon.png", "new");
+            //toolStripButton2.ImageKey = "disk";
+            toolStripButton2.ImageKey = "new";
+            img.SetImage48("logout-icon.png", "door_out");
+            toolStripButton1.ImageKey = "door_out";
+
+
+
         }
         
         public bool EsActualizacion { get; set; }
         public bool EsLectura { get; set; }
+        public int EstadoOrden { get; set; }
 
         public bool EsMecanicoAtender { get; set; }
 
         void Congelar()
         {
             toolStripButton2.Enabled = !EsLectura;
-            if (EsMecanicoAtender)
+            if (EsMecanicoAtender  )
             {
                 uc_Catalogo_Parte_Principal1.Enabled = uc_Catalogo_Parte_Secundaria1.Enabled =
                 uc_Accion1.Enabled = numericUpDown1.Enabled = false;
             }
             else uc_Accion2.Enabled = false;
+
+            //if( EstadoOrden != 3 | EstadoOrden != 0 )
+            if (EstadoOrden == (int)entidades.vialsur.prefectura.Orden_TipoEstado.FINALIZADO ) //|
+                //EstadoOrden != (int)entidades.vialsur.prefectura.Orden_TipoEstado.NO_DEFINIDO )
+            {
+                uc_Catalogo_Parte_Principal1.Enabled = uc_Catalogo_Parte_Secundaria1.Enabled =
+                uc_Accion1.Enabled = uc_Accion2.Enabled =  numericUpDown1.Enabled = lettersTextBox1.Enabled =
+                toolStripButton2.Enabled = false;
+            }
+
+        //    NO_DEFINIDO = 0,
+        //CREADO = 1,
+        //AUTORIZADO = 2,
+        //EJECUCION = 3,
+        //FINALIZADO = 4,
+        //DESCARTADO = 5
 
         }
 
@@ -120,9 +149,11 @@ namespace vialsur.prefectura.Ordenes
             this.Close();
 
 
-        }      
+        }
 
-
-
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

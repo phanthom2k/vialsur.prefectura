@@ -16,6 +16,18 @@ namespace vialsur.prefectura.Ordenes
         public frmDetalleTrabajos()
         {
             InitializeComponent();
+
+            Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
+            toolStrip1.ImageList = img.GetCatalog();
+            img.SetImage48("Actions-document-save-icon.png", "disk");
+            toolStripButton3.ImageKey = "disk";
+
+            img.SetImage48("blue-document-icon.png", "new");           
+            toolStripButton2.ImageKey = "new";
+
+            img.SetImage48("logout-icon.png", "door_out");
+            toolStripButton1.ImageKey = "door_out";
+
         }
 
         ve_vehiculo obj_vehiculo;
@@ -124,6 +136,7 @@ namespace vialsur.prefectura.Ordenes
         {
             frmSeleccionadorTrabajo obj = new frmSeleccionadorTrabajo();
             obj.Obj_vehiculo = this.obj_vehiculo;
+            obj.EstadoOrden = (int)entidades.vialsur.prefectura.Orden_TipoEstado.NO_DEFINIDO;
             obj.EsLectura = false;
             if (obj.ShowDialog() == DialogResult.Yes)
             {

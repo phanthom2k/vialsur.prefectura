@@ -15,6 +15,15 @@ namespace vialsur.prefectura.Ordenes
         public frmOrdenes()
         {
             InitializeComponent();
+            Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
+            toolStrip1.ImageList = img.GetCatalog();
+            // img.SetImage48("Actions-document-save-icon.png", "disk");
+            img.SetImage48("blue-document-icon.png", "new");
+            //toolStripButton2.ImageKey = "disk";
+            toolStripButton2.ImageKey = "new";
+            img.SetImage48("logout-icon.png", "door_out");
+            toolStripButton1.ImageKey = "door_out";
+
         }
 
         public string Cedula { get; set; }

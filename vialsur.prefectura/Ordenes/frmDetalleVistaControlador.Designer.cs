@@ -84,6 +84,10 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.LBK_ESTADO = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.LBL_ORDENNO = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -336,7 +340,7 @@
             this.lblTipoMantenimiento.AutoSize = true;
             this.lblTipoMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoMantenimiento.ForeColor = System.Drawing.Color.Red;
-            this.lblTipoMantenimiento.Location = new System.Drawing.Point(230, 23);
+            this.lblTipoMantenimiento.Location = new System.Drawing.Point(230, 47);
             this.lblTipoMantenimiento.Name = "lblTipoMantenimiento";
             this.lblTipoMantenimiento.Size = new System.Drawing.Size(162, 17);
             this.lblTipoMantenimiento.TabIndex = 65;
@@ -347,7 +351,7 @@
             this.lblNombresMecanicoResponsable.AutoSize = true;
             this.lblNombresMecanicoResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombresMecanicoResponsable.ForeColor = System.Drawing.Color.Red;
-            this.lblNombresMecanicoResponsable.Location = new System.Drawing.Point(230, 41);
+            this.lblNombresMecanicoResponsable.Location = new System.Drawing.Point(230, 65);
             this.lblNombresMecanicoResponsable.Name = "lblNombresMecanicoResponsable";
             this.lblNombresMecanicoResponsable.Size = new System.Drawing.Size(251, 17);
             this.lblNombresMecanicoResponsable.TabIndex = 63;
@@ -357,7 +361,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 23);
+            this.label6.Location = new System.Drawing.Point(14, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 17);
             this.label6.TabIndex = 62;
@@ -367,7 +371,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 41);
+            this.label1.Location = new System.Drawing.Point(14, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 17);
             this.label1.TabIndex = 60;
@@ -393,12 +397,12 @@
             this.observacion,
             this.estado,
             this.orden_id});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 383);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 412);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1190, 226);
+            this.dataGridView1.Size = new System.Drawing.Size(1190, 197);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -503,7 +507,7 @@
             // 
             // txtObservacion
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(142, 83);
+            this.txtObservacion.Location = new System.Drawing.Point(142, 107);
             this.txtObservacion.MaxLength = 1200;
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
@@ -514,7 +518,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 80);
+            this.label4.Location = new System.Drawing.Point(14, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 40;
@@ -522,6 +526,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LBL_ORDENNO);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.LBK_ESTADO);
+            this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.numericTextBox1);
             this.groupBox1.Controls.Add(this.lblKmOut);
@@ -538,7 +546,7 @@
             this.groupBox1.Controls.Add(this.lblNombresMecanicoResponsable);
             this.groupBox1.Location = new System.Drawing.Point(12, 222);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1190, 155);
+            this.groupBox1.Size = new System.Drawing.Size(1190, 184);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ORDEN DE MANTENIMIENTO";
@@ -548,7 +556,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(878, 57);
+            this.label17.Location = new System.Drawing.Point(878, 81);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(30, 17);
             this.label17.TabIndex = 74;
@@ -557,7 +565,7 @@
             // numericTextBox1
             // 
             this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(780, 55);
+            this.numericTextBox1.Location = new System.Drawing.Point(780, 79);
             this.numericTextBox1.MaxLength = 10;
             this.numericTextBox1.Name = "numericTextBox1";
             this.numericTextBox1.Size = new System.Drawing.Size(100, 22);
@@ -568,7 +576,7 @@
             this.lblKmOut.AutoSize = true;
             this.lblKmOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKmOut.ForeColor = System.Drawing.Color.Red;
-            this.lblKmOut.Location = new System.Drawing.Point(994, 55);
+            this.lblKmOut.Location = new System.Drawing.Point(994, 79);
             this.lblKmOut.Name = "lblKmOut";
             this.lblKmOut.Size = new System.Drawing.Size(61, 17);
             this.lblKmOut.TabIndex = 72;
@@ -579,7 +587,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(606, 58);
+            this.label18.Location = new System.Drawing.Point(606, 82);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(167, 17);
             this.label18.TabIndex = 71;
@@ -590,7 +598,7 @@
             this.lblKmIn.AutoSize = true;
             this.lblKmIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKmIn.ForeColor = System.Drawing.Color.Red;
-            this.lblKmIn.Location = new System.Drawing.Point(230, 58);
+            this.lblKmIn.Location = new System.Drawing.Point(230, 82);
             this.lblKmIn.Name = "lblKmIn";
             this.lblKmIn.Size = new System.Drawing.Size(61, 17);
             this.lblKmIn.TabIndex = 70;
@@ -600,7 +608,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(14, 58);
+            this.label16.Location = new System.Drawing.Point(14, 82);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(171, 17);
             this.label16.TabIndex = 69;
@@ -611,7 +619,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.Red;
-            this.lblFecha.Location = new System.Drawing.Point(675, 23);
+            this.lblFecha.Location = new System.Drawing.Point(675, 47);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(69, 17);
             this.lblFecha.TabIndex = 67;
@@ -621,7 +629,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(606, 23);
+            this.label11.Location = new System.Drawing.Point(606, 47);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 17);
             this.label11.TabIndex = 66;
@@ -670,6 +678,48 @@
             this.toolStripButton3.Text = "&Cambiar Estado";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // LBK_ESTADO
+            // 
+            this.LBK_ESTADO.AutoSize = true;
+            this.LBK_ESTADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBK_ESTADO.ForeColor = System.Drawing.Color.Red;
+            this.LBK_ESTADO.Location = new System.Drawing.Point(789, 30);
+            this.LBK_ESTADO.Name = "LBK_ESTADO";
+            this.LBK_ESTADO.Size = new System.Drawing.Size(109, 17);
+            this.LBK_ESTADO.TabIndex = 69;
+            this.LBK_ESTADO.Text = "LBK_ESTADO";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(606, 30);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(186, 17);
+            this.label20.TabIndex = 68;
+            this.label20.Text = "ESTADO DE LA ORDEN:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(15, 30);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(96, 17);
+            this.label19.TabIndex = 75;
+            this.label19.Text = "ORDEN NO:";
+            // 
+            // LBL_ORDENNO
+            // 
+            this.LBL_ORDENNO.AutoSize = true;
+            this.LBL_ORDENNO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_ORDENNO.ForeColor = System.Drawing.Color.Red;
+            this.LBL_ORDENNO.Location = new System.Drawing.Point(230, 30);
+            this.LBL_ORDENNO.Name = "LBL_ORDENNO";
+            this.LBL_ORDENNO.Size = new System.Drawing.Size(123, 17);
+            this.LBL_ORDENNO.TabIndex = 76;
+            this.LBL_ORDENNO.Text = "LBL_ORDENNO";
             // 
             // frmDetalleVistaControlador
             // 
@@ -752,5 +802,9 @@
         private Vivaldi.UserControls.NumericTextBox numericTextBox1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.Label LBL_ORDENNO;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label LBK_ESTADO;
+        private System.Windows.Forms.Label label20;
     }
 }

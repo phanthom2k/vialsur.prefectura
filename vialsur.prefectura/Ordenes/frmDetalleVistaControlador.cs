@@ -17,6 +17,21 @@ namespace vialsur.prefectura.Ordenes
         {
             InitializeComponent();
             toolStripButton3.Visible = false;
+
+
+            Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
+            toolStrip1.ImageList = img.GetCatalog();            
+            img.SetImage48("box-out-icon.png", "mark");           
+            toolStripButton2.ImageKey = "mark";
+
+            img.SetImage48("logout-icon.png", "door_out");
+            toolStripButton1.ImageKey = "door_out";
+
+            img.SetImage48("cloud-sync-icon.png", "disk");
+            toolStripButton3.ImageKey = "disk";
+            
+
+
         }
         /// <summary>
         /// Num. CEdula del aprovador
@@ -60,6 +75,8 @@ namespace vialsur.prefectura.Ordenes
                 obj_vehiculo = obj_ve_resp.ve_vehiculo;
 
                 MostrarInformacionVehiculo(obj_vehiculo, obj_orden);
+                if (obj_orden.estado == (int) entidades.vialsur.prefectura.Orden_TipoEstado.FINALIZADO)
+                    toolStripButton2.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -105,6 +122,8 @@ namespace vialsur.prefectura.Ordenes
                     numericTextBox1.Text = ord.km_egreso.ToString();
                     lblFecha.Text = ((DateTime)ord.fecha).ToShortDateString();
 
+                    LBL_ORDENNO.Text = string.Format("{0:0000000}", int.Parse(ord.id) );
+                    LBK_ESTADO.Text = ((entidades.vialsur.prefectura.Orden_TipoEstado)int.Parse(ord.estado.ToString())).ToString();
                     txtObservacion.Text = ord.observacion;
 
                 }
@@ -146,6 +165,7 @@ namespace vialsur.prefectura.Ordenes
                     frmSeleccionadorTrabajo objSelecTrab = new frmSeleccionadorTrabajo();
                     objSelecTrab.Obj_orden_detalle = obj_ord_det_temp;
                     objSelecTrab.Obj_vehiculo = obj_vehiculo;
+                    objSelecTrab.EstadoOrden  = (int)obj_orden.estado;
                     objSelecTrab.EsMecanicoAtender = true;
                     objSelecTrab.EsActualizacion = true;
                     if (objSelecTrab.ShowDialog() == DialogResult.Yes)
