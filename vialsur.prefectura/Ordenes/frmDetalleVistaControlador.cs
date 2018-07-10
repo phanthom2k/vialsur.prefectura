@@ -27,6 +27,8 @@ namespace vialsur.prefectura.Ordenes
 
         public string OrdenID { get; set; }
 
+        public entidades.vialsur.prefectura.emp_empleado Empleado { get; set; }
+
         orden obj_orden;
 
         ve_vehiculo obj_vehiculo;
@@ -47,7 +49,7 @@ namespace vialsur.prefectura.Ordenes
         }
         */
 
-
+       
         private void frmDetalleVistaControlador_Load(object sender, EventArgs e)
         {
             try
@@ -228,7 +230,9 @@ namespace vialsur.prefectura.Ordenes
             {
                 var objFrmCambioEstado = new frmOrdenesCambiarEstado();
                 objFrmCambioEstado.OrdenID = this.OrdenID;
-                objFrmCambioEstado.Cedula = this.Cedula;
+                //                objFrmCambioEstado.Cedula = this.Cedula;
+                //objFrmCambioEstado.Cedula = Empleado.cedula;
+                objFrmCambioEstado.Empleado = Empleado;
                 objFrmCambioEstado.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO;
                 objFrmCambioEstado.ShowDialog();                
             }

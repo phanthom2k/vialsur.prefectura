@@ -145,7 +145,8 @@ namespace datos.vialsur.prefectura
             }
             catch (Exception ex)
             {
-                throw new Exception("No se pudo registrar los datos de la persona", ex);
+                throw ex;
+                //throw new Exception("No se pudo registrar los datos de la persona", ex);
             }
         }
 

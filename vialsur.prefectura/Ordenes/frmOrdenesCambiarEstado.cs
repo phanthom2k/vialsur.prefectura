@@ -15,6 +15,8 @@ namespace vialsur.prefectura.Ordenes
         public string OrdenID { set; get; }
         public string Cedula { set; get; }
 
+        public entidades.vialsur.prefectura.emp_empleado Empleado { get; set; }
+
         public entidades.vialsur.prefectura.Orden_TipoEstado Estado { get; set; }
 
 
@@ -61,14 +63,12 @@ namespace vialsur.prefectura.Ordenes
                     if(MessageBox.Show("Desea registrar el cambio","Cambio de estado",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                     {
                         entidades.vialsur.prefectura.Orden_TipoEstado _ii = (entidades.vialsur.prefectura.Orden_TipoEstado)uc_TipoEstadosOrdenes1.SelectedIndex;
-                        new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Cedula);                            
-                    }
-                    
+                        //new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Cedula);                                                    
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Empleado.cedula);
+                    }                    
                 }
                 else
                     MessageBox.Show("No puede cambiar a un estado igual o inferior", "Cambio de estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
 
                 this.Close();
             }

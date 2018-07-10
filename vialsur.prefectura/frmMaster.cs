@@ -17,7 +17,8 @@ namespace vialsur.prefectura
             InitializeComponent();
         }
 
-        
+        public entidades.vialsur.prefectura.emp_empleado Empleado { get; set; }
+
         private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -89,8 +90,8 @@ namespace vialsur.prefectura
             {
                 var ordenes = new Ordenes.frmOrdenes();
                 ordenes.MdiParent = this;
-
-                ordenes.Cedula = "1104126626";
+                ordenes.Empleado = Empleado;
+                //ordenes.Cedula = Empleado.cedula;
 
                 ordenes.WindowState = FormWindowState.Maximized;
                 ordenes.Show();
@@ -112,9 +113,8 @@ namespace vialsur.prefectura
             {
                 var ordenes = new Ordenes.frmOrdenes();
                 ordenes.MdiParent = this;
-
-                ordenes.Cedula = "1104126626";
-
+                ordenes.Empleado = Empleado;
+                //ordenes.Cedula = Empleado.cedula;
 
                 ordenes.WindowState = FormWindowState.Maximized;
                 ordenes.Show();
@@ -133,6 +133,7 @@ namespace vialsur.prefectura
                 objFrm.MdiParent = this;
                 objFrm.WindowState = FormWindowState.Maximized;
                 objFrm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                objFrm.Empleado = Empleado;
                 objFrm.Show();
                 
             }

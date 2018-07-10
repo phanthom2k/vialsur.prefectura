@@ -37,6 +37,7 @@ namespace vialsur.prefectura.log
                     bool _valid;
                     entidades.vialsur.prefectura.emp_empleado emp = new logica.vialsur.prefectura.log.cls_log_empleados().Verificar(txtUsuario.Text, txtContrasena.Text, out _valid);
                     var master = new frmMaster();
+                    master.Empleado = emp;
                     this.Hide();                   
                     master.ShowDialog();
                     this.Close();
