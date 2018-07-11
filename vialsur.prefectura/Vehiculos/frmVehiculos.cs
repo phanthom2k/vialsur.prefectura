@@ -15,6 +15,17 @@ namespace vialsur.prefectura.Vehiculos
         public frmVehiculos()
         {
             InitializeComponent();
+
+            Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
+            toolStrip1.ImageList = img.GetCatalog();
+            // img.SetImage48("Actions-document-save-icon.png", "disk");
+            img.SetImage48("file-text-icon48x48.png", "new");
+            //toolStripButton2.ImageKey = "disk";
+            toolStripButton2.ImageKey = "new";
+            img.SetImage48("logout-icon.png", "door_out");
+            toolStripButton1.ImageKey = "door_out";
+
+
         }
 
         private void btn_NuevoVehiculo_Click(object sender, EventArgs e)

@@ -22,7 +22,7 @@ namespace vialsur.prefectura.Ordenes
             img.SetImage48("Actions-document-save-icon.png", "disk");
             toolStripButton3.ImageKey = "disk";
 
-            img.SetImage48("blue-document-icon.png", "new");           
+            img.SetImage48("file-text-icon48x48.png", "new");           
             toolStripButton2.ImageKey = "new";
 
             img.SetImage48("logout-icon.png", "door_out");

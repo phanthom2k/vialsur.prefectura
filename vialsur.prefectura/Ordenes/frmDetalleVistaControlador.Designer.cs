@@ -72,6 +72,10 @@
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LBL_ORDENNO = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.LBK_ESTADO = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
             this.lblKmOut = new System.Windows.Forms.Label();
@@ -84,10 +88,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.LBK_ESTADO = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.LBL_ORDENNO = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -551,6 +551,48 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ORDEN DE MANTENIMIENTO";
             // 
+            // LBL_ORDENNO
+            // 
+            this.LBL_ORDENNO.AutoSize = true;
+            this.LBL_ORDENNO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_ORDENNO.ForeColor = System.Drawing.Color.Red;
+            this.LBL_ORDENNO.Location = new System.Drawing.Point(230, 30);
+            this.LBL_ORDENNO.Name = "LBL_ORDENNO";
+            this.LBL_ORDENNO.Size = new System.Drawing.Size(123, 17);
+            this.LBL_ORDENNO.TabIndex = 76;
+            this.LBL_ORDENNO.Text = "LBL_ORDENNO";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(15, 30);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(96, 17);
+            this.label19.TabIndex = 75;
+            this.label19.Text = "ORDEN NO:";
+            // 
+            // LBK_ESTADO
+            // 
+            this.LBK_ESTADO.AutoSize = true;
+            this.LBK_ESTADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBK_ESTADO.ForeColor = System.Drawing.Color.Red;
+            this.LBK_ESTADO.Location = new System.Drawing.Point(789, 30);
+            this.LBK_ESTADO.Name = "LBK_ESTADO";
+            this.LBK_ESTADO.Size = new System.Drawing.Size(109, 17);
+            this.LBK_ESTADO.TabIndex = 69;
+            this.LBK_ESTADO.Text = "LBK_ESTADO";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(606, 30);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(186, 17);
+            this.label20.TabIndex = 68;
+            this.label20.Text = "ESTADO DE LA ORDEN:";
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -677,49 +719,8 @@
             this.toolStripButton3.Size = new System.Drawing.Size(118, 49);
             this.toolStripButton3.Text = "&Cambiar Estado";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.Visible = false;
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // LBK_ESTADO
-            // 
-            this.LBK_ESTADO.AutoSize = true;
-            this.LBK_ESTADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBK_ESTADO.ForeColor = System.Drawing.Color.Red;
-            this.LBK_ESTADO.Location = new System.Drawing.Point(789, 30);
-            this.LBK_ESTADO.Name = "LBK_ESTADO";
-            this.LBK_ESTADO.Size = new System.Drawing.Size(109, 17);
-            this.LBK_ESTADO.TabIndex = 69;
-            this.LBK_ESTADO.Text = "LBK_ESTADO";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(606, 30);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(186, 17);
-            this.label20.TabIndex = 68;
-            this.label20.Text = "ESTADO DE LA ORDEN:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(15, 30);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(96, 17);
-            this.label19.TabIndex = 75;
-            this.label19.Text = "ORDEN NO:";
-            // 
-            // LBL_ORDENNO
-            // 
-            this.LBL_ORDENNO.AutoSize = true;
-            this.LBL_ORDENNO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_ORDENNO.ForeColor = System.Drawing.Color.Red;
-            this.LBL_ORDENNO.Location = new System.Drawing.Point(230, 30);
-            this.LBL_ORDENNO.Name = "LBL_ORDENNO";
-            this.LBL_ORDENNO.Size = new System.Drawing.Size(123, 17);
-            this.LBL_ORDENNO.TabIndex = 76;
-            this.LBL_ORDENNO.Text = "LBL_ORDENNO";
             // 
             // frmDetalleVistaControlador
             // 

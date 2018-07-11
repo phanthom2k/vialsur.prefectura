@@ -50,6 +50,17 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+        public bool Actualizar_Emp_Empleado_PWD(emp_empleado empleado)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_emp_empleado().ActalizarPer_persona_Clave(empleado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public bool ExisteCedula(string cedula)
         {

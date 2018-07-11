@@ -124,6 +124,12 @@
     <Compile Include="Ordenes\frmVisorOrden_1.Designer.cs">
       <DependentUpon>frmVisorOrden_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personal\frmMiPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal\frmMiPerfil.Designer.cs">
+      <DependentUpon>frmMiPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personal\frmPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     <EmbeddedResource Include="Ordenes\frmVisorOrden_1.resx">
       <DependentUpon>frmVisorOrden_1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Personal\frmMiPerfil.resx">
+      <DependentUpon>frmMiPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Personal\frmPersonal.resx">
       <DependentUpon>frmPersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +333,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="icons\48x48\cloud-sync-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\48x48\file-text-icon48x48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\48x48\floppy-icon48x48.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="icons\48x48\logout-icon.png">

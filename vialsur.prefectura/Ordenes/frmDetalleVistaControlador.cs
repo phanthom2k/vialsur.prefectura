@@ -77,6 +77,9 @@ namespace vialsur.prefectura.Ordenes
                 MostrarInformacionVehiculo(obj_vehiculo, obj_orden);
                 if (obj_orden.estado == (int) entidades.vialsur.prefectura.Orden_TipoEstado.FINALIZADO)
                     toolStripButton2.Enabled = false;
+                //habilita para que el administrador pueda cambiar el estado
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                    toolStripButton3.Visible = true;
             }
             catch (Exception ex)
             {

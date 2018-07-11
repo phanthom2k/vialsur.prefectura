@@ -43,6 +43,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtp_FechaDesactivacion = new System.Windows.Forms.DateTimePicker();
+            this.dtp_FechaActivacion = new System.Windows.Forms.DateTimePicker();
+            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
+            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
             this.chk_Activo = new System.Windows.Forms.CheckBox();
             this.atxt_Observaciones = new Vivaldi.AlfaTextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,10 +55,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtp_FechaActivacion = new System.Windows.Forms.DateTimePicker();
-            this.dtp_FechaDesactivacion = new System.Windows.Forms.DateTimePicker();
-            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
-            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -141,6 +143,7 @@
             // 
             // ltxt_Nombres
             // 
+            this.ltxt_Nombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ltxt_Nombres.Location = new System.Drawing.Point(104, 37);
             this.ltxt_Nombres.MaxLength = 150;
             this.ltxt_Nombres.Name = "ltxt_Nombres";
@@ -149,6 +152,7 @@
             // 
             // ltxt_Apellidos
             // 
+            this.ltxt_Apellidos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ltxt_Apellidos.Location = new System.Drawing.Point(104, 63);
             this.ltxt_Apellidos.MaxLength = 150;
             this.ltxt_Apellidos.Name = "ltxt_Apellidos";
@@ -196,6 +200,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.dtp_FechaDesactivacion);
             this.tabPage2.Controls.Add(this.dtp_FechaActivacion);
             this.tabPage2.Controls.Add(this.uc_TIPOUSUARIO1);
@@ -213,8 +219,48 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(621, 312);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Datos Generales";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dtp_FechaDesactivacion
+            // 
+            this.dtp_FechaDesactivacion.Enabled = false;
+            this.dtp_FechaDesactivacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_FechaDesactivacion.Location = new System.Drawing.Point(192, 90);
+            this.dtp_FechaDesactivacion.Name = "dtp_FechaDesactivacion";
+            this.dtp_FechaDesactivacion.Size = new System.Drawing.Size(200, 22);
+            this.dtp_FechaDesactivacion.TabIndex = 18;
+            // 
+            // dtp_FechaActivacion
+            // 
+            this.dtp_FechaActivacion.Enabled = false;
+            this.dtp_FechaActivacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_FechaActivacion.Location = new System.Drawing.Point(192, 62);
+            this.dtp_FechaActivacion.Name = "dtp_FechaActivacion";
+            this.dtp_FechaActivacion.Size = new System.Drawing.Size(200, 22);
+            this.dtp_FechaActivacion.TabIndex = 17;
+            // 
+            // uc_TIPOUSUARIO1
+            // 
+            this.uc_TIPOUSUARIO1.Ancho = 121;
+            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
+            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
+            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 119);
+            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
+            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(263, 24);
+            this.uc_TIPOUSUARIO1.TabIndex = 16;
+            // 
+            // uc_CARGO1
+            // 
+            this.uc_CARGO1.Ancho = 121;
+            this.uc_CARGO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_CARGO1.DropDownWidth = 121;
+            this.uc_CARGO1.FormattingEnabled = true;
+            this.uc_CARGO1.Location = new System.Drawing.Point(129, 7);
+            this.uc_CARGO1.Name = "uc_CARGO1";
+            this.uc_CARGO1.Size = new System.Drawing.Size(263, 24);
+            this.uc_CARGO1.TabIndex = 15;
             // 
             // chk_Activo
             // 
@@ -231,17 +277,17 @@
             // 
             // atxt_Observaciones
             // 
-            this.atxt_Observaciones.Location = new System.Drawing.Point(129, 155);
+            this.atxt_Observaciones.Location = new System.Drawing.Point(129, 184);
             this.atxt_Observaciones.MaxLength = 550;
             this.atxt_Observaciones.Multiline = true;
             this.atxt_Observaciones.Name = "atxt_Observaciones";
-            this.atxt_Observaciones.Size = new System.Drawing.Size(488, 142);
+            this.atxt_Observaciones.Size = new System.Drawing.Size(488, 113);
             this.atxt_Observaciones.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 155);
+            this.label10.Location = new System.Drawing.Point(16, 184);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(107, 17);
             this.label10.TabIndex = 5;
@@ -292,45 +338,22 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CARGO:";
             // 
-            // dtp_FechaActivacion
+            // label11
             // 
-            this.dtp_FechaActivacion.Enabled = false;
-            this.dtp_FechaActivacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_FechaActivacion.Location = new System.Drawing.Point(192, 62);
-            this.dtp_FechaActivacion.Name = "dtp_FechaActivacion";
-            this.dtp_FechaActivacion.Size = new System.Drawing.Size(200, 22);
-            this.dtp_FechaActivacion.TabIndex = 17;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 155);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 17);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "CLAVE";
             // 
-            // dtp_FechaDesactivacion
+            // textBox1
             // 
-            this.dtp_FechaDesactivacion.Enabled = false;
-            this.dtp_FechaDesactivacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_FechaDesactivacion.Location = new System.Drawing.Point(192, 90);
-            this.dtp_FechaDesactivacion.Name = "dtp_FechaDesactivacion";
-            this.dtp_FechaDesactivacion.Size = new System.Drawing.Size(200, 22);
-            this.dtp_FechaDesactivacion.TabIndex = 18;
-            // 
-            // uc_TIPOUSUARIO1
-            // 
-            this.uc_TIPOUSUARIO1.Ancho = 121;
-            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
-            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
-            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 119);
-            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
-            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(263, 24);
-            this.uc_TIPOUSUARIO1.TabIndex = 16;
-            // 
-            // uc_CARGO1
-            // 
-            this.uc_CARGO1.Ancho = 121;
-            this.uc_CARGO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_CARGO1.DropDownWidth = 121;
-            this.uc_CARGO1.FormattingEnabled = true;
-            this.uc_CARGO1.Location = new System.Drawing.Point(129, 7);
-            this.uc_CARGO1.Name = "uc_CARGO1";
-            this.uc_CARGO1.Size = new System.Drawing.Size(263, 24);
-            this.uc_CARGO1.TabIndex = 15;
+            this.textBox1.Location = new System.Drawing.Point(129, 152);
+            this.textBox1.MaxLength = 10;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(263, 22);
+            this.textBox1.TabIndex = 20;
             // 
             // frmPersonal_Nuevo
             // 
@@ -388,5 +411,7 @@
         private uc.uc_CARGO uc_CARGO1;
         private System.Windows.Forms.DateTimePicker dtp_FechaDesactivacion;
         private System.Windows.Forms.DateTimePicker dtp_FechaActivacion;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label11;
     }
 }

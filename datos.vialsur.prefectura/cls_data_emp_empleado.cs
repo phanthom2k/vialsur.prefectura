@@ -224,6 +224,84 @@ namespace datos.vialsur.prefectura
         }
 
         /// <summary>
+        /// Actualiza la clave
+        /// </summary>
+        /// <param name="_emp_empleado"></param>
+        /// <returns></returns>
+        public bool ActalizarPer_persona_Clave(entidades.vialsur.prefectura.emp_empleado _emp_empleado)
+        {
+            bool k = false;
+            try
+            {
+                if (VerificarExistenciaCedula(_emp_empleado.cedula))
+                {
+                    List<SqlParameter> parameters = new List<SqlParameter>();
+
+                    #region parametros
+
+                    SqlParameter _cedula = new SqlParameter("@cedula", SqlDbType.VarChar, 10);
+                    _cedula.Value = _emp_empleado.cedula;
+                    parameters.Add(_cedula);
+
+                    //SqlParameter _cargo_id = new SqlParameter("@cargo_id", SqlDbType.Int);
+                    //_cargo_id.Value = _emp_empleado.cargo_id;
+                    //parameters.Add(_cargo_id);
+
+                    SqlParameter _pwd = new SqlParameter("@pwd", SqlDbType.Text);
+                    _pwd.Value = _emp_empleado.pwd;
+                    parameters.Add(_pwd);
+
+                    //SqlParameter _activo = new SqlParameter("@activo", SqlDbType.Bit);
+                    //_activo.Value = _emp_empleado.activo;
+                    //parameters.Add(_activo);
+
+                    //SqlParameter _fecha_activacion = new SqlParameter("@fecha_activacion", SqlDbType.DateTime);
+                    //_fecha_activacion.Value = _emp_empleado.fecha_activacion;
+                    //parameters.Add(_fecha_activacion);
+
+
+                    //SqlParameter _fecha_desactivacion = new SqlParameter("@fecha_desactivacion", SqlDbType.DateTime);
+                    //_fecha_desactivacion.Value = _emp_empleado.fecha_activacion;
+                    //parameters.Add(_fecha_desactivacion);
+
+
+                    //SqlParameter _per_persona_cedula_activacion = new SqlParameter("@per_persona_cedula_activacion", SqlDbType.VarChar, 10);
+                    //_per_persona_cedula_activacion.Value = _emp_empleado.per_persona_cedula_activacion;
+                    //parameters.Add(_per_persona_cedula_activacion);
+
+                    //SqlParameter _tipo_usuario = new SqlParameter("@tipo_usuario", SqlDbType.Int);
+                    //_tipo_usuario.Value = _emp_empleado.tipo_usuario;
+                    //parameters.Add(_tipo_usuario);
+
+                    //SqlParameter _observaciones_activacion = new SqlParameter("@observaciones_activacion", SqlDbType.Text);
+                    //_observaciones_activacion.Value = _emp_empleado.observaciones_activacion;
+                    //parameters.Add(_observaciones_activacion);
+
+                    //SqlParameter _observaciones_desactivacion = new SqlParameter("@observaciones_desactivacion", SqlDbType.Text);
+                    //_observaciones_desactivacion.Value = _emp_empleado.observaciones_desactivacion;
+                    //parameters.Add(_observaciones_desactivacion);
+
+                    #endregion
+
+                    string _sql_update = "UPDATE[dbo].[emp_empleado] " +
+                                            "SET  [pwd] = @pwd " +
+                                            "WHERE[cedula] = @cedula ";
+
+                    int customerId = SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_update, parameters.ToArray());
+
+                    k = customerId > 0 ? true : false;
+                }
+                else
+                    throw new Exception("Cédula no registrada");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo registrar los datos de la persona", ex);
+            }
+            return k;
+        }
+
+        /// <summary>
         /// Verifica si existe la cedula ya registrada en la tabla
         /// Retorna FALSE en el caso de que no este registrada
         ///         TRUE en el caso de que este registrada

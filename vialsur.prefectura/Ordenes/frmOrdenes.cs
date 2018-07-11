@@ -18,7 +18,7 @@ namespace vialsur.prefectura.Ordenes
             Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
             toolStrip1.ImageList = img.GetCatalog();
             // img.SetImage48("Actions-document-save-icon.png", "disk");
-            img.SetImage48("blue-document-icon.png", "new");
+            img.SetImage48("file-text-icon48x48.png", "new");
             //toolStripButton2.ImageKey = "disk";
             toolStripButton2.ImageKey = "new";
             img.SetImage48("logout-icon.png", "door_out");
@@ -125,6 +125,7 @@ namespace vialsur.prefectura.Ordenes
                    
                     frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
                     frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                    frmDetalle.Empleado = Empleado;
                     frmDetalle.ShowDialog();
                     frmDetalle.Dispose();
                     //CargarDatosGrilla(Cedula);

@@ -23,9 +23,9 @@ namespace vialsur.prefectura.Ordenes
             Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
             toolStrip1.ImageList = img.GetCatalog();
             // img.SetImage48("Actions-document-save-icon.png", "disk");
-            img.SetImage48("blue-document-icon.png", "new");
+            img.SetImage48("floppy-icon48x48.png", "save");
             //toolStripButton2.ImageKey = "disk";
-            toolStripButton2.ImageKey = "new";
+            toolStripButton2.ImageKey = "save";
             img.SetImage48("logout-icon.png", "door_out");
             toolStripButton1.ImageKey = "door_out";
 

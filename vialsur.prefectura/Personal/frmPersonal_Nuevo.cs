@@ -16,6 +16,16 @@ namespace vialsur.prefectura.Personal
         {
             InitializeComponent();
 
+            Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
+            toolStrip1.ImageList = img.GetCatalog();
+            // img.SetImage48("Actions-document-save-icon.png", "disk");
+            img.SetImage48("floppy-icon48x48.png", "save");
+            //toolStripButton2.ImageKey = "disk";
+            toolStripButton2.ImageKey = "save";
+            img.SetImage48("logout-icon.png", "door_out");
+            toolStripButton1.ImageKey = "door_out";
+
+
             if (EsVer)
                 toolStripButton2.Enabled = false;
 
@@ -39,6 +49,7 @@ namespace vialsur.prefectura.Personal
                 persona = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(Cedula);
                 empleado = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().Consultar_Emp_Empleado(Cedula);
 
+                ntxt_Cedula.Enabled = false;
                 ntxt_Cedula.Text = persona.cedula;
                 ltxt_Nombres.Text = persona.nombres;
                 ltxt_Apellidos.Text = persona.apellidos;
@@ -48,6 +59,8 @@ namespace vialsur.prefectura.Personal
                 uc_CARGO1.SelectedValue = empleado.cargo_id;
                 chk_Activo.Checked = (bool)empleado.activo;
                 dtp_FechaActivacion.Value = (DateTime)empleado.fecha_activacion;
+
+                textBox1.Text = empleado.pwd;
 
                 if ((bool)empleado.activo)
                 {
@@ -61,8 +74,9 @@ namespace vialsur.prefectura.Personal
             {
                 persona = new entidades.vialsur.prefectura.per_persona();
                 empleado = new entidades.vialsur.prefectura.emp_empleado();
+                empleado.per_persona_cedula_activacion = EmpleadoUsuario.cedula;  //se trae desde el evento guardar (en caso de ver o modificar no es necesario)
             }
-                   
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -73,6 +87,11 @@ namespace vialsur.prefectura.Personal
 
         entidades.vialsur.prefectura.per_persona persona;
         entidades.vialsur.prefectura.emp_empleado empleado;
+
+        /// <summary>
+        /// Esta propiedad es para enviar el objeto emp_empleado que representa al administrador que este operando
+        /// </summary>
+        public entidades.vialsur.prefectura.emp_empleado EmpleadoUsuario;
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
@@ -88,7 +107,8 @@ namespace vialsur.prefectura.Personal
                 //empleado = new entidades.vialsur.prefectura.emp_empleado();
                 empleado.cedula = persona.cedula;
                 empleado.cargo_id = Convert.ToInt32(uc_CARGO1.SelectedValue);
-                empleado.pwd = empleado.cedula;
+                //empleado.pwd = empleado.cedula;
+                empleado.pwd = textBox1.Text;  //CLAVE 10 letras maximo
                 empleado.activo = chk_Activo.Checked;
                 empleado.fecha_activacion = dtp_FechaActivacion.Value;
 
@@ -98,7 +118,10 @@ namespace vialsur.prefectura.Personal
                 }
                 empleado.tipo_usuario = Convert.ToInt32(uc_TIPOUSUARIO1.SelectedValue);
 
-                empleado.per_persona_cedula_activacion = "1104126626";
+                //si hay una persona con rol de admin (se mueve esto al load)
+                //empleado.per_persona_cedula_activacion = "1104126626";
+                
+
                 empleado.observaciones_activacion = empleado.observaciones_desactivacion =
                                                     atxt_Observaciones.Text.ToUpper();
 
