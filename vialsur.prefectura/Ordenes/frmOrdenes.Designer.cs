@@ -43,6 +43,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.txt_input = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,10 +64,6 @@
             this.ve_vehiculo_responsable_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ve_vehiculo_responsable_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.txt_input = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -180,9 +180,50 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1177, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(1187, 464);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(701, 71);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 28);
+            this.button2.TabIndex = 36;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.Location = new System.Drawing.Point(578, 71);
+            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(115, 28);
+            this.btn_Buscar.TabIndex = 35;
+            this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // txt_input
+            // 
+            this.txt_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_input.Location = new System.Drawing.Point(178, 71);
+            this.txt_input.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_input.MaxLength = 125;
+            this.txt_input.Name = "txt_input";
+            this.txt_input.Size = new System.Drawing.Size(379, 26);
+            this.txt_input.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 77);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 17);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Parametro de busqueda:";
             // 
             // cl_ver
             // 
@@ -213,17 +254,18 @@
             // id
             // 
             this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
+            this.id.HeaderText = "No Orden";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
             // tipo_oden
             // 
             this.tipo_oden.DataPropertyName = "tipo_oden";
-            this.tipo_oden.HeaderText = "tipo_oden";
-            this.tipo_oden.MinimumWidth = 70;
+            this.tipo_oden.HeaderText = "Tipo oden mantenimiento";
+            this.tipo_oden.MinimumWidth = 125;
             this.tipo_oden.Name = "tipo_oden";
             this.tipo_oden.ReadOnly = true;
+            this.tipo_oden.Width = 125;
             // 
             // fecha
             // 
@@ -231,7 +273,7 @@
             dataGridViewCellStyle2.Format = "d";
             dataGridViewCellStyle2.NullValue = null;
             this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
-            this.fecha.HeaderText = "fecha";
+            this.fecha.HeaderText = "Fecha";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             // 
@@ -241,14 +283,14 @@
             dataGridViewCellStyle3.Format = "##:##";
             dataGridViewCellStyle3.NullValue = "00:00";
             this.hora.DefaultCellStyle = dataGridViewCellStyle3;
-            this.hora.HeaderText = "hora";
+            this.hora.HeaderText = "Hora";
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
             // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "estado";
+            this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
             // 
@@ -300,17 +342,17 @@
             // cedula_responsable
             // 
             this.cedula_responsable.DataPropertyName = "cedula_responsable";
-            this.cedula_responsable.HeaderText = "cedula_responsable";
+            this.cedula_responsable.HeaderText = "Responsable de Mantenimiento";
             this.cedula_responsable.MaxInputLength = 125;
-            this.cedula_responsable.MinimumWidth = 125;
+            this.cedula_responsable.MinimumWidth = 175;
             this.cedula_responsable.Name = "cedula_responsable";
             this.cedula_responsable.ReadOnly = true;
-            this.cedula_responsable.Width = 150;
+            this.cedula_responsable.Width = 175;
             // 
             // ve_vehiculo_id
             // 
             this.ve_vehiculo_id.DataPropertyName = "ve_vehiculo_id";
-            this.ve_vehiculo_id.HeaderText = "ve_vehiculo_id";
+            this.ve_vehiculo_id.HeaderText = "Placa Vehiculo";
             this.ve_vehiculo_id.Name = "ve_vehiculo_id";
             this.ve_vehiculo_id.ReadOnly = true;
             // 
@@ -337,47 +379,6 @@
             this.tipo_responsable.Name = "tipo_responsable";
             this.tipo_responsable.ReadOnly = true;
             this.tipo_responsable.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(701, 71);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 28);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.Location = new System.Drawing.Point(578, 71);
-            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(115, 28);
-            this.btn_Buscar.TabIndex = 35;
-            this.btn_Buscar.Text = "Buscar";
-            this.btn_Buscar.UseVisualStyleBackColor = true;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
-            // 
-            // txt_input
-            // 
-            this.txt_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_input.Location = new System.Drawing.Point(178, 71);
-            this.txt_input.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_input.MaxLength = 125;
-            this.txt_input.Name = "txt_input";
-            this.txt_input.Size = new System.Drawing.Size(379, 26);
-            this.txt_input.TabIndex = 34;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 77);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 17);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Parametro de busqueda:";
             // 
             // frmOrdenes
             // 

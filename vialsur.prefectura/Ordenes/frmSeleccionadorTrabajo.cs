@@ -37,6 +37,8 @@ namespace vialsur.prefectura.Ordenes
         public bool EsLectura { get; set; }
         public int EstadoOrden { get; set; }
 
+        public bool EsNuevoEdi { get; set; }
+
         public bool EsMecanicoAtender { get; set; }
 
         void Congelar()
@@ -58,12 +60,21 @@ namespace vialsur.prefectura.Ordenes
                 toolStripButton2.Enabled = false;
             }
 
-        //    NO_DEFINIDO = 0,
-        //CREADO = 1,
-        //AUTORIZADO = 2,
-        //EJECUCION = 3,
-        //FINALIZADO = 4,
-        //DESCARTADO = 5
+            
+            if (EsNuevoEdi)
+            {                
+                uc_Accion2.Enabled = numericUpDown1.Enabled = false;
+            }
+            
+
+
+
+            //    NO_DEFINIDO = 0,
+            //CREADO = 1,
+            //AUTORIZADO = 2,
+            //EJECUCION = 3,
+            //FINALIZADO = 4,
+            //DESCARTADO = 5
 
         }
 
@@ -111,10 +122,14 @@ namespace vialsur.prefectura.Ordenes
                 uc_Catalogo_Parte_Principal1.SelectedValue = obj_orden_detalle.catalogo_parte_principal_id;
                 uc_Catalogo_Parte_Secundaria1.SelectedValue = obj_orden_detalle.catalogo_parte_secundaria_id;
                 uc_Accion1.SelectedValue = obj_orden_detalle.accion_requerida;
-                uc_Accion2.SelectedValue = obj_orden_detalle.accion_realizada;
+               // if(obj_orden_detalle.accion_realizada != null)
+                    uc_Accion2.SelectedValue = obj_orden_detalle.accion_realizada;
+               
                 numericUpDown1.Value = Convert.ToInt32(obj_orden_detalle.cantidad);
                 lettersTextBox1.Text = obj_orden_detalle.observacion;
                 checkBox1.Checked = (bool)obj_orden_detalle.estado;
+
+                ///uc_Accion2.Enabled = false;  //para q no haya como cambiar la actividad realizada 
             }
             else  //en el caso de que sea nueva
                     obj_orden_detalle = new orde_detalle();

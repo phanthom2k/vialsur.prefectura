@@ -138,6 +138,7 @@ namespace vialsur.prefectura.Ordenes
             obj.Obj_vehiculo = this.obj_vehiculo;
             obj.EstadoOrden = (int)entidades.vialsur.prefectura.Orden_TipoEstado.NO_DEFINIDO;
             obj.EsLectura = false;
+            obj.EsNuevoEdi = true;
             if (obj.ShowDialog() == DialogResult.Yes)
             {
                 var _det_tmp = obj.Obj_orden_detalle;
@@ -235,11 +236,20 @@ namespace vialsur.prefectura.Ordenes
                 }
                 else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
                 {
-                    var objfrmDesignadorTrabajo = new frmSeleccionadorTrabajo();
+                   
+                    frmSeleccionadorTrabajo objfrmDesignadorTrabajo = new frmSeleccionadorTrabajo();
                     objfrmDesignadorTrabajo.Obj_vehiculo = this.obj_vehiculo;
-                    objfrmDesignadorTrabajo.Obj_orden_detalle = detalle.FirstOrDefault(x => x.id == dataGridView1.Rows[e.RowIndex].Cells["cl_id"].Value.ToString());
-                    objfrmDesignadorTrabajo.EsLectura = true;
+                    objfrmDesignadorTrabajo.EstadoOrden = (int)entidades.vialsur.prefectura.Orden_TipoEstado.NO_DEFINIDO;
+                    objfrmDesignadorTrabajo.EsNuevoEdi = true;
+                  
+                    objfrmDesignadorTrabajo.Obj_orden_detalle = detalle.FirstOrDefault(x => x.id == dataGridView1.Rows[e.RowIndex].Cells["cl_id"].Value.ToString());                    
                     objfrmDesignadorTrabajo.ShowDialog();
+
+
+                    /*frmSeleccionadorTrabajo obj = new frmSeleccionadorTrabajo();
+            obj.Obj_vehiculo = this.obj_vehiculo;
+            obj.EstadoOrden = (int)entidades.vialsur.prefectura.Orden_TipoEstado.NO_DEFINIDO;
+            obj.EsLectura = false;*/
 
                 }
 
@@ -253,9 +263,16 @@ namespace vialsur.prefectura.Ordenes
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             try
-            {                                
+            {
+                if (MessageBox.Show("Desea registrar la orden","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+                    return;
+                if (detalle.Count == 0)
+                {
+                    MessageBox.Show("Debe ingresar el detalle de trabajos a realizar","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
+                    
                 var obj_logica_orden = new logica.vialsur.prefectura.Orden.cls_logica_orden();
-
                 string ID_ORDEN = obj_logica_orden.RegistrarOrdenMantenimiento(obj_vehiculo, obj_orden, detalle);
 
                 MessageBox.Show("Orden creada: "+ID_ORDEN);
