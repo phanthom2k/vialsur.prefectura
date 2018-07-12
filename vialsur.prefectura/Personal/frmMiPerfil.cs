@@ -86,5 +86,10 @@ namespace vialsur.prefectura.Personal
                     MessageBox.Show("No coincide la clave");
                 }
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

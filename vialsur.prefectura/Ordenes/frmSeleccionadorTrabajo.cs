@@ -63,7 +63,7 @@ namespace vialsur.prefectura.Ordenes
             
             if (EsNuevoEdi)
             {                
-                uc_Accion2.Enabled = numericUpDown1.Enabled = false;
+                uc_Accion2.Enabled =  false;
             }
             
 
@@ -122,7 +122,7 @@ namespace vialsur.prefectura.Ordenes
                 uc_Catalogo_Parte_Principal1.SelectedValue = obj_orden_detalle.catalogo_parte_principal_id;
                 uc_Catalogo_Parte_Secundaria1.SelectedValue = obj_orden_detalle.catalogo_parte_secundaria_id;
                 uc_Accion1.SelectedValue = obj_orden_detalle.accion_requerida;
-               // if(obj_orden_detalle.accion_realizada != null)
+                if(obj_orden_detalle.accion_realizada != null)
                     uc_Accion2.SelectedValue = obj_orden_detalle.accion_realizada;
                
                 numericUpDown1.Value = Convert.ToInt32(obj_orden_detalle.cantidad);
