@@ -257,7 +257,11 @@ namespace vialsur.prefectura.Ordenes
                 //objFrmCambioEstado.Cedula = Empleado.cedula;
                 objFrmCambioEstado.Empleado = Empleado;
                 objFrmCambioEstado.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO;
-                objFrmCambioEstado.ShowDialog();                
+                if (objFrmCambioEstado.ShowDialog() == DialogResult.Yes) 
+                {
+                    obj_orden = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConsultarOrden(OrdenID);
+                    MostrarInformacionVehiculo(obj_vehiculo, obj_orden);
+                }
             }
             catch (Exception ex)
             {

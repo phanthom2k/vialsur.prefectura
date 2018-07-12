@@ -34,8 +34,6 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.lbl_placa_prov = new System.Windows.Forms.Label();
@@ -63,10 +61,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.btn_Siguiente = new System.Windows.Forms.Button();
             this.txt_ParametroABuscar = new Vivaldi.AlfaTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Siguiente = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -141,27 +140,6 @@
             this.label1.Size = new System.Drawing.Size(199, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "PARAMETRO DE BUSQUEDA";
-            // 
-            // button1
-            // 
-            this.button1.Image = global::vialsur.prefectura.Properties.Resources.broom;
-            this.button1.Location = new System.Drawing.Point(647, 28);
-            this.button1.Margin = new System.Windows.Forms.Padding(1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 33);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.Image = global::vialsur.prefectura.Properties.Resources.search_icon;
-            this.btn_Buscar.Location = new System.Drawing.Point(614, 28);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(33, 33);
-            this.btn_Buscar.TabIndex = 4;
-            this.btn_Buscar.UseVisualStyleBackColor = true;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // groupBox2
             // 
@@ -445,25 +423,6 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "MARCA:";
             // 
-            // btn_Cancelar
-            // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(518, 368);
-            this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
-            this.btn_Cancelar.TabIndex = 6;
-            this.btn_Cancelar.Text = "Cancelar";
-            this.btn_Cancelar.UseVisualStyleBackColor = true;
-            // 
-            // btn_Siguiente
-            // 
-            this.btn_Siguiente.Location = new System.Drawing.Point(670, 368);
-            this.btn_Siguiente.Name = "btn_Siguiente";
-            this.btn_Siguiente.Size = new System.Drawing.Size(75, 75);
-            this.btn_Siguiente.TabIndex = 7;
-            this.btn_Siguiente.Text = "Siguiente";
-            this.btn_Siguiente.UseVisualStyleBackColor = true;
-            this.btn_Siguiente.Click += new System.EventHandler(this.btn_Siguiente_Click);
-            // 
             // txt_ParametroABuscar
             // 
             this.txt_ParametroABuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -474,21 +433,67 @@
             this.txt_ParametroABuscar.TabIndex = 1;
             this.txt_ParametroABuscar.Text = "LLL1111";
             // 
-            // button2
+            // btn_Siguiente
             // 
-            this.button2.Location = new System.Drawing.Point(594, 368);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 75);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Siguiente.FlatAppearance.BorderSize = 0;
+            this.btn_Siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Siguiente.Image = global::vialsur.prefectura.Properties.Resources.sign_right_icon48x48;
+            this.btn_Siguiente.Location = new System.Drawing.Point(670, 368);
+            this.btn_Siguiente.Name = "btn_Siguiente";
+            this.btn_Siguiente.Size = new System.Drawing.Size(75, 75);
+            this.btn_Siguiente.TabIndex = 7;
+            this.btn_Siguiente.Text = "Siguiente";
+            this.btn_Siguiente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Siguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_Siguiente.UseVisualStyleBackColor = true;
+            this.btn_Siguiente.Click += new System.EventHandler(this.btn_Siguiente_Click);
+            // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancelar.Image = global::vialsur.prefectura.Properties.Resources.sign_error_icon48x48;
+            this.btn_Cancelar.Location = new System.Drawing.Point(589, 368);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Cancelar.TabIndex = 6;
+            this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.FlatAppearance.BorderSize = 0;
+            this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Buscar.Image = global::vialsur.prefectura.Properties.Resources.search_icon;
+            this.btn_Buscar.Location = new System.Drawing.Point(605, 28);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(33, 33);
+            this.btn_Buscar.TabIndex = 4;
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::vialsur.prefectura.Properties.Resources.broom;
+            this.button1.Location = new System.Drawing.Point(642, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(41, 33);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmSeleccionarVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 452);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_Siguiente);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.groupBox2);
@@ -553,6 +558,5 @@
         private System.Windows.Forms.Label lbl_placa;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Button btn_Siguiente;
-        private System.Windows.Forms.Button button2;
     }
 }

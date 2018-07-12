@@ -15,6 +15,18 @@ namespace vialsur.prefectura.Ordenes
         public frmSeleccionarVehiculo()
         {
             InitializeComponent();
+
+            //Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
+            //btn_Cancelar.ImageList = img.GetCatalog();
+            //img.SetImage48("sign-error-icon48x48.png", "cancel");
+            //btn_Cancelar.ImageKey = "cancel";
+            
+
+            //btn_Siguiente.ImageList = img.GetCatalog();
+            //img.SetImage48("sign-right-icon48x48.png", "next");
+            //btn_Siguiente.ImageKey = "next";           
+
+
         }
 
         private void frmSeleccionarVehiculo_Load(object sender, EventArgs e)
@@ -122,6 +134,11 @@ namespace vialsur.prefectura.Ordenes
             frm_designacion.ShowDialog();
             this.Close();
 
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

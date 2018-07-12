@@ -219,7 +219,7 @@ namespace vialsur.prefectura.Ordenes
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {                
+            {               
 
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
                 {
@@ -234,25 +234,27 @@ namespace vialsur.prefectura.Ordenes
                     }
                     
                 }
-                else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
+
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_eliminar" & dataGridView1.RowCount > 0)
                 {
-                   
+                    if(MessageBox.Show("¿Desea eliminar el trabajo?","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes )
+                    {
+                        detalle.Remove(detalle.FirstOrDefault(x => x.id == dataGridView1.Rows[e.RowIndex].Cells["cl_id"].Value.ToString()));
+                    }                    
+                }
+
+                else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
+                {                   
                     frmSeleccionadorTrabajo objfrmDesignadorTrabajo = new frmSeleccionadorTrabajo();
                     objfrmDesignadorTrabajo.Obj_vehiculo = this.obj_vehiculo;
                     objfrmDesignadorTrabajo.EstadoOrden = (int)entidades.vialsur.prefectura.Orden_TipoEstado.NO_DEFINIDO;
                     objfrmDesignadorTrabajo.EsNuevoEdi = true;
                   
                     objfrmDesignadorTrabajo.Obj_orden_detalle = detalle.FirstOrDefault(x => x.id == dataGridView1.Rows[e.RowIndex].Cells["cl_id"].Value.ToString());                    
-                    objfrmDesignadorTrabajo.ShowDialog();
-
-
-                    /*frmSeleccionadorTrabajo obj = new frmSeleccionadorTrabajo();
-            obj.Obj_vehiculo = this.obj_vehiculo;
-            obj.EstadoOrden = (int)entidades.vialsur.prefectura.Orden_TipoEstado.NO_DEFINIDO;
-            obj.EsLectura = false;*/
+                    objfrmDesignadorTrabajo.ShowDialog();                   
 
                 }
-
+                dataGridView1.DataSource = new BindingSource(detalle, null);                
             }
             catch (Exception ex)
             {

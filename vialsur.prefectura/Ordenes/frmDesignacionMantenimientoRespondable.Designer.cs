@@ -55,7 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lettersTextBox1 = new Vivaldi.UserControls.LettersTextBox();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.btn_Siguiente = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -92,9 +91,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(731, 200);
+            this.groupBox2.Size = new System.Drawing.Size(731, 187);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INFORMACIÓN DEL VEHICULO";
@@ -312,7 +311,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 221);
+            this.label1.Location = new System.Drawing.Point(12, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 17);
             this.label1.TabIndex = 7;
@@ -322,7 +321,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 251);
+            this.label4.Location = new System.Drawing.Point(12, 226);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(184, 17);
             this.label4.TabIndex = 8;
@@ -332,7 +331,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 333);
+            this.label6.Location = new System.Drawing.Point(12, 300);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 17);
             this.label6.TabIndex = 11;
@@ -341,39 +340,40 @@
             // lettersTextBox1
             // 
             this.lettersTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.lettersTextBox1.Location = new System.Drawing.Point(225, 333);
+            this.lettersTextBox1.Location = new System.Drawing.Point(225, 300);
             this.lettersTextBox1.MaxLength = 500;
             this.lettersTextBox1.Multiline = true;
             this.lettersTextBox1.Name = "lettersTextBox1";
-            this.lettersTextBox1.Size = new System.Drawing.Size(518, 80);
+            this.lettersTextBox1.Size = new System.Drawing.Size(518, 65);
             this.lettersTextBox1.TabIndex = 12;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Location = new System.Drawing.Point(589, 419);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(75, 75);
-            this.btnAtras.TabIndex = 15;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
             // 
             // btn_Siguiente
             // 
-            this.btn_Siguiente.Location = new System.Drawing.Point(665, 419);
+            this.btn_Siguiente.FlatAppearance.BorderSize = 0;
+            this.btn_Siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Siguiente.Image = global::vialsur.prefectura.Properties.Resources.sign_right_icon48x48;
+            this.btn_Siguiente.Location = new System.Drawing.Point(670, 368);
             this.btn_Siguiente.Name = "btn_Siguiente";
             this.btn_Siguiente.Size = new System.Drawing.Size(75, 75);
             this.btn_Siguiente.TabIndex = 14;
             this.btn_Siguiente.Text = "Siguiente";
+            this.btn_Siguiente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Siguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_Siguiente.UseVisualStyleBackColor = true;
             this.btn_Siguiente.Click += new System.EventHandler(this.btn_Siguiente_Click);
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(513, 419);
+            this.btn_Cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancelar.Image = global::vialsur.prefectura.Properties.Resources.sign_error_icon48x48;
+            this.btn_Cancelar.Location = new System.Drawing.Point(589, 368);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
             this.btn_Cancelar.TabIndex = 13;
             this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_Cancelar.UseVisualStyleBackColor = true;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
@@ -381,7 +381,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 280);
+            this.label11.Location = new System.Drawing.Point(12, 252);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(210, 17);
             this.label11.TabIndex = 17;
@@ -391,7 +391,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 307);
+            this.label16.Location = new System.Drawing.Point(12, 278);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(220, 17);
             this.label16.TabIndex = 19;
@@ -400,7 +400,7 @@
             // numericTextBox1
             // 
             this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(225, 304);
+            this.numericTextBox1.Location = new System.Drawing.Point(225, 275);
             this.numericTextBox1.MaxLength = 10;
             this.numericTextBox1.Name = "numericTextBox1";
             this.numericTextBox1.Size = new System.Drawing.Size(115, 22);
@@ -410,7 +410,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(339, 308);
+            this.label17.Location = new System.Drawing.Point(339, 279);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(28, 17);
             this.label17.TabIndex = 21;
@@ -422,7 +422,7 @@
             this.uc_Empleados2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_Empleados2.DropDownWidth = 121;
             this.uc_Empleados2.FormattingEnabled = true;
-            this.uc_Empleados2.Location = new System.Drawing.Point(225, 277);
+            this.uc_Empleados2.Location = new System.Drawing.Point(225, 249);
             this.uc_Empleados2.Name = "uc_Empleados2";
             this.uc_Empleados2.Size = new System.Drawing.Size(518, 24);
             this.uc_Empleados2.TabIndex = 18;
@@ -433,7 +433,7 @@
             this.uc_Empleados1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_Empleados1.DropDownWidth = 121;
             this.uc_Empleados1.FormattingEnabled = true;
-            this.uc_Empleados1.Location = new System.Drawing.Point(225, 248);
+            this.uc_Empleados1.Location = new System.Drawing.Point(225, 223);
             this.uc_Empleados1.Name = "uc_Empleados1";
             this.uc_Empleados1.Size = new System.Drawing.Size(518, 24);
             this.uc_Empleados1.TabIndex = 16;
@@ -444,7 +444,7 @@
             this.uc_TipoMantenimiento1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_TipoMantenimiento1.DropDownWidth = 121;
             this.uc_TipoMantenimiento1.FormattingEnabled = true;
-            this.uc_TipoMantenimiento1.Location = new System.Drawing.Point(225, 218);
+            this.uc_TipoMantenimiento1.Location = new System.Drawing.Point(225, 196);
             this.uc_TipoMantenimiento1.Name = "uc_TipoMantenimiento1";
             this.uc_TipoMantenimiento1.Size = new System.Drawing.Size(518, 24);
             this.uc_TipoMantenimiento1.TabIndex = 9;
@@ -453,14 +453,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 564);
+            this.ClientSize = new System.Drawing.Size(752, 452);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.numericTextBox1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.uc_Empleados2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.uc_Empleados1);
-            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btn_Siguiente);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.lettersTextBox1);
@@ -509,7 +508,6 @@
         private uc.uc_TipoMantenimiento uc_TipoMantenimiento1;
         private System.Windows.Forms.Label label6;
         private Vivaldi.UserControls.LettersTextBox lettersTextBox1;
-        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Button btn_Siguiente;
         private System.Windows.Forms.Button btn_Cancelar;
         private uc.uc_Empleados uc_Empleados1;

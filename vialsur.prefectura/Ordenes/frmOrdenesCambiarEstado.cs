@@ -44,6 +44,18 @@ namespace vialsur.prefectura.Ordenes
                 lbl_EstadoActual.Text = ((entidades.vialsur.prefectura.Orden_TipoEstado)ord.estado).ToString();
                 uc_TipoEstadosOrdenes1.CargarDatos();
 
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)  |
+                    entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)  )
+                {
+                    toolStripButton2.Visible = true;
+                    uc_TipoEstadosOrdenes1.Enabled = true;
+                }
+                else
+                {
+                    toolStripButton2.Visible = false;
+                    uc_TipoEstadosOrdenes1.Enabled = false;
+                }
+                    
 
                 //uc_TipoEstadosOrdenes1.CargarDatos();
                 //lbl_EstadoActual.Text = ((entidades.vialsur.prefectura.Orden_TipoEstado)((int)new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarOrdenPorId(OrdenID).estado)).ToString();
@@ -71,12 +83,16 @@ namespace vialsur.prefectura.Ordenes
             {
                 if (uc_TipoEstadosOrdenes1.SelectedIndex > 0 &&   uc_TipoEstadosOrdenes1.SelectedIndex  > ord.estado && uc_TipoEstadosOrdenes1.SelectedIndex == (int)Estado)
                 {
-                    if(MessageBox.Show("Desea registrar el cambio","Cambio de estado",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                    if (MessageBox.Show("Desea registrar el cambio", "Cambio de estado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         entidades.vialsur.prefectura.Orden_TipoEstado _ii = (entidades.vialsur.prefectura.Orden_TipoEstado)uc_TipoEstadosOrdenes1.SelectedIndex;
                         //new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Cedula);                                                    
                         new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Empleado.cedula);
-                    }                    
+                        DialogResult = DialogResult.Yes;
+                    }
+                    else
+                        DialogResult = DialogResult.No;
+                                
                 }
                 else
                     MessageBox.Show("No puede cambiar a un estado igual o inferior", "Cambio de estado", MessageBoxButtons.OK, MessageBoxIcon.Information);

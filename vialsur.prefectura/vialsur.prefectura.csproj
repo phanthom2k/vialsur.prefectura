@@ -344,7 +344,15 @@
     <Content Include="icons\48x48\logout-icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="icons\48x48\sign-error-icon48x48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\48x48\sign-right-icon48x48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\logop_prefectura.png" />
+    <None Include="Resources\sign-right-icon48x48.png" />
+    <None Include="Resources\sign-error-icon48x48.png" />
     <None Include="Resources\logop_prefectura1.png" />
   </ItemGroup>
   <ItemGroup />

@@ -83,5 +83,10 @@ namespace vialsur.prefectura.Ordenes
             }
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

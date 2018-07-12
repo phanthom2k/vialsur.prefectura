@@ -80,6 +80,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
             this.toolStripButton1.Text = "&Salir";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -89,6 +90,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
             this.toolStripButton2.Text = "&Nueva";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Visible = false;
             // 
             // dataGridView1
             // 
@@ -154,14 +156,14 @@
             // id
             // 
             this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
+            this.id.HeaderText = "Orden No.";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
             // tipo_oden
             // 
             this.tipo_oden.DataPropertyName = "tipo_oden";
-            this.tipo_oden.HeaderText = "tipo_oden";
+            this.tipo_oden.HeaderText = "Tipo oden";
             this.tipo_oden.MinimumWidth = 70;
             this.tipo_oden.Name = "tipo_oden";
             this.tipo_oden.ReadOnly = true;
@@ -172,7 +174,7 @@
             dataGridViewCellStyle2.Format = "d";
             dataGridViewCellStyle2.NullValue = null;
             this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
-            this.fecha.HeaderText = "fecha";
+            this.fecha.HeaderText = "Fecha";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             // 
@@ -182,14 +184,14 @@
             dataGridViewCellStyle3.Format = "##:##";
             dataGridViewCellStyle3.NullValue = "00:00";
             this.hora.DefaultCellStyle = dataGridViewCellStyle3;
-            this.hora.HeaderText = "hora";
+            this.hora.HeaderText = "Hora";
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
             // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "estado";
+            this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
             // 
@@ -213,7 +215,7 @@
             // observacion
             // 
             this.observacion.DataPropertyName = "observacion";
-            this.observacion.HeaderText = "observacion";
+            this.observacion.HeaderText = "Bbservación";
             this.observacion.Name = "observacion";
             this.observacion.ReadOnly = true;
             this.observacion.Visible = false;
@@ -224,7 +226,7 @@
             dataGridViewCellStyle4.Format = "######### km";
             dataGridViewCellStyle4.NullValue = "0 km";
             this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle4;
-            this.km_ingreso.HeaderText = "km_ingreso";
+            this.km_ingreso.HeaderText = "Km (Ingreso)";
             this.km_ingreso.Name = "km_ingreso";
             this.km_ingreso.ReadOnly = true;
             // 
@@ -234,24 +236,24 @@
             dataGridViewCellStyle5.Format = "######### km";
             dataGridViewCellStyle5.NullValue = "0 km";
             this.km_egreso.DefaultCellStyle = dataGridViewCellStyle5;
-            this.km_egreso.HeaderText = "km_egreso";
+            this.km_egreso.HeaderText = "Km (Egreso)";
             this.km_egreso.Name = "km_egreso";
             this.km_egreso.ReadOnly = true;
             // 
             // cedula_responsable
             // 
             this.cedula_responsable.DataPropertyName = "cedula_responsable";
-            this.cedula_responsable.HeaderText = "cedula_responsable";
+            this.cedula_responsable.HeaderText = "Responsable mantenimiento";
             this.cedula_responsable.MaxInputLength = 125;
             this.cedula_responsable.MinimumWidth = 125;
             this.cedula_responsable.Name = "cedula_responsable";
             this.cedula_responsable.ReadOnly = true;
-            this.cedula_responsable.Width = 150;
+            this.cedula_responsable.Width = 175;
             // 
             // ve_vehiculo_id
             // 
             this.ve_vehiculo_id.DataPropertyName = "ve_vehiculo_id";
-            this.ve_vehiculo_id.HeaderText = "ve_vehiculo_id";
+            this.ve_vehiculo_id.HeaderText = "Placa Vehiculo";
             this.ve_vehiculo_id.Name = "ve_vehiculo_id";
             this.ve_vehiculo_id.ReadOnly = true;
             // 

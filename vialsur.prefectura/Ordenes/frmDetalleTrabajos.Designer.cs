@@ -53,18 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSubParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClAccionRequerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClAccionRealizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClOrdenId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -75,6 +63,19 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSubParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClAccionRequerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClAccionRealizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClOrdenId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -104,9 +105,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(4, 65);
+            this.groupBox2.Location = new System.Drawing.Point(4, 59);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(731, 187);
+            this.groupBox2.Size = new System.Drawing.Size(827, 149);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INFORMACIÓN DEL VEHICULO";
@@ -114,7 +115,7 @@
             // lbl_TipoVehiculo
             // 
             this.lbl_TipoVehiculo.AutoSize = true;
-            this.lbl_TipoVehiculo.Location = new System.Drawing.Point(172, 158);
+            this.lbl_TipoVehiculo.Location = new System.Drawing.Point(610, 119);
             this.lbl_TipoVehiculo.Name = "lbl_TipoVehiculo";
             this.lbl_TipoVehiculo.Size = new System.Drawing.Size(112, 17);
             this.lbl_TipoVehiculo.TabIndex = 53;
@@ -124,7 +125,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 158);
+            this.label9.Location = new System.Drawing.Point(454, 119);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 17);
             this.label9.TabIndex = 52;
@@ -133,7 +134,7 @@
             // lbl_TipoCombustible
             // 
             this.lbl_TipoCombustible.AutoSize = true;
-            this.lbl_TipoCombustible.Location = new System.Drawing.Point(172, 140);
+            this.lbl_TipoCombustible.Location = new System.Drawing.Point(171, 119);
             this.lbl_TipoCombustible.Name = "lbl_TipoCombustible";
             this.lbl_TipoCombustible.Size = new System.Drawing.Size(135, 17);
             this.lbl_TipoCombustible.TabIndex = 51;
@@ -143,7 +144,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(15, 140);
+            this.label8.Location = new System.Drawing.Point(14, 119);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(162, 17);
             this.label8.TabIndex = 50;
@@ -152,7 +153,7 @@
             // lbl_estado
             // 
             this.lbl_estado.AutoSize = true;
-            this.lbl_estado.Location = new System.Drawing.Point(95, 120);
+            this.lbl_estado.Location = new System.Drawing.Point(94, 99);
             this.lbl_estado.Name = "lbl_estado";
             this.lbl_estado.Size = new System.Drawing.Size(73, 17);
             this.lbl_estado.TabIndex = 49;
@@ -161,7 +162,7 @@
             // lbl_placa_prov
             // 
             this.lbl_placa_prov.AutoSize = true;
-            this.lbl_placa_prov.Location = new System.Drawing.Point(515, 102);
+            this.lbl_placa_prov.Location = new System.Drawing.Point(449, 81);
             this.lbl_placa_prov.Name = "lbl_placa_prov";
             this.lbl_placa_prov.Size = new System.Drawing.Size(100, 17);
             this.lbl_placa_prov.TabIndex = 48;
@@ -170,7 +171,7 @@
             // lbl_placa
             // 
             this.lbl_placa.AutoSize = true;
-            this.lbl_placa.Location = new System.Drawing.Point(83, 102);
+            this.lbl_placa.Location = new System.Drawing.Point(82, 81);
             this.lbl_placa.Name = "lbl_placa";
             this.lbl_placa.Size = new System.Drawing.Size(64, 17);
             this.lbl_placa.TabIndex = 47;
@@ -179,7 +180,7 @@
             // lbl_seriechasis
             // 
             this.lbl_seriechasis.AutoSize = true;
-            this.lbl_seriechasis.Location = new System.Drawing.Point(140, 83);
+            this.lbl_seriechasis.Location = new System.Drawing.Point(580, 64);
             this.lbl_seriechasis.Name = "lbl_seriechasis";
             this.lbl_seriechasis.Size = new System.Drawing.Size(101, 17);
             this.lbl_seriechasis.TabIndex = 44;
@@ -234,7 +235,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(339, 102);
+            this.label12.Location = new System.Drawing.Point(273, 81);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(170, 17);
             this.label12.TabIndex = 34;
@@ -254,7 +255,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(14, 83);
+            this.label14.Location = new System.Drawing.Point(454, 64);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(118, 17);
             this.label14.TabIndex = 32;
@@ -264,7 +265,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 102);
+            this.label13.Location = new System.Drawing.Point(14, 81);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 17);
             this.label13.TabIndex = 31;
@@ -274,7 +275,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(15, 120);
+            this.label10.Location = new System.Drawing.Point(14, 99);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 17);
             this.label10.TabIndex = 29;
@@ -331,6 +332,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl_ver,
             this.cl_modificar,
+            this.cl_eliminar,
             this.cl_id,
             this.clParte,
             this.clSubParte,
@@ -341,15 +343,120 @@
             this.clEstado,
             this.ClOrdenId,
             this.ClOrden});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 331);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 274);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(830, 335);
+            this.dataGridView1.Size = new System.Drawing.Size(842, 174);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(210, 17);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "MECANICO RESPONSABLE:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 234);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 17);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "CUSTODIO";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(10, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(176, 17);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "TIPO MENTENIMIENTO";
+            // 
+            // lblNombresMecanicoResponsable
+            // 
+            this.lblNombresMecanicoResponsable.AutoSize = true;
+            this.lblNombresMecanicoResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombresMecanicoResponsable.ForeColor = System.Drawing.Color.Red;
+            this.lblNombresMecanicoResponsable.Location = new System.Drawing.Point(220, 215);
+            this.lblNombresMecanicoResponsable.Name = "lblNombresMecanicoResponsable";
+            this.lblNombresMecanicoResponsable.Size = new System.Drawing.Size(251, 17);
+            this.lblNombresMecanicoResponsable.TabIndex = 56;
+            this.lblNombresMecanicoResponsable.Text = "lblNombresMecanicoResponsable";
+            // 
+            // lblNombresCustodioVehiculo
+            // 
+            this.lblNombresCustodioVehiculo.AutoSize = true;
+            this.lblNombresCustodioVehiculo.Location = new System.Drawing.Point(220, 234);
+            this.lblNombresCustodioVehiculo.Name = "lblNombresCustodioVehiculo";
+            this.lblNombresCustodioVehiculo.Size = new System.Drawing.Size(188, 17);
+            this.lblNombresCustodioVehiculo.TabIndex = 57;
+            this.lblNombresCustodioVehiculo.Text = "lblNombresCustodioVehiculo";
+            // 
+            // lblTipoMantenimiento
+            // 
+            this.lblTipoMantenimiento.AutoSize = true;
+            this.lblTipoMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoMantenimiento.ForeColor = System.Drawing.Color.Red;
+            this.lblTipoMantenimiento.Location = new System.Drawing.Point(220, 252);
+            this.lblTipoMantenimiento.Name = "lblTipoMantenimiento";
+            this.lblTipoMantenimiento.Size = new System.Drawing.Size(162, 17);
+            this.lblTipoMantenimiento.TabIndex = 59;
+            this.lblTipoMantenimiento.Text = "lblTipoMantenimiento";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(846, 52);
+            this.toolStrip1.TabIndex = 60;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
+            this.toolStripButton1.Text = "&Salir";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
+            this.toolStripButton2.Text = "&Nueva";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(66, 49);
+            this.toolStripButton3.Text = "&Guardar";
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // cl_ver
             // 
@@ -373,7 +480,18 @@
             this.cl_modificar.ReadOnly = true;
             this.cl_modificar.Text = "Modif.";
             this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Visible = false;
             this.cl_modificar.Width = 55;
+            // 
+            // cl_eliminar
+            // 
+            this.cl_eliminar.HeaderText = "Eliminar";
+            this.cl_eliminar.MinimumWidth = 60;
+            this.cl_eliminar.Name = "cl_eliminar";
+            this.cl_eliminar.ReadOnly = true;
+            this.cl_eliminar.Text = "Eliminar";
+            this.cl_eliminar.UseColumnTextForButtonValue = true;
+            this.cl_eliminar.Width = 60;
             // 
             // cl_id
             // 
@@ -447,6 +565,7 @@
             this.clEstado.MinimumWidth = 65;
             this.clEstado.Name = "clEstado";
             this.clEstado.ReadOnly = true;
+            this.clEstado.Visible = false;
             this.clEstado.Width = 65;
             // 
             // ClOrdenId
@@ -465,116 +584,11 @@
             this.ClOrden.ReadOnly = true;
             this.ClOrden.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 264);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 17);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "MECANICO RESPONSABLE:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 283);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 17);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "CUSTODIO";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 301);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(176, 17);
-            this.label6.TabIndex = 55;
-            this.label6.Text = "TIPO MENTENIMIENTO";
-            // 
-            // lblNombresMecanicoResponsable
-            // 
-            this.lblNombresMecanicoResponsable.AutoSize = true;
-            this.lblNombresMecanicoResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombresMecanicoResponsable.ForeColor = System.Drawing.Color.Red;
-            this.lblNombresMecanicoResponsable.Location = new System.Drawing.Point(230, 264);
-            this.lblNombresMecanicoResponsable.Name = "lblNombresMecanicoResponsable";
-            this.lblNombresMecanicoResponsable.Size = new System.Drawing.Size(251, 17);
-            this.lblNombresMecanicoResponsable.TabIndex = 56;
-            this.lblNombresMecanicoResponsable.Text = "lblNombresMecanicoResponsable";
-            // 
-            // lblNombresCustodioVehiculo
-            // 
-            this.lblNombresCustodioVehiculo.AutoSize = true;
-            this.lblNombresCustodioVehiculo.Location = new System.Drawing.Point(230, 283);
-            this.lblNombresCustodioVehiculo.Name = "lblNombresCustodioVehiculo";
-            this.lblNombresCustodioVehiculo.Size = new System.Drawing.Size(188, 17);
-            this.lblNombresCustodioVehiculo.TabIndex = 57;
-            this.lblNombresCustodioVehiculo.Text = "lblNombresCustodioVehiculo";
-            // 
-            // lblTipoMantenimiento
-            // 
-            this.lblTipoMantenimiento.AutoSize = true;
-            this.lblTipoMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoMantenimiento.ForeColor = System.Drawing.Color.Red;
-            this.lblTipoMantenimiento.Location = new System.Drawing.Point(230, 301);
-            this.lblTipoMantenimiento.Name = "lblTipoMantenimiento";
-            this.lblTipoMantenimiento.Size = new System.Drawing.Size(162, 17);
-            this.lblTipoMantenimiento.TabIndex = 59;
-            this.lblTipoMantenimiento.Text = "lblTipoMantenimiento";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(843, 52);
-            this.toolStrip1.TabIndex = 60;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
-            this.toolStripButton1.Text = "&Salir";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
-            this.toolStripButton2.Text = "&Nueva";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(66, 49);
-            this.toolStripButton3.Text = "&Guardar";
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
             // frmDetalleTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 678);
+            this.ClientSize = new System.Drawing.Size(846, 452);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblTipoMantenimiento);
             this.Controls.Add(this.lblNombresCustodioVehiculo);
@@ -636,8 +650,10 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn clParte;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSubParte;
@@ -648,6 +664,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClOrdenId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClOrden;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }
