@@ -252,12 +252,16 @@ namespace datos.vialsur.prefectura
                    "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
                     "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
                     "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
-                    "WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula " +
-                    "AND ( ve_vehiculo.placa = @Placa  " +
-                    "OR orden.id LIKE @id_orden ) ";
+                    "WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula ";
+
+            if(Placa != "" & id_orden != "")
+                consulta_sql += " AND ( ve_vehiculo.placa = @Placa OR orden.id LIKE @id_orden ) ";
+
             if (estado != -1) //cuando no se tenga q poner el estado 
-                consulta_sql += " AND orden.estado>=@estado ";
-                    consulta_sql +=  "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
+                              //consulta_sql += " AND orden.estado  >= @estado ";
+                consulta_sql += " AND orden.estado = @estado ";
+
+            consulta_sql +=  " ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
 
             try
             {
@@ -266,25 +270,29 @@ namespace datos.vialsur.prefectura
                 SqlParameter parametro1 = new SqlParameter("@Cedula", SqlDbType.NChar,10 );
                 parametro1.Value = Cedula;
                 parameters.Add(parametro1);
+                if (Placa != "" & id_orden != "")
+                {
+                    SqlParameter parametro2 = new SqlParameter("@Placa", SqlDbType.NChar, 10);
+                    parametro2.Value = Placa;
+                    parameters.Add(parametro2);
 
-                SqlParameter parametro2 = new SqlParameter("@Placa", SqlDbType.NChar, 10);
-                parametro2.Value = Placa;
-                parameters.Add(parametro2);
-
-                SqlParameter parametro3 = new SqlParameter("@id_orden", SqlDbType.NChar, 10);
-                parametro3.Value = id_orden+"%";
-                parameters.Add(parametro3);
-
+                    SqlParameter parametro3 = new SqlParameter("@id_orden", SqlDbType.NChar, 10);
+                    parametro3.Value = id_orden + "%";
+                    parameters.Add(parametro3);
+                }
+                                
                 SqlParameter parametro4 = new SqlParameter("@estado", SqlDbType.Int);
                 parametro4.Value = estado;
                 parameters.Add(parametro4);
 
+                //DataTable dt1 = SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parameters.ToArray()).Tables[0];                
                 return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parameters.ToArray() ).Tables[0];
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al consultar los datos de las ordenes: " + ex.Message);
             }
+        
         }
 
         /// <summary>

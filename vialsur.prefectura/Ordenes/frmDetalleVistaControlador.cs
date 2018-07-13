@@ -80,6 +80,16 @@ namespace vialsur.prefectura.Ordenes
                 //habilita para que el administrador pueda cambiar el estado
                 if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
                     toolStripButton3.Visible = true;
+                if (entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                    toolStripButton2.Visible = true;
+                ///EN EL CASO DE QUE ESTE EN ESTADO CREADO Y SEA  MECANICO
+                if(entidades.vialsur.prefectura.Orden_TipoEstado.CREADO  == (entidades.vialsur.prefectura.Orden_TipoEstado)((int)obj_orden.estado) &&
+                    entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)   )
+                {
+                    toolStripButton2.Visible = false;
+                    dataGridView1.Columns["cl_ver"].Visible = false;
+                }
+
             }
             catch (Exception ex)
             {

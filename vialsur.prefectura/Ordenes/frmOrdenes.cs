@@ -15,6 +15,7 @@ namespace vialsur.prefectura.Ordenes
         public frmOrdenes()
         {
             InitializeComponent();
+
             Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
             toolStrip1.ImageList = img.GetCatalog();
             // img.SetImage48("Actions-document-save-icon.png", "disk");
@@ -23,6 +24,8 @@ namespace vialsur.prefectura.Ordenes
             toolStripButton2.ImageKey = "new";
             img.SetImage48("logout-icon.png", "door_out");
             toolStripButton1.ImageKey = "door_out";
+
+            uc_TipoEstadosOrdenes1.CargarDatos();
 
         }
 
@@ -37,8 +40,15 @@ namespace vialsur.prefectura.Ordenes
             frmSeleccionarVehiculo Paso_1 = new frmSeleccionarVehiculo();
             Paso_1.ShowDialog();
             //llamar para refrescar la grilla
-            //CargarDatosGrilla(Cedula);
-            CargarDatosGrilla(Empleado.cedula);
+            //CargarDatosGrilla(Cedula);            
+            try
+            {
+                CargarDatosGrilla(Empleado.cedula);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -51,8 +61,13 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
+                //DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(cedula, Placa, id_orden,
+                //                                                                                    (int) entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO );
+
                 DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(cedula, Placa, id_orden,
-                                                                                                    (int) entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO );
+                                                                                                       uc_TipoEstadosOrdenes1.SelectedIndex );
+
+
                 dataGridView1.DataSource = dt;
                // dataGridView1.Columns["tipo_oden"].ValueType = typeof(string);
            /*     if (dt.Rows.Count > 0)
@@ -93,11 +108,13 @@ namespace vialsur.prefectura.Ordenes
             try
             {
                 //CargarDatosGrilla(Cedula);
-                CargarDatosGrilla(Empleado.cedula);
+                uc_TipoEstadosOrdenes1.SelectedIndex = (int)entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO;
+                CargarDatosGrilla(Empleado.cedula);                                
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // throw ex;
             }
         }
 
@@ -163,6 +180,18 @@ namespace vialsur.prefectura.Ordenes
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CargarDatosGrilla(Empleado.cedula);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: "+ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }

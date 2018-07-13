@@ -60,7 +60,6 @@ namespace vialsur.prefectura.uc
                 var e = Enum.GetNames(typeof(entidades.vialsur.prefectura.Orden_TipoEstado));
                 e[0] = "Seleccione";
 
-
                 this.DataSource = e ;
                // this.ValueMember = "id";
                          

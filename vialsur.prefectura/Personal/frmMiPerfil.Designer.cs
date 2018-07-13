@@ -46,8 +46,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dtp_FechaDesactivacion = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaActivacion = new System.Windows.Forms.DateTimePicker();
-            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
-            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
             this.chk_Activo = new System.Windows.Forms.CheckBox();
             this.atxt_Observaciones = new Vivaldi.AlfaTextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,6 +57,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
+            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -179,8 +179,6 @@
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.dtp_FechaDesactivacion);
             this.tabPage2.Controls.Add(this.dtp_FechaActivacion);
-            this.tabPage2.Controls.Add(this.uc_TIPOUSUARIO1);
-            this.tabPage2.Controls.Add(this.uc_CARGO1);
             this.tabPage2.Controls.Add(this.chk_Activo);
             this.tabPage2.Controls.Add(this.atxt_Observaciones);
             this.tabPage2.Controls.Add(this.label10);
@@ -189,6 +187,8 @@
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.uc_TIPOUSUARIO1);
+            this.tabPage2.Controls.Add(this.uc_CARGO1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -248,30 +248,6 @@
             this.dtp_FechaActivacion.Name = "dtp_FechaActivacion";
             this.dtp_FechaActivacion.Size = new System.Drawing.Size(200, 22);
             this.dtp_FechaActivacion.TabIndex = 17;
-            // 
-            // uc_TIPOUSUARIO1
-            // 
-            this.uc_TIPOUSUARIO1.Ancho = 121;
-            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
-            this.uc_TIPOUSUARIO1.Enabled = false;
-            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
-            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 119);
-            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
-            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(263, 24);
-            this.uc_TIPOUSUARIO1.TabIndex = 16;
-            // 
-            // uc_CARGO1
-            // 
-            this.uc_CARGO1.Ancho = 121;
-            this.uc_CARGO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_CARGO1.DropDownWidth = 121;
-            this.uc_CARGO1.Enabled = false;
-            this.uc_CARGO1.FormattingEnabled = true;
-            this.uc_CARGO1.Location = new System.Drawing.Point(129, 7);
-            this.uc_CARGO1.Name = "uc_CARGO1";
-            this.uc_CARGO1.Size = new System.Drawing.Size(263, 24);
-            this.uc_CARGO1.TabIndex = 15;
             // 
             // chk_Activo
             // 
@@ -382,6 +358,30 @@
             this.toolStripButton2.Text = "&Guardar";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // uc_TIPOUSUARIO1
+            // 
+            this.uc_TIPOUSUARIO1.Ancho = 121;
+            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
+            this.uc_TIPOUSUARIO1.Enabled = false;
+            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
+            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 119);
+            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
+            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(263, 24);
+            this.uc_TIPOUSUARIO1.TabIndex = 16;
+            // 
+            // uc_CARGO1
+            // 
+            this.uc_CARGO1.Ancho = 121;
+            this.uc_CARGO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_CARGO1.DropDownWidth = 121;
+            this.uc_CARGO1.Enabled = false;
+            this.uc_CARGO1.FormattingEnabled = true;
+            this.uc_CARGO1.Location = new System.Drawing.Point(129, 7);
+            this.uc_CARGO1.Name = "uc_CARGO1";
+            this.uc_CARGO1.Size = new System.Drawing.Size(263, 24);
+            this.uc_CARGO1.TabIndex = 15;
             // 
             // frmMiPerfil
             // 
