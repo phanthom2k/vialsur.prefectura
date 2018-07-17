@@ -180,7 +180,8 @@ namespace vialsur.prefectura.Ordenes
                     objSelecTrab.Obj_vehiculo = obj_vehiculo;
                     objSelecTrab.EstadoOrden  = (int)obj_orden.estado;
 
-                    if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                    if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario) & 
+                        obj_orden.ve_vehiculo_responsable.First().per_persona_cedula != Empleado.cedula)
                         objSelecTrab.EsLectura = true;
 
                     objSelecTrab.EsMecanicoAtender = objSelecTrab.EsActualizacion = true;

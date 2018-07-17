@@ -34,12 +34,13 @@
             this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tareasAsignadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tareasPendientesDeAprobarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialDeOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.miPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +71,8 @@
             this.ordenesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaToolStripMenuItem,
             this.tareasAsignadasToolStripMenuItem,
-            this.tareasPendientesDeAprobarToolStripMenuItem});
+            this.tareasPendientesDeAprobarToolStripMenuItem,
+            this.historialDeOrdenesToolStripMenuItem});
             this.ordenesToolStripMenuItem.Name = "ordenesToolStripMenuItem";
             this.ordenesToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.ordenesToolStripMenuItem.Text = "Ordenes";
@@ -98,6 +100,14 @@
             this.tareasPendientesDeAprobarToolStripMenuItem.Visible = false;
             this.tareasPendientesDeAprobarToolStripMenuItem.Click += new System.EventHandler(this.tareasPendientesDeAprobarToolStripMenuItem_Click);
             // 
+            // historialDeOrdenesToolStripMenuItem
+            // 
+            this.historialDeOrdenesToolStripMenuItem.Name = "historialDeOrdenesToolStripMenuItem";
+            this.historialDeOrdenesToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
+            this.historialDeOrdenesToolStripMenuItem.Text = "Historial de Ordenes";
+            this.historialDeOrdenesToolStripMenuItem.Visible = false;
+            this.historialDeOrdenesToolStripMenuItem.Click += new System.EventHandler(this.historialDeOrdenesToolStripMenuItem_Click);
+            // 
             // administraciónToolStripMenuItem
             // 
             this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -117,10 +127,17 @@
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Visible = false;
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
+            // 
+            // miPerfilToolStripMenuItem
+            // 
+            this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
+            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
+            this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -138,13 +155,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // miPerfilToolStripMenuItem
-            // 
-            this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
-            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
-            this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
-            this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
             // 
             // frmMaster
             // 
@@ -186,5 +196,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem miPerfilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialDeOrdenesToolStripMenuItem;
     }
 }

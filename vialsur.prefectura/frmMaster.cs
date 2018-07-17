@@ -101,6 +101,7 @@ namespace vialsur.prefectura
                 {
                     tareasPendientesDeAprobarToolStripMenuItem.Visible = true;
                     personalToolStripMenuItem.Visible = true;
+                    historialDeOrdenesToolStripMenuItem.Visible = true;
                 }
 
                 toolStripStatusLabel1.Text = string.Format("USUARIO: {0} / TIPO USUARIO: {1}",
@@ -169,6 +170,23 @@ namespace vialsur.prefectura
             miPerfil.WindowState = FormWindowState.Maximized;
             miPerfil.Empleado = Empleado;
             miPerfil.Show();
+        }
+
+        private void historialDeOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ordenes = new Ordenes.frmOrdenes();
+                ordenes.MdiParent = this;
+                ordenes.Empleado = Empleado;
+                ordenes.Text = "Historial de ordenes";
+                ordenes.WindowState = FormWindowState.Maximized;
+                ordenes.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
         }
     }
 }

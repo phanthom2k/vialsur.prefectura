@@ -64,10 +64,9 @@ namespace vialsur.prefectura.Ordenes
                 //DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(cedula, Placa, id_orden,
                 //                                                                                    (int) entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO );
 
+                 
                 DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(cedula, Placa, id_orden,
-                                                                                                       uc_TipoEstadosOrdenes1.SelectedIndex );
-
-
+                                                                                                          uc_TipoEstadosOrdenes1.SelectedIndex);
                 dataGridView1.DataSource = dt;
                // dataGridView1.Columns["tipo_oden"].ValueType = typeof(string);
            /*     if (dt.Rows.Count > 0)
@@ -107,9 +106,16 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
-                //CargarDatosGrilla(Cedula);
                 uc_TipoEstadosOrdenes1.SelectedIndex = (int)entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO;
-                CargarDatosGrilla(Empleado.cedula);                                
+
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                {   //EN EL CASO DEL ADMINISTRADOR
+                    CargarDatosGrilla();
+                }
+                else
+                {   //EN EL CASO DE QUE SE LOGUEE COMO MECANICO U OTRO                    
+                    CargarDatosGrilla(Empleado.cedula);
+                }                    
             }
             catch (Exception ex)
             {
@@ -123,7 +129,10 @@ namespace vialsur.prefectura.Ordenes
             try
             {
                 //CargarDatosGrilla(Cedula, txt_input.Text.ToUpper(), txt_input.Text.ToUpper());
-                CargarDatosGrilla(Empleado.cedula , txt_input.Text.ToUpper(), txt_input.Text.ToUpper());
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                    CargarDatosGrilla("", txt_input.Text.ToUpper(), txt_input.Text.ToUpper());
+                else
+                 CargarDatosGrilla(Empleado.cedula , txt_input.Text.ToUpper(), txt_input.Text.ToUpper());
             }
             catch (Exception ex)
             {
@@ -146,8 +155,15 @@ namespace vialsur.prefectura.Ordenes
                     frmDetalle.ShowDialog();
                     frmDetalle.Dispose();
                     //CargarDatosGrilla(Cedula);
-                    CargarDatosGrilla(Empleado.cedula);
-
+                    //CargarDatosGrilla(Empleado.cedula);
+                    if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                    {   //EN EL CASO DEL ADMINISTRADOR
+                        CargarDatosGrilla();
+                    }
+                    else
+                    {   //EN EL CASO DE QUE SE LOGUEE COMO MECANICO U OTRO                    
+                        CargarDatosGrilla(Empleado.cedula);
+                    }
                 }
 
 
@@ -186,7 +202,10 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
-                CargarDatosGrilla(Empleado.cedula);
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                    CargarDatosGrilla("", txt_input.Text.ToUpper(), txt_input.Text.ToUpper());
+                else                    
+                    CargarDatosGrilla(Empleado.cedula);
             }
             catch (Exception ex)
             {

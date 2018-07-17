@@ -94,6 +94,8 @@ namespace logica.vialsur.prefectura.Orden
         {
             try
             {
+
+
                 System.Data.DataTable dt =  new cls_data_orden().ObtenerOrdenesByTecnicoAsignado_UI(Cedula, Placa, id_orden, estado);
                 //dataGridView1.Columns["tipo_oden"].ValueType = typeof(string);
                 // dt.Columns["tipo_oden"].DataType = typeof(string);

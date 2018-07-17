@@ -235,16 +235,7 @@ namespace datos.vialsur.prefectura
         /// <returns></returns>
         public DataTable ObtenerOrdenesByTecnicoAsignado_UI(string Cedula, string Placa, string id_orden, int estado =-1)
         {
-            string consulta_sql =
-                    //"SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
-                    //"orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, " +
-                    //"ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id," +
-                    //"ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
-                    //"ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
-                    //"FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
-                    //"WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula " +
-                    //"ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC ";
-
+            string consulta_sql =            
                     "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
                    "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso,  " +
                    "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
@@ -252,9 +243,13 @@ namespace datos.vialsur.prefectura
                    "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
                     "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
                     "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
-                    "WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula ";
+                    //"WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula ";
+                    "WHERE 1=1 ";
 
-            if(Placa != "" & id_orden != "")
+            if (Cedula!="")
+                consulta_sql += " AND ve_vehiculo_responsable.per_persona_cedula = @Cedula ";
+
+            if (Placa != "" & id_orden != "")
                 consulta_sql += " AND ( ve_vehiculo.placa = @Placa OR orden.id LIKE @id_orden ) ";
 
             if (estado != -1) //cuando no se tenga q poner el estado 
