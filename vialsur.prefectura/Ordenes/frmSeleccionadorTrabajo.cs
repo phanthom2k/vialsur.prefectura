@@ -33,6 +33,7 @@ namespace vialsur.prefectura.Ordenes
 
         }
         
+        public entidades.vialsur.prefectura.TipoUsuario Tipo_Usuario { get; set; }
         public bool EsActualizacion { get; set; }
         public bool EsLectura { get; set; }
         public int EstadoOrden { get; set; }
@@ -59,13 +60,16 @@ namespace vialsur.prefectura.Ordenes
                 uc_Accion1.Enabled = uc_Accion2.Enabled =  numericUpDown1.Enabled = lettersTextBox1.Enabled =
                 toolStripButton2.Enabled = false;
             }
-
             
             if (EsNuevoEdi)
             {                
                 uc_Accion2.Enabled =  false;
             }
-            
+
+            //if (entidades.vialsur.prefectura.TipoUsuario.MECANICO != Tipo_Usuario & EsNuevoEdi)
+            //{
+            //    toolStripButton2.Enabled = uc_Accion2.Enabled = false;
+            //}
 
 
 

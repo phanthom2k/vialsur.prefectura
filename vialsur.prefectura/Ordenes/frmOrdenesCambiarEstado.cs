@@ -86,8 +86,12 @@ namespace vialsur.prefectura.Ordenes
                     if (MessageBox.Show("Desea registrar el cambio", "Cambio de estado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         entidades.vialsur.prefectura.Orden_TipoEstado _ii = (entidades.vialsur.prefectura.Orden_TipoEstado)uc_TipoEstadosOrdenes1.SelectedIndex;
-                        //new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Cedula);                                                    
-                        new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Empleado.cedula);
+                        //new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Cedula);
+                        ///si el usuario es el administrador se registrara su cedula para identificar quien autorizo
+                        if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario) )
+                            new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii, Empleado.cedula);
+                        else
+                            new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, _ii);
                         DialogResult = DialogResult.Yes;
                     }
                     else

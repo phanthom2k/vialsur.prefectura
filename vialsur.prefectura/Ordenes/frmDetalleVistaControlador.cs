@@ -179,21 +179,21 @@ namespace vialsur.prefectura.Ordenes
                     objSelecTrab.Obj_orden_detalle = obj_ord_det_temp;
                     objSelecTrab.Obj_vehiculo = obj_vehiculo;
                     objSelecTrab.EstadoOrden  = (int)obj_orden.estado;
-                    objSelecTrab.EsMecanicoAtender = true;
-                    objSelecTrab.EsActualizacion = true;
-                    if (objSelecTrab.ShowDialog() == DialogResult.Yes)
+
+                    if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                        objSelecTrab.EsLectura = true;
+
+                    objSelecTrab.EsMecanicoAtender = objSelecTrab.EsActualizacion = true;
+                              
+                    objSelecTrab.Tipo_Usuario = (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario);
+                    if (objSelecTrab.ShowDialog() == DialogResult.Yes )
                     {
                         entidades.vialsur.prefectura.orde_detalle obj_orden_detalle = objSelecTrab.Obj_orden_detalle;
                         new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarOrde_Detalle(obj_orden_detalle);
                         CargarDatosGrilla();
                         new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, entidades.vialsur.prefectura.Orden_TipoEstado.EJECUCION);
                     }
-
-
                 }
-
-
-
 
                 /* frmPersonal_Nuevo frm_personal = new frmPersonal_Nuevo();
                  if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
