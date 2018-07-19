@@ -350,6 +350,7 @@
     <Content Include="icons\48x48\sign-right-icon48x48.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\22008079_1404910242955688_2294224932610583079_n.png" />
     <Content Include="Resources\logop_prefectura.png" />
     <None Include="Resources\sign-right-icon48x48.png" />
     <None Include="Resources\sign-error-icon48x48.png" />

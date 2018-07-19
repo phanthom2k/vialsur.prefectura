@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::vialsur.prefectura.Properties.Resources.logop_prefectura;
+            this.BackgroundImage = global::vialsur.prefectura.Properties.Resources._22008079_1404910242955688_2294224932610583079_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1160, 618);
             this.Controls.Add(this.statusStrip1);
