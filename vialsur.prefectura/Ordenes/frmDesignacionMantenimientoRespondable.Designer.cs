@@ -64,6 +64,8 @@
             this.uc_Empleados2 = new vialsur.prefectura.uc.uc_Empleados();
             this.uc_Empleados1 = new vialsur.prefectura.uc.uc_Empleados();
             this.uc_TipoMantenimiento1 = new vialsur.prefectura.uc.uc_TipoMantenimiento();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -349,6 +351,7 @@
             // 
             // btn_Siguiente
             // 
+            this.btn_Siguiente.Enabled = false;
             this.btn_Siguiente.FlatAppearance.BorderSize = 0;
             this.btn_Siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Siguiente.Image = global::vialsur.prefectura.Properties.Resources.sign_right_icon48x48;
@@ -386,6 +389,7 @@
             this.label11.Size = new System.Drawing.Size(210, 17);
             this.label11.TabIndex = 17;
             this.label11.Text = "CUSTODIO DEL VEHICULO:";
+            this.label11.Visible = false;
             // 
             // label16
             // 
@@ -405,6 +409,7 @@
             this.numericTextBox1.Name = "numericTextBox1";
             this.numericTextBox1.Size = new System.Drawing.Size(115, 22);
             this.numericTextBox1.TabIndex = 20;
+            this.numericTextBox1.TextChanged += new System.EventHandler(this.numericTextBox1_TextChanged);
             this.numericTextBox1.Leave += new System.EventHandler(this.numericTextBox1_Leave);
             // 
             // label17
@@ -426,6 +431,7 @@
             this.uc_Empleados2.Name = "uc_Empleados2";
             this.uc_Empleados2.Size = new System.Drawing.Size(518, 24);
             this.uc_Empleados2.TabIndex = 18;
+            this.uc_Empleados2.Visible = false;
             // 
             // uc_Empleados1
             // 
@@ -437,6 +443,7 @@
             this.uc_Empleados1.Name = "uc_Empleados1";
             this.uc_Empleados1.Size = new System.Drawing.Size(518, 24);
             this.uc_Empleados1.TabIndex = 16;
+            this.uc_Empleados1.SelectedIndexChanged += new System.EventHandler(this.uc_Empleados1_SelectedIndexChanged);
             // 
             // uc_TipoMantenimiento1
             // 
@@ -448,12 +455,34 @@
             this.uc_TipoMantenimiento1.Name = "uc_TipoMantenimiento1";
             this.uc_TipoMantenimiento1.Size = new System.Drawing.Size(518, 24);
             this.uc_TipoMantenimiento1.TabIndex = 9;
+            this.uc_TipoMantenimiento1.SelectedIndexChanged += new System.EventHandler(this.uc_TipoMantenimiento1_SelectedIndexChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(392, 278);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(225, 17);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "KILOMETRAJE REGISTRADO:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(619, 278);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 17);
+            this.label19.TabIndex = 54;
+            this.label19.Text = "label19";
             // 
             // frmDesignacionMantenimientoRespondable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 452);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.numericTextBox1);
             this.Controls.Add(this.label16);
@@ -473,7 +502,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDesignacionMantenimientoRespondable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2 frmDesignacionMantenimientoRespondable";
+            this.Text = "Nueva Orden";
             this.Load += new System.EventHandler(this.frmDesignacionMantenimientoRespondable_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -520,5 +549,7 @@
         private System.Windows.Forms.Label label16;
         private Vivaldi.UserControls.NumericTextBox numericTextBox1;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }

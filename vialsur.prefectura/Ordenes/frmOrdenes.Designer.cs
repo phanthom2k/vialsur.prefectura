@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -140,10 +140,10 @@
             // 
             // cl_ver
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "#######km";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
             this.cl_ver.FillWeight = 55F;
             this.cl_ver.HeaderText = "Ver";
             this.cl_ver.MinimumWidth = 57;
@@ -183,9 +183,9 @@
             // fecha
             // 
             this.fecha.DataPropertyName = "fecha";
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.fecha.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
             this.fecha.HeaderText = "Fecha";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
@@ -193,9 +193,9 @@
             // hora
             // 
             this.hora.DataPropertyName = "hora";
-            dataGridViewCellStyle8.Format = "##:##";
-            dataGridViewCellStyle8.NullValue = "00:00";
-            this.hora.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Format = "##:##";
+            dataGridViewCellStyle3.NullValue = "00:00";
+            this.hora.DefaultCellStyle = dataGridViewCellStyle3;
             this.hora.HeaderText = "Hora";
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
@@ -235,9 +235,9 @@
             // km_ingreso
             // 
             this.km_ingreso.DataPropertyName = "km_ingreso";
-            dataGridViewCellStyle9.Format = "######### km";
-            dataGridViewCellStyle9.NullValue = "0 km";
-            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Format = "######### km";
+            dataGridViewCellStyle4.NullValue = "0 km";
+            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle4;
             this.km_ingreso.HeaderText = "km_ingreso";
             this.km_ingreso.Name = "km_ingreso";
             this.km_ingreso.ReadOnly = true;
@@ -245,9 +245,9 @@
             // km_egreso
             // 
             this.km_egreso.DataPropertyName = "km_egreso";
-            dataGridViewCellStyle10.Format = "######### km";
-            dataGridViewCellStyle10.NullValue = "0 km";
-            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Format = "######### km";
+            dataGridViewCellStyle5.NullValue = "0 km";
+            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle5;
             this.km_egreso.HeaderText = "km_egreso";
             this.km_egreso.Name = "km_egreso";
             this.km_egreso.ReadOnly = true;
@@ -437,7 +437,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmOrdenes";
-            this.Text = "frmOrdenes";
+            this.Text = "Ordenes";
             this.Load += new System.EventHandler(this.frmOrdenes_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

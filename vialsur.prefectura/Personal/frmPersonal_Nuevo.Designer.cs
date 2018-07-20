@@ -43,6 +43,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.dtp_FechaDesactivacion = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaActivacion = new System.Windows.Forms.DateTimePicker();
             this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
@@ -55,8 +57,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -222,6 +222,23 @@
             this.tabPage2.Text = "Datos Generales";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(129, 152);
+            this.textBox1.MaxLength = 10;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(263, 22);
+            this.textBox1.TabIndex = 20;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 155);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 17);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "CLAVE";
+            // 
             // dtp_FechaDesactivacion
             // 
             this.dtp_FechaDesactivacion.Enabled = false;
@@ -338,23 +355,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CARGO:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 155);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 17);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "CLAVE";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(129, 152);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 22);
-            this.textBox1.TabIndex = 20;
-            // 
             // frmPersonal_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -367,7 +367,7 @@
             this.MinimizeBox = false;
             this.Name = "frmPersonal_Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPersonal_Nuevo";
+            this.Text = "Datos Personal";
             this.Load += new System.EventHandler(this.frmPersonal_Nuevo_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

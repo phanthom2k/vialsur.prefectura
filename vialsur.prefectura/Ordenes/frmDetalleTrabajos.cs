@@ -270,10 +270,15 @@ namespace vialsur.prefectura.Ordenes
                     return;
                 if (detalle.Count == 0)
                 {
-                    MessageBox.Show("Debe ingresar el detalle de trabajos a realizar","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Debe ingresar polomenos un trabajo.","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
-                    
+                if (detalle.Count == 6)
+                {
+                    MessageBox.Show("Solo se permite ingresar 6 detalles de trabajo.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 var obj_logica_orden = new logica.vialsur.prefectura.Orden.cls_logica_orden();
                 string ID_ORDEN = obj_logica_orden.RegistrarOrdenMantenimiento(obj_vehiculo, obj_orden, detalle);
 

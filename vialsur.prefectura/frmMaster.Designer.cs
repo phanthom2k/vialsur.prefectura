@@ -170,7 +170,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMaster";
-            this.Text = "frmMaster";
+            this.Text = "Master";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMaster_Load);
             this.menuStrip1.ResumeLayout(false);

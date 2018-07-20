@@ -108,6 +108,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
             this.toolStripButton1.Text = "&Salir";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -117,6 +118,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
             this.toolStripButton2.Text = "&Nueva";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Visible = false;
             // 
             // button2
             // 
@@ -456,14 +458,14 @@
             // id
             // 
             this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
+            this.id.HeaderText = "OORDEN No";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
             // tipo_oden
             // 
             this.tipo_oden.DataPropertyName = "tipo_oden";
-            this.tipo_oden.HeaderText = "tipo_oden";
+            this.tipo_oden.HeaderText = "TIPO DE ORDEN";
             this.tipo_oden.MinimumWidth = 70;
             this.tipo_oden.Name = "tipo_oden";
             this.tipo_oden.ReadOnly = true;
@@ -474,7 +476,7 @@
             dataGridViewCellStyle2.Format = "d";
             dataGridViewCellStyle2.NullValue = null;
             this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
-            this.fecha.HeaderText = "fecha";
+            this.fecha.HeaderText = "FECHA";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             // 
@@ -484,14 +486,14 @@
             dataGridViewCellStyle3.Format = "##:##";
             dataGridViewCellStyle3.NullValue = "00:00";
             this.hora.DefaultCellStyle = dataGridViewCellStyle3;
-            this.hora.HeaderText = "hora";
+            this.hora.HeaderText = "HORA";
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
             // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "estado";
+            this.estado.HeaderText = "ESTADO";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
             // 
@@ -506,16 +508,17 @@
             // chofer
             // 
             this.chofer.DataPropertyName = "chofer";
-            this.chofer.HeaderText = "chofer";
+            this.chofer.HeaderText = "CHOFER";
             this.chofer.MinimumWidth = 125;
             this.chofer.Name = "chofer";
             this.chofer.ReadOnly = true;
+            this.chofer.Visible = false;
             this.chofer.Width = 150;
             // 
             // observacion
             // 
             this.observacion.DataPropertyName = "observacion";
-            this.observacion.HeaderText = "observacion";
+            this.observacion.HeaderText = "OBSERVACION";
             this.observacion.Name = "observacion";
             this.observacion.ReadOnly = true;
             this.observacion.Visible = false;
@@ -526,7 +529,7 @@
             dataGridViewCellStyle4.Format = "######### km";
             dataGridViewCellStyle4.NullValue = "0 km";
             this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle4;
-            this.km_ingreso.HeaderText = "km_ingreso";
+            this.km_ingreso.HeaderText = "Km Ingreso";
             this.km_ingreso.Name = "km_ingreso";
             this.km_ingreso.ReadOnly = true;
             // 
@@ -536,14 +539,14 @@
             dataGridViewCellStyle5.Format = "######### km";
             dataGridViewCellStyle5.NullValue = "0 km";
             this.km_egreso.DefaultCellStyle = dataGridViewCellStyle5;
-            this.km_egreso.HeaderText = "km_egreso";
+            this.km_egreso.HeaderText = "Km Egreso";
             this.km_egreso.Name = "km_egreso";
             this.km_egreso.ReadOnly = true;
             // 
             // cedula_responsable
             // 
             this.cedula_responsable.DataPropertyName = "cedula_responsable";
-            this.cedula_responsable.HeaderText = "cedula_responsable";
+            this.cedula_responsable.HeaderText = "RESPONSABLE";
             this.cedula_responsable.MaxInputLength = 125;
             this.cedula_responsable.MinimumWidth = 125;
             this.cedula_responsable.Name = "cedula_responsable";
@@ -553,7 +556,7 @@
             // ve_vehiculo_id
             // 
             this.ve_vehiculo_id.DataPropertyName = "ve_vehiculo_id";
-            this.ve_vehiculo_id.HeaderText = "ve_vehiculo_id";
+            this.ve_vehiculo_id.HeaderText = "PLACA";
             this.ve_vehiculo_id.Name = "ve_vehiculo_id";
             this.ve_vehiculo_id.ReadOnly = true;
             // 
@@ -602,7 +605,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmHistoriadoVehiculo";
-            this.Text = "frmHistoriadoVehiculo";
+            this.Text = "Historiado de Vehiculo";
             this.Load += new System.EventHandler(this.frmHistoriadoVehiculo_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

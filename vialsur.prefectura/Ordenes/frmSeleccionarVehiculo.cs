@@ -59,6 +59,24 @@ namespace vialsur.prefectura.Ordenes
                     if(vehiculo.estado != null)
                         lbl_estado.Text = (bool)vehiculo.estado ? "Activo" : "Inactivo";
                 }
+                else
+                {
+                    lbk_codigo.Text = string.Empty;
+                    lbl_codigo_anterior.Text = string.Empty;
+                    
+                    lbl_marca.Text = string.Empty;
+                    lbl_modelo.Text = string.Empty;
+                    lbl_pais_fabricacion.Text = string.Empty;
+                    
+                    lbl_color.Text = string.Empty;
+                    lbl_seriemotor.Text = string.Empty;
+                    lbl_seriechasis.Text = 
+                    lbl_anofab.Text = string.Empty;
+                    lbl_anocomp.Text = string.Empty;
+                    lbl_placa.Text = string.Empty;
+                    lbl_placa_prov.Text = string.Empty;                    
+                    lbl_estado.Text = string.Empty;
+                }
                 
         
             }
@@ -108,7 +126,16 @@ namespace vialsur.prefectura.Ordenes
                     obj_vehiculo = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ConsultarDatosVehiculo(txt_ParametroABuscar.Text,
                       Convert.ToInt32(groupBox1.Controls.OfType<RadioButton>().Where(r => r.Checked).FirstOrDefault().Tag.ToString()));
                     if (obj_vehiculo != null & obj_vehiculo.estado != null)
+                    {
                         MostrarInformacionVehiculo(obj_vehiculo);
+                        btn_Siguiente.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_Siguiente.Enabled = false;
+
+                    }
+
                 }
 //int.Parse(groupBox1.Controls.OfType<RadioButton>().Where(r => r.Checked).FirstOrDefault().Tag.ToString());
 

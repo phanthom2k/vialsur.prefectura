@@ -54,11 +54,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
+            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
-            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -326,6 +326,30 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CARGO:";
             // 
+            // uc_TIPOUSUARIO1
+            // 
+            this.uc_TIPOUSUARIO1.Ancho = 121;
+            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
+            this.uc_TIPOUSUARIO1.Enabled = false;
+            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
+            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 119);
+            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
+            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(263, 24);
+            this.uc_TIPOUSUARIO1.TabIndex = 16;
+            // 
+            // uc_CARGO1
+            // 
+            this.uc_CARGO1.Ancho = 121;
+            this.uc_CARGO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_CARGO1.DropDownWidth = 121;
+            this.uc_CARGO1.Enabled = false;
+            this.uc_CARGO1.FormattingEnabled = true;
+            this.uc_CARGO1.Location = new System.Drawing.Point(129, 7);
+            this.uc_CARGO1.Name = "uc_CARGO1";
+            this.uc_CARGO1.Size = new System.Drawing.Size(263, 24);
+            this.uc_CARGO1.TabIndex = 15;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -359,30 +383,6 @@
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // uc_TIPOUSUARIO1
-            // 
-            this.uc_TIPOUSUARIO1.Ancho = 121;
-            this.uc_TIPOUSUARIO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_TIPOUSUARIO1.DropDownWidth = 121;
-            this.uc_TIPOUSUARIO1.Enabled = false;
-            this.uc_TIPOUSUARIO1.FormattingEnabled = true;
-            this.uc_TIPOUSUARIO1.Location = new System.Drawing.Point(129, 119);
-            this.uc_TIPOUSUARIO1.Name = "uc_TIPOUSUARIO1";
-            this.uc_TIPOUSUARIO1.Size = new System.Drawing.Size(263, 24);
-            this.uc_TIPOUSUARIO1.TabIndex = 16;
-            // 
-            // uc_CARGO1
-            // 
-            this.uc_CARGO1.Ancho = 121;
-            this.uc_CARGO1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_CARGO1.DropDownWidth = 121;
-            this.uc_CARGO1.Enabled = false;
-            this.uc_CARGO1.FormattingEnabled = true;
-            this.uc_CARGO1.Location = new System.Drawing.Point(129, 7);
-            this.uc_CARGO1.Name = "uc_CARGO1";
-            this.uc_CARGO1.Size = new System.Drawing.Size(263, 24);
-            this.uc_CARGO1.TabIndex = 15;
-            // 
             // frmMiPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -391,7 +391,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMiPerfil";
-            this.Text = "frmMiPerfil";
+            this.Text = "Mi Perfil";
             this.Load += new System.EventHandler(this.frmMiPerfil_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

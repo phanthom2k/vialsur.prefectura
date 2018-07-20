@@ -206,7 +206,7 @@
             // cedula
             // 
             this.cedula.DataPropertyName = "cedula";
-            this.cedula.HeaderText = "cedula";
+            this.cedula.HeaderText = "CEDULA";
             this.cedula.Name = "cedula";
             this.cedula.ReadOnly = true;
             // 
@@ -214,7 +214,7 @@
             // 
             this.nombres.DataPropertyName = "nombres";
             this.nombres.FillWeight = 200F;
-            this.nombres.HeaderText = "nombres";
+            this.nombres.HeaderText = "NOMBRES";
             this.nombres.MaxInputLength = 150;
             this.nombres.MinimumWidth = 220;
             this.nombres.Name = "nombres";
@@ -225,7 +225,7 @@
             // 
             this.apellidos.DataPropertyName = "apellidos";
             this.apellidos.FillWeight = 200F;
-            this.apellidos.HeaderText = "apellidos";
+            this.apellidos.HeaderText = "APELLIDOS";
             this.apellidos.MinimumWidth = 220;
             this.apellidos.Name = "apellidos";
             this.apellidos.ReadOnly = true;
@@ -237,25 +237,26 @@
             this.id.HeaderText = "emp_empleado.id";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // activo
             // 
             this.activo.DataPropertyName = "activo";
-            this.activo.HeaderText = "activo";
+            this.activo.HeaderText = "ESTADO";
             this.activo.Name = "activo";
             this.activo.ReadOnly = true;
             // 
             // fecha_activacion
             // 
             this.fecha_activacion.DataPropertyName = "fecha_activacion";
-            this.fecha_activacion.HeaderText = "fecha_activacion";
+            this.fecha_activacion.HeaderText = "FECHA DE ACTIVACION";
             this.fecha_activacion.Name = "fecha_activacion";
             this.fecha_activacion.ReadOnly = true;
             // 
             // tipo_usuario
             // 
             this.tipo_usuario.DataPropertyName = "tipo_usuario";
-            this.tipo_usuario.HeaderText = "tipo_usuario";
+            this.tipo_usuario.HeaderText = "TIPO USUARIO";
             this.tipo_usuario.Name = "tipo_usuario";
             this.tipo_usuario.ReadOnly = true;
             // 
@@ -335,7 +336,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmPersonal";
-            this.Text = "frmPersonal";
+            this.Text = "Personal";
             this.Load += new System.EventHandler(this.frmPersonal_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

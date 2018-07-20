@@ -50,8 +50,7 @@ namespace vialsur.prefectura.Ordenes
                     //lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
                     //                        (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
                     lbl_TipoVehiculo.Text = ((TipoClaseVehiculo)mod.clase_vehiculo).ToString();
-
-
+                    label19.Text = new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(vehiculo.placa).ToString();
                 }
 
 
@@ -165,10 +164,11 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
-
-                if (int.Parse(numericTextBox1.Text) < new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa))
+                var km_registrado = new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa);
+                //if (int.Parse(numericTextBox1.Text) < new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa))
+                if (int.Parse(numericTextBox1.Text) < km_registrado)
                 {
-                    MessageBox.Show("El kilometraje ingresado es inferior al registrado"+ new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa));
+                    MessageBox.Show("El kilometraje ingresado es inferior al registrado "+ new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa));
                     numericTextBox1.BackColor = Color.Red;
                 }
                 else
@@ -177,13 +177,36 @@ namespace vialsur.prefectura.Ordenes
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("El kilometraje ingresado es inferior al registrado","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
 
-        
+        void VerificarSelecciones()
+        {
+            if(uc_TipoMantenimiento1.SelectedIndex>0 & uc_Empleados1.SelectedIndex >0  & numericTextBox1.Text != "") //& uc_Empleados2.SelectedIndex >0 )
+            {
+                btn_Siguiente.Enabled = true;
+            }
+            else
+            {
+                 btn_Siguiente.Enabled = false;
+            }
+        }
 
+        private void uc_TipoMantenimiento1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VerificarSelecciones();
+        }
+
+        private void uc_Empleados1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VerificarSelecciones();
+        }
+
+        private void numericTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            VerificarSelecciones();
+        }
     }
 }

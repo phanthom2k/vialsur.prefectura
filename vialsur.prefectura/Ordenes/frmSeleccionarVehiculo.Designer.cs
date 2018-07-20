@@ -435,6 +435,7 @@
             // 
             // btn_Siguiente
             // 
+            this.btn_Siguiente.Enabled = false;
             this.btn_Siguiente.FlatAppearance.BorderSize = 0;
             this.btn_Siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Siguiente.Image = global::vialsur.prefectura.Properties.Resources.sign_right_icon48x48;
@@ -507,7 +508,7 @@
             this.MinimizeBox = false;
             this.Name = "frmSeleccionarVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "1 frmSeleccionarVehiculo";
+            this.Text = "Nueva Orden";
             this.Load += new System.EventHandler(this.frmSeleccionarVehiculo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

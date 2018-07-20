@@ -296,7 +296,7 @@
             // 
             this.cl_serie_chasis.DataPropertyName = "serie_chasis";
             this.cl_serie_chasis.FillWeight = 250F;
-            this.cl_serie_chasis.HeaderText = "serie_chasis";
+            this.cl_serie_chasis.HeaderText = "SERIE DE CHASIS";
             this.cl_serie_chasis.MaxInputLength = 100;
             this.cl_serie_chasis.MinimumWidth = 250;
             this.cl_serie_chasis.Name = "cl_serie_chasis";
@@ -307,7 +307,7 @@
             // 
             this.cl_serie_motor.DataPropertyName = "serie_motor";
             this.cl_serie_motor.FillWeight = 200F;
-            this.cl_serie_motor.HeaderText = "serie_motor";
+            this.cl_serie_motor.HeaderText = "SERIE DE MOTOR";
             this.cl_serie_motor.MaxInputLength = 100;
             this.cl_serie_motor.MinimumWidth = 200;
             this.cl_serie_motor.Name = "cl_serie_motor";
@@ -317,14 +317,14 @@
             // cl_color
             // 
             this.cl_color.DataPropertyName = "COLOR";
-            this.cl_color.HeaderText = "color";
+            this.cl_color.HeaderText = "COLOR";
             this.cl_color.Name = "cl_color";
             this.cl_color.ReadOnly = true;
             // 
             // cl_costo
             // 
             this.cl_costo.DataPropertyName = "costo";
-            this.cl_costo.HeaderText = "costo";
+            this.cl_costo.HeaderText = "COSTO";
             this.cl_costo.Name = "cl_costo";
             this.cl_costo.ReadOnly = true;
             this.cl_costo.Visible = false;
@@ -332,7 +332,7 @@
             // cl_estado
             // 
             this.cl_estado.DataPropertyName = "estado";
-            this.cl_estado.HeaderText = "estado";
+            this.cl_estado.HeaderText = "ESTADO";
             this.cl_estado.Name = "cl_estado";
             this.cl_estado.ReadOnly = true;
             // 
@@ -477,7 +477,7 @@
             this.Controls.Add(this.txt_input);
             this.Controls.Add(this.label1);
             this.Name = "frmVehiculos";
-            this.Text = "frmVehiculos";
+            this.Text = "Vehiculos";
             this.Load += new System.EventHandler(this.frmVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStrip1.ResumeLayout(false);

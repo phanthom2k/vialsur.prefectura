@@ -445,7 +445,7 @@
             this.MaximizeBox = false;
             this.Name = "frmVehiculo_Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmVehiculo_Nuevo";
+            this.Text = "Vehiculo Nuevo";
             this.Load += new System.EventHandler(this.frmVehiculo_Nuevo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.error_Provider1)).EndInit();
             this.toolStrip1.ResumeLayout(false);

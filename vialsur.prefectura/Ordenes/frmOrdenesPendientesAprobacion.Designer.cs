@@ -210,6 +210,7 @@
             this.chofer.MinimumWidth = 125;
             this.chofer.Name = "chofer";
             this.chofer.ReadOnly = true;
+            this.chofer.Visible = false;
             this.chofer.Width = 150;
             // 
             // observacion
@@ -289,7 +290,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmOrdenesPendientesAprobacion";
-            this.Text = "frmOrdenesPendientesAprobacion";
+            this.Text = "Ordenes Pendientes de Aprobacion";
             this.Load += new System.EventHandler(this.frmOrdenesPendientesAprobacion_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
