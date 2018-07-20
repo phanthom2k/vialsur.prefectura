@@ -269,7 +269,7 @@
             this.atxt_Observaciones.MaxLength = 550;
             this.atxt_Observaciones.Multiline = true;
             this.atxt_Observaciones.Name = "atxt_Observaciones";
-            this.atxt_Observaciones.Size = new System.Drawing.Size(461, 80);
+            this.atxt_Observaciones.Size = new System.Drawing.Size(435, 80);
             this.atxt_Observaciones.TabIndex = 10;
             // 
             // label10
