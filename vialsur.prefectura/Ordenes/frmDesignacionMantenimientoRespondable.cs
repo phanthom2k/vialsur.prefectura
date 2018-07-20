@@ -23,6 +23,11 @@ namespace vialsur.prefectura.Ordenes
             
         }
 
+        /// <summary>
+        /// Representa el usuario
+        /// </summary>
+        public entidades.vialsur.prefectura.emp_empleado Empleado { get; set; }
+
         void MostrarInformacionVehiculo(entidades.vialsur.prefectura.ve_vehiculo vehiculo)
         {
             try
@@ -140,6 +145,7 @@ namespace vialsur.prefectura.Ordenes
                 frmDetalleTrabajos frm_detalles = new frmDetalleTrabajos();
                 frm_detalles.Obj_vehiculo = Obj_vehiculo;
                 frm_detalles.Obj_orden = Obj_orden;
+                frm_detalles.Empleado = Empleado;
                 this.Hide();
                 frm_detalles.ShowDialog();
                 this.Close();

@@ -79,6 +79,7 @@ namespace vialsur.prefectura
             try
             {
                 Ordenes.frmSeleccionarVehiculo Paso_1 = new Ordenes.frmSeleccionarVehiculo();
+                Paso_1.Empleado = Empleado;
                 Paso_1.ShowDialog();
             }
             catch (Exception ex)

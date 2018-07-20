@@ -85,7 +85,7 @@ namespace datos.vialsur.prefectura
         /// </summary>
         /// <param name="_orden">Obj. Orden</param>
         /// <returns></returns>
-        public string Insertar_orden(entidades.vialsur.prefectura.orden _orden)
+        public string Insertar_orden(entidades.vialsur.prefectura.orden _orden, string cedula_creador="")
         {
             try
             {
@@ -133,6 +133,11 @@ namespace datos.vialsur.prefectura
                 SqlParameter _km_egreso = new SqlParameter("@km_egreso", SqlDbType.Int);
                 _km_egreso.Value = _orden.km_egreso;
                 parameters.Add(_km_egreso);
+
+
+                SqlParameter _per_persona_cedula_crea = new SqlParameter("@per_persona_cedula_crea", SqlDbType.NChar, 10);
+                _per_persona_cedula_crea.Value = cedula_creador;
+                parameters.Add(_per_persona_cedula_crea);
 
                 #endregion
 
@@ -235,9 +240,9 @@ namespace datos.vialsur.prefectura
         /// <returns></returns>
         public DataTable ObtenerOrdenesByTecnicoAsignado_UI(string Cedula, string Placa, string id_orden, int estado =-1)
         {
-            string consulta_sql =            
+            string consulta_sql =             
                     "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
-                   "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso,  " +
+                   "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, orden.per_persona_cedula_crea,  " +
                    "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
                    "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
                    "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
@@ -299,7 +304,7 @@ namespace datos.vialsur.prefectura
         {
             string consulta_sql =
                     "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, "+
-                    "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso,  "+
+                    "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, orden.per_persona_cedula_crea,  " +
                     "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id,  "+
                     "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado,  "+
                     "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable "+
@@ -334,7 +339,7 @@ namespace datos.vialsur.prefectura
             string consulta_sql =
 
                     "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
-                   "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso,  " +
+                   "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, orden.per_persona_cedula_crea, " +
                    "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
                    "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
                    "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
@@ -377,7 +382,7 @@ namespace datos.vialsur.prefectura
         {
             try
             {
-                string consulta = "SELECT id, tipo_oden, fecha, hora, estado, ve_vehiculo_responsable_id, per_persona_cedula, observacion, km_ingreso, km_egreso " +
+                string consulta = "SELECT id, tipo_oden, fecha, hora, estado, ve_vehiculo_responsable_id, per_persona_cedula, observacion, km_ingreso, km_egreso, per_persona_cedula_crea " +
                                    "FROM orden where id = @id_orden";
 
                 SqlParameter parametro = new SqlParameter("@id_orden", SqlDbType.NChar,10 );
@@ -394,7 +399,7 @@ namespace datos.vialsur.prefectura
                     obj_orden.hora = (TimeSpan)dr_datos["hora"];
                     obj_orden.estado = int.Parse(dr_datos["estado"].ToString());
                     obj_orden.ve_vehiculo_responsable_id = int.Parse(dr_datos["ve_vehiculo_responsable_id"].ToString());
-                    
+                    obj_orden.per_persona_cedula_crea = dr_datos["per_persona_cedula_crea"] == null ? "" : dr_datos["per_persona_cedula_crea"].ToString();
                     obj_orden.per_persona_numero_cedula = dr_datos["per_persona_cedula"] == null ? "" : dr_datos["per_persona_cedula"].ToString();
                     obj_orden.observacion = dr_datos["observacion"].ToString();
                     int ki = 0, ke = 0;

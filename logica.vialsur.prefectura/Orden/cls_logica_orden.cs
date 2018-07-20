@@ -35,9 +35,9 @@ namespace logica.vialsur.prefectura.Orden
         /// <param name="mi_orden"></param>
         /// <param name="mi_orde_detalle"></param>
         /// <returns>IR DE LA ORDEN</returns>
-        public string RegistrarOrdenMantenimiento(ve_vehiculo mi_ve_vehiculo, orden mi_orden, List<orde_detalle> mi_orde_detalle) //, ve_vehiculo_responsable mi_ve_vehiculo_responsable)
+        public string RegistrarOrdenMantenimiento(ve_vehiculo mi_ve_vehiculo, orden mi_orden, List<orde_detalle> mi_orde_detalle, emp_empleado emp_usuario) //, ve_vehiculo_responsable mi_ve_vehiculo_responsable)
         {
-            try
+            try 
             {
                 var _ve_vehiculo_responsable = new cls_data_ve_vehiculo_responsable();
                 ve_vehiculo_responsable mi_ve_vehiculo_responsable = mi_orden.ve_vehiculo_responsable.First();
@@ -45,7 +45,7 @@ namespace logica.vialsur.prefectura.Orden
                 
                 var _orden = new cls_data_orden();
                 mi_orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable_id;
-                string orden_id = _orden.Insertar_orden(mi_orden);
+                string orden_id = _orden.Insertar_orden(mi_orden, emp_usuario.cedula); //registra la orden con la CI del usuario que la creo
 
                 for(int i= 0; i< mi_orde_detalle.Count; i++  )
                 {
@@ -93,7 +93,7 @@ namespace logica.vialsur.prefectura.Orden
         public System.Data.DataTable ConnsultarOrdenesAsignadasTecnicosPorCedula_UI_customized(string Cedula, string Placa, string id_orden, int estado)
         {
             try
-            {
+            { 
 
 
                 System.Data.DataTable dt =  new cls_data_orden().ObtenerOrdenesByTecnicoAsignado_UI(Cedula, Placa, id_orden, estado);
@@ -110,7 +110,7 @@ namespace logica.vialsur.prefectura.Orden
                 {
                     dt_clodana.LoadDataRow(dr.ItemArray, false);
                 }
-                dt.Clear();
+                dt.Clear(); 
                 dt.Dispose();
 
 
@@ -123,6 +123,7 @@ namespace logica.vialsur.prefectura.Orden
                     
                     entidades.vialsur.prefectura.per_persona persona_chofer = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
                                                                                 dt_clodana.Rows[i]["chofer"].ToString());
+                    
 
                     dt_clodana.Rows[i]["chofer"] = persona_chofer.apellidos + ", " + persona_chofer.nombres;
 
@@ -132,6 +133,10 @@ namespace logica.vialsur.prefectura.Orden
 
                     dt_clodana.Rows[i]["estado"] = Orden_TipoEstadoById(int.Parse(dt_clodana.Rows[i]["estado"].ToString()));
                     dt_clodana.Rows[i]["hora"] = dt_clodana.Rows[i]["hora"].ToString().Substring(0, 5);
+
+                    dt_clodana.Rows[i]["per_persona_cedula_crea"] = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                                                                               dt_clodana.Rows[i]["per_persona_cedula_crea"].ToString()).ApellidosNombres;
+
 
 
                 }
@@ -166,7 +171,7 @@ namespace logica.vialsur.prefectura.Orden
                 }
                 dt.Clear();
                 dt.Dispose();
-
+                 
 
                 for (int i = 0; i < dt_clodana.Rows.Count; i++)
                 {
@@ -187,7 +192,8 @@ namespace logica.vialsur.prefectura.Orden
                     dt_clodana.Rows[i]["estado"] = Orden_TipoEstadoById(int.Parse(dt_clodana.Rows[i]["estado"].ToString()));
                     dt_clodana.Rows[i]["hora"] = dt_clodana.Rows[i]["hora"].ToString().Substring(0, 5);
 
-
+                    dt_clodana.Rows[i]["per_persona_cedula_crea"] = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                                                                               dt_clodana.Rows[i]["per_persona_cedula_crea"].ToString()).ApellidosNombres;
                 }
                 return dt_clodana;
             }

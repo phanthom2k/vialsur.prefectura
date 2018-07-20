@@ -29,6 +29,10 @@ namespace vialsur.prefectura.Ordenes
             toolStripButton1.ImageKey = "door_out";
 
         }
+        /// <summary>
+        /// Datos del usuario
+        /// </summary>
+        public entidades.vialsur.prefectura.emp_empleado Empleado { get; set; }
 
         ve_vehiculo obj_vehiculo;
         /// <summary>
@@ -280,7 +284,7 @@ namespace vialsur.prefectura.Ordenes
                 }
 
                 var obj_logica_orden = new logica.vialsur.prefectura.Orden.cls_logica_orden();
-                string ID_ORDEN = obj_logica_orden.RegistrarOrdenMantenimiento(obj_vehiculo, obj_orden, detalle);
+                string ID_ORDEN = obj_logica_orden.RegistrarOrdenMantenimiento(obj_vehiculo, obj_orden, detalle, Empleado );
 
                 MessageBox.Show("Orden creada: "+ID_ORDEN);
                 this.Close();

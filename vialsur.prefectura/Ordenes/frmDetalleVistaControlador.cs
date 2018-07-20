@@ -139,6 +139,9 @@ namespace vialsur.prefectura.Ordenes
                     LBK_ESTADO.Text = ((entidades.vialsur.prefectura.Orden_TipoEstado)int.Parse(ord.estado.ToString())).ToString();
                     txtObservacion.Text = ord.observacion;
 
+                    label22.Text = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(ord.per_persona_cedula_crea).ApellidosNombres; 
+                    //per_persona_cedula_crea
+
                 }
 
 

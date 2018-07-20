@@ -53,7 +53,8 @@ namespace entidades.vialsur.prefectura
         public string observacion { get; set; }
         public Nullable<int> km_ingreso { get; set; }
         public Nullable<int> km_egreso { get; set; }
-    
+        public string per_persona_cedula_crea { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orde_detalle> orde_detalle { get; set; }
         //public virtual ve_vehiculo_responsable ve_vehiculo_responsable { get; set; }

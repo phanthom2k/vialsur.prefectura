@@ -28,6 +28,10 @@ namespace vialsur.prefectura.Ordenes
 
 
         }
+        /// <summary>
+        /// Representa al usuario
+        /// </summary>
+        public entidades.vialsur.prefectura.emp_empleado Empleado { get; set; }
 
         private void frmSeleccionarVehiculo_Load(object sender, EventArgs e)
         {
@@ -157,6 +161,7 @@ namespace vialsur.prefectura.Ordenes
             
             frmDesignacionMantenimientoRespondable frm_designacion = new frmDesignacionMantenimientoRespondable();
             frm_designacion.Obj_vehiculo = Obj_vehiculo;
+            frm_designacion.Empleado = Empleado;
             this.Hide();
             frm_designacion.ShowDialog();
             this.Close();

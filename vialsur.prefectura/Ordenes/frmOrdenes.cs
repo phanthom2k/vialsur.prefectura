@@ -38,6 +38,7 @@ namespace vialsur.prefectura.Ordenes
             ///NUEVA ORDERDEN
             ///
             frmSeleccionarVehiculo Paso_1 = new frmSeleccionarVehiculo();
+            Paso_1.Empleado = Empleado;
             Paso_1.ShowDialog();
             //llamar para refrescar la grilla
             //CargarDatosGrilla(Cedula);            
