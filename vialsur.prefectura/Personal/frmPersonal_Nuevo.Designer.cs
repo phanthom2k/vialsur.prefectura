@@ -286,9 +286,8 @@
             this.chk_Activo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chk_Activo.Location = new System.Drawing.Point(129, 37);
             this.chk_Activo.Name = "chk_Activo";
-            this.chk_Activo.Size = new System.Drawing.Size(98, 21);
+            this.chk_Activo.Size = new System.Drawing.Size(18, 17);
             this.chk_Activo.TabIndex = 14;
-            this.chk_Activo.Text = "checkBox2";
             this.chk_Activo.UseVisualStyleBackColor = true;
             this.chk_Activo.CheckedChanged += new System.EventHandler(this.chk_Activo_CheckedChanged);
             // 

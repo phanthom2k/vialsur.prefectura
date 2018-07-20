@@ -130,7 +130,7 @@
             this.MinimizeBox = false;
             this.Name = "frmOrdenesCambiarEstado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmOrdenesCambiarEstado";
+            this.Text = "Cambiar Estado";
             this.Load += new System.EventHandler(this.frmOrdenesCambiarEstado_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

@@ -46,10 +46,24 @@ namespace vialsur.prefectura.Personal
                 MessageBox.Show("Error al intentar registrar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
         private void frmPersonal_Load(object sender, EventArgs e)
         {
-            CargarDatosGrilla();
+            try
+            {
+                CargarDatosGrilla();
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)EmpleadoUsuario.tipo_usuario))
+                {
+                    toolStripButton2.Visible = true;
+                }
+                //public entidades.vialsur.prefectura.emp_empleado Empleado { get; set; }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: "+ex.Message);
+            }
+            
         }
 
         int pivote = 0;

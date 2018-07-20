@@ -53,7 +53,7 @@ namespace vialsur.prefectura.uc
 
                 System.Data.DataRow dr1 = _dt_catalogo.NewRow();
                 dr1["id"] = 1;
-                dr1["descripcion"] = "PRVENTIVO";
+                dr1["descripcion"] = "PREVENTIVO";
                 _dt_catalogo.Rows.Add(dr1);
 
                 System.Data.DataRow dr2 = _dt_catalogo.NewRow();

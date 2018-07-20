@@ -31,6 +31,7 @@ namespace vialsur.prefectura
                 {
                     var vehiculos = new Vehiculos.frmVehiculos();
                     vehiculos.MdiParent = this;
+                    vehiculos.Empleado = Empleado;
                     vehiculos.WindowState = FormWindowState.Maximized;
                     vehiculos.Show();                    
                 }
@@ -60,7 +61,7 @@ namespace vialsur.prefectura
                 if (activeChild == null)
                 {
                     var vehiculos = new Personal.frmPersonal();
-                    vehiculos.MdiParent = this;
+                    vehiculos.MdiParent = this;                    
                     vehiculos.EmpleadoUsuario = Empleado;
                    // vehiculos.WindowState = FormWindowState.Maximized;
                     vehiculos.Show();

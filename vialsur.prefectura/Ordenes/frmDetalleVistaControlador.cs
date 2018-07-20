@@ -228,28 +228,34 @@ namespace vialsur.prefectura.Ordenes
             {
                 if(MessageBox.Show("¿Desea marcar la salida del vehiculo?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button1)==DialogResult.Yes)
                 {
-                    if (numericTextBox1.IntValue > 0 )
+                    if(numericTextBox1.Text!="")
                     {
-                        if( new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa) <= numericTextBox1.IntValue   )
+                        if (numericTextBox1.IntValue > 0)
                         {
-                            if( new logica.vialsur.prefectura.Orden.cls_logica_orden().VerificarCumplimientoDetallesAsignados(OrdenID))
+                            if (new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa) <= numericTextBox1.IntValue)
                             {
+                                if (new logica.vialsur.prefectura.Orden.cls_logica_orden().VerificarCumplimientoDetallesAsignados(OrdenID))
+                                {
 
-                                new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, Orden_TipoEstado.FINALIZADO, numericTextBox1.IntValue);
-                                this.Close();
+                                    new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ActualizarEstadoOrden(OrdenID, Orden_TipoEstado.FINALIZADO, numericTextBox1.IntValue);
+                                    this.Close();
+                                }
+                                else
+                                    MessageBox.Show("Aun tiene pendientes trabajos que realizar en la orden");
                             }
                             else
-                                MessageBox.Show("Aun tiene pendientes trabajos que realizar en la orden");
+                            {
+                                MessageBox.Show("Kilometraje de salida ingresado es inferior al registrado (" + new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa) + "Km)");
+                            }
                         }
                         else
-                        {
-                            MessageBox.Show("Kilometraje de salida ingresado es inferior al registrado ("+ new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(obj_vehiculo.placa)+"Km)");
-                        }                        
+                            MessageBox.Show("Kilometraje de salida es 0");
                     }
                     else
-                        MessageBox.Show("Kilometraje de salida es 0");                    
-
-                    
+                    {
+                        MessageBox.Show("No ha ingresado un kilometraje", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                                        
                 }
             }
             catch (Exception ex)

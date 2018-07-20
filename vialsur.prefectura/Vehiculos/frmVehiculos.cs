@@ -63,6 +63,7 @@ namespace vialsur.prefectura.Vehiculos
             }
         }
 
+        public entidades.vialsur.prefectura.emp_empleado Empleado { get; set; }
 
         private void frmVehiculos_Load(object sender, EventArgs e)
         {
@@ -70,7 +71,18 @@ namespace vialsur.prefectura.Vehiculos
             {
                 toolStripStatusLabel1.Text = "Vehiculos registrados: "+new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ContarVehiculos().ToString();
                 CargarDatosGrilla();
-                
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                {
+                    toolStripButton2.Visible = true;                   
+                    dataGridView1.Columns["cl_modificar"].Visible = true;
+                }
+                else
+                {
+                    toolStripButton2.Visible = false; ;
+                    dataGridView1.Columns["cl_modificar"].Visible = false; ;
+                }                
+
+
             }
             catch (Exception ex)
             {
