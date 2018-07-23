@@ -23,6 +23,7 @@ namespace vialsur.prefectura.Ordenes
         {
             try
             {
+                axAcroPDF1.Visible = true;
                // this.Text = NombreArchivo;
                 axAcroPDF1.src = RutaArchivo;
                 axAcroPDF1.setZoom(65);
@@ -36,7 +37,11 @@ namespace vialsur.prefectura.Ordenes
                     MessageBox.Show("Adobe acrobat no instalado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
                 }
                 else
-                    MessageBox.Show("Ocurrio un problema al intentar abir el documento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ocurrio un problema al intentar abir el documento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+            }
+            finally
+            {
+                axAcroPDF1.Visible = false;
             }
         }
     }
