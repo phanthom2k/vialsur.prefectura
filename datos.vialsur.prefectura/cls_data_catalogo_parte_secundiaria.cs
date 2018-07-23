@@ -82,7 +82,7 @@ namespace datos.vialsur.prefectura
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
