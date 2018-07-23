@@ -154,6 +154,23 @@ namespace vialsur.prefectura.Ordenes
             if(!EsActualizacion) //si es nuevo
             {
                 obj_orden_detalle.id = DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
+
+                if (uc_Catalogo_Parte_Principal1.SelectedIndex==0 | 
+                   uc_Catalogo_Parte_Secundaria1.SelectedIndex == 0 |
+                   uc_Accion1.SelectedIndex == 0 |
+                   numericUpDown1.Value == 0)
+                {
+                    MessageBox.Show("Debe seleccionar las opciones");
+                    return;
+                }
+            }
+            else
+            {
+                if(uc_Accion2.SelectedIndex ==0 )
+                {
+                    MessageBox.Show("Debe seleccionar el trabajo realizado");
+                    return;
+                }
             }
                         
             obj_orden_detalle.catalogo_parte_principal_id = (int)uc_Catalogo_Parte_Principal1.SelectedValue;

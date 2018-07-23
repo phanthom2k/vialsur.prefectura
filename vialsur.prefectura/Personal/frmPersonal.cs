@@ -122,7 +122,9 @@ namespace vialsur.prefectura.Personal
                     frm_personal.EsNuevo = false;
                     frm_personal.EsModificar = true;
                     frm_personal.Cedula = dataGridView1.Rows[e.RowIndex].Cells["cedula"].Value.ToString();
-                    
+
+                    if (frm_personal.ShowDialog() == DialogResult.Yes)
+                        CargarDatosGrilla();
 
                     //frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
                     //frm_Vehiculo.EsNuevo = false;
@@ -140,9 +142,12 @@ namespace vialsur.prefectura.Personal
                     frm_personal.EsNuevo = false;
                     frm_personal.EsModificar = true;
                     frm_personal.Cedula = dataGridView1.Rows[e.RowIndex].Cells["cedula"].Value.ToString();
+
+                    if (frm_personal.ShowDialog() == DialogResult.Yes)
+                        CargarDatosGrilla();
+
                 }
-                if( frm_personal.ShowDialog() == DialogResult.Yes)
-                    CargarDatosGrilla();
+         
 
 
             }
