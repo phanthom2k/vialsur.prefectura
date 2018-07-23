@@ -261,7 +261,8 @@ namespace datos.vialsur.prefectura
                               //consulta_sql += " AND orden.estado  >= @estado ";
                 consulta_sql += " AND orden.estado = @estado ";
 
-            consulta_sql +=  " ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
+            //consulta_sql +=  " ORDER BY ve_vehiculo_responsable.fecha ASC, orden.id desc  ";
+            consulta_sql += " ORDER BY CAST(orden.id AS INT) desc  "; 
 
             try
             {
@@ -311,7 +312,7 @@ namespace datos.vialsur.prefectura
                     "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id  "+
                     "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id "+
                     "WHERE orden.estado = @estado "+
-                    "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC;";
+                    "ORDER BY ve_vehiculo_responsable.fecha ASC ;";
 
             try
             {
@@ -349,7 +350,8 @@ namespace datos.vialsur.prefectura
 
             consulta_sql += id_orden != "" ? "AND orden.id LIKE @id_orden " : "";
 
-            consulta_sql += "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";
+            //consulta_sql += "ORDER BY ve_vehiculo_responsable.fecha ASC, orden.hora DESC";            
+            consulta_sql += " ORDER BY CAST(orden.id AS INT) desc  ";
 
             try
             {

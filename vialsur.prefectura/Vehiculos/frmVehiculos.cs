@@ -151,7 +151,7 @@ namespace vialsur.prefectura.Vehiculos
                 {
                     frmHistoriadoVehiculo frm_historiado = new frmHistoriadoVehiculo();
                     frm_historiado.IdVehiculo = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
-
+                    frm_historiado.WindowState = FormWindowState.Maximized;
                     frm_historiado.Show();
 
                     //frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
