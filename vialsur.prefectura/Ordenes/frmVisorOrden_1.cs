@@ -28,9 +28,15 @@ namespace vialsur.prefectura.Ordenes
                 axAcroPDF1.setZoom(65);
                 //axAcroPDF1.setShowToolbar(true);
             }
+           
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un problema al intentar abir el documento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(ex.HResult == 80040154 | ex.HResult == 0x80040154)
+                {
+                    MessageBox.Show("Adobe acrobat no instalado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
+                }
+                else
+                    MessageBox.Show("Ocurrio un problema al intentar abir el documento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

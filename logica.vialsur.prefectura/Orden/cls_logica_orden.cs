@@ -250,7 +250,8 @@ namespace logica.vialsur.prefectura.Orden
 
                     dt_clodana.Rows[i]["estado"] = Orden_TipoEstadoById(int.Parse(dt_clodana.Rows[i]["estado"].ToString()));
                     dt_clodana.Rows[i]["hora"] = dt_clodana.Rows[i]["hora"].ToString().Substring(0, 5);
-
+                    dt_clodana.Rows[i]["per_persona_cedula_crea"] = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(
+                                                                               dt_clodana.Rows[i]["per_persona_cedula_crea"].ToString()).ApellidosNombres;
 
                 }
                 return dt_clodana;
