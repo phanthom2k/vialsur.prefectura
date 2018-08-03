@@ -121,11 +121,8 @@
   <data name="sign-right-icon48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-right-icon48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sign-error-icon48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sign-error-icon48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="22008079_1404910242955688_2294224932610583079_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\22008079_1404910242955688_2294224932610583079_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logop_prefectura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logop_prefectura1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,7 +130,19 @@
   <data name="broom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\broom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="22008079_1404910242955688_2294224932610583079_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\22008079_1404910242955688_2294224932610583079_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sign-error-icon48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign-error-icon48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo2016-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo2016-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo2016-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo2016-11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

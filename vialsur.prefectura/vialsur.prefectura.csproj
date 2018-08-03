@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -46,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icono.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
@@ -337,6 +340,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icono.ico" />
     <Content Include="icons\48x48\Actions-document-save-icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -368,6 +372,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\22008079_1404910242955688_2294224932610583079_n.png" />
+    <None Include="Resources\favicon.ico" />
+    <None Include="Resources\Logo2016-1.jpg" />
+    <None Include="Resources\Logo2016-11.jpg" />
+    <None Include="Resources\icono.ico" />
+    <Content Include="icons\icono.ico" />
     <Content Include="Resources\logop_prefectura.png" />
     <None Include="Resources\sign-right-icon48x48.png" />
     <None Include="Resources\sign-error-icon48x48.png" />
