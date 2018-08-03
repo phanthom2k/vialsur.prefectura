@@ -38,6 +38,17 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.txt_input = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.lblPagActual = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblPagFinal = new System.Windows.Forms.Label();
+            this.uc_TipoEstadosOrdenes1 = new vialsur.prefectura.uc.uc_TipoEstadosOrdenes();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,17 +67,6 @@
             this.ve_vehiculo_responsable_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ve_vehiculo_responsable_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.txt_input = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.lblPagActual = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblPagFinal = new System.Windows.Forms.Label();
-            this.uc_TipoEstadosOrdenes1 = new vialsur.prefectura.uc.uc_TipoEstadosOrdenes();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -139,170 +139,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1187, 505);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // cl_ver
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "#######km";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 57;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Ver";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 57;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modif.";
-            this.cl_modificar.MinimumWidth = 70;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Modif.";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 70;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "No Orden";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // tipo_oden
-            // 
-            this.tipo_oden.DataPropertyName = "tipo_oden";
-            this.tipo_oden.HeaderText = "Tipo oden mantenimiento";
-            this.tipo_oden.MinimumWidth = 125;
-            this.tipo_oden.Name = "tipo_oden";
-            this.tipo_oden.ReadOnly = true;
-            this.tipo_oden.Width = 125;
-            // 
-            // ve_vehiculo_id
-            // 
-            this.ve_vehiculo_id.DataPropertyName = "ve_vehiculo_id";
-            this.ve_vehiculo_id.HeaderText = "Placa Vehiculo";
-            this.ve_vehiculo_id.Name = "ve_vehiculo_id";
-            this.ve_vehiculo_id.ReadOnly = true;
-            // 
-            // fecha
-            // 
-            this.fecha.DataPropertyName = "fecha";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            // 
-            // hora
-            // 
-            this.hora.DataPropertyName = "hora";
-            dataGridViewCellStyle3.Format = "##:##";
-            dataGridViewCellStyle3.NullValue = "00:00";
-            this.hora.DefaultCellStyle = dataGridViewCellStyle3;
-            this.hora.HeaderText = "Hora";
-            this.hora.Name = "hora";
-            this.hora.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // ve_vehiculo_responsable_id
-            // 
-            this.ve_vehiculo_responsable_id.DataPropertyName = "ve_vehiculo_responsable_id";
-            this.ve_vehiculo_responsable_id.HeaderText = "ve_vehiculo_responsable_id";
-            this.ve_vehiculo_responsable_id.Name = "ve_vehiculo_responsable_id";
-            this.ve_vehiculo_responsable_id.ReadOnly = true;
-            this.ve_vehiculo_responsable_id.Visible = false;
-            // 
-            // chofer
-            // 
-            this.chofer.DataPropertyName = "chofer";
-            this.chofer.HeaderText = "chofer";
-            this.chofer.MinimumWidth = 125;
-            this.chofer.Name = "chofer";
-            this.chofer.ReadOnly = true;
-            this.chofer.Width = 150;
-            // 
-            // observacion
-            // 
-            this.observacion.DataPropertyName = "observacion";
-            this.observacion.HeaderText = "observacion";
-            this.observacion.Name = "observacion";
-            this.observacion.ReadOnly = true;
-            this.observacion.Visible = false;
-            // 
-            // km_ingreso
-            // 
-            this.km_ingreso.DataPropertyName = "km_ingreso";
-            dataGridViewCellStyle4.Format = "######### km";
-            dataGridViewCellStyle4.NullValue = "0 km";
-            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle4;
-            this.km_ingreso.HeaderText = "km_ingreso";
-            this.km_ingreso.Name = "km_ingreso";
-            this.km_ingreso.ReadOnly = true;
-            // 
-            // km_egreso
-            // 
-            this.km_egreso.DataPropertyName = "km_egreso";
-            dataGridViewCellStyle5.Format = "######### km";
-            dataGridViewCellStyle5.NullValue = "0 km";
-            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle5;
-            this.km_egreso.HeaderText = "km_egreso";
-            this.km_egreso.Name = "km_egreso";
-            this.km_egreso.ReadOnly = true;
-            // 
-            // cedula_responsable
-            // 
-            this.cedula_responsable.DataPropertyName = "cedula_responsable";
-            this.cedula_responsable.HeaderText = "Responsable de Mantenimiento";
-            this.cedula_responsable.MaxInputLength = 125;
-            this.cedula_responsable.MinimumWidth = 175;
-            this.cedula_responsable.Name = "cedula_responsable";
-            this.cedula_responsable.ReadOnly = true;
-            this.cedula_responsable.Width = 175;
-            // 
-            // per_persona_cedula_crea
-            // 
-            this.per_persona_cedula_crea.DataPropertyName = "per_persona_cedula_crea";
-            this.per_persona_cedula_crea.HeaderText = "Creador de orden";
-            this.per_persona_cedula_crea.MinimumWidth = 175;
-            this.per_persona_cedula_crea.Name = "per_persona_cedula_crea";
-            this.per_persona_cedula_crea.ReadOnly = true;
-            this.per_persona_cedula_crea.Width = 175;
-            // 
-            // ve_vehiculo_responsable_estado
-            // 
-            this.ve_vehiculo_responsable_estado.DataPropertyName = "ve_vehiculo_responsable_estado";
-            this.ve_vehiculo_responsable_estado.HeaderText = "ve_vehiculo_responsable_estado";
-            this.ve_vehiculo_responsable_estado.Name = "ve_vehiculo_responsable_estado";
-            this.ve_vehiculo_responsable_estado.ReadOnly = true;
-            this.ve_vehiculo_responsable_estado.Visible = false;
-            // 
-            // ve_vehiculo_responsable_fecha
-            // 
-            this.ve_vehiculo_responsable_fecha.DataPropertyName = "ve_vehiculo_responsable_fecha";
-            this.ve_vehiculo_responsable_fecha.HeaderText = "ve_vehiculo_responsable_fecha";
-            this.ve_vehiculo_responsable_fecha.Name = "ve_vehiculo_responsable_fecha";
-            this.ve_vehiculo_responsable_fecha.ReadOnly = true;
-            this.ve_vehiculo_responsable_fecha.Visible = false;
-            // 
-            // tipo_responsable
-            // 
-            this.tipo_responsable.DataPropertyName = "tipo_responsable";
-            this.tipo_responsable.HeaderText = "tipo_responsable";
-            this.tipo_responsable.Name = "tipo_responsable";
-            this.tipo_responsable.ReadOnly = true;
-            this.tipo_responsable.Visible = false;
             // 
             // button2
             // 
@@ -428,6 +264,187 @@
             this.uc_TipoEstadosOrdenes1.Name = "uc_TipoEstadosOrdenes1";
             this.uc_TipoEstadosOrdenes1.Size = new System.Drawing.Size(276, 24);
             this.uc_TipoEstadosOrdenes1.TabIndex = 43;
+            // 
+            // cl_ver
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modif.";
+            this.cl_modificar.MinimumWidth = 70;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Modif.";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Visible = false;
+            this.cl_modificar.Width = 70;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "No Orden";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // tipo_oden
+            // 
+            this.tipo_oden.DataPropertyName = "tipo_oden";
+            this.tipo_oden.HeaderText = "Tipo oden mantenimiento";
+            this.tipo_oden.MinimumWidth = 125;
+            this.tipo_oden.Name = "tipo_oden";
+            this.tipo_oden.ReadOnly = true;
+            this.tipo_oden.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tipo_oden.Width = 125;
+            // 
+            // ve_vehiculo_id
+            // 
+            this.ve_vehiculo_id.DataPropertyName = "ve_vehiculo_id";
+            this.ve_vehiculo_id.HeaderText = "Placa Vehiculo";
+            this.ve_vehiculo_id.Name = "ve_vehiculo_id";
+            this.ve_vehiculo_id.ReadOnly = true;
+            this.ve_vehiculo_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // fecha
+            // 
+            this.fecha.DataPropertyName = "fecha";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            this.fecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // hora
+            // 
+            this.hora.DataPropertyName = "hora";
+            dataGridViewCellStyle3.Format = "##:##";
+            dataGridViewCellStyle3.NullValue = "00:00";
+            this.hora.DefaultCellStyle = dataGridViewCellStyle3;
+            this.hora.HeaderText = "Hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            this.hora.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ve_vehiculo_responsable_id
+            // 
+            this.ve_vehiculo_responsable_id.DataPropertyName = "ve_vehiculo_responsable_id";
+            this.ve_vehiculo_responsable_id.HeaderText = "ve_vehiculo_responsable_id";
+            this.ve_vehiculo_responsable_id.Name = "ve_vehiculo_responsable_id";
+            this.ve_vehiculo_responsable_id.ReadOnly = true;
+            this.ve_vehiculo_responsable_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ve_vehiculo_responsable_id.Visible = false;
+            // 
+            // chofer
+            // 
+            this.chofer.DataPropertyName = "chofer";
+            this.chofer.HeaderText = "chofer";
+            this.chofer.MinimumWidth = 25;
+            this.chofer.Name = "chofer";
+            this.chofer.ReadOnly = true;
+            this.chofer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chofer.Width = 150;
+            // 
+            // observacion
+            // 
+            this.observacion.DataPropertyName = "observacion";
+            this.observacion.HeaderText = "observacion";
+            this.observacion.Name = "observacion";
+            this.observacion.ReadOnly = true;
+            this.observacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.observacion.Visible = false;
+            // 
+            // km_ingreso
+            // 
+            this.km_ingreso.DataPropertyName = "km_ingreso";
+            dataGridViewCellStyle4.Format = "######### km";
+            dataGridViewCellStyle4.NullValue = "0 km";
+            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle4;
+            this.km_ingreso.HeaderText = "km_ingreso";
+            this.km_ingreso.Name = "km_ingreso";
+            this.km_ingreso.ReadOnly = true;
+            this.km_ingreso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // km_egreso
+            // 
+            this.km_egreso.DataPropertyName = "km_egreso";
+            dataGridViewCellStyle5.Format = "######### km";
+            dataGridViewCellStyle5.NullValue = "0 km";
+            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle5;
+            this.km_egreso.HeaderText = "km_egreso";
+            this.km_egreso.Name = "km_egreso";
+            this.km_egreso.ReadOnly = true;
+            this.km_egreso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cedula_responsable
+            // 
+            this.cedula_responsable.DataPropertyName = "cedula_responsable";
+            this.cedula_responsable.HeaderText = "Responsable de Mantenimiento";
+            this.cedula_responsable.MaxInputLength = 125;
+            this.cedula_responsable.MinimumWidth = 175;
+            this.cedula_responsable.Name = "cedula_responsable";
+            this.cedula_responsable.ReadOnly = true;
+            this.cedula_responsable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cedula_responsable.Width = 175;
+            // 
+            // per_persona_cedula_crea
+            // 
+            this.per_persona_cedula_crea.DataPropertyName = "per_persona_cedula_crea";
+            this.per_persona_cedula_crea.HeaderText = "Creador de orden";
+            this.per_persona_cedula_crea.MinimumWidth = 175;
+            this.per_persona_cedula_crea.Name = "per_persona_cedula_crea";
+            this.per_persona_cedula_crea.ReadOnly = true;
+            this.per_persona_cedula_crea.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.per_persona_cedula_crea.Width = 175;
+            // 
+            // ve_vehiculo_responsable_estado
+            // 
+            this.ve_vehiculo_responsable_estado.DataPropertyName = "ve_vehiculo_responsable_estado";
+            this.ve_vehiculo_responsable_estado.HeaderText = "ve_vehiculo_responsable_estado";
+            this.ve_vehiculo_responsable_estado.Name = "ve_vehiculo_responsable_estado";
+            this.ve_vehiculo_responsable_estado.ReadOnly = true;
+            this.ve_vehiculo_responsable_estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ve_vehiculo_responsable_estado.Visible = false;
+            // 
+            // ve_vehiculo_responsable_fecha
+            // 
+            this.ve_vehiculo_responsable_fecha.DataPropertyName = "ve_vehiculo_responsable_fecha";
+            this.ve_vehiculo_responsable_fecha.HeaderText = "ve_vehiculo_responsable_fecha";
+            this.ve_vehiculo_responsable_fecha.Name = "ve_vehiculo_responsable_fecha";
+            this.ve_vehiculo_responsable_fecha.ReadOnly = true;
+            this.ve_vehiculo_responsable_fecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ve_vehiculo_responsable_fecha.Visible = false;
+            // 
+            // tipo_responsable
+            // 
+            this.tipo_responsable.DataPropertyName = "tipo_responsable";
+            this.tipo_responsable.HeaderText = "tipo_responsable";
+            this.tipo_responsable.Name = "tipo_responsable";
+            this.tipo_responsable.ReadOnly = true;
+            this.tipo_responsable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tipo_responsable.Visible = false;
             // 
             // frmOrdenes
             // 

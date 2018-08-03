@@ -65,7 +65,7 @@ namespace datos.vialsur.prefectura
                 _estado.Value = _orde_detalle.estado;
                 parameters.Add(_estado);
 
-                SqlParameter _accion_requerida = new SqlParameter("@accion_requerida", SqlDbType.Bit);
+                SqlParameter _accion_requerida = new SqlParameter("@accion_requerida", SqlDbType.Int );
                 _accion_requerida.Value = _orde_detalle.accion_requerida;
                 parameters.Add(_accion_requerida);
 
