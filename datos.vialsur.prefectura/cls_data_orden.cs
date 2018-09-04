@@ -386,7 +386,7 @@ namespace datos.vialsur.prefectura
         {
             try
             {
-                string consulta = "SELECT id, tipo_oden, fecha, fecha_cierre, hora, estado, ve_vehiculo_responsable_id, per_persona_cedula, observacion, km_ingreso, km_egreso, per_persona_cedula_crea " +
+                string consulta = "SELECT id, tipo_oden, fecha,  hora, fecha_cierre, estado, ve_vehiculo_responsable_id, per_persona_cedula, observacion, km_ingreso, km_egreso, per_persona_cedula_crea " +
                                    "FROM orden where id = @id_orden";
 
                 SqlParameter parametro = new SqlParameter("@id_orden", SqlDbType.NChar,10 );
@@ -400,7 +400,9 @@ namespace datos.vialsur.prefectura
                     obj_orden.id = dr_datos["id"].ToString();
                     obj_orden.tipo_oden = int.Parse(dr_datos["tipo_oden"].ToString());
                     obj_orden.fecha = Convert.ToDateTime(dr_datos["fecha"]);
-                    obj_orden.fecha_cierre = Convert.ToDateTime(dr_datos["fecha_cierre"]);
+
+                    obj_orden.fecha_cierre = dr_datos["fecha_cierre"]!=null?Convert.ToDateTime(dr_datos["fecha_cierre"]):new DateTime;
+
                     obj_orden.hora = (TimeSpan)dr_datos["hora"];
                     obj_orden.estado = int.Parse(dr_datos["estado"].ToString());
                     obj_orden.ve_vehiculo_responsable_id = int.Parse(dr_datos["ve_vehiculo_responsable_id"].ToString());

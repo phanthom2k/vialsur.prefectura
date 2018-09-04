@@ -46,7 +46,8 @@ namespace vialsur.prefectura.rpt
                 pdfFormFields.SetField("ORDEN No", String.Format("{0:0000000000000}", obj_orden.id ));
                 pdfFormFields.SetField("TIPO DE MANTENIMIENTO", ((entidades.vialsur.prefectura.Orden_TipoMantenimiento) obj_orden.tipo_oden).ToString() );
                 pdfFormFields.SetField("MECANICO RESPONSABLE", obj_persona.GetFullName );
-                pdfFormFields.SetField("FECHA DE REGISTRO",  obj_orden.fecha.ToString() );
+                pdfFormFields.SetField("FECHA DE REGISTRO",   ((DateTime)obj_orden.fecha).ToString("dd-MM-yyy hh:mm:ss") );
+                pdfFormFields.SetField("FECHA SALIDA", obj_orden.fecha_cierre!=null?obj_orden.fecha_cierre.ToString():"");
                 pdfFormFields.SetField("KILOMENTRAJE DE INGRESO", obj_orden.km_ingreso.ToString()+"Km" );
                 pdfFormFields.SetField("KILOMETRAJE DE EGRESO", obj_orden.km_egreso.ToString()+"Km");
                 pdfFormFields.SetField("OBSERVACIONES GENERALES", obj_orden.observacion );
