@@ -134,7 +134,7 @@ namespace vialsur.prefectura.Ordenes
                     lblKmOut.Text = ord.km_egreso + "Km";
                     numericTextBox1.Text = ord.km_egreso.ToString();
                     lblFecha.Text = ((DateTime)ord.fecha).ToShortDateString();
-                    lblFechaSalida.Text = ((DateTime)ord.fecha_cierre).ToString();
+                    lblFechaSalida.Text = ord.fecha_cierre!=null?((DateTime)ord.fecha_cierre).ToString():"";
                     LBL_ORDENNO.Text = string.Format("{0:0000000}", int.Parse(ord.id) );
                     LBK_ESTADO.Text = ((entidades.vialsur.prefectura.Orden_TipoEstado)int.Parse(ord.estado.ToString())).ToString();
                     txtObservacion.Text = ord.observacion;

@@ -50,7 +50,6 @@
             this.lblPagFinal = new System.Windows.Forms.Label();
             this.uc_TipoEstadosOrdenes1 = new vialsur.prefectura.uc.uc_TipoEstadosOrdenes();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.fecha_cierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_oden = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +64,7 @@
             this.km_egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedula_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.per_persona_cedula_crea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_cierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ve_vehiculo_responsable_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ve_vehiculo_responsable_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,7 +115,6 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl_ver,
-            this.fecha_cierre,
             this.cl_modificar,
             this.id,
             this.tipo_oden,
@@ -130,6 +129,7 @@
             this.km_egreso,
             this.cedula_responsable,
             this.per_persona_cedula_crea,
+            this.fecha_cierre,
             this.ve_vehiculo_responsable_estado,
             this.ve_vehiculo_responsable_fecha,
             this.tipo_responsable});
@@ -282,14 +282,6 @@
             this.cl_ver.UseColumnTextForButtonValue = true;
             this.cl_ver.Width = 57;
             // 
-            // fecha_cierre
-            // 
-            this.fecha_cierre.DataPropertyName = "fecha_cierre";
-            this.fecha_cierre.HeaderText = "fecha_cierre";
-            this.fecha_cierre.Name = "fecha_cierre";
-            this.fecha_cierre.ReadOnly = true;
-            this.fecha_cierre.Visible = false;
-            // 
             // cl_modificar
             // 
             this.cl_modificar.FillWeight = 55F;
@@ -334,7 +326,7 @@
             dataGridViewCellStyle2.Format = "d";
             dataGridViewCellStyle2.NullValue = null;
             this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
-            this.fecha.HeaderText = "Fecha";
+            this.fecha.HeaderText = "Fecha Ingreso";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             this.fecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -375,6 +367,7 @@
             this.chofer.Name = "chofer";
             this.chofer.ReadOnly = true;
             this.chofer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chofer.Visible = false;
             this.chofer.Width = 150;
             // 
             // observacion
@@ -428,6 +421,16 @@
             this.per_persona_cedula_crea.ReadOnly = true;
             this.per_persona_cedula_crea.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.per_persona_cedula_crea.Width = 175;
+            // 
+            // fecha_cierre
+            // 
+            this.fecha_cierre.DataPropertyName = "fecha_cierre";
+            this.fecha_cierre.FillWeight = 110F;
+            this.fecha_cierre.HeaderText = "Fecha Salida";
+            this.fecha_cierre.MinimumWidth = 125;
+            this.fecha_cierre.Name = "fecha_cierre";
+            this.fecha_cierre.ReadOnly = true;
+            this.fecha_cierre.Width = 125;
             // 
             // ve_vehiculo_responsable_estado
             // 
@@ -503,7 +506,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblPagFinal;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_cierre;
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_oden;
@@ -518,6 +520,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn km_egreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedula_responsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn per_persona_cedula_crea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_cierre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_responsable_estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_responsable_fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_responsable;

@@ -401,7 +401,8 @@ namespace datos.vialsur.prefectura
                     obj_orden.tipo_oden = int.Parse(dr_datos["tipo_oden"].ToString());
                     obj_orden.fecha = Convert.ToDateTime(dr_datos["fecha"]);
 
-                    obj_orden.fecha_cierre = dr_datos["fecha_cierre"]!=null?Convert.ToDateTime(dr_datos["fecha_cierre"]):new DateTime;
+                    if (dr_datos["fecha_cierre"] != DBNull.Value )
+                        obj_orden.fecha_cierre = Convert.ToDateTime(dr_datos["fecha_cierre"]);
 
                     obj_orden.hora = (TimeSpan)dr_datos["hora"];
                     obj_orden.estado = int.Parse(dr_datos["estado"].ToString());
