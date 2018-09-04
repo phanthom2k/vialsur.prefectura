@@ -41,10 +41,12 @@ namespace entidades.vialsur.prefectura
             this.ve_vehiculo_responsable = new HashSet<ve_vehiculo_responsable>();
         }
 
-    
+        
+
         public string id { get; set; }
         public int tipo_oden { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
+        public Nullable<System.DateTime> fecha_cierre { get; set; }
         public Nullable<System.TimeSpan> hora { get; set; }
         public Nullable<int> estado { get; set; }
         public Nullable<int> ve_vehiculo_responsable_id { get; set; }

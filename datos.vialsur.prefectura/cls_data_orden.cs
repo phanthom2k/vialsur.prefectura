@@ -32,7 +32,7 @@ namespace datos.vialsur.prefectura
         public DataTable ObtenerOrdenesByIdVehiculo(int IdVehiculo )
         {
             string consulta_sql =
-                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, orden.per_persona_cedula, orden.observacion, orden.km_ingreso, " +
+                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.fecha_cierre, orden.estado, orden.ve_vehiculo_responsable_id, orden.per_persona_cedula, orden.observacion, orden.km_ingreso, " +
                     "orden.km_egreso, ve_vehiculo.id AS ve_vehiculo_id, ve_vehiculo.placa " +
                     "FROM orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id INNER JOIN " +
                     "ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
@@ -60,7 +60,7 @@ namespace datos.vialsur.prefectura
         public DataTable ObtenerOrdenesByPlaca(string Placa)
         {
             string consulta_sql =
-                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, orden.per_persona_cedula, orden.observacion, orden.km_ingreso, " +
+                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.fecha_cierre, orden.estado, orden.ve_vehiculo_responsable_id, orden.per_persona_cedula, orden.observacion, orden.km_ingreso, " +
                     "orden.km_egreso, ve_vehiculo.id AS ve_vehiculo_id, ve_vehiculo.placa " +
                     "FROM orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id INNER JOIN " +
                     "ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
@@ -221,7 +221,9 @@ namespace datos.vialsur.prefectura
 
                 #endregion
 
-                string _update_Sql = "UPDATE [dbo].[orden] SET [estado] = @estado, [km_egreso] = @km_egreso WHERE [id] = @id;";
+                ///update insert to grant update smalldatetime
+                /////CAST('2007-05-08 12:59:59.998' AS smalldatetime)
+                string _update_Sql = "UPDATE [dbo].[orden] SET [estado] = @estado, [km_egreso] = @km_egreso , fecha_cierre = CAST(SYSDATETIME() AS smalldatetime) WHERE [id] = @id;";
                 SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _update_Sql, parameters.ToArray());
             }
             catch (Exception ex)
@@ -240,8 +242,8 @@ namespace datos.vialsur.prefectura
         /// <returns></returns>
         public DataTable ObtenerOrdenesByTecnicoAsignado_UI(string Cedula, string Placa, string id_orden, int estado =-1)
         {
-            string consulta_sql =             
-                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
+            string consulta_sql =
+                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.fecha_cierre, orden.estado, orden.ve_vehiculo_responsable_id, " +
                    "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, orden.per_persona_cedula_crea,  " +
                    "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
                    "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
@@ -304,7 +306,7 @@ namespace datos.vialsur.prefectura
         public DataTable ObtenerOrdenesByEstado_UI(entidades.vialsur.prefectura.Orden_TipoEstado  estado)
         {
             string consulta_sql =
-                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, "+
+                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.fecha_cierre, orden.estado, orden.ve_vehiculo_responsable_id, " +
                     "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, orden.per_persona_cedula_crea,  " +
                     "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id,  "+
                     "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado,  "+
@@ -339,7 +341,7 @@ namespace datos.vialsur.prefectura
         {
             string consulta_sql =
 
-                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.estado, orden.ve_vehiculo_responsable_id, " +
+                    "SELECT orden.id, orden.tipo_oden, orden.fecha, orden.hora, orden.fecha_cierre, orden.estado, orden.ve_vehiculo_responsable_id, " +
                    "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, orden.per_persona_cedula_crea, " +
                    "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
                    "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
@@ -384,7 +386,7 @@ namespace datos.vialsur.prefectura
         {
             try
             {
-                string consulta = "SELECT id, tipo_oden, fecha, hora, estado, ve_vehiculo_responsable_id, per_persona_cedula, observacion, km_ingreso, km_egreso, per_persona_cedula_crea " +
+                string consulta = "SELECT id, tipo_oden, fecha, fecha_cierre, hora, estado, ve_vehiculo_responsable_id, per_persona_cedula, observacion, km_ingreso, km_egreso, per_persona_cedula_crea " +
                                    "FROM orden where id = @id_orden";
 
                 SqlParameter parametro = new SqlParameter("@id_orden", SqlDbType.NChar,10 );
@@ -398,6 +400,7 @@ namespace datos.vialsur.prefectura
                     obj_orden.id = dr_datos["id"].ToString();
                     obj_orden.tipo_oden = int.Parse(dr_datos["tipo_oden"].ToString());
                     obj_orden.fecha = Convert.ToDateTime(dr_datos["fecha"]);
+                    obj_orden.fecha_cierre = Convert.ToDateTime(dr_datos["fecha_cierre"]);
                     obj_orden.hora = (TimeSpan)dr_datos["hora"];
                     obj_orden.estado = int.Parse(dr_datos["estado"].ToString());
                     obj_orden.ve_vehiculo_responsable_id = int.Parse(dr_datos["ve_vehiculo_responsable_id"].ToString());

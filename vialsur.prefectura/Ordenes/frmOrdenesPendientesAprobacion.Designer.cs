@@ -56,6 +56,7 @@
             this.ve_vehiculo_responsable_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.per_persona_cedula_crea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_cierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +120,8 @@
             this.ve_vehiculo_responsable_estado,
             this.ve_vehiculo_responsable_fecha,
             this.tipo_responsable,
-            this.per_persona_cedula_crea});
+            this.per_persona_cedula_crea,
+            this.fecha_cierre});
             this.dataGridView1.Location = new System.Drawing.Point(0, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -293,6 +295,14 @@
             this.per_persona_cedula_crea.ReadOnly = true;
             this.per_persona_cedula_crea.Width = 175;
             // 
+            // fecha_cierre
+            // 
+            this.fecha_cierre.DataPropertyName = "fecha_cierre";
+            this.fecha_cierre.HeaderText = "fecha_cierre";
+            this.fecha_cierre.Name = "fecha_cierre";
+            this.fecha_cierre.ReadOnly = true;
+            this.fecha_cierre.Visible = false;
+            // 
             // frmOrdenesPendientesAprobacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,5 +345,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_responsable_fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_responsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn per_persona_cedula_crea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_cierre;
     }
 }
