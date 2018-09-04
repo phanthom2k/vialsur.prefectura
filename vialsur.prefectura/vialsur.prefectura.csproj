@@ -288,7 +288,7 @@
     <EmbeddedResource Include="Vehiculos\frmVehiculo_Nuevo.resx">
       <DependentUpon>frmVehiculo_Nuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="db_mantenimiento.bak" />
+    <None Include="BD_DESARROLLO\db_mantenimiento.bak" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

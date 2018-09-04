@@ -250,8 +250,8 @@ GO
                     obj_vehiculo.codigo = dr_datos["codigo"].ToString();
                     obj_vehiculo.codigo_anterior = dr_datos["codigo_anterior"].ToString();
                     obj_vehiculo.color = dr_datos["color"].ToString();
-                    obj_vehiculo.costo = decimal.Parse(dr_datos["costo"].ToString());
-                    obj_vehiculo.estado = (bool)dr_datos["estado"];
+                    obj_vehiculo.costo = dr_datos["costo"]==DBNull.Value?0:decimal.Parse(dr_datos["costo"].ToString());
+                    obj_vehiculo.estado =  (bool)dr_datos["estado"];
                     obj_vehiculo.PaisCodigo = dr_datos["PaisCodigo"].ToString();
                     obj_vehiculo.placa = dr_datos["placa"].ToString();
                     obj_vehiculo.placa_provisional = dr_datos["placa_provisional"].ToString();
