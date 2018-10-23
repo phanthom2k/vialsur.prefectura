@@ -102,6 +102,7 @@
             this.lblPagFinal.TabIndex = 32;
             this.lblPagFinal.Text = "lblPagFinal";
             this.lblPagFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPagFinal.Visible = false;
             // 
             // label3
             // 
@@ -112,6 +113,7 @@
             this.label3.Size = new System.Drawing.Size(24, 17);
             this.label3.TabIndex = 31;
             this.label3.Text = "de";
+            this.label3.Visible = false;
             // 
             // lblPagActual
             // 
@@ -122,6 +124,7 @@
             this.lblPagActual.TabIndex = 30;
             this.lblPagActual.Text = "lblPagActual";
             this.lblPagActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPagActual.Visible = false;
             // 
             // label2
             // 
@@ -132,6 +135,7 @@
             this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 29;
             this.label2.Text = "PAGINA";
+            this.label2.Visible = false;
             // 
             // button5
             // 
