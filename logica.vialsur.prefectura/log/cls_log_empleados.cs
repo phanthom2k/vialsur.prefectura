@@ -26,14 +26,16 @@ namespace logica.vialsur.prefectura.log
                 if(obj_emp.cedula == null && obj_emp.pwd == null )
                     throw new Exception("Usuario y/o clave invalida");
 
-                if (obj_emp.cedula.Equals(cedula) && obj_emp.pwd.Equals(pwd)  && (bool)obj_emp.activo)
+                if (obj_emp.cedula.Equals(cedula) && obj_emp.pwd.Equals(pwd))
                     EsValido = true;
                 else
                 {
                     EsValido = false;
                     throw new Exception("Usuario y/o clave invalida");
                 }
-                    
+                if ((bool)obj_emp.activo != true)
+                    throw new Exception("Usuario inactivo.\nConsulte con el administrador del sistema.");
+
                 return obj_emp;
             }
             catch (Exception ex)
