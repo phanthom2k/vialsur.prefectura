@@ -81,7 +81,11 @@ namespace vialsur.prefectura.Ordenes
             ////FALTA IMPLEMENTAR UN CONTROL QUE SOLO PERMITA CAMBIAR ACORDE AL FORMULARIO QUE LO SOLICITA EN ESTE CASO HAY Q INGRESAR UN SWITCH PARA QUE SOLO ALMACENE LA AUTORIZACION
             try
             {
-                if (uc_TipoEstadosOrdenes1.SelectedIndex > 0 &&   uc_TipoEstadosOrdenes1.SelectedIndex  > ord.estado && uc_TipoEstadosOrdenes1.SelectedIndex == (int)Estado)
+                //if (uc_TipoEstadosOrdenes1.SelectedIndex > 0 &&   uc_TipoEstadosOrdenes1.SelectedIndex  > ord.estado && uc_TipoEstadosOrdenes1.SelectedIndex == (int) Estado  )
+                if (uc_TipoEstadosOrdenes1.SelectedIndex > 0 && uc_TipoEstadosOrdenes1.SelectedIndex > ord.estado   &&
+                   (((entidades.vialsur.prefectura.Orden_TipoEstado)uc_TipoEstadosOrdenes1.SelectedIndex) == entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO |
+                   ((entidades.vialsur.prefectura.Orden_TipoEstado)uc_TipoEstadosOrdenes1.SelectedIndex) == entidades.vialsur.prefectura.Orden_TipoEstado.DESCARTADO)
+                   )
                 {
                     if (MessageBox.Show("Desea registrar el cambio", "Cambio de estado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
