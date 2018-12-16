@@ -24,22 +24,41 @@ namespace entidades.vialsur.prefectura
         ADMINISTRATIVO = 4
     }
 
+    /// <summary>
+    /// TIPOS DE MANTENIMIENTO 
+    /// MISMOS VALORES ESTAN EN EL UC_TIPO_MANTENIMIENTO_ASIGNADO
+    /// </summary>
+    public enum Tipo_Mantenimiento_Asignado
+    {
+        NO_DEFINIDO = 0,
+        PREVENTIVO = 1,
+        CORRECTIVO = 2        
+    }
 
 
     public partial class emp_empleado
     {
         public int id { get; set; }
         public string cedula { get; set; }
+        /// <summary>
+        /// Hace referencia al cargo del empleado NO al rol en el sistema
+        /// </summary>
         public Nullable<int> cargo_id { get; set; }
         public string pwd { get; set; }
         public Nullable<bool> activo { get; set; }
         public Nullable<System.DateTime> fecha_activacion { get; set; }
         public Nullable<System.DateTime> fecha_desactivacion { get; set; }
         public string per_persona_cedula_activacion { get; set; }
-        public Nullable<int> tipo_usuario { get; set; }
+        //public Nullable<int> tipo_usuario { get; set; }
+        public int tipo_usuario { get; set; }
         public string observaciones_activacion { get; set; }
         public string observaciones_desactivacion { get; set; }
-    
+        /// <summary>
+        /// El tipo de mantenimiento asignado a realizar por default
+        /// 1 = preventivo   2 = correctivo
+        /// </summary>
+        public int tipo_mantenimiento_asignado { get; set; }
+
         public virtual per_persona per_persona { get; set; }
     }
 }

@@ -40,6 +40,9 @@
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.catalogoDeMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.catálogoDeModelosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
@@ -53,7 +56,8 @@
             this.salirToolStripMenuItem,
             this.ordenesToolStripMenuItem,
             this.administraciónToolStripMenuItem,
-            this.miPerfilToolStripMenuItem});
+            this.miPerfilToolStripMenuItem,
+            this.caToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1160, 28);
@@ -140,6 +144,30 @@
             this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
             this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
             // 
+            // caToolStripMenuItem
+            // 
+            this.caToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.catalogoDeMarcasToolStripMenuItem,
+            this.catálogoDeModelosToolStripMenuItem});
+            this.caToolStripMenuItem.Name = "caToolStripMenuItem";
+            this.caToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.caToolStripMenuItem.Text = "Catalogos";
+            this.caToolStripMenuItem.Visible = false;
+            // 
+            // catalogoDeMarcasToolStripMenuItem
+            // 
+            this.catalogoDeMarcasToolStripMenuItem.Name = "catalogoDeMarcasToolStripMenuItem";
+            this.catalogoDeMarcasToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.catalogoDeMarcasToolStripMenuItem.Text = "Catálogo de Marcas";
+            this.catalogoDeMarcasToolStripMenuItem.Click += new System.EventHandler(this.catalogoDeMarcasToolStripMenuItem_Click);
+            // 
+            // catálogoDeModelosToolStripMenuItem
+            // 
+            this.catálogoDeModelosToolStripMenuItem.Name = "catálogoDeModelosToolStripMenuItem";
+            this.catálogoDeModelosToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.catálogoDeModelosToolStripMenuItem.Text = "Catálogo de Modelos";
+            this.catálogoDeModelosToolStripMenuItem.Click += new System.EventHandler(this.catálogoDeModelosToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -199,5 +227,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem miPerfilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialDeOrdenesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem catalogoDeMarcasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem catálogoDeModelosToolStripMenuItem;
     }
 }

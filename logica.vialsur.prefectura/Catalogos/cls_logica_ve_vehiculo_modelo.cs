@@ -33,5 +33,62 @@ namespace logica.vialsur.prefectura.Catalogos
         }
 
 
+        /// <summary>
+        /// Lista los modelos de una determinada marca para ser usados en la grilla principal
+        /// </summary>
+        /// <param name="id_marca"></param>
+        /// <returns></returns>
+        public DataTable ListarModelos_UX(int id_marca)
+        {
+            try
+            {
+                return new cls_data_ve_vehiculo_modelo().ListarModelos_UX(id_marca);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        /// <summary>
+        /// Consulta los datos de un determinado modelo
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.ve_vehiculo_modelo ConsultarModeloPorId(int id)
+        {
+            try
+            {
+                return new cls_data_ve_vehiculo_modelo().ConsultarModeloPorId(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Actualizar(entidades.vialsur.prefectura.ve_vehiculo_modelo modelo)
+        {
+            try
+            {
+                return new cls_data_ve_vehiculo_modelo().Actualizar(modelo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void Insertar(entidades.vialsur.prefectura.ve_vehiculo_modelo modelo)
+        {
+            try
+            {
+                new cls_data_ve_vehiculo_modelo().Insertar(modelo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

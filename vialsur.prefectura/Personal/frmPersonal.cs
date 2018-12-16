@@ -60,13 +60,12 @@ namespace vialsur.prefectura.Personal
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error: "+ex.Message);
-            }
-            
+            }            
         }
 
         int pivote = 0;
+        int contador = 0;
         private void CargarDatosGrilla(string cedula ="" , bool BusquedaFrontal=true)
         {
             try
@@ -81,10 +80,23 @@ namespace vialsur.prefectura.Personal
 
                     dt = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ListarPersonas_UX(ref pivote, true, cedula);
                 }
-                    
+                contador = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ConsultarNumeroEmpleados();
+                //contador = Convert.ToInt32(dt.Compute("COUNT(cedula)", string.Empty));
                 //  DataTable dt = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ListarPersonas_UX(ref pivote);
+
+                DataColumn dtc_activo2 = new DataColumn("activo2", typeof(String));
+                dt.Columns.Add(dtc_activo2);
                 dataGridView1.DataSource = dt;
                 
+                for (int i=0; i< dataGridView1.RowCount; i++)
+                {
+                    if ( Convert.ToBoolean(dataGridView1.Rows[i].Cells["activo"].Value))
+                        dataGridView1.Rows[i].Cells["activo2"].Value = "ACTIVO";                        
+                    else dataGridView1.Rows[i].Cells["activo2"].Value = "INACTIVO";
+                }
+                dataGridView1.Update();
+
+
             }
             catch (Exception ex)
             {
@@ -94,19 +106,38 @@ namespace vialsur.prefectura.Personal
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(pivote>=0)
+            if (pivote > 0)
             {
                 lblPagActual.Text = pivote.ToString();
                 pivote -= 25;
                 CargarDatosGrilla("", false);
+                button4.Enabled = true;
+                button5.Enabled = true;
             }
+            else button4.Enabled = false;
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            lblPagFinal.Text = (pivote + 25).ToString();
+
             pivote += 25;
-            CargarDatosGrilla("", true);
+
+            if (pivote <= contador)
+            {
+                lblPagFinal.Text = pivote.ToString();
+                CargarDatosGrilla("", true);
+                //lblPagFinal.Text = (pivote + 25).ToString();
+                //pivote += 25;
+                //CargarDatosGrilla("", true);
+                button5.Enabled = true;
+                button4.Enabled = true;
+            }
+            else
+            {
+                pivote -= 25;
+                button5.Enabled = false;
+            }
 
         }
 
@@ -147,9 +178,7 @@ namespace vialsur.prefectura.Personal
                         CargarDatosGrilla();
 
                 }
-         
-
-
+             
             }
             catch (Exception ex)
             {
@@ -160,6 +189,32 @@ namespace vialsur.prefectura.Personal
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pivote = 0;
+                CargarDatosGrilla(txt_input.Text, false);
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show("Ocurrio un problema al intentar buscar la persona","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+        //limpiar
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pivote = 0;
+                CargarDatosGrilla();
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show("Ocurrio un problema al intentar buscar la persona", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

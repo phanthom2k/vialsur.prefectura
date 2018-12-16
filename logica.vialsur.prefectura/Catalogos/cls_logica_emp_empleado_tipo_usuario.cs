@@ -7,13 +7,45 @@ using System.Threading.Tasks;
 namespace logica.vialsur.prefectura.Catalogos
 {
     using entidades.vialsur.prefectura;
+    using System.Data;
 
 
-
-    public class cls_logica_emp_empleado
+    public class cls_logica_emp_empleado_tipo_usuario
     {
+        /// <summary>
+        /// Consulta el catalogo de CARGOS
+        /// </summary>
+        /// <returns></returns>
+        public DataTable Consultar()
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_emp_empleado_tipo_usuario().Consultar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        /// <summary>
+        /// Consulta el nombre simple del TIPO DE USUARIO DEL SISTEMA segun el id del catalogo
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public string Consultar_Nombre_Tipo_Usuario_Por_ID(int i)
+        {
+            try
+            {
+                return new datos.vialsur.prefectura.cls_data_emp_empleado_tipo_usuario().Consultar_Nombre_Tipo_Usuario_Por_ID(i);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al intentar consultar el catalogo de cargos", ex);
+            }
+        }
 
+        /*
         public bool Nuevo_Emp_Empleado(emp_empleado empleado)
         {
             try
@@ -74,22 +106,6 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
-        /// <summary>
-        /// Consulta el numero de empleados registrados
-        /// </summary>
-        /// <returns></returns>
-        public int ConsultarNumeroEmpleados()
-        {
-            try
-            {
-                return new datos.vialsur.prefectura.cls_data_emp_empleado().ConsultarNumeroEmpleados();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
 
         public System.Data.DataTable ListarPersonas_UX(ref int pivoteBase, bool busquedaFrontal=true,  string cedula = "")
         {
@@ -114,22 +130,21 @@ namespace logica.vialsur.prefectura.Catalogos
                     pivoteProyectado = 25;
                 }
                 System.Data.DataTable dt = new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonas_UX(pivoteBase, pivoteProyectado, cedula);
-                return dt;
-                //se comenta xq ya se implementa del determinar el nombre del tipo de usuario en la consulta
-                //System.Data.DataTable dt_clonada = dt.Clone();
-                //dt_clonada.Columns["tipo_usuario"].DataType = typeof(string); 
+                System.Data.DataTable dt_clonada = dt.Clone();
+                dt_clonada.Columns["tipo_usuario"].DataType = typeof(string);
 
-                //foreach(System.Data.DataRow dr in dt.Rows)
-                //{
-                //    dt_clonada.LoadDataRow(dr.ItemArray, false);
-                //}
+                foreach(System.Data.DataRow dr in dt.Rows)
+                {
+                    dt_clonada.LoadDataRow(dr.ItemArray, false);
+                }
 
-                //for (int i = 0; i < dt_clonada.Rows.Count; i++)
-                //{
-                //    dt_clonada.Rows[i]["tipo_usuario"] = ((TipoUsuario)int.Parse(dt_clonada.Rows[i]["tipo_usuario"].ToString())).ToString();                    
-                //}
+                for (int i = 0; i < dt_clonada.Rows.Count; i++)
+                {
 
-                //return dt_clonada;               
+                    dt_clonada.Rows[i]["tipo_usuario"] = ((TipoUsuario)int.Parse(dt_clonada.Rows[i]["tipo_usuario"].ToString())).ToString();
+                }
+
+                return dt_clonada;               
                 
             }
             catch (Exception ex)
@@ -144,15 +159,14 @@ namespace logica.vialsur.prefectura.Catalogos
         /// <param name="tu"></param>
         /// <param name="activo"></param>
         /// <returns></returns>
-        public System.Data.DataTable ListarPersonasPorTipoUsuario_UX(entidades.vialsur.prefectura.TipoUsuario tu, bool activo = true,
-            entidades.vialsur.prefectura.Tipo_Mantenimiento_Asignado _Tipo_Mantenimiento_Asignado = entidades.vialsur.prefectura.Tipo_Mantenimiento_Asignado.NO_DEFINIDO)
+        public System.Data.DataTable ListarPersonasPorTipoUsuario_UX(entidades.vialsur.prefectura.TipoUsuario tu, bool activo = true)
         {
             try
             {
 
                 //return new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonasPorTipoUsuario_UX(tu, activo);
                 System.Data.DataTable dt_empleados = new System.Data.DataTable("emp_empleado");
-                dt_empleados  = new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonasPorTipoUsuario_UX(tu, activo, _Tipo_Mantenimiento_Asignado);
+                dt_empleados  = new datos.vialsur.prefectura.cls_data_emp_empleado().ListarPersonasPorTipoUsuario_UX(tu, activo);
                               
                 System.Data.DataRow  dr0 = dt_empleados.NewRow();
                 dr0["cedula"] = 0;
@@ -166,6 +180,6 @@ namespace logica.vialsur.prefectura.Catalogos
                 throw ex;
             }
         }
-
+        */
     }
 }

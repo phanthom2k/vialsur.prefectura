@@ -34,25 +34,6 @@
             this.txt_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_historiado = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_codigo_anterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_ve_vehiculo_modelo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_placa_provisional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_anio_fabricacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_anio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_cilindraje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_serie_chasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_serie_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_PaisCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.lblPagFinal = new System.Windows.Forms.Label();
@@ -64,6 +45,26 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_historiado = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_codigo_anterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_ve_vehiculo_modelo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COMBUSTIBLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_placa_provisional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_anio_fabricacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_anio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_cilindraje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_serie_chasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_serie_motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_PaisCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -136,8 +137,9 @@
             this.id,
             this.cl_codigo,
             this.cl_codigo_anterior,
-            this.cl_ve_vehiculo_modelo_id,
             this.cl_marca,
+            this.cl_ve_vehiculo_modelo_id,
+            this.COMBUSTIBLE,
             this.cl_placa,
             this.cl_placa_provisional,
             this.cl_anio_fabricacion,
@@ -157,192 +159,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1409, 549);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // cl_ver
-            // 
-            this.cl_ver.DataPropertyName = "id";
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 57;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Ver";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 57;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.DataPropertyName = "id";
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modificar";
-            this.cl_modificar.MinimumWidth = 70;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Modificar";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 70;
-            // 
-            // cl_historiado
-            // 
-            this.cl_historiado.HeaderText = "Historiado";
-            this.cl_historiado.Name = "cl_historiado";
-            this.cl_historiado.ReadOnly = true;
-            this.cl_historiado.Text = "Historiado";
-            this.cl_historiado.UseColumnTextForButtonValue = true;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // cl_codigo
-            // 
-            this.cl_codigo.DataPropertyName = "codigo";
-            this.cl_codigo.HeaderText = "CODIGO";
-            this.cl_codigo.Name = "cl_codigo";
-            this.cl_codigo.ReadOnly = true;
-            // 
-            // cl_codigo_anterior
-            // 
-            this.cl_codigo_anterior.DataPropertyName = "codigo_anterior";
-            this.cl_codigo_anterior.HeaderText = "codigo_anterior";
-            this.cl_codigo_anterior.Name = "cl_codigo_anterior";
-            this.cl_codigo_anterior.ReadOnly = true;
-            this.cl_codigo_anterior.Visible = false;
-            // 
-            // cl_ve_vehiculo_modelo_id
-            // 
-            this.cl_ve_vehiculo_modelo_id.DataPropertyName = "modelo";
-            this.cl_ve_vehiculo_modelo_id.FillWeight = 150F;
-            this.cl_ve_vehiculo_modelo_id.HeaderText = "MODELO";
-            this.cl_ve_vehiculo_modelo_id.MaxInputLength = 125;
-            this.cl_ve_vehiculo_modelo_id.MinimumWidth = 150;
-            this.cl_ve_vehiculo_modelo_id.Name = "cl_ve_vehiculo_modelo_id";
-            this.cl_ve_vehiculo_modelo_id.ReadOnly = true;
-            this.cl_ve_vehiculo_modelo_id.Width = 150;
-            // 
-            // cl_marca
-            // 
-            this.cl_marca.DataPropertyName = "MARCA";
-            this.cl_marca.FillWeight = 150F;
-            this.cl_marca.HeaderText = "MARCA";
-            this.cl_marca.MaxInputLength = 150;
-            this.cl_marca.MinimumWidth = 150;
-            this.cl_marca.Name = "cl_marca";
-            this.cl_marca.ReadOnly = true;
-            this.cl_marca.Width = 150;
-            // 
-            // cl_placa
-            // 
-            this.cl_placa.DataPropertyName = "placa";
-            this.cl_placa.FillWeight = 80F;
-            this.cl_placa.HeaderText = "PLACA";
-            this.cl_placa.MaxInputLength = 10;
-            this.cl_placa.MinimumWidth = 80;
-            this.cl_placa.Name = "cl_placa";
-            this.cl_placa.ReadOnly = true;
-            this.cl_placa.Width = 80;
-            // 
-            // cl_placa_provisional
-            // 
-            this.cl_placa_provisional.DataPropertyName = "placa_provisional";
-            this.cl_placa_provisional.FillWeight = 80F;
-            this.cl_placa_provisional.HeaderText = "PLACA PROV.";
-            this.cl_placa_provisional.MaxInputLength = 10;
-            this.cl_placa_provisional.MinimumWidth = 80;
-            this.cl_placa_provisional.Name = "cl_placa_provisional";
-            this.cl_placa_provisional.ReadOnly = true;
-            this.cl_placa_provisional.Width = 80;
-            // 
-            // cl_anio_fabricacion
-            // 
-            this.cl_anio_fabricacion.DataPropertyName = "anio_fabricacion";
-            this.cl_anio_fabricacion.DividerWidth = 1;
-            this.cl_anio_fabricacion.FillWeight = 60F;
-            this.cl_anio_fabricacion.HeaderText = "A. FAB";
-            this.cl_anio_fabricacion.MaxInputLength = 4;
-            this.cl_anio_fabricacion.MinimumWidth = 60;
-            this.cl_anio_fabricacion.Name = "cl_anio_fabricacion";
-            this.cl_anio_fabricacion.ReadOnly = true;
-            this.cl_anio_fabricacion.Width = 60;
-            // 
-            // cl_anio_compra
-            // 
-            this.cl_anio_compra.DataPropertyName = "anio_compra";
-            this.cl_anio_compra.DividerWidth = 1;
-            this.cl_anio_compra.FillWeight = 60F;
-            this.cl_anio_compra.HeaderText = "A. COMP";
-            this.cl_anio_compra.MaxInputLength = 4;
-            this.cl_anio_compra.MinimumWidth = 60;
-            this.cl_anio_compra.Name = "cl_anio_compra";
-            this.cl_anio_compra.ReadOnly = true;
-            this.cl_anio_compra.Width = 60;
-            // 
-            // cl_cilindraje
-            // 
-            this.cl_cilindraje.DataPropertyName = "cilindraje";
-            this.cl_cilindraje.FillWeight = 75F;
-            this.cl_cilindraje.HeaderText = "CILINDRAJE";
-            this.cl_cilindraje.MaxInputLength = 5;
-            this.cl_cilindraje.MinimumWidth = 75;
-            this.cl_cilindraje.Name = "cl_cilindraje";
-            this.cl_cilindraje.ReadOnly = true;
-            this.cl_cilindraje.Width = 75;
-            // 
-            // cl_serie_chasis
-            // 
-            this.cl_serie_chasis.DataPropertyName = "serie_chasis";
-            this.cl_serie_chasis.FillWeight = 250F;
-            this.cl_serie_chasis.HeaderText = "SERIE DE CHASIS";
-            this.cl_serie_chasis.MaxInputLength = 100;
-            this.cl_serie_chasis.MinimumWidth = 250;
-            this.cl_serie_chasis.Name = "cl_serie_chasis";
-            this.cl_serie_chasis.ReadOnly = true;
-            this.cl_serie_chasis.Width = 250;
-            // 
-            // cl_serie_motor
-            // 
-            this.cl_serie_motor.DataPropertyName = "serie_motor";
-            this.cl_serie_motor.FillWeight = 200F;
-            this.cl_serie_motor.HeaderText = "SERIE DE MOTOR";
-            this.cl_serie_motor.MaxInputLength = 100;
-            this.cl_serie_motor.MinimumWidth = 200;
-            this.cl_serie_motor.Name = "cl_serie_motor";
-            this.cl_serie_motor.ReadOnly = true;
-            this.cl_serie_motor.Width = 200;
-            // 
-            // cl_color
-            // 
-            this.cl_color.DataPropertyName = "COLOR";
-            this.cl_color.HeaderText = "COLOR";
-            this.cl_color.Name = "cl_color";
-            this.cl_color.ReadOnly = true;
-            // 
-            // cl_costo
-            // 
-            this.cl_costo.DataPropertyName = "costo";
-            this.cl_costo.HeaderText = "COSTO";
-            this.cl_costo.Name = "cl_costo";
-            this.cl_costo.ReadOnly = true;
-            this.cl_costo.Visible = false;
-            // 
-            // cl_estado
-            // 
-            this.cl_estado.DataPropertyName = "estado";
-            this.cl_estado.HeaderText = "ESTADO";
-            this.cl_estado.Name = "cl_estado";
-            this.cl_estado.ReadOnly = true;
-            // 
-            // cl_PaisCodigo
-            // 
-            this.cl_PaisCodigo.DataPropertyName = "PaisCodigo";
-            this.cl_PaisCodigo.HeaderText = "PaisCodigo";
-            this.cl_PaisCodigo.Name = "cl_PaisCodigo";
-            this.cl_PaisCodigo.ReadOnly = true;
-            this.cl_PaisCodigo.Visible = false;
             // 
             // button4
             // 
@@ -459,6 +275,200 @@
             this.toolStripButton2.Visible = false;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // cl_ver
+            // 
+            this.cl_ver.DataPropertyName = "id";
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.DataPropertyName = "id";
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modificar";
+            this.cl_modificar.MinimumWidth = 70;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Modificar";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 70;
+            // 
+            // cl_historiado
+            // 
+            this.cl_historiado.HeaderText = "Historiado";
+            this.cl_historiado.Name = "cl_historiado";
+            this.cl_historiado.ReadOnly = true;
+            this.cl_historiado.Text = "Historiado";
+            this.cl_historiado.UseColumnTextForButtonValue = true;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // cl_codigo
+            // 
+            this.cl_codigo.DataPropertyName = "codigo";
+            this.cl_codigo.HeaderText = "CODIGO";
+            this.cl_codigo.Name = "cl_codigo";
+            this.cl_codigo.ReadOnly = true;
+            // 
+            // cl_codigo_anterior
+            // 
+            this.cl_codigo_anterior.DataPropertyName = "codigo_anterior";
+            this.cl_codigo_anterior.HeaderText = "codigo_anterior";
+            this.cl_codigo_anterior.Name = "cl_codigo_anterior";
+            this.cl_codigo_anterior.ReadOnly = true;
+            this.cl_codigo_anterior.Visible = false;
+            // 
+            // cl_marca
+            // 
+            this.cl_marca.DataPropertyName = "MARCA";
+            this.cl_marca.FillWeight = 150F;
+            this.cl_marca.HeaderText = "MARCA";
+            this.cl_marca.MaxInputLength = 150;
+            this.cl_marca.MinimumWidth = 150;
+            this.cl_marca.Name = "cl_marca";
+            this.cl_marca.ReadOnly = true;
+            this.cl_marca.Width = 150;
+            // 
+            // cl_ve_vehiculo_modelo_id
+            // 
+            this.cl_ve_vehiculo_modelo_id.DataPropertyName = "modelo";
+            this.cl_ve_vehiculo_modelo_id.FillWeight = 150F;
+            this.cl_ve_vehiculo_modelo_id.HeaderText = "MODELO";
+            this.cl_ve_vehiculo_modelo_id.MaxInputLength = 125;
+            this.cl_ve_vehiculo_modelo_id.MinimumWidth = 150;
+            this.cl_ve_vehiculo_modelo_id.Name = "cl_ve_vehiculo_modelo_id";
+            this.cl_ve_vehiculo_modelo_id.ReadOnly = true;
+            this.cl_ve_vehiculo_modelo_id.Width = 150;
+            // 
+            // COMBUSTIBLE
+            // 
+            this.COMBUSTIBLE.DataPropertyName = "COMBUSTIBLE";
+            this.COMBUSTIBLE.HeaderText = "COMBUSTIBLE";
+            this.COMBUSTIBLE.Name = "COMBUSTIBLE";
+            this.COMBUSTIBLE.ReadOnly = true;
+            this.COMBUSTIBLE.Width = 120;
+            // 
+            // cl_placa
+            // 
+            this.cl_placa.DataPropertyName = "placa";
+            this.cl_placa.FillWeight = 80F;
+            this.cl_placa.HeaderText = "PLACA";
+            this.cl_placa.MaxInputLength = 10;
+            this.cl_placa.MinimumWidth = 80;
+            this.cl_placa.Name = "cl_placa";
+            this.cl_placa.ReadOnly = true;
+            this.cl_placa.Width = 80;
+            // 
+            // cl_placa_provisional
+            // 
+            this.cl_placa_provisional.DataPropertyName = "placa_provisional";
+            this.cl_placa_provisional.FillWeight = 80F;
+            this.cl_placa_provisional.HeaderText = "PLACA PROV.";
+            this.cl_placa_provisional.MaxInputLength = 10;
+            this.cl_placa_provisional.MinimumWidth = 80;
+            this.cl_placa_provisional.Name = "cl_placa_provisional";
+            this.cl_placa_provisional.ReadOnly = true;
+            this.cl_placa_provisional.Width = 80;
+            // 
+            // cl_anio_fabricacion
+            // 
+            this.cl_anio_fabricacion.DataPropertyName = "anio_fabricacion";
+            this.cl_anio_fabricacion.DividerWidth = 1;
+            this.cl_anio_fabricacion.FillWeight = 60F;
+            this.cl_anio_fabricacion.HeaderText = "A. FAB";
+            this.cl_anio_fabricacion.MaxInputLength = 4;
+            this.cl_anio_fabricacion.MinimumWidth = 60;
+            this.cl_anio_fabricacion.Name = "cl_anio_fabricacion";
+            this.cl_anio_fabricacion.ReadOnly = true;
+            this.cl_anio_fabricacion.Width = 60;
+            // 
+            // cl_anio_compra
+            // 
+            this.cl_anio_compra.DataPropertyName = "anio_compra";
+            this.cl_anio_compra.DividerWidth = 1;
+            this.cl_anio_compra.FillWeight = 60F;
+            this.cl_anio_compra.HeaderText = "A. COMP";
+            this.cl_anio_compra.MaxInputLength = 4;
+            this.cl_anio_compra.MinimumWidth = 60;
+            this.cl_anio_compra.Name = "cl_anio_compra";
+            this.cl_anio_compra.ReadOnly = true;
+            this.cl_anio_compra.Width = 60;
+            // 
+            // cl_cilindraje
+            // 
+            this.cl_cilindraje.DataPropertyName = "cilindraje";
+            this.cl_cilindraje.FillWeight = 75F;
+            this.cl_cilindraje.HeaderText = "CILINDRAJE";
+            this.cl_cilindraje.MaxInputLength = 5;
+            this.cl_cilindraje.MinimumWidth = 75;
+            this.cl_cilindraje.Name = "cl_cilindraje";
+            this.cl_cilindraje.ReadOnly = true;
+            this.cl_cilindraje.Width = 75;
+            // 
+            // cl_serie_chasis
+            // 
+            this.cl_serie_chasis.DataPropertyName = "serie_chasis";
+            this.cl_serie_chasis.FillWeight = 250F;
+            this.cl_serie_chasis.HeaderText = "SERIE DE CHASIS";
+            this.cl_serie_chasis.MaxInputLength = 100;
+            this.cl_serie_chasis.MinimumWidth = 250;
+            this.cl_serie_chasis.Name = "cl_serie_chasis";
+            this.cl_serie_chasis.ReadOnly = true;
+            this.cl_serie_chasis.Width = 250;
+            // 
+            // cl_serie_motor
+            // 
+            this.cl_serie_motor.DataPropertyName = "serie_motor";
+            this.cl_serie_motor.FillWeight = 200F;
+            this.cl_serie_motor.HeaderText = "SERIE DE MOTOR";
+            this.cl_serie_motor.MaxInputLength = 100;
+            this.cl_serie_motor.MinimumWidth = 200;
+            this.cl_serie_motor.Name = "cl_serie_motor";
+            this.cl_serie_motor.ReadOnly = true;
+            this.cl_serie_motor.Width = 200;
+            // 
+            // cl_color
+            // 
+            this.cl_color.DataPropertyName = "COLOR";
+            this.cl_color.HeaderText = "COLOR";
+            this.cl_color.Name = "cl_color";
+            this.cl_color.ReadOnly = true;
+            // 
+            // cl_costo
+            // 
+            this.cl_costo.DataPropertyName = "costo";
+            this.cl_costo.HeaderText = "COSTO";
+            this.cl_costo.Name = "cl_costo";
+            this.cl_costo.ReadOnly = true;
+            this.cl_costo.Visible = false;
+            // 
+            // cl_estado
+            // 
+            this.cl_estado.DataPropertyName = "estado";
+            this.cl_estado.HeaderText = "ESTADO";
+            this.cl_estado.Name = "cl_estado";
+            this.cl_estado.ReadOnly = true;
+            // 
+            // cl_PaisCodigo
+            // 
+            this.cl_PaisCodigo.DataPropertyName = "PaisCodigo";
+            this.cl_PaisCodigo.HeaderText = "PaisCodigo";
+            this.cl_PaisCodigo.Name = "cl_PaisCodigo";
+            this.cl_PaisCodigo.ReadOnly = true;
+            this.cl_PaisCodigo.Visible = false;
+            // 
             // frmVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -513,8 +523,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_codigo_anterior;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_ve_vehiculo_modelo_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_ve_vehiculo_modelo_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COMBUSTIBLE;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_placa_provisional;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_anio_fabricacion;

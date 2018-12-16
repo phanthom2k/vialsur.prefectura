@@ -41,7 +41,7 @@ namespace vialsur.prefectura.Personal
             {
                 uc_CARGO1.CargarDatos();
                 uc_TIPOUSUARIO1.CargarDatos();
-
+                uc_TipoMantenimientoAsignado1.CargarDatos();
                 persona = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(Empleado.cedula);
 
                 ntxt_Cedula.Text = persona.cedula;
@@ -61,6 +61,7 @@ namespace vialsur.prefectura.Personal
                     dtp_FechaDesactivacion.Value = (DateTime)Empleado.fecha_desactivacion;
                 }
                 uc_TIPOUSUARIO1.SelectedValue = Empleado.tipo_usuario;
+                uc_TipoMantenimientoAsignado1.SelectedValue = Empleado.tipo_mantenimiento_asignado;
                 atxt_Observaciones.Text = Empleado.observaciones_activacion + "\n" + Empleado.observaciones_desactivacion;
 
 

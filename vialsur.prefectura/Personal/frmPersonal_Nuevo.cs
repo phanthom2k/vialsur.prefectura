@@ -43,6 +43,7 @@ namespace vialsur.prefectura.Personal
         {
             uc_CARGO1.CargarDatos();
             uc_TIPOUSUARIO1.CargarDatos();
+            uc_TipoMantenimientoAsignado1.CargarDatos();
 
             if (EsVer | EsModificar)  //solo para mostrar los datos
             {
@@ -67,6 +68,7 @@ namespace vialsur.prefectura.Personal
                     dtp_FechaDesactivacion.Value = (DateTime)empleado.fecha_desactivacion;
                 }
                 uc_TIPOUSUARIO1.SelectedValue = empleado.tipo_usuario;
+                uc_TipoMantenimientoAsignado1.SelectedValue = empleado.tipo_mantenimiento_asignado;
                 atxt_Observaciones.Text = empleado.observaciones_activacion + "\n" + empleado.observaciones_desactivacion;                
 
             }
@@ -96,8 +98,7 @@ namespace vialsur.prefectura.Personal
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             try   
-            {                
-                
+            {                                
                 //persona = new entidades.vialsur.prefectura.per_persona();
                 persona.cedula = ntxt_Cedula.Text;
                 persona.nombres = ltxt_Nombres.Text.ToUpper();
@@ -105,13 +106,13 @@ namespace vialsur.prefectura.Personal
                 persona.fecha_nacimiento = dtp_FechaNacimiento.Value;
 
                 //empleado = new entidades.vialsur.prefectura.emp_empleado();
-                empleado.cedula = persona.cedula;
+                empleado.cedula = persona.cedula;                
                 empleado.cargo_id = Convert.ToInt32(uc_CARGO1.SelectedValue);
                 //empleado.pwd = empleado.cedula;
                 empleado.pwd = textBox1.Text;  //CLAVE 10 letras maximo
                 empleado.activo = chk_Activo.Checked;
                 empleado.fecha_activacion = dtp_FechaActivacion.Value;
-
+                empleado.tipo_mantenimiento_asignado = Convert.ToInt32(uc_TipoMantenimientoAsignado1.SelectedValue);
                 if (chk_Activo.Checked)
                 {
                     empleado.fecha_desactivacion = dtp_FechaDesactivacion.Value;
@@ -145,14 +146,16 @@ namespace vialsur.prefectura.Personal
                     new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().Actualizar_Emp_Empleado(empleado);
 
                     MessageBox.Show("Se registro los datos correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
+                }                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Problemas al intentar registrar la información. "+ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+
+
 
         private void chk_Activo_CheckedChanged(object sender, EventArgs e)
         {

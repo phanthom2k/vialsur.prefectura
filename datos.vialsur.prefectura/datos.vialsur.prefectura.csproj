@@ -43,12 +43,16 @@
   <ItemGroup>
     <Compile Include="cls_data_catalogo_parte_principal.cs" />
     <Compile Include="cls_data_catalogo_parte_secundiaria.cs" />
+    <Compile Include="cls_data_emp_empleado_tipo_mantenimiento_asignado.cs" />
+    <Compile Include="cls_data_emp_empleado_tipo_usuario.cs" />
+    <Compile Include="cls_data_emp_empleado_cargo.cs" />
     <Compile Include="cls_data_emp_empleado.cs" />
     <Compile Include="cls_data_orden.cs" />
     <Compile Include="cls_data_orde_detalle.cs" />
     <Compile Include="cls_data_pais.cs" />
     <Compile Include="cls_data_per_persona.cs" />
     <Compile Include="cls_data_ve_vehiculo.cs" />
+    <Compile Include="cls_data_ve_vehiculo_tipo.cs" />
     <Compile Include="cls_data_ve_vehiculo_color.cs" />
     <Compile Include="cls_data_ve_vehiculo_marca.cs" />
     <Compile Include="cls_data_ve_vehiculo_modelo.cs" />

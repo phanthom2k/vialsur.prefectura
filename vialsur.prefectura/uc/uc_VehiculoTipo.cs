@@ -9,11 +9,15 @@ namespace vialsur.prefectura.uc
     using System.Windows.Forms;
     using System.Drawing;
     using logica.vialsur.prefectura;
-    using entidades.vialsur.prefectura;
-    public class uc_Empleados : ComboBox
+
+    /// <summary>
+    /// CONTROL QUE CARGA TODOS LOS TIPOS DE VEHICULOS DISPONIBLES
+    /// EJEMPLO:  CAMIONETAS, AUTOMOVILES, CAMIONES ETC
+    /// </summary>
+    public class uc_VehiculoTipo : ComboBox
     {
         #region UI
-        public uc_Empleados()
+        public uc_VehiculoTipo()
         {
             this.DropDownStyle = ComboBoxStyle.DropDownList;
             this.DropDownWidth = Ancho;
@@ -38,25 +42,22 @@ namespace vialsur.prefectura.uc
         }
         #endregion
 
+
         /// <summary>
-        /// Carga los empleados acorde al TIPO DE USUARIO, ESTADO (ACTIVO/INACTIVO) Y EL TIPO_MANTENIMIENTO_ASIGNADO (EL MECANICO)
+        /// 
         /// </summary>
-        /// <param name="emp"></param>
-        /// <param name="activo"></param>
-        /// <param name="_Tipo_Mantenimiento_Asignado"></param>
-        public void CargarDatos(entidades.vialsur.prefectura.TipoUsuario emp, bool activo, 
-            Tipo_Mantenimiento_Asignado _Tipo_Mantenimiento_Asignado = Tipo_Mantenimiento_Asignado.NO_DEFINIDO)
+        public void CargarDatos()
         {
             try
             {
-                this.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ListarPersonasPorTipoUsuario_UX(emp, activo, _Tipo_Mantenimiento_Asignado);
-                this.ValueMember = "cedula";
-                this.DisplayMember = "nombre";
-                //this.SelectedIndex = 0;
+                this.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo_tipo().UX_Consulta_Todos_Registros();
+                this.ValueMember = "id";
+                this.DisplayMember = "tipo";
+                this.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERR-uc_Empleados" + ex.Message);
+                MessageBox.Show("ERR-uc_VehiculoMarca" + ex.Message);
             }
         }
 

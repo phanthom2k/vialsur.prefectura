@@ -431,7 +431,7 @@
             this.txt_ParametroABuscar.Name = "txt_ParametroABuscar";
             this.txt_ParametroABuscar.Size = new System.Drawing.Size(382, 22);
             this.txt_ParametroABuscar.TabIndex = 1;
-            this.txt_ParametroABuscar.Text = "LLL1111";
+            this.txt_ParametroABuscar.Text = "VL-027";
             // 
             // btn_Siguiente
             // 

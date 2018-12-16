@@ -124,7 +124,7 @@ namespace vialsur.prefectura.Ordenes
                     lbl_TipoCombustible.Text = ((TipoCombustible)mod.tipo_combustible).ToString(); // == 1 ? "GASOLINA" : "DIESEL";
                     //lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
                     //                        (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
-                    lbl_TipoVehiculo.Text = ((TipoClaseVehiculo)mod.clase_vehiculo).ToString();
+                    lbl_TipoVehiculo.Text = ((ClaseVehiculo)mod.clase_vehiculo).ToString();
 
 
                     lblTipoMantenimiento.Text = ((Orden_TipoMantenimiento)ord.tipo_oden).ToString();

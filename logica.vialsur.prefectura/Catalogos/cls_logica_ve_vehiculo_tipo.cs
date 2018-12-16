@@ -10,19 +10,21 @@ namespace logica.vialsur.prefectura.Catalogos
     using System.Data.SqlClient;
     using System.Data;
 
-    public    class cls_logica_ve_vehiculo_marca
+    public    class cls_logica_ve_vehiculo_tipo
     {
+        /// <summary>
+        /// Consulta todos los registro de los tipos de vehiculos
+        /// </summary>
+        /// <returns></returns>
         public DataTable UX_Consulta_Todos_Registros()
         {
             try
-            {
-                SqlDataReader datos_para_control = new cls_data_ve_vehiculo_marca().Consultar();
-
-                DataTable dt_datos = new DataTable("ve_vehiculo_marca");
-                dt_datos.Load(datos_para_control);                
+            {                
+                DataTable dt_datos = new cls_data_ve_vehiculo_tipo().Consultar();
+                
                 DataRow dr0 = dt_datos.NewRow();
                 dr0["id"] = 0;
-                dr0["nombre"] = "Seleccione";
+                dr0["tipo"] = "Seleccione";
                 dt_datos.Rows.InsertAt(dr0, 0);
                 return dt_datos;
             }
@@ -32,6 +34,7 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+    /*
         /// <summary>
         /// Lista todos las Marcas Registradas
         /// </summary>
@@ -95,6 +98,7 @@ namespace logica.vialsur.prefectura.Catalogos
                 throw ex;
             }
         }
+        */
 
     }
 }

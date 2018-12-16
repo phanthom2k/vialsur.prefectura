@@ -14,19 +14,44 @@ namespace datos.vialsur.prefectura
   
 
 
-    public class cls_data_emp_empleado
+    public class cls_data_emp_empleado_cargo
     {
         private string _con = String.Empty;
-        public cls_data_emp_empleado()
+        public cls_data_emp_empleado_cargo()
         {
             this._con = ConfigurationManager.ConnectionStrings["db_mantenimiento"].ConnectionString;
         }
-        ~cls_data_emp_empleado()
+        ~cls_data_emp_empleado_cargo()
         {
             this._con = String.Empty;
         }
 
 
+        /// <summary>
+        /// Consulta todo el catalogo de cargos disponibles (ID, Nombre)
+        /// </summary>
+        /// <returns></returns>
+        public DataTable Consultar()
+        {
+            try
+            {
+                string _sql_consulta = "SELECT[id] ,[nombre] FROM[dbo].[emp_empleado_cargo] order by id asc; ";               
+                
+                DataTable dt = new DataTable();
+
+                dt.Load(SqlHelper.ExecuteReader(_con, CommandType.Text, _sql_consulta), LoadOption.PreserveChanges);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al intentar consultar el catalogo de cargos", ex);
+            }
+        }
+
+
+
+        /*
         public bool InsertarNuevaPer_persona(entidades.vialsur.prefectura.emp_empleado _emp_empleado)
         {
             bool k = false;
@@ -115,8 +140,8 @@ namespace datos.vialsur.prefectura
             try
             {
                 string consulta =   "SELECT[id],[cedula],[cargo_id],[pwd],[activo],[fecha_activacion],[fecha_desactivacion],[per_persona_cedula_activacion]," +
-                                    "[tipo_usuario],[observaciones_activacion],[observaciones_desactivacion],[tipo_mantenimiento_asignado] " +
-                                    "FROM [dbo].[emp_empleado] WHERE[cedula] = @cedula";
+                                    "[tipo_usuario],[observaciones_activacion],[observaciones_desactivacion] " +
+                                    "FROM[dbo].[emp_empleado] WHERE[cedula] = @cedula";
 
                 SqlParameter parametro = new SqlParameter("@cedula", SqlDbType.VarChar);
                 parametro.Value = cedula;
@@ -137,8 +162,7 @@ namespace datos.vialsur.prefectura
                     obj_emp_empleado.per_persona_cedula_activacion = dr_datos["per_persona_cedula_activacion"].ToString();
                     obj_emp_empleado.tipo_usuario = Convert.ToInt32(dr_datos["tipo_usuario"]);
                     obj_emp_empleado.observaciones_activacion = dr_datos["observaciones_activacion"].ToString();
-                    obj_emp_empleado.observaciones_desactivacion = dr_datos["observaciones_desactivacion"].ToString();
-                    obj_emp_empleado.tipo_mantenimiento_asignado = Convert.ToInt32(dr_datos["tipo_mantenimiento_asignado"]);
+                    obj_emp_empleado.observaciones_desactivacion = dr_datos["observaciones_desactivacion"].ToString();                    
                 }
                 dr_datos.Close();
                 return obj_emp_empleado;
@@ -202,17 +226,12 @@ namespace datos.vialsur.prefectura
                     _observaciones_desactivacion.Value = _emp_empleado.observaciones_desactivacion;
                     parameters.Add(_observaciones_desactivacion);
 
-                    SqlParameter _tipo_mantenimiento_asignado = new SqlParameter("@tipo_mantenimiento_asignado", SqlDbType.Int);
-                    _tipo_mantenimiento_asignado.Value = _emp_empleado.tipo_mantenimiento_asignado;
-                    parameters.Add(_tipo_mantenimiento_asignado);
-
-                    
                     #endregion
 
                     string _sql_update =    "UPDATE[dbo].[emp_empleado] " +
                                             "SET[cargo_id] = @cargo_id, [pwd] = @pwd, [activo] = @activo,[fecha_activacion] = @fecha_activacion, [fecha_desactivacion] = @fecha_desactivacion, " +
                                             "[per_persona_cedula_activacion] = @per_persona_cedula_activacion, [tipo_usuario] = @tipo_usuario,[observaciones_activacion] = @observaciones_activacion," +
-                                            "[observaciones_desactivacion] = @observaciones_desactivacion , [tipo_mantenimiento_asignado] = @tipo_mantenimiento_asignado " +
+                                            "[observaciones_desactivacion] = @observaciones_desactivacion " +
                                             "WHERE[cedula] = @cedula ";
 
                     int customerId = SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_update, parameters.ToArray());
@@ -334,7 +353,7 @@ namespace datos.vialsur.prefectura
 
 
         /// <summary>
-        /// Lista los empleados que estan registrados para usar en la grilla principal, se incluye el nombre del CARGO y TIPO DE USUARIO ademas del ID
+        /// Lista los empleados que estan registrados para usar en la grilla principal
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
@@ -344,20 +363,14 @@ namespace datos.vialsur.prefectura
         {
             try
             {
-                //string _sql_consulta = "SELECT per_persona.cedula, per_persona.nombres, per_persona.apellidos, emp_empleado.id, emp_empleado.activo,emp_empleado.fecha_activacion, emp_empleado.tipo_usuario, emp_empleado.cargo_id " +
-                //                        "FROM per_persona INNER JOIN emp_empleado ON per_persona.cedula = emp_empleado.cedula   ";
-
-
-                string _sql_consulta = "SELECT p.cedula, p.nombres, p.apellidos, e.id, e.activo,e.fecha_activacion, " +
-                                        "e.tipo_usuario, (select etu.nombre from emp_empleado_tipo_usuario etu where etu.id = e.tipo_usuario  ) as tipousuario, " +
-                                        "e.cargo_id , (select emp_carg.nombre from emp_empleado_cargo as emp_carg where emp_carg.id = e.cargo_id) as cargoid " +
-                                        "FROM per_persona p INNER JOIN emp_empleado e ON p.cedula = e.cedula ";
-
+                string _sql_consulta = "SELECT per_persona.cedula, per_persona.nombres, per_persona.apellidos, emp_empleado.id, emp_empleado.activo,emp_empleado.fecha_activacion, emp_empleado.tipo_usuario " +
+                                        "FROM per_persona INNER JOIN emp_empleado ON per_persona.cedula = emp_empleado.cedula   ";
+                                        
+                
                 List<SqlParameter> parameters = new List<SqlParameter>();
                 if (cedula =="")  //para buscar minimo y maximo
                 {
-                    //_sql_consulta += "WHERE emp_empleado.id >= @ID1 AND emp_empleado.id <= @ID2 ";
-                    _sql_consulta += "WHERE E.id >= @ID1 AND E.id <= @ID2 ";
+                    _sql_consulta += "WHERE emp_empleado.id >= @ID1 AND emp_empleado.id <= @ID2 ";
 
                     SqlParameter _id1 = new SqlParameter("@ID1", SqlDbType.Int );
                     _id1.Value = a;
@@ -369,7 +382,7 @@ namespace datos.vialsur.prefectura
                 }
                 else  //para buscar por el numero de cedula
                 {
-                    _sql_consulta += "WHERE E.cedula = @cedula; ";
+                    _sql_consulta += "WHERE emp_empleado.cedula = @cedula; ";
 
                     SqlParameter _cedula = new SqlParameter("@cedula", SqlDbType.VarChar);
                     _cedula.Value = cedula;
@@ -394,8 +407,7 @@ namespace datos.vialsur.prefectura
         /// <param name="tu"></param>
         /// <param name="activo"></param>
         /// <returns></returns>
-        public DataTable ListarPersonasPorTipoUsuario_UX(entidades.vialsur.prefectura.TipoUsuario tu, bool activo = true,
-             entidades.vialsur.prefectura.Tipo_Mantenimiento_Asignado _Tipo_Mantenimiento_Asignado = entidades.vialsur.prefectura.Tipo_Mantenimiento_Asignado.NO_DEFINIDO)
+        public DataTable ListarPersonasPorTipoUsuario_UX(entidades.vialsur.prefectura.TipoUsuario tu, bool activo = true)
         {
             try
             {
@@ -403,10 +415,6 @@ namespace datos.vialsur.prefectura
                                         "FROM per_persona INNER JOIN emp_empleado ON per_persona.cedula = emp_empleado.cedula " +
                                         "WHERE emp_empleado.activo = @activo " +
                                         "AND emp_empleado.tipo_usuario = @tipo_usuario ";
-                if (_Tipo_Mantenimiento_Asignado != entidades.vialsur.prefectura.Tipo_Mantenimiento_Asignado.NO_DEFINIDO)
-                    _sql_consulta += "AND tipo_mantenimiento_asignado= " + (int) _Tipo_Mantenimiento_Asignado;
-                //_sql_consulta += "AND tipo_mantenimiento_asignado= " + (entidades.vialsur.prefectura.Tipo_Mantenimiento_Asignado)_Tipo_Mantenimiento_Asignado;
-
 
                 List<SqlParameter> parameters = new List<SqlParameter>();
                 SqlParameter _activo = new SqlParameter("@activo", SqlDbType.Bit);
@@ -429,25 +437,6 @@ namespace datos.vialsur.prefectura
             }
         }
 
-
-        /// <summary>
-        /// Consulta el numero de empleados registrados
-        /// </summary>
-        /// <returns></returns>
-        public int ConsultarNumeroEmpleados()
-        {
-            try
-            {
-                string _sql_consulta = "SELECT count([cedula]) as [cedula] FROM [dbo].[emp_empleado]";
-
-                return Convert.ToInt32(SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_consulta));
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+    */
     }
 }

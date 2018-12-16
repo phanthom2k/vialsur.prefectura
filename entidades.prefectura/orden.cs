@@ -29,6 +29,7 @@ namespace entidades.vialsur.prefectura
 
     public enum Orden_TipoMantenimiento
     {
+        NO_DEFINIDO = 0,
         PREVENTIVO = 1,
         CORRECTIVO = 2
     }

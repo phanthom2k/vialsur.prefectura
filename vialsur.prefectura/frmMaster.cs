@@ -99,16 +99,22 @@ namespace vialsur.prefectura
                 ordenes.Empleado = Empleado;
                 //ordenes.Cedula = Empleado.cedula;
 
-                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                //if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)) //se comenta para re escribir codigo
+                if ( Empleado.tipo_usuario == 1 ) //si el tipo de usuario es administrador
                 {
                     tareasPendientesDeAprobarToolStripMenuItem.Visible = true;
                     personalToolStripMenuItem.Visible = true;
                     historialDeOrdenesToolStripMenuItem.Visible = true;
+                    caToolStripMenuItem.Visible = true;
                 }
 
-                toolStripStatusLabel1.Text = string.Format("USUARIO: {0} / TIPO USUARIO: {1}",
+                //toolStripStatusLabel1.Text = string.Format("USUARIO: {0} / TIPO USUARIO: {1}",
+                //    new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(Empleado.cedula).ApellidosNombres,
+                //                             ((entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario )).ToString());
+                toolStripStatusLabel1.Text = string.Format("USUARIO: {0} / TIPO DE USUARIO: {1}",
                     new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(Empleado.cedula).ApellidosNombres,
-                                             ((entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario )).ToString());
+                                                            new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado_tipo_usuario().Consultar_Nombre_Tipo_Usuario_Por_ID(Empleado.tipo_usuario));
+                                                             //((entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)).ToString());
 
                 ordenes.WindowState = FormWindowState.Maximized;
                 ordenes.Show();
@@ -184,6 +190,54 @@ namespace vialsur.prefectura
                 ordenes.Text = "Historial de ordenes";
                 ordenes.WindowState = FormWindowState.Maximized;
                 ordenes.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void catalogosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void catalogoDeMarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {   //CATALOGO DE MARCAS
+            try
+            {
+                Form activeChild = this.ActiveMdiChild;
+                if (activeChild == null)
+                {
+
+                    var catalogo_marcas = new Catalogos.frmCatalogo_Marcas();
+                    catalogo_marcas.MdiParent = this;
+                    catalogo_marcas.Empleado = Empleado;
+                    catalogo_marcas.WindowState = FormWindowState.Maximized;
+                    catalogo_marcas.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void catálogoDeModelosToolStripMenuItem_Click(object sender, EventArgs e)
+        {   ///CATALOGO DE MODELOS
+            try
+            {
+                Form activeChild = this.ActiveMdiChild;
+                if (activeChild == null)
+                {
+
+                    var catalogo_modelo = new Catalogos.frmCatalogo_Modelos();
+                    catalogo_modelo.MdiParent = this;
+                    catalogo_modelo.Empleado = Empleado;
+                    catalogo_modelo.WindowState = FormWindowState.Maximized;
+                    catalogo_modelo.Show();
+                }
             }
             catch (Exception ex)
             {

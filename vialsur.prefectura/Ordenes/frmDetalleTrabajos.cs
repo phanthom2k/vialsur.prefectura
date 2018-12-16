@@ -96,7 +96,7 @@ namespace vialsur.prefectura.Ordenes
                     lbl_TipoCombustible.Text = ((TipoCombustible)mod.tipo_combustible).ToString();
                     //lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
                     //                        (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
-                    lbl_TipoVehiculo.Text = ((TipoClaseVehiculo)mod.clase_vehiculo).ToString();
+                    lbl_TipoVehiculo.Text = ((ClaseVehiculo)mod.clase_vehiculo).ToString();
 
                     lblNombresMecanicoResponsable.Text =
                         new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(

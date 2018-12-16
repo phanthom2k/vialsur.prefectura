@@ -90,7 +90,7 @@ namespace vialsur.prefectura.Vehiculos
                     if (vehiculo.estado != null)
                         lbl_estado.Text = (bool)vehiculo.estado ? "Activo" : "Inactivo";
                     lbl_TipoCombustible.Text = ((entidades.vialsur.prefectura.TipoCombustible)mod.tipo_combustible).ToString(); // == 1 ? "GASOLINA" : "DIESEL";                    
-                    lbl_TipoVehiculo.Text = ((entidades.vialsur.prefectura.TipoClaseVehiculo)mod.clase_vehiculo).ToString();                 
+                    lbl_TipoVehiculo.Text = ((entidades.vialsur.prefectura.ClaseVehiculo)mod.clase_vehiculo).ToString();                 
                 }
             }
             catch (Exception ex)

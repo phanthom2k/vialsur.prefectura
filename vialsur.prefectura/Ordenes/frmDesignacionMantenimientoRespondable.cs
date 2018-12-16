@@ -18,7 +18,9 @@ namespace vialsur.prefectura.Ordenes
             InitializeComponent();
 
             uc_TipoMantenimiento1.CargarDatos();
-            uc_Empleados1.CargarDatos(entidades.vialsur.prefectura.TipoUsuario.MECANICO, true);
+
+            //uc_Empleados1.CargarDatos(entidades.vialsur.prefectura.TipoUsuario.MECANICO, true); //se comenta para que discrimine cuando se seleccion el TIPO DE MANTENIMIENTO
+
             uc_Empleados2.CargarDatos(entidades.vialsur.prefectura.TipoUsuario.CHOFER, true);
             
         }
@@ -54,7 +56,7 @@ namespace vialsur.prefectura.Ordenes
                     lbl_TipoCombustible.Text = ((TipoCombustible)mod.tipo_combustible).ToString(); // == 1 ? "GASOLINA" : "DIESEL";
                     //lbl_TipoVehiculo.Text = (int)mod.clase_vehiculo == 1 ? "LIVIANO" :
                     //                        (int)mod.clase_vehiculo == 2 ? "PESADO" : "NO DEFINIDO";
-                    lbl_TipoVehiculo.Text = ((TipoClaseVehiculo)mod.clase_vehiculo).ToString();
+                    lbl_TipoVehiculo.Text = ((ClaseVehiculo)mod.clase_vehiculo).ToString();
                     label19.Text = new logica.vialsur.prefectura.Catalogos.cls_logica_orden().ConsultarKilometrajeDeVehiculo(vehiculo.placa).ToString();
                 }
 
@@ -203,6 +205,10 @@ namespace vialsur.prefectura.Ordenes
         private void uc_TipoMantenimiento1_SelectedIndexChanged(object sender, EventArgs e)
         {
             VerificarSelecciones();
+            if (uc_TipoMantenimiento1.SelectedIndex == 1) //preventivo
+                uc_Empleados1.CargarDatos(entidades.vialsur.prefectura.TipoUsuario.MECANICO, true, Tipo_Mantenimiento_Asignado.PREVENTIVO);
+            else
+                uc_Empleados1.CargarDatos(entidades.vialsur.prefectura.TipoUsuario.MECANICO, true, Tipo_Mantenimiento_Asignado.CORRECTIVO );
         }
 
         private void uc_Empleados1_SelectedIndexChanged(object sender, EventArgs e)

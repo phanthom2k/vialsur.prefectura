@@ -485,10 +485,9 @@ GO
         {
             try
             {
-
                 string _sql_consulta_lista_vehiculos =
                     "SELECT v.[id],v.[codigo],[codigo_anterior], mar.nombre MARCA, m.modelo,[placa],[placa_provisional], [anio_fabricacion],[anio_compra],[cilindraje]," +
-                    " [costo],[estado],[PaisCodigo] ,[serie_chasis],[serie_motor] , c.nombre_comun COLOR " +
+                    " [costo],[estado],[PaisCodigo] ,[serie_chasis],[serie_motor] , c.nombre_comun COLOR , CASE WHEN m.tipo_combustible = 1 THEN 'GASOLINA' ELSE 'DIESEL' END COMBUSTIBLE " +
                     "FROM[dbo].[ve_vehiculo] v, ve_vehiculo_color c, ve_vehiculo_modelo m, ve_vehiculo_marca mar " +
                     "where(v.ve_vehiculo_color_id = c.id AND v.ve_vehiculo_modelo_id = m.id " +
                     "and m.ve_vehiculo_marca_id = mar.id) ";
@@ -516,6 +515,7 @@ GO
             }
 
         }
+
 
     }
 }

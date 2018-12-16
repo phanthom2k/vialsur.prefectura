@@ -11,9 +11,9 @@ namespace vialsur.prefectura.uc
     using logica.vialsur.prefectura;
     using System.Data;
 
-    public class uc_TipoMantenimiento: ComboBox
+    public class uc_TipoMantenimientoAsignado : ComboBox
     {
-        public uc_TipoMantenimiento()
+        public uc_TipoMantenimientoAsignado()
         {
             this.DropDownStyle = ComboBoxStyle.DropDownList;
             this.DropDownWidth = Ancho;
@@ -34,12 +34,23 @@ namespace vialsur.prefectura.uc
                 this.DropDownWidth = value;
             }
         }
+
             
         public void CargarDatos()
         {
             try
             {
-                System.Data.DataTable _dt_catalogo = new System.Data.DataTable();
+                DataTable dt = new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado_tipo_mantenimiento_asignado().Consultar();
+                DataRow dr1 = dt.NewRow();
+                dr1["id"] = 0;
+                dr1["nombre"] = "Seleccione";
+                dt.Rows.InsertAt(dr1, 0);
+                this.ValueMember = "id";
+                this.DisplayMember = "nombre";
+                this.DataSource = dt;
+
+
+               /* System.Data.DataTable _dt_catalogo = new System.Data.DataTable();
 
                 _dt_catalogo.Columns.Add(new System.Data.DataColumn("id", Type.GetType("System.Int32")));
                 _dt_catalogo.Columns.Add(new System.Data.DataColumn("descripcion", Type.GetType("System.String")));
@@ -48,6 +59,7 @@ namespace vialsur.prefectura.uc
                 dr0["id"] = 0;
                 dr0["descripcion"] = "Seleccione";
                 _dt_catalogo.Rows.Add(dr0);
+
 
                 System.Data.DataRow dr1 = _dt_catalogo.NewRow();
                 dr1["id"] = 1;
@@ -71,12 +83,13 @@ namespace vialsur.prefectura.uc
 
                 this.DataSource = _dt_catalogo;
                 this.ValueMember = "id";
-                this.DisplayMember = "descripcion";
+                this.DisplayMember = "descripcion"; */
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Problemas al cargar el catalogo de tipos de mantenimientos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

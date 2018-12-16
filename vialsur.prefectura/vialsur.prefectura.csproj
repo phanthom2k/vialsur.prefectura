@@ -70,6 +70,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\frmCatalogo_Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmCatalogo_Marcas.Designer.cs">
+      <DependentUpon>frmCatalogo_Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmCatalogo_Marcas_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmCatalogo_Marcas_Nuevo.Designer.cs">
+      <DependentUpon>frmCatalogo_Marcas_Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmCatalogo_Modelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmCatalogo_Modelos.Designer.cs">
+      <DependentUpon>frmCatalogo_Modelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\frmCatalogo_Modelos_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmCatalogo_Modelos_Nuevo.Designer.cs">
+      <DependentUpon>frmCatalogo_Modelos_Nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,7 +212,19 @@
     <Compile Include="uc\uc_Pais.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="uc\uc_ClaseVehiculo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="uc\uc_TipoCombustible.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="uc\uc_TipoMotor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uc\uc_TipoEstadosOrdenes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="uc\uc_TipoMantenimientoAsignado.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="uc\uc_TipoMantenimiento.cs">
@@ -198,6 +234,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="uc\uc_VehiculoColor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="uc\uc_VehiculoTipo.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="uc\uc_VehiculoMarca.cs">
@@ -224,6 +263,18 @@
     <Compile Include="Vehiculos\frmVehiculo_Nuevo.Designer.cs">
       <DependentUpon>frmVehiculo_Nuevo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Catalogos\frmCatalogo_Marcas.resx">
+      <DependentUpon>frmCatalogo_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmCatalogo_Marcas_Nuevo.resx">
+      <DependentUpon>frmCatalogo_Marcas_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmCatalogo_Modelos.resx">
+      <DependentUpon>frmCatalogo_Modelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmCatalogo_Modelos_Nuevo.resx">
+      <DependentUpon>frmCatalogo_Modelos_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

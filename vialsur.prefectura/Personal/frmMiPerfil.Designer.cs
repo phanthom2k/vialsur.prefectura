@@ -54,11 +54,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
-            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.label13 = new System.Windows.Forms.Label();
+            this.uc_TipoMantenimientoAsignado1 = new vialsur.prefectura.uc.uc_TipoMantenimientoAsignado();
+            this.uc_TIPOUSUARIO1 = new vialsur.prefectura.uc.uc_TIPOUSUARIO();
+            this.uc_CARGO1 = new vialsur.prefectura.uc.uc_CARGO();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -72,7 +74,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 66);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(615, 342);
+            this.tabControl1.Size = new System.Drawing.Size(615, 362);
             this.tabControl1.TabIndex = 49;
             // 
             // tabPage1
@@ -88,7 +90,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(607, 313);
+            this.tabPage1.Size = new System.Drawing.Size(607, 333);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Persona";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -173,6 +175,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.uc_TipoMantenimientoAsignado1);
+            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.textBox1);
@@ -192,14 +196,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(607, 313);
+            this.tabPage2.Size = new System.Drawing.Size(607, 333);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Datos Generales";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 180);
+            this.textBox2.Location = new System.Drawing.Point(129, 205);
             this.textBox2.MaxLength = 10;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(263, 22);
@@ -208,7 +212,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 183);
+            this.label12.Location = new System.Drawing.Point(16, 208);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 21;
@@ -216,7 +220,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 152);
+            this.textBox1.Location = new System.Drawing.Point(129, 177);
             this.textBox1.MaxLength = 10;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(263, 22);
@@ -225,7 +229,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 155);
+            this.label11.Location = new System.Drawing.Point(16, 180);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 17);
             this.label11.TabIndex = 19;
@@ -264,7 +268,7 @@
             // atxt_Observaciones
             // 
             this.atxt_Observaciones.Enabled = false;
-            this.atxt_Observaciones.Location = new System.Drawing.Point(129, 215);
+            this.atxt_Observaciones.Location = new System.Drawing.Point(129, 240);
             this.atxt_Observaciones.MaxLength = 550;
             this.atxt_Observaciones.Multiline = true;
             this.atxt_Observaciones.Name = "atxt_Observaciones";
@@ -274,7 +278,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 215);
+            this.label10.Location = new System.Drawing.Point(16, 240);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(107, 17);
             this.label10.TabIndex = 5;
@@ -325,6 +329,60 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CARGO:";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(638, 52);
+            this.toolStrip1.TabIndex = 50;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
+            this.toolStripButton1.Text = "&Salir";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(66, 49);
+            this.toolStripButton2.Text = "&Guardar";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(15, 151);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(238, 17);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "TIPO MANTENIMIENTO ASIGNADO:";
+            // 
+            // uc_TipoMantenimientoAsignado1
+            // 
+            this.uc_TipoMantenimientoAsignado1.Ancho = 121;
+            this.uc_TipoMantenimientoAsignado1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_TipoMantenimientoAsignado1.DropDownWidth = 121;
+            this.uc_TipoMantenimientoAsignado1.Enabled = false;
+            this.uc_TipoMantenimientoAsignado1.FormattingEnabled = true;
+            this.uc_TipoMantenimientoAsignado1.Location = new System.Drawing.Point(259, 148);
+            this.uc_TipoMantenimientoAsignado1.Name = "uc_TipoMantenimientoAsignado1";
+            this.uc_TipoMantenimientoAsignado1.Size = new System.Drawing.Size(237, 24);
+            this.uc_TipoMantenimientoAsignado1.TabIndex = 24;
+            // 
             // uc_TIPOUSUARIO1
             // 
             this.uc_TIPOUSUARIO1.Ancho = 121;
@@ -349,44 +407,11 @@
             this.uc_CARGO1.Size = new System.Drawing.Size(263, 24);
             this.uc_CARGO1.TabIndex = 15;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(636, 52);
-            this.toolStrip1.TabIndex = 50;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
-            this.toolStripButton1.Text = "&Salir";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(66, 49);
-            this.toolStripButton2.Text = "&Guardar";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
             // frmMiPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 415);
+            this.ClientSize = new System.Drawing.Size(638, 440);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMiPerfil";
@@ -436,5 +461,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
+        private uc.uc_TipoMantenimientoAsignado uc_TipoMantenimientoAsignado1;
+        private System.Windows.Forms.Label label13;
     }
 }
