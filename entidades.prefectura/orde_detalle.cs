@@ -19,7 +19,9 @@ namespace entidades.vialsur.prefectura
         CAMBIO = 1,
         LIMPIEZA = 2,
         REVISION = 3,
-        OTRO = 4
+        //OTRO = 4
+        REPARACIÓN = 4,
+        OTRO = 5
     }
 
 

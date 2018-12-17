@@ -44,11 +44,15 @@ namespace vialsur.prefectura.Ordenes
 
         void Congelar()
         {
-            toolStripButton2.Enabled = !EsLectura;
+            toolStripButton2.Enabled =  !EsLectura;
+
+            ///esta linea aumento para que solo el mecanico pueda generar la orden de pedido de la parte
+            chk_solicitar_repuestos.Enabled = !EsLectura;   
             if (EsMecanicoAtender  )
             {
                 uc_Catalogo_Parte_Principal1.Enabled = uc_Catalogo_Parte_Secundaria1.Enabled =
                 uc_Accion1.Enabled = numericUpDown1.Enabled = false;
+                chk_solicitar_repuestos.Visible = true;
             }
             else uc_Accion2.Enabled = false;
 
@@ -190,6 +194,21 @@ namespace vialsur.prefectura.Ordenes
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void chk_solicitar_repuestos_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (EsMecanicoAtender)
+                {
+                    if (chk_solicitar_repuestos.Checked) ;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Existio un problema al intentar registrar el pedido","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }

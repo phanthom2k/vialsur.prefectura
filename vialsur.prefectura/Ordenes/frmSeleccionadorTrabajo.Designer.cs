@@ -41,6 +41,7 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.chk_solicitar_repuestos = new System.Windows.Forms.CheckBox();
             this.uc_Accion2 = new vialsur.prefectura.uc.uc_Accion();
             this.uc_Accion1 = new vialsur.prefectura.uc.uc_Accion();
             this.uc_Catalogo_Parte_Secundaria1 = new vialsur.prefectura.uc.uc_Catalogo_Parte_Secundaria();
@@ -83,7 +84,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 208);
+            this.label4.Location = new System.Drawing.Point(12, 201);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 5;
@@ -92,13 +93,14 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 355);
+            this.checkBox1.Location = new System.Drawing.Point(415, 348);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBox1.Size = new System.Drawing.Size(87, 21);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "ESTADO";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             // 
             // label5
             // 
@@ -113,7 +115,7 @@
             // lettersTextBox1
             // 
             this.lettersTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.lettersTextBox1.Location = new System.Drawing.Point(15, 228);
+            this.lettersTextBox1.Location = new System.Drawing.Point(15, 221);
             this.lettersTextBox1.MaxLength = 600;
             this.lettersTextBox1.Multiline = true;
             this.lettersTextBox1.Name = "lettersTextBox1";
@@ -177,6 +179,21 @@
             this.label6.TabIndex = 63;
             this.label6.Text = "TRABAJO REALIZADO:";
             // 
+            // chk_solicitar_repuestos
+            // 
+            this.chk_solicitar_repuestos.AutoSize = true;
+            this.chk_solicitar_repuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_solicitar_repuestos.ForeColor = System.Drawing.Color.Red;
+            this.chk_solicitar_repuestos.Location = new System.Drawing.Point(12, 348);
+            this.chk_solicitar_repuestos.Name = "chk_solicitar_repuestos";
+            this.chk_solicitar_repuestos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chk_solicitar_repuestos.Size = new System.Drawing.Size(342, 21);
+            this.chk_solicitar_repuestos.TabIndex = 65;
+            this.chk_solicitar_repuestos.Text = "      ?SOLICITAR REPUESTOS A BODEGA¿";
+            this.chk_solicitar_repuestos.UseVisualStyleBackColor = true;
+            this.chk_solicitar_repuestos.Visible = false;
+            this.chk_solicitar_repuestos.CheckedChanged += new System.EventHandler(this.chk_solicitar_repuestos_CheckedChanged);
+            // 
             // uc_Accion2
             // 
             this.uc_Accion2.Ancho = 121;
@@ -228,7 +245,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 386);
+            this.ClientSize = new System.Drawing.Size(516, 380);
+            this.Controls.Add(this.chk_solicitar_repuestos);
             this.Controls.Add(this.uc_Accion2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.numericUpDown1);
@@ -276,5 +294,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label6;
         private uc.uc_Accion uc_Accion2;
+        private System.Windows.Forms.CheckBox chk_solicitar_repuestos;
     }
 }

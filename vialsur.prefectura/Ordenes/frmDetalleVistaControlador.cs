@@ -185,7 +185,10 @@ namespace vialsur.prefectura.Ordenes
 
                     if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario) & 
                         obj_orden.ve_vehiculo_responsable.First().per_persona_cedula != Empleado.cedula)
+                    {
                         objSelecTrab.EsLectura = true;
+                        
+                    }
 
                     objSelecTrab.EsMecanicoAtender = objSelecTrab.EsActualizacion = true;
                               
