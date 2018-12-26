@@ -52,7 +52,7 @@ namespace vialsur.prefectura.Ordenes
             {
                 uc_Catalogo_Parte_Principal1.Enabled = uc_Catalogo_Parte_Secundaria1.Enabled =
                 uc_Accion1.Enabled = numericUpDown1.Enabled = false;
-                chk_solicitar_repuestos.Visible = true;
+             //   chk_solicitar_repuestos.Visible = true;  //elimino por que voy a poner en otro lado
             }
             else uc_Accion2.Enabled = false;
 

@@ -50,8 +50,10 @@
     <Compile Include="cls_data_orden.cs" />
     <Compile Include="cls_data_orde_detalle.cs" />
     <Compile Include="cls_data_pais.cs" />
+    <Compile Include="cls_data_detalle_pedidos.cs" />
     <Compile Include="cls_data_per_persona.cs" />
     <Compile Include="cls_data_ve_vehiculo.cs" />
+    <Compile Include="cls_data_pedidos.cs" />
     <Compile Include="cls_data_ve_vehiculo_tipo.cs" />
     <Compile Include="cls_data_ve_vehiculo_color.cs" />
     <Compile Include="cls_data_ve_vehiculo_marca.cs" />

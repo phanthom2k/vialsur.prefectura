@@ -72,6 +72,8 @@
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblFechaSalida = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.LBL_ORDENNO = new System.Windows.Forms.Label();
@@ -90,8 +92,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lblFechaSalida = new System.Windows.Forms.Label();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -424,6 +425,7 @@
             this.cl_ver.Text = "Ver";
             this.cl_ver.UseColumnTextForButtonValue = true;
             this.cl_ver.Width = 57;
+            this.cl_ver.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             // 
             // cl_modificar
             // 
@@ -563,6 +565,27 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ORDEN DE MANTENIMIENTO";
+            // 
+            // lblFechaSalida
+            // 
+            this.lblFechaSalida.AutoSize = true;
+            this.lblFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaSalida.ForeColor = System.Drawing.Color.Red;
+            this.lblFechaSalida.Location = new System.Drawing.Point(641, 65);
+            this.lblFechaSalida.Name = "lblFechaSalida";
+            this.lblFechaSalida.Size = new System.Drawing.Size(114, 17);
+            this.lblFechaSalida.TabIndex = 80;
+            this.lblFechaSalida.Text = "lblFechaSalida";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(515, 65);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(122, 17);
+            this.label23.TabIndex = 79;
+            this.label23.Text = "FECHA SALIDA:";
             // 
             // label21
             // 
@@ -718,7 +741,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1009, 52);
@@ -757,26 +781,16 @@
             this.toolStripButton3.Visible = false;
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // label23
+            // toolStripButton4
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(515, 65);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(122, 17);
-            this.label23.TabIndex = 79;
-            this.label23.Text = "FECHA SALIDA:";
-            // 
-            // lblFechaSalida
-            // 
-            this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaSalida.ForeColor = System.Drawing.Color.Red;
-            this.lblFechaSalida.Location = new System.Drawing.Point(641, 65);
-            this.lblFechaSalida.Name = "lblFechaSalida";
-            this.lblFechaSalida.Size = new System.Drawing.Size(114, 17);
-            this.lblFechaSalida.TabIndex = 80;
-            this.lblFechaSalida.Text = "lblFechaSalida";
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(112, 49);
+            this.toolStripButton4.Text = "&Solicitar partes";
+            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton4.Visible = false;
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // frmDetalleVistaControlador
             // 
@@ -787,6 +801,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "frmDetalleVistaControlador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -868,5 +883,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orden_id;
         private System.Windows.Forms.Label lblFechaSalida;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }

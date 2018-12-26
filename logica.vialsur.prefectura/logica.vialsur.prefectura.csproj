@@ -52,6 +52,8 @@
     <Compile Include="Catalogos\cls_logica_per_persona.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_color.cs" />
+    <Compile Include="Catalogos\cls_logica_pedidos.cs" />
+    <Compile Include="Catalogos\cls_logica_detalle_pedidos.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_tipo.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_marca.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_modelo.cs" />

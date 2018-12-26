@@ -29,7 +29,9 @@ namespace vialsur.prefectura.Ordenes
 
             img.SetImage48("cloud-sync-icon.png", "disk");
             toolStripButton3.ImageKey = "disk";
-            
+
+            img.SetImage48("Shopping-basket-add-icon.png", "basket");
+            toolStripButton4.ImageKey = "basket";
 
 
         }
@@ -37,6 +39,8 @@ namespace vialsur.prefectura.Ordenes
         /// Num. CEdula del aprovador
         /// </summary>
         public string Cedula { get; set; }
+
+        public string Cedula_mecanico { get; set; }
 
         public bool EsCambioEstado { set { toolStripButton3.Visible = value;  } }
 
@@ -79,9 +83,9 @@ namespace vialsur.prefectura.Ordenes
                     toolStripButton2.Enabled = false;
                 //habilita para que el administrador pueda cambiar el estado
                 if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
-                    toolStripButton3.Visible = true;
+                     toolStripButton3.Visible = true;
                 if (entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
-                    toolStripButton2.Visible = true;
+                    toolStripButton4.Visible =  toolStripButton2.Visible = true;
                 ///EN EL CASO DE QUE ESTE EN ESTADO CREADO Y SEA  MECANICO
                 if(entidades.vialsur.prefectura.Orden_TipoEstado.CREADO  == (entidades.vialsur.prefectura.Orden_TipoEstado)((int)obj_orden.estado) &&
                     entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)   )
@@ -139,7 +143,9 @@ namespace vialsur.prefectura.Ordenes
                     LBK_ESTADO.Text = ((entidades.vialsur.prefectura.Orden_TipoEstado)int.Parse(ord.estado.ToString())).ToString();
                     txtObservacion.Text = ord.observacion;
 
-                    label22.Text = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(ord.per_persona_cedula_crea).ApellidosNombres; 
+                    label22.Text = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(ord.per_persona_cedula_crea).ApellidosNombres;
+                    ///obtengo la cedula del mecanico
+                    Cedula_mecanico = ord.ve_vehiculo_responsable.FirstOrDefault().per_persona_cedula;
                     //per_persona_cedula_crea
 
                 }
@@ -290,7 +296,6 @@ namespace vialsur.prefectura.Ordenes
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error "+ex.Message);
             }
         }
@@ -298,6 +303,52 @@ namespace vialsur.prefectura.Ordenes
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {  ///SOLICITAR PARTES
+            try
+            {                
+                var _pedido = new entidades.vialsur.prefectura.pedidos();
+                _pedido.cedula = Cedula_mecanico;
+                _pedido.orden_id = OrdenID;  //id de la orden de mantenimiento
+                    
+
+                var objPedido = new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos();
+                //verificar que ya este creado la orden
+                if(  objPedido.Consultar_Pedido(OrdenID).cedula == null)
+                {
+                    if (MessageBox.Show("¿Desea solicitar partes?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        objPedido.InsertarPedido(_pedido);
+                }
+                if(  objPedido.Consultar_Pedido(OrdenID).cedula != null)
+                {
+                    var frmPedido = new vialsur.prefectura.Pedidos.frmPedidosOrden();
+                    frmPedido.OrdenID = OrdenID;
+                    frmPedido.ShowDialog();
+                }
+                
+                                
+
+                /*
+                var objFrmCambioEstado = new frmOrdenesCambiarEstado();
+                objFrmCambioEstado.OrdenID = this.OrdenID;
+                //                objFrmCambioEstado.Cedula = this.Cedula;
+                //objFrmCambioEstado.Cedula = Empleado.cedula;
+                objFrmCambioEstado.Empleado = Empleado;
+
+                //    objFrmCambioEstado.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.AUTORIZADO | entidades.vialsur.prefectura.Orden_TipoEstado.DESCARTADO;  //COMENTO ESTO
+
+                if (objFrmCambioEstado.ShowDialog() == DialogResult.Yes)
+                {
+                    obj_orden = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConsultarOrden(OrdenID);
+                    MostrarInformacionVehiculo(obj_vehiculo, obj_orden);
+                }  */
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
         }
     }
 }
