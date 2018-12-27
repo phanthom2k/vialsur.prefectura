@@ -1,6 +1,6 @@
-﻿namespace vialsur.prefectura.Ordenes
+﻿namespace vialsur.prefectura.Pedidos
 {
-    partial class frmOrdenesPendientesAprobacion
+    partial class frmPedidosPendientesAprobacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesPendientesAprobacion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosPendientesAprobacion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -70,8 +70,8 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1232, 52);
-            this.toolStrip1.TabIndex = 23;
+            this.toolStrip1.Size = new System.Drawing.Size(1304, 52);
+            this.toolStrip1.TabIndex = 24;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1
@@ -127,9 +127,8 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1232, 531);
-            this.dataGridView1.TabIndex = 38;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Size = new System.Drawing.Size(1281, 411);
+            this.dataGridView1.TabIndex = 39;
             // 
             // cl_ver
             // 
@@ -303,16 +302,16 @@
             this.fecha_cierre.ReadOnly = true;
             this.fecha_cierre.Visible = false;
             // 
-            // frmOrdenesPendientesAprobacion
+            // frmPedidosPendientesAprobacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 591);
+            this.ClientSize = new System.Drawing.Size(1304, 543);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "frmOrdenesPendientesAprobacion";
-            this.Text = "Ordenes Pendientes de Aprobacion";
-            this.Load += new System.EventHandler(this.frmOrdenesPendientesAprobacion_Load);
+            this.Name = "frmPedidosPendientesAprobacion";
+            this.Text = "frmPedidosPendientesAprobacion";
+            this.Load += new System.EventHandler(this.frmPedidosPendientesAprobacion_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

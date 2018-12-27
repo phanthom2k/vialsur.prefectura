@@ -115,7 +115,7 @@
             // lbl_TipoVehiculo
             // 
             this.lbl_TipoVehiculo.AutoSize = true;
-            this.lbl_TipoVehiculo.Location = new System.Drawing.Point(610, 119);
+            this.lbl_TipoVehiculo.Location = new System.Drawing.Point(683, 119);
             this.lbl_TipoVehiculo.Name = "lbl_TipoVehiculo";
             this.lbl_TipoVehiculo.Size = new System.Drawing.Size(112, 17);
             this.lbl_TipoVehiculo.TabIndex = 53;
@@ -125,7 +125,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(454, 119);
+            this.label9.Location = new System.Drawing.Point(557, 119);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 17);
             this.label9.TabIndex = 52;
@@ -180,7 +180,7 @@
             // lbl_seriechasis
             // 
             this.lbl_seriechasis.AutoSize = true;
-            this.lbl_seriechasis.Location = new System.Drawing.Point(580, 64);
+            this.lbl_seriechasis.Location = new System.Drawing.Point(683, 63);
             this.lbl_seriechasis.Name = "lbl_seriechasis";
             this.lbl_seriechasis.Size = new System.Drawing.Size(101, 17);
             this.lbl_seriechasis.TabIndex = 44;
@@ -255,7 +255,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(454, 64);
+            this.label14.Location = new System.Drawing.Point(557, 63);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(118, 17);
             this.label14.TabIndex = 32;
@@ -289,7 +289,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 27;
-            this.label7.Text = "CODIGO:";
+            this.label7.Text = "CÓDIGO:";
             // 
             // label3
             // 
@@ -487,7 +487,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 17);
             this.label1.TabIndex = 53;
-            this.label1.Text = "MECANICO RESPONSABLE:";
+            this.label1.Text = "MECÁNICO RESPONSABLE:";
             // 
             // label4
             // 

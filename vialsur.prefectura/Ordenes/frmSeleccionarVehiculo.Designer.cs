@@ -90,7 +90,6 @@
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(159, 21);
             this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Tag = "3";
             this.radioButton4.Text = "CODIGO ANTERIOR";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -98,6 +97,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
             this.radioButton3.Location = new System.Drawing.Point(20, 76);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(84, 21);
@@ -114,7 +114,6 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(169, 21);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Tag = "1";
             this.radioButton2.Text = "PLACA PROVISIONAL";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -122,12 +121,10 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(20, 22);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(73, 21);
             this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Tag = "0";
             this.radioButton1.Text = "PLACA";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -139,7 +136,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "PARAMETRO DE BUSQUEDA";
+            this.label1.Text = "PARÁMETRO DE BUSQUEDA";
             // 
             // groupBox2
             // 
@@ -311,7 +308,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(158, 17);
             this.label8.TabIndex = 35;
-            this.label8.Text = "CODIGO ANTERIOR:";
+            this.label8.Text = "CÓDIGO ANTERIOR:";
             // 
             // label12
             // 
@@ -381,7 +378,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 27;
-            this.label7.Text = "CODIGO:";
+            this.label7.Text = "CÓDIGO:";
             // 
             // label4
             // 

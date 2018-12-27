@@ -331,7 +331,7 @@
             // fecha_activacion
             // 
             this.fecha_activacion.DataPropertyName = "fecha_activacion";
-            this.fecha_activacion.HeaderText = "FECHA DE ACTIVACION";
+            this.fecha_activacion.HeaderText = "FECHA DE ACTIVACIÓN";
             this.fecha_activacion.Name = "fecha_activacion";
             this.fecha_activacion.ReadOnly = true;
             // 

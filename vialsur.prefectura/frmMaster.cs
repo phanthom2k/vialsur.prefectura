@@ -244,5 +244,23 @@ namespace vialsur.prefectura
                 MessageBox.Show("Error" + ex.Message);
             }
         }
+
+        private void ordenesDePartesYPiezasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pedidos.frmPedidosPendientesAprobacion objForm = new Pedidos.frmPedidosPendientesAprobacion();
+                objForm.MdiParent = this;
+                objForm.WindowState = FormWindowState.Maximized;
+                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                //objForm.Empleado = Empleado;
+                objForm.Show();                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
     }
 }

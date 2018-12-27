@@ -36,6 +36,7 @@
             this.tareasAsignadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tareasPendientesDeAprobarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialDeOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDePartesYPiezasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +78,8 @@
             this.nuevaToolStripMenuItem,
             this.tareasAsignadasToolStripMenuItem,
             this.tareasPendientesDeAprobarToolStripMenuItem,
-            this.historialDeOrdenesToolStripMenuItem});
+            this.historialDeOrdenesToolStripMenuItem,
+            this.ordenesDePartesYPiezasToolStripMenuItem});
             this.ordenesToolStripMenuItem.Name = "ordenesToolStripMenuItem";
             this.ordenesToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.ordenesToolStripMenuItem.Text = "Ordenes";
@@ -113,6 +115,13 @@
             this.historialDeOrdenesToolStripMenuItem.Visible = false;
             this.historialDeOrdenesToolStripMenuItem.Click += new System.EventHandler(this.historialDeOrdenesToolStripMenuItem_Click);
             // 
+            // ordenesDePartesYPiezasToolStripMenuItem
+            // 
+            this.ordenesDePartesYPiezasToolStripMenuItem.Name = "ordenesDePartesYPiezasToolStripMenuItem";
+            this.ordenesDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
+            this.ordenesDePartesYPiezasToolStripMenuItem.Text = "Ordenes de partes y piezas";
+            this.ordenesDePartesYPiezasToolStripMenuItem.Click += new System.EventHandler(this.ordenesDePartesYPiezasToolStripMenuItem_Click);
+            // 
             // administraciónToolStripMenuItem
             // 
             this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -126,7 +135,7 @@
             // 
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
             this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
-            this.vehiculosToolStripMenuItem.Text = "Vehiculos";
+            this.vehiculosToolStripMenuItem.Text = "Vehículos";
             this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // personalToolStripMenuItem
@@ -151,7 +160,7 @@
             this.catálogoDeModelosToolStripMenuItem});
             this.caToolStripMenuItem.Name = "caToolStripMenuItem";
             this.caToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            this.caToolStripMenuItem.Text = "Catalogos";
+            this.caToolStripMenuItem.Text = "Catálogos";
             this.caToolStripMenuItem.Visible = false;
             // 
             // catalogoDeMarcasToolStripMenuItem
@@ -230,5 +239,6 @@
         private System.Windows.Forms.ToolStripMenuItem caToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem catalogoDeMarcasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem catálogoDeModelosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDePartesYPiezasToolStripMenuItem;
     }
 }

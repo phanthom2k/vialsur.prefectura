@@ -308,7 +308,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 27;
-            this.label7.Text = "CODIGO:";
+            this.label7.Text = "CÓDIGO:";
             // 
             // label3
             // 
@@ -425,7 +425,6 @@
             this.cl_ver.Text = "Ver";
             this.cl_ver.UseColumnTextForButtonValue = true;
             this.cl_ver.Width = 57;
-            this.cl_ver.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             // 
             // cl_modificar
             // 
@@ -533,7 +532,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 40;
-            this.label4.Text = "OBSERVACION";
+            this.label4.Text = "OBSERVACIÓN";
             // 
             // groupBox1
             // 
@@ -655,7 +654,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(788, 102);
+            this.label17.Location = new System.Drawing.Point(829, 102);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(30, 17);
             this.label17.TabIndex = 74;
@@ -664,7 +663,7 @@
             // numericTextBox1
             // 
             this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(690, 100);
+            this.numericTextBox1.Location = new System.Drawing.Point(731, 100);
             this.numericTextBox1.MaxLength = 10;
             this.numericTextBox1.Name = "numericTextBox1";
             this.numericTextBox1.Size = new System.Drawing.Size(100, 22);
@@ -688,16 +687,16 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(516, 103);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(167, 17);
+            this.label18.Size = new System.Drawing.Size(210, 17);
             this.label18.TabIndex = 71;
-            this.label18.Text = "Kilometraje de egreso";
+            this.label18.Text = "KILOMETRAJE DE EGRESO";
             // 
             // lblKmIn
             // 
             this.lblKmIn.AutoSize = true;
             this.lblKmIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKmIn.ForeColor = System.Drawing.Color.Red;
-            this.lblKmIn.Location = new System.Drawing.Point(198, 103);
+            this.lblKmIn.Location = new System.Drawing.Point(239, 103);
             this.lblKmIn.Name = "lblKmIn";
             this.lblKmIn.Size = new System.Drawing.Size(61, 17);
             this.lblKmIn.TabIndex = 70;
@@ -709,9 +708,9 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(14, 103);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(171, 17);
+            this.label16.Size = new System.Drawing.Size(220, 17);
             this.label16.TabIndex = 69;
-            this.label16.Text = "Kilometraje de ingreso";
+            this.label16.Text = "KILOMETRAJE DE INGRESO:";
             // 
             // lblFecha
             // 
