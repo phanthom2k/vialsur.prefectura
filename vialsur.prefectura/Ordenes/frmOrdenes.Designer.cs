@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -305,6 +307,9 @@
             // tipo_oden
             // 
             this.tipo_oden.DataPropertyName = "tipo_oden";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Lime;
+            this.tipo_oden.DefaultCellStyle = dataGridViewCellStyle2;
             this.tipo_oden.HeaderText = "Tipo oden mantenimiento";
             this.tipo_oden.MinimumWidth = 125;
             this.tipo_oden.Name = "tipo_oden";
@@ -323,9 +328,9 @@
             // fecha
             // 
             this.fecha.DataPropertyName = "fecha";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.fecha.DefaultCellStyle = dataGridViewCellStyle3;
             this.fecha.HeaderText = "Fecha Ingreso";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
@@ -334,9 +339,9 @@
             // hora
             // 
             this.hora.DataPropertyName = "hora";
-            dataGridViewCellStyle3.Format = "##:##";
-            dataGridViewCellStyle3.NullValue = "00:00";
-            this.hora.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Format = "##:##";
+            dataGridViewCellStyle4.NullValue = "00:00";
+            this.hora.DefaultCellStyle = dataGridViewCellStyle4;
             this.hora.HeaderText = "Hora";
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
@@ -345,6 +350,9 @@
             // estado
             // 
             this.estado.DataPropertyName = "estado";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Yellow;
+            this.estado.DefaultCellStyle = dataGridViewCellStyle5;
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
@@ -382,9 +390,9 @@
             // km_ingreso
             // 
             this.km_ingreso.DataPropertyName = "km_ingreso";
-            dataGridViewCellStyle4.Format = "######### km";
-            dataGridViewCellStyle4.NullValue = "0 km";
-            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Format = "######### km";
+            dataGridViewCellStyle6.NullValue = "0 km";
+            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle6;
             this.km_ingreso.HeaderText = "km_ingreso";
             this.km_ingreso.Name = "km_ingreso";
             this.km_ingreso.ReadOnly = true;
@@ -393,9 +401,9 @@
             // km_egreso
             // 
             this.km_egreso.DataPropertyName = "km_egreso";
-            dataGridViewCellStyle5.Format = "######### km";
-            dataGridViewCellStyle5.NullValue = "0 km";
-            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Format = "######### km";
+            dataGridViewCellStyle7.NullValue = "0 km";
+            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle7;
             this.km_egreso.HeaderText = "km_egreso";
             this.km_egreso.Name = "km_egreso";
             this.km_egreso.ReadOnly = true;

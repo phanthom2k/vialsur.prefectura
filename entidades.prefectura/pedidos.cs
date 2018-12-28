@@ -12,7 +12,15 @@ namespace entidades.vialsur.prefectura
     using System;
     using System.Collections.Generic;
 
- 
+    /// <summary>
+    /// Representa el estado de la orden de pedido de pieza
+    /// </summary>
+    public enum Orden_TipoEstadoPedido
+    {        
+        CREADO = 0,
+        AUTORIZADO = 1     
+    }
+
     public partial class pedidos
     {
         public int id { get; set; }

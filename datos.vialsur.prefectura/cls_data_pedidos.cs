@@ -190,5 +190,38 @@ namespace datos.vialsur.prefectura
                 throw ex;
             }
         }
+
+
+
+        /// <summary>
+        /// Consulta las ordenes DE PEDIDO DE PARTES segun el estado
+        /// </summary>
+        /// <param name="estado"></param>
+        /// <returns></returns>
+        public DataTable ObtenerOrdenesByEstado_UI(entidades.vialsur.prefectura.Orden_TipoEstadoPedido estado)
+        {
+            string consulta_sql =
+                                "SELECT pedidos.id, pedidos.fecha, pedidos.cedula, pedidos.observaciones, pedidos.orden_id, pedidos.aprobada, CONCAT(per_persona.apellidos,', ',per_persona.nombres) solicitante, " +
+                                "vehiculo.codigo, vehiculo.placa,  marca.nombre, modelo.modelo " +
+                                "FROM   pedidos, per_persona, orden, ve_vehiculo_responsable, ve_vehiculo vehiculo, ve_vehiculo_modelo modelo,ve_vehiculo_marca marca " +
+                                "WHERE pedidos.cedula = per_persona.cedula AND pedidos.orden_id = orden.id AND orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
+                                "AND ve_vehiculo_responsable.ve_vehiculo_id = vehiculo.id AND " +
+                                "vehiculo.ve_vehiculo_modelo_id = modelo.id AND modelo.ve_vehiculo_marca_id = marca.id AND pedidos.aprobada=@aprobada";
+
+            try
+            {
+                SqlParameter parametro1 = new SqlParameter("@aprobada", SqlDbType.Bit );
+                parametro1.Value = estado;
+
+
+                return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parametro1).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar los datos de las ordenes de pedidos de piezas: " + ex.Message);
+            }
+        }
+
+
     }
 }
