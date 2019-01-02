@@ -367,6 +367,7 @@
     <EmbeddedResource Include="Vehiculos\frmVehiculo_Nuevo.resx">
       <DependentUpon>frmVehiculo_Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BD_DESARROLLO\01ENE2019db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\23nov2018db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\db_mantenimiento.bak" />
     <None Include="Properties\Settings.settings">
@@ -380,6 +381,9 @@
     </Compile>
     <None Include="template_orden_v1 old1.pdf" />
     <None Include="template_orden_v1.pdf" />
+    <None Include="template_pedidospiezas_v1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

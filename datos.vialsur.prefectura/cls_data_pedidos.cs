@@ -151,7 +151,7 @@ namespace datos.vialsur.prefectura
            }  */
 
         /// <summary>
-        /// Consulta los datos de la Marca segun el ID
+        /// Consulta los datos de la PEDIDO segun ORDEN_ID
         /// </summary>
         /// <param name=""></param>
         /// <returns></returns>
@@ -176,6 +176,48 @@ namespace datos.vialsur.prefectura
                     obj_pedido.observaciones = dr_datos["observaciones"].ToString();
                     obj_pedido.orden_id = dr_datos["orden_id"].ToString();
                     obj_pedido.aprobada = (bool) dr_datos["aprobada"];
+
+                    //obj_marca.id = (int)dr_datos["id"];
+                    //obj_marca.nombre = dr_datos["nombre"].ToString();
+                    //obj_marca.obserbacion = dr_datos["obserbacion"].ToString();
+                    //obj_marca.activo = (bool)dr_datos["activo"];
+                }
+                dr_datos.Close();
+                return obj_pedido;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        /// <summary>
+        /// Consulta un determinado pedido segun su ID
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.pedidos Consultar_PedidoById(int ID)
+        {
+            try
+            {
+
+                string consulta = "SELECT [id],[fecha],[cedula],[observaciones],[orden_id],[aprobada] FROM [dbo].[pedidos] WHERE [id] = @id";
+
+                SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
+                parametro.Value = ID;
+
+                entidades.vialsur.prefectura.pedidos obj_pedido = new entidades.vialsur.prefectura.pedidos();
+
+                SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
+                while (dr_datos.Read())
+                {
+                    obj_pedido.id = (int)dr_datos["id"];
+                    obj_pedido.fecha = Convert.ToDateTime(dr_datos["fecha"]);
+                    obj_pedido.cedula = dr_datos["cedula"].ToString();
+                    obj_pedido.observaciones = dr_datos["observaciones"].ToString();
+                    obj_pedido.orden_id = dr_datos["orden_id"].ToString();
+                    obj_pedido.aprobada = (bool)dr_datos["aprobada"];
 
                     //obj_marca.id = (int)dr_datos["id"];
                     //obj_marca.nombre = dr_datos["nombre"].ToString();

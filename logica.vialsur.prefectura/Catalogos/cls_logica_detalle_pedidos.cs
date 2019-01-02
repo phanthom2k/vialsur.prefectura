@@ -71,7 +71,7 @@ namespace logica.vialsur.prefectura.Catalogos
         /// <summary>
         /// Inserta un nuevo registro de un detalle
         /// </summary>
-        /// <param name="marca"></param>
+        /// <param name="detalle"></param>
         public void InsertarDetallePedido(entidades.vialsur.prefectura.detalle_pedidos detalle)
         {
             try
@@ -129,10 +129,8 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
-
-
         /// <summary>
-        /// 
+        /// CONSULTA EL DETALLE DE UNA ORDEN DE PARTES Y PIEZAS ACORDE AL  ORDEN_ID
         /// </summary>
         /// <param name="orden_id"></param>
         /// <returns></returns>
@@ -142,6 +140,29 @@ namespace logica.vialsur.prefectura.Catalogos
             try
             {
                 return new datos.vialsur.prefectura.cls_data_detalle_pedidos().ConsultarDetallesByOrden_Id(orden_id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("cls_logica_detalle_pedidos:" + ex.Message, ex);
+            }
+            finally
+            {
+
+            }
+        }
+
+
+        /// <summary>
+        /// CONSULTA EL CONJUNTO DE DETALLES DE UN DETERMINADO PEDIDO SEGUN EL [ID] DEL PEDIDO
+        /// </summary>
+        /// <param name="pedido_id"></param>
+        /// <returns></returns>
+        public DataTable ConsultarDetallesBy_PedidoId(int pedido_id)
+        {
+
+            try
+            { 
+                return new datos.vialsur.prefectura.cls_data_detalle_pedidos().ConsultarDetallesBy_PedidoId(pedido_id);
             }
             catch (Exception ex)
             {

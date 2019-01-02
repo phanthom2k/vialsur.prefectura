@@ -53,7 +53,7 @@ namespace logica.vialsur.prefectura.Catalogos
         //}
 
         /// <summary>
-        /// CONSULTA EL PEDIDO DE UNA DETERMINADA ORDEN SEGUN ID DE LA ORDEN
+        /// CONSULTA EL PEDIDO DE UNA DETERMINADA ORDEN SEGUN ID DE LA ORDEN DE MANTENIMIENTO
         /// </summary>
         /// <param name="ByOrdenID"></param>
         /// <returns></returns>
@@ -62,6 +62,23 @@ namespace logica.vialsur.prefectura.Catalogos
             try
             {
                 return new cls_data_pedidos().Consultar_Pedido(ByOrdenID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// CONSULTA EL PEDIDO ACORDE A SU [ID]
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public entidades.vialsur.prefectura.pedidos Consultar_PedidoById(int ID)
+        {
+            try
+            {
+                return new cls_data_pedidos().Consultar_PedidoById(ID);
             }
             catch (Exception ex)
             {
@@ -164,6 +181,10 @@ namespace logica.vialsur.prefectura.Catalogos
         //        throw ex;
         //    }
         //}
+
+
+
+
 
     }
 }

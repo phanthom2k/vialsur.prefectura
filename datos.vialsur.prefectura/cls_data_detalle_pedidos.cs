@@ -152,30 +152,62 @@ namespace datos.vialsur.prefectura
             {
 
             }
+        } 
+
+        /// <summary>
+        /// CONSULTA EL CONJUNTO DE DETALLES DE UN DETERMINADO PEDIDO SEGUN EL [ID] DEL PEDIDO
+        /// </summary>
+        /// <param name="PedidoId"></param>
+        /// <returns></returns>
+        public DataTable ConsultarDetallesBy_PedidoId(int PedidoId)
+        {
+            string sql_Consulta = "SELECT id, pedidos_id, cantidad, detalle " +
+                                  "FROM detalle_pedidos WHERE pedidos_id= @pedidos_id";
+            try
+            {
+
+                List<SqlParameter> parameters = new List<SqlParameter>();
+                SqlParameter _pedidos_id = new SqlParameter("@pedidos_id", SqlDbType.Int);
+                _pedidos_id.Value = PedidoId;
+                parameters.Add(_pedidos_id);
+
+
+                DataTable dt = new DataTable();
+                dt.Load(SqlHelper.ExecuteReader(_con, CommandType.Text, sql_Consulta, parameters.ToArray()), LoadOption.PreserveChanges);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("cls_data_detalle_pedidos:" + ex.Message, ex);
+            }
+            finally
+            {
+
+            }
         }
 
-/*
-        /// <summary>
-        /// Retorna un SqlDataReader con todas las marcas disponibles en el catalogo
-        /// </summary>
-        /// <returns></returns>
-        //public SqlDataReader ConsultarTodasMarcas()
-        //{
-        //    try
-        //    {
-        //        string _sql = "SELECT id, nombre, obserbacion, activo FROM ve_vehiculo_marca order by nombre asc;";
-        //        return SqlHelper.ExecuteReader(_con, CommandType.Text, _sql);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("cls_data_ve_vehiculo_marca:" + ex.Message, ex);
-        //    }
-        //    finally
-        //    {
+        /*
+                /// <summary>
+                /// Retorna un SqlDataReader con todas las marcas disponibles en el catalogo
+                /// </summary>
+                /// <returns></returns>
+                //public SqlDataReader ConsultarTodasMarcas()
+                //{
+                //    try
+                //    {
+                //        string _sql = "SELECT id, nombre, obserbacion, activo FROM ve_vehiculo_marca order by nombre asc;";
+                //        return SqlHelper.ExecuteReader(_con, CommandType.Text, _sql);
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        throw new Exception("cls_data_ve_vehiculo_marca:" + ex.Message, ex);
+                //    }
+                //    finally
+                //    {
 
-        //    }
-        //}
-        */
+                //    }
+                //}
+                */
 
         /// <summary>
         /// Consulta un detalle espepcifico segun su ID

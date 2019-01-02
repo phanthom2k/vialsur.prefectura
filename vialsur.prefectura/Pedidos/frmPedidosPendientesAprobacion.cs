@@ -61,5 +61,38 @@ namespace vialsur.prefectura.Pedidos
         {
             this.Close();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")   ///VER LA ORDEN EN PDF
+            {
+                rpt.cls_RPT_orden_partes_y_piezas objRpt = new rpt.cls_RPT_orden_partes_y_piezas();
+                objRpt.Orden_Id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+                objRpt.Generar();
+                Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
+                frmVisor.Text = "Orden de pedido de piezas";
+                frmVisor.RutaArchivo = @"C:\Temp\2.pdf";
+                frmVisor.ShowDialog();
+
+
+                //rpt.cls_RPT_orden_individual objRpt = new rpt.cls_RPT_orden_individual();
+                //objRpt.Orden_Id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                //objRpt.Generar();
+                //Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
+                //frmVisor.RutaArchivo = @"C:\Temp\1.pdf";
+                //frmVisor.ShowDialog();
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_aprobar")  //PARA PODER CAMBIAR EL ESTADO A APROBADO
+            {
+                //frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
+                //frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                //// frmDetalle.EsCambioEstado = true;  ///comento para que se habilite acorde al usuario esto controlo en el frm DetalleVistaCOntrolador
+                ////frmDetalle.Cedula = this.Cedula;
+                //frmDetalle.Empleado = Empleado;
+                //frmDetalle.ShowDialog();
+                //frmDetalle.Dispose();
+                //CargarDatosGrilla();
+            }
+        }
     }
 }

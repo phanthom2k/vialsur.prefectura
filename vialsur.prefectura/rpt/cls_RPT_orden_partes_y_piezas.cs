@@ -17,17 +17,68 @@ namespace vialsur.prefectura.rpt
     public class cls_RPT_orden_partes_y_piezas
     {
 
-        public string Orden_Id { get; set; }
+        public int Orden_Id { get; set; }
 
         private static string ArchivoFichaUnipropiedad =  @"C:\template_orden_v1.pdf";
 
-        private static string template_1 = System.Environment.CurrentDirectory + "\\template_orden_v1.pdf";
+        private static string template_1 = System.Environment.CurrentDirectory + "\\template_pedidospiezas_v1.pdf";
 
         public string Generar()
         {
             try
             {
 
+                pedidos obj_pedido = new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos().Consultar_PedidoById(Orden_Id);
+                orden obj_orden = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConsultarOrden(obj_pedido.orden_id);
+                per_persona obj_persona = new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Consultar_Per_Persona(obj_pedido.cedula);
+                ve_vehiculo_responsable obj_ve_resp = obj_orden.ve_vehiculo_responsable.FirstOrDefault();
+                ve_vehiculo obj_vehiculo = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ConsultarDatosVehiculoPorId((int)obj_ve_resp.ve_vehiculo_id);
+
+                ve_vehiculo_color obj_col = obj_vehiculo.ve_vehiculo_color;
+                ve_vehiculo_modelo obj_modelo = obj_vehiculo.ve_vehiculo_modelo;
+                ve_vehiculo_marca obj_marca = obj_modelo.ve_vehiculo_marca;
+
+
+                PdfReader pdfReader = new PdfReader(template_1);
+                PdfStamper pdfStamper = new PdfStamper(pdfReader, new FileStream(@"C:\Temp\2.pdf", FileMode.Create));
+                AcroFields pdfFormFields = pdfStamper.AcroFields;
+                /// DETALLES DE LA ORDEN
+                pdfFormFields.SetField("ORDEN No", String.Format("{0:000000000000#}", obj_pedido.id));
+                pdfFormFields.SetField("MECANICO RESPONSABLE", obj_persona.GetFullName);
+                pdfFormFields.SetField("FECHA DE REGISTRO DE SOLICITUD", ((DateTime)obj_pedido.fecha).ToString("dd-MM-yyy"));
+                pdfFormFields.SetField("OBSERVACIONES GENERALES", obj_pedido.observaciones);
+
+                /// DATOS GENERALES DEL AUTOMOTOR
+                  //info del vehiculo
+                pdfFormFields.SetField("CÓDIGO", obj_vehiculo.codigo);
+                pdfFormFields.SetField("MARCA", obj_marca.nombre);
+                pdfFormFields.SetField("SERIE MOTOR", obj_vehiculo.serie_motor);
+                pdfFormFields.SetField("SERIE CHASIS", obj_vehiculo.serie_chasis);
+                pdfFormFields.SetField("PLACA", obj_vehiculo.placa);
+                pdfFormFields.SetField("TIPO VEHÍCULO", "");
+                //pdfFormFields.SetField("ESTADO", obj_vehiculo.estado.ToString());
+                pdfFormFields.SetField("ESTADO", (bool)obj_vehiculo.estado? "ACTIVO":"INACTIVO");
+                pdfFormFields.SetField("MODELO", obj_modelo.modelo);
+                pdfFormFields.SetField("COLOR", obj_col.nombre_comun);
+                pdfFormFields.SetField("PLACA PROVISIONAL", obj_vehiculo.placa_provisional);
+                pdfFormFields.SetField("TIPO DE COMBUSTIBLE", ((TipoCombustible)((int)obj_modelo.tipo_combustible)).ToString());
+
+                /// DETALLE DE REPUESTOS Y MATERIALES
+                //DataTable dt_detalle = new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ConsultarDetalleOrdenesByIdOrden_UI(Orden_Id);
+                DataTable dt_detalle = new logica.vialsur.prefectura.Catalogos.cls_logica_detalle_pedidos().ConsultarDetallesBy_PedidoId(Orden_Id);
+                for (int i = 0; i < dt_detalle.Rows.Count; i++)
+                {
+                    pdfFormFields.SetField("CANTIDADRow" + (i + 1), String.Format("{0:0000#}",dt_detalle.Rows[i]["cantidad"].ToString()));
+                    pdfFormFields.SetField("CONCEPTORow" + (i + 1), dt_detalle.Rows[i]["detalle"].ToString());
+                }
+                dt_detalle.Clear();
+                dt_detalle.Dispose();
+                
+                ///
+                pdfFormFields.SetField("SOLICITANTE", obj_persona.GetFullName);
+
+
+                /*
                 orden obj_orden =  new logica.vialsur.prefectura.Orden.cls_logica_orden().ConsultarOrden(Orden_Id);
                 ve_vehiculo_responsable obj_ve_resp = obj_orden.ve_vehiculo_responsable.FirstOrDefault();
 
@@ -81,6 +132,11 @@ namespace vialsur.prefectura.rpt
                 }
                 dt_detalle.Clear();
                 dt_detalle.Dispose();
+
+                pdfStamper.FormFlattening = false;
+                pdfStamper.Close();
+                */
+
 
                 pdfStamper.FormFlattening = false;
                 pdfStamper.Close();

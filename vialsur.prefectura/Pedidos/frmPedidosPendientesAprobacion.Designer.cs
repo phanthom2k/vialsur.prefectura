@@ -38,7 +38,7 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_aprobar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,7 +97,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl_ver,
-            this.cl_modificar,
+            this.cl_aprobar,
             this.id,
             this.fecha,
             this.cedula,
@@ -116,6 +116,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1304, 476);
             this.dataGridView1.TabIndex = 39;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cl_ver
             // 
@@ -132,16 +133,16 @@
             this.cl_ver.UseColumnTextForButtonValue = true;
             this.cl_ver.Width = 57;
             // 
-            // cl_modificar
+            // cl_aprobar
             // 
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Aprobar";
-            this.cl_modificar.MinimumWidth = 70;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Aprobar";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 70;
+            this.cl_aprobar.FillWeight = 55F;
+            this.cl_aprobar.HeaderText = "Aprobar";
+            this.cl_aprobar.MinimumWidth = 70;
+            this.cl_aprobar.Name = "cl_aprobar";
+            this.cl_aprobar.ReadOnly = true;
+            this.cl_aprobar.Text = "Aprobar";
+            this.cl_aprobar.UseColumnTextForButtonValue = true;
+            this.cl_aprobar.Width = 70;
             // 
             // id
             // 
@@ -266,7 +267,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_aprobar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
