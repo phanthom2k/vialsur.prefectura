@@ -266,14 +266,14 @@
             // cantidad
             // 
             this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "cantidad";
+            this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
             this.cantidad.ReadOnly = true;
             // 
             // detalle
             // 
             this.detalle.DataPropertyName = "detalle";
-            this.detalle.HeaderText = "detalle";
+            this.detalle.HeaderText = "Detalle";
             this.detalle.MinimumWidth = 550;
             this.detalle.Name = "detalle";
             this.detalle.ReadOnly = true;

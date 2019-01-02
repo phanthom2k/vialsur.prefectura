@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_input = new System.Windows.Forms.TextBox();
@@ -366,6 +368,8 @@
             // COMBUSTIBLE
             // 
             this.COMBUSTIBLE.DataPropertyName = "COMBUSTIBLE";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.COMBUSTIBLE.DefaultCellStyle = dataGridViewCellStyle4;
             this.COMBUSTIBLE.HeaderText = "COMBUSTIBLE";
             this.COMBUSTIBLE.Name = "COMBUSTIBLE";
             this.COMBUSTIBLE.ReadOnly = true;
@@ -374,8 +378,8 @@
             // cl_placa
             // 
             this.cl_placa.DataPropertyName = "placa";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cl_placa.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cl_placa.DefaultCellStyle = dataGridViewCellStyle5;
             this.cl_placa.FillWeight = 80F;
             this.cl_placa.HeaderText = "PLACA";
             this.cl_placa.MaxInputLength = 10;
@@ -405,6 +409,7 @@
             this.cl_anio_fabricacion.MinimumWidth = 60;
             this.cl_anio_fabricacion.Name = "cl_anio_fabricacion";
             this.cl_anio_fabricacion.ReadOnly = true;
+            this.cl_anio_fabricacion.Visible = false;
             this.cl_anio_fabricacion.Width = 60;
             // 
             // cl_anio_compra
@@ -417,6 +422,7 @@
             this.cl_anio_compra.MinimumWidth = 60;
             this.cl_anio_compra.Name = "cl_anio_compra";
             this.cl_anio_compra.ReadOnly = true;
+            this.cl_anio_compra.Visible = false;
             this.cl_anio_compra.Width = 60;
             // 
             // cl_cilindraje
@@ -428,6 +434,7 @@
             this.cl_cilindraje.MinimumWidth = 75;
             this.cl_cilindraje.Name = "cl_cilindraje";
             this.cl_cilindraje.ReadOnly = true;
+            this.cl_cilindraje.Visible = false;
             this.cl_cilindraje.Width = 75;
             // 
             // cl_serie_chasis
@@ -470,6 +477,8 @@
             // cl_estado
             // 
             this.cl_estado.DataPropertyName = "estado";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cl_estado.DefaultCellStyle = dataGridViewCellStyle6;
             this.cl_estado.HeaderText = "ESTADO";
             this.cl_estado.Name = "cl_estado";
             this.cl_estado.ReadOnly = true;

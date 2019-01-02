@@ -464,7 +464,7 @@ GO
         {
             try
             {
-                string _sql_consulta = "SELECT count([id]) [id] FROM [dbo].[ve_vehiculo]";
+                string _sql_consulta = "SELECT count([id]) [id] FROM [dbo].[ve_vehiculo] WHERE muestra=1";  //SE AÑADE MUESTRA=1 PARA MOSTRAR SOLO LOS QUE QUEREMOS
 
                 return (int)SqlHelper.ExecuteScalar(_con, CommandType.Text, _sql_consulta);
             }
@@ -490,7 +490,8 @@ GO
                     " [costo],[estado],[PaisCodigo] ,[serie_chasis],[serie_motor] , c.nombre_comun COLOR , CASE WHEN m.tipo_combustible = 1 THEN 'GASOLINA' ELSE 'DIESEL' END COMBUSTIBLE " +
                     "FROM[dbo].[ve_vehiculo] v, ve_vehiculo_color c, ve_vehiculo_modelo m, ve_vehiculo_marca mar " +
                     "where(v.ve_vehiculo_color_id = c.id AND v.ve_vehiculo_modelo_id = m.id " +
-                    "and m.ve_vehiculo_marca_id = mar.id) ";
+                    //"and m.ve_vehiculo_marca_id = mar.id ) ";
+                    "and m.ve_vehiculo_marca_id = mar.id AND v.muestra=1 ) ";  // SE AÑADE > AND v.muestra=1 < PARA MOSTRAR SOLO LOS QUE QUEREMOS
 
                 DataTable dt = new DataTable();
                 if(parametroBusqueda == String.Empty)
@@ -500,7 +501,7 @@ GO
                 }
                 else
                 {
-                    _sql_consulta_lista_vehiculos += "AND(V.placa = @parametroBusqueda OR V.placa_provisional= @parametroBusqueda OR V.serie_chasis = @parametroBusqueda OR " +
+                    _sql_consulta_lista_vehiculos += "AND (V.placa = @parametroBusqueda OR V.placa_provisional= @parametroBusqueda OR V.serie_chasis = @parametroBusqueda OR " +
                                                     "V.serie_motor =@parametroBusqueda OR V.codigo=@parametroBusqueda OR V.codigo_anterior=@parametroBusqueda OR V.anio_compra= TRY_PARSE(@parametroBusqueda AS INT)) " +
                                                     "ORDER BY MARCA, M.modelo ";
                     SqlParameter parametro = new SqlParameter("@parametroBusqueda", SqlDbType.VarChar);

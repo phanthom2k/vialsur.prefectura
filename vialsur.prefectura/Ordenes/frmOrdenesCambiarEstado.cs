@@ -44,6 +44,13 @@ namespace vialsur.prefectura.Ordenes
                 lbl_EstadoActual.Text = ((entidades.vialsur.prefectura.Orden_TipoEstado)ord.estado).ToString();
                 uc_TipoEstadosOrdenes1.CargarDatos();
 
+                if(((entidades.vialsur.prefectura.Orden_TipoEstado)ord.estado) == entidades.vialsur.prefectura.Orden_TipoEstado.FINALIZADO)
+                {
+                    toolStripButton2.Enabled = false;
+                    uc_TipoEstadosOrdenes1.Enabled = false;
+                    return;
+                }
+
                 if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)  |
                     entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)  )
                 {
@@ -111,6 +118,11 @@ namespace vialsur.prefectura.Ordenes
             {
                 MessageBox.Show("Error: "+ex.Message);                
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

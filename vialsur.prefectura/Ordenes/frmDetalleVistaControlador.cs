@@ -18,7 +18,7 @@ namespace vialsur.prefectura.Ordenes
             InitializeComponent();
             toolStripButton3.Visible = false;
 
-
+            
             Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
             toolStrip1.ImageList = img.GetCatalog();            
             img.SetImage48("box-out-icon.png", "mark");           
@@ -79,20 +79,25 @@ namespace vialsur.prefectura.Ordenes
                 obj_vehiculo = obj_ve_resp.ve_vehiculo;
 
                 MostrarInformacionVehiculo(obj_vehiculo, obj_orden);
+                //EN EL CASO DE QUE ESTE FINALIZADO
                 if (obj_orden.estado == (int) entidades.vialsur.prefectura.Orden_TipoEstado.FINALIZADO)
-                    toolStripButton2.Enabled = false;
+                    toolStripButton4.Visible = toolStripButton2.Enabled = false;
                 //habilita para que el administrador pueda cambiar el estado
                 if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
                      toolStripButton3.Visible = true;
-                if (entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                
+                //HABILITA PARA QUE EL MECANICO O EL DESIGNADO PUEDA MARCAR salida y soliictar partes
+                if (entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)
+                    || obj_ve_resp.per_persona_cedula == Empleado.cedula  )
                     toolStripButton4.Visible =  toolStripButton2.Visible = true;
+                
                 ///EN EL CASO DE QUE ESTE EN ESTADO CREADO Y SEA  MECANICO
                 if(entidades.vialsur.prefectura.Orden_TipoEstado.CREADO  == (entidades.vialsur.prefectura.Orden_TipoEstado)((int)obj_orden.estado) &&
                     entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)   )
                 {
                     toolStripButton2.Visible = false;
                     dataGridView1.Columns["cl_ver"].Visible = false;
-                }
+                }  //toolStripButton2
 
             }
             catch (Exception ex)

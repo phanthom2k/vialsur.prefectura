@@ -44,9 +44,15 @@ namespace vialsur.prefectura.Pedidos
         {
             try
             {
+
                 pedido = new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos().Consultar_Pedido(OrdenID);
                 LBL_FECHA.Text = Convert.ToDateTime(pedido.fecha).ToShortDateString();  //Convert.ToDateTime(row("campofecha")).ToString("dd/MM/yyyy");
                 LBL_ESTADO.Text = pedido.aprobada ? "APROBADO" : "CREADO";
+                if(pedido.aprobada)
+                {
+                    lettersTextBox1.Enabled = toolStripButton3.Enabled = toolStripButton2.Enabled = false;
+                    dataGridView1.Columns["cl_ver"].Visible = dataGridView1.Columns["cl_modificar"].Visible = false;
+                }
                 LBL_ORDEN.Text = OrdenID;
                 lettersTextBox1.Text = pedido.observaciones;
                 CargarDatos();

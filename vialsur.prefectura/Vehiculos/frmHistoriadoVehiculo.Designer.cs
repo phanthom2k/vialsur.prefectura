@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -77,6 +78,7 @@
             this.chofer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.km_ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHA_CIERRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.km_egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedula_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ve_vehiculo_responsable_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -415,6 +417,7 @@
             this.chofer,
             this.observacion,
             this.km_ingreso,
+            this.FECHA_CIERRE,
             this.km_egreso,
             this.cedula_responsable,
             this.ve_vehiculo_responsable_estado,
@@ -493,7 +496,7 @@
             dataGridViewCellStyle2.Format = "d";
             dataGridViewCellStyle2.NullValue = null;
             this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
-            this.fecha.HeaderText = "Fecha";
+            this.fecha.HeaderText = "Fecha Ingreso Vehículo";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             // 
@@ -510,6 +513,8 @@
             // estado
             // 
             this.estado.DataPropertyName = "estado";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.estado.DefaultCellStyle = dataGridViewCellStyle4;
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
@@ -543,19 +548,26 @@
             // km_ingreso
             // 
             this.km_ingreso.DataPropertyName = "km_ingreso";
-            dataGridViewCellStyle4.Format = "######### km";
-            dataGridViewCellStyle4.NullValue = "0 km";
-            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Format = "######### km";
+            dataGridViewCellStyle5.NullValue = "0 km";
+            this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle5;
             this.km_ingreso.HeaderText = "Km Ingreso";
             this.km_ingreso.Name = "km_ingreso";
             this.km_ingreso.ReadOnly = true;
             // 
+            // FECHA_CIERRE
+            // 
+            this.FECHA_CIERRE.DataPropertyName = "fecha_cierre";
+            this.FECHA_CIERRE.HeaderText = "Fecha Salida Vehículo";
+            this.FECHA_CIERRE.Name = "FECHA_CIERRE";
+            this.FECHA_CIERRE.ReadOnly = true;
+            // 
             // km_egreso
             // 
             this.km_egreso.DataPropertyName = "km_egreso";
-            dataGridViewCellStyle5.Format = "######### km";
-            dataGridViewCellStyle5.NullValue = "0 km";
-            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Format = "######### km";
+            dataGridViewCellStyle6.NullValue = "0 km";
+            this.km_egreso.DefaultCellStyle = dataGridViewCellStyle6;
             this.km_egreso.HeaderText = "Km Egreso";
             this.km_egreso.Name = "km_egreso";
             this.km_egreso.ReadOnly = true;
@@ -673,6 +685,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chofer;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn km_ingreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_CIERRE;
         private System.Windows.Forms.DataGridViewTextBoxColumn km_egreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedula_responsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_responsable_estado;

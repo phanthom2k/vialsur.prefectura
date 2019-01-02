@@ -143,6 +143,7 @@ namespace vialsur.prefectura.Vehiculos
                     frm_Vehiculo.EsNuevo = false;
                     frm_Vehiculo.Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
                     frm_Vehiculo.EsVer = dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" ? true : false;
+                    frm_Vehiculo.Text = dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" ? "Información del Vehículo" : "Modificar datos del vehículo";
                     frm_Vehiculo.ShowDialog(); 
                     frm_Vehiculo.Dispose();
                     btn_Buscar_Click(sender, e);
@@ -179,8 +180,19 @@ namespace vialsur.prefectura.Vehiculos
                 if (e.Value is bool)
                 {
                     bool value = (bool)e.Value;
-                    e.Value = (value) ? "ACTIVO" : "INACTIVO";
+                    //e.Value = (value) ? "ACTIVO" : "INACTIVO";                    
+                    if (value)
+                    {
+                        e.Value = "ACTIVO";
+                        e.CellStyle.BackColor = Color.GreenYellow;                        
+                    }
+                    else
+                    {
+                        e.Value =  "INACTIVO";
+                        e.CellStyle.BackColor = Color.Red;                        
+                    }
                     e.FormattingApplied = true;
+
                 }
             }
         }

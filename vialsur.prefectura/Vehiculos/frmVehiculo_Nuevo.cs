@@ -124,7 +124,7 @@ namespace vialsur.prefectura.Vehiculos
                 {
                     ///obj_vehiculo = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ConsultarDatosVehiculoPorId(10);
                     obj_vehiculo = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ConsultarDatosVehiculoPorId(Id);
-
+                    chk_activo.Checked = (bool) obj_vehiculo.estado;
                     atxt_codigo.Text = obj_vehiculo.codigo;
                     atxt_codigoanterior.Text = obj_vehiculo.codigo_anterior;
                     cmb_Marca.SelectedValue = obj_vehiculo.ve_vehiculo_marca_id;
