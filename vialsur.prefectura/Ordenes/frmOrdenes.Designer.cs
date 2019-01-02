@@ -56,6 +56,7 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_oden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ve_vehiculo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,6 +122,7 @@
             this.id,
             this.tipo_oden,
             this.ve_vehiculo_id,
+            this.codigo,
             this.fecha,
             this.hora,
             this.estado,
@@ -325,6 +327,13 @@
             this.ve_vehiculo_id.ReadOnly = true;
             this.ve_vehiculo_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
             // fecha
             // 
             this.fecha.DataPropertyName = "fecha";
@@ -343,9 +352,11 @@
             dataGridViewCellStyle4.NullValue = "00:00";
             this.hora.DefaultCellStyle = dataGridViewCellStyle4;
             this.hora.HeaderText = "Hora";
+            this.hora.MinimumWidth = 50;
             this.hora.Name = "hora";
             this.hora.ReadOnly = true;
             this.hora.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hora.Width = 50;
             // 
             // estado
             // 
@@ -393,7 +404,7 @@
             dataGridViewCellStyle6.Format = "######### km";
             dataGridViewCellStyle6.NullValue = "0 km";
             this.km_ingreso.DefaultCellStyle = dataGridViewCellStyle6;
-            this.km_ingreso.HeaderText = "km_ingreso";
+            this.km_ingreso.HeaderText = "Km de ingreso";
             this.km_ingreso.Name = "km_ingreso";
             this.km_ingreso.ReadOnly = true;
             this.km_ingreso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -404,7 +415,7 @@
             dataGridViewCellStyle7.Format = "######### km";
             dataGridViewCellStyle7.NullValue = "0 km";
             this.km_egreso.DefaultCellStyle = dataGridViewCellStyle7;
-            this.km_egreso.HeaderText = "km_egreso";
+            this.km_egreso.HeaderText = "Km de salida";
             this.km_egreso.Name = "km_egreso";
             this.km_egreso.ReadOnly = true;
             this.km_egreso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -414,21 +425,21 @@
             this.cedula_responsable.DataPropertyName = "cedula_responsable";
             this.cedula_responsable.HeaderText = "Responsable de Mantenimiento";
             this.cedula_responsable.MaxInputLength = 125;
-            this.cedula_responsable.MinimumWidth = 175;
+            this.cedula_responsable.MinimumWidth = 250;
             this.cedula_responsable.Name = "cedula_responsable";
             this.cedula_responsable.ReadOnly = true;
             this.cedula_responsable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cedula_responsable.Width = 175;
+            this.cedula_responsable.Width = 250;
             // 
             // per_persona_cedula_crea
             // 
             this.per_persona_cedula_crea.DataPropertyName = "per_persona_cedula_crea";
             this.per_persona_cedula_crea.HeaderText = "Creador de orden";
-            this.per_persona_cedula_crea.MinimumWidth = 175;
+            this.per_persona_cedula_crea.MinimumWidth = 250;
             this.per_persona_cedula_crea.Name = "per_persona_cedula_crea";
             this.per_persona_cedula_crea.ReadOnly = true;
             this.per_persona_cedula_crea.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.per_persona_cedula_crea.Width = 175;
+            this.per_persona_cedula_crea.Width = 250;
             // 
             // fecha_cierre
             // 
@@ -518,6 +529,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_oden;
         private System.Windows.Forms.DataGridViewTextBoxColumn ve_vehiculo_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;

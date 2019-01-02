@@ -350,7 +350,8 @@ namespace datos.vialsur.prefectura
 
                 string _sql_consulta = "SELECT p.cedula, p.nombres, p.apellidos, e.id, e.activo,e.fecha_activacion, " +
                                         "e.tipo_usuario, (select etu.nombre from emp_empleado_tipo_usuario etu where etu.id = e.tipo_usuario  ) as tipousuario, " +
-                                        "e.cargo_id , (select emp_carg.nombre from emp_empleado_cargo as emp_carg where emp_carg.id = e.cargo_id) as cargoid " +
+                                        "e.cargo_id , (select emp_carg.nombre from emp_empleado_cargo as emp_carg where emp_carg.id = e.cargo_id) as cargoid,  " +
+                                        "e.tipo_mantenimiento_asignado  " +
                                         "FROM per_persona p INNER JOIN emp_empleado e ON p.cedula = e.cedula ";
 
                 List<SqlParameter> parameters = new List<SqlParameter>();

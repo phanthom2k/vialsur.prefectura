@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVehiculos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_input = new System.Windows.Forms.TextBox();
@@ -159,6 +163,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1409, 549);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // button4
             // 
@@ -318,6 +323,8 @@
             // cl_codigo
             // 
             this.cl_codigo.DataPropertyName = "codigo";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cl_codigo.DefaultCellStyle = dataGridViewCellStyle1;
             this.cl_codigo.HeaderText = "CODIGO";
             this.cl_codigo.Name = "cl_codigo";
             this.cl_codigo.ReadOnly = true;
@@ -333,6 +340,8 @@
             // cl_marca
             // 
             this.cl_marca.DataPropertyName = "MARCA";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cl_marca.DefaultCellStyle = dataGridViewCellStyle2;
             this.cl_marca.FillWeight = 150F;
             this.cl_marca.HeaderText = "MARCA";
             this.cl_marca.MaxInputLength = 150;
@@ -344,6 +353,8 @@
             // cl_ve_vehiculo_modelo_id
             // 
             this.cl_ve_vehiculo_modelo_id.DataPropertyName = "modelo";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cl_ve_vehiculo_modelo_id.DefaultCellStyle = dataGridViewCellStyle3;
             this.cl_ve_vehiculo_modelo_id.FillWeight = 150F;
             this.cl_ve_vehiculo_modelo_id.HeaderText = "MODELO";
             this.cl_ve_vehiculo_modelo_id.MaxInputLength = 125;
@@ -363,6 +374,8 @@
             // cl_placa
             // 
             this.cl_placa.DataPropertyName = "placa";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cl_placa.DefaultCellStyle = dataGridViewCellStyle4;
             this.cl_placa.FillWeight = 80F;
             this.cl_placa.HeaderText = "PLACA";
             this.cl_placa.MaxInputLength = 10;

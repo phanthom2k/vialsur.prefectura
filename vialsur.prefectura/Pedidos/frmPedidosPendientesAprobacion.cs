@@ -85,6 +85,13 @@ namespace vialsur.prefectura.Pedidos
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_aprobar")  //PARA PODER CAMBIAR EL ESTADO A APROBADO
             {
+                if(MessageBox.Show("¿Desea aprobar la orden?","APROBACIÓN DE ORDEN DE PARTES Y PIEZAS", MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
+                {
+                    new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos().ActualizarEstado(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value), true);
+                    CargarDatosGrilla();
+                }
+
+
                 //frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
                 //frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
                 //// frmDetalle.EsCambioEstado = true;  ///comento para que se habilite acorde al usuario esto controlo en el frm DetalleVistaCOntrolador

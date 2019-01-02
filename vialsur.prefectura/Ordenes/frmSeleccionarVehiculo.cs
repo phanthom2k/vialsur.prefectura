@@ -127,8 +127,11 @@ namespace vialsur.prefectura.Ordenes
                 limpiar();
                 if(!string.IsNullOrEmpty(txt_ParametroABuscar.Text ) )                    
                 {
+                    ///SE ENVIA A CONSULTAR SOLO LOS VEHICULOS QUE ESTAN ACTIVOS
                     obj_vehiculo = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ConsultarDatosVehiculo(txt_ParametroABuscar.Text,
-                      Convert.ToInt32(groupBox1.Controls.OfType<RadioButton>().Where(r => r.Checked).FirstOrDefault().Tag.ToString()));
+                      Convert.ToInt32(groupBox1.Controls.OfType<RadioButton>().Where(r => r.Checked).FirstOrDefault().Tag.ToString()),
+                      true                      
+                      );
                     if (obj_vehiculo != null & obj_vehiculo.estado != null)
                     {
                         MostrarInformacionVehiculo(obj_vehiculo);

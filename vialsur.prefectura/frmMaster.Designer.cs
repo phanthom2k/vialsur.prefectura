@@ -98,7 +98,7 @@
             // 
             this.tareasAsignadasToolStripMenuItem.Name = "tareasAsignadasToolStripMenuItem";
             this.tareasAsignadasToolStripMenuItem.Size = new System.Drawing.Size(346, 26);
-            this.tareasAsignadasToolStripMenuItem.Text = "Tareas Asignadas";
+            this.tareasAsignadasToolStripMenuItem.Text = "Tareas de Mantenimiento Asignadas";
             this.tareasAsignadasToolStripMenuItem.Click += new System.EventHandler(this.tareasAsignadasToolStripMenuItem_Click);
             // 
             // tareasPendientesDeAprobarToolStripMenuItem
@@ -131,6 +131,7 @@
             this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Name = "nuevaOrdenDePartesYPiezasToolStripMenuItem";
             this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(336, 26);
             this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Text = "Aprobar Orden de Partes y Piezas";
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Visible = false;
             this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Click += new System.EventHandler(this.nuevaOrdenDePartesYPiezasToolStripMenuItem_Click);
             // 
             // ordenesDePartesYPiezasRealizadasToolStripMenuItem
@@ -152,14 +153,14 @@
             // vehiculosToolStripMenuItem
             // 
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.vehiculosToolStripMenuItem.Text = "Vehículos";
             this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Visible = false;
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);

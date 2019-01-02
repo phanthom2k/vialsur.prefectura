@@ -247,7 +247,7 @@ namespace datos.vialsur.prefectura
                    "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, orden.per_persona_cedula_crea,  " +
                    "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id, " +
                    "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado, " +
-                   "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable " +
+                   "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable, ve_vehiculo.codigo  " +
                     "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
                     "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id " +
                     //"WHERE ve_vehiculo_responsable.per_persona_cedula = @Cedula ";
@@ -310,7 +310,7 @@ namespace datos.vialsur.prefectura
                     "orden.per_persona_cedula as chofer,orden.observacion, orden.km_ingreso, orden.km_egreso, orden.per_persona_cedula_crea,  " +
                     "ve_vehiculo_responsable.per_persona_cedula AS cedula_responsable, ve_vehiculo_responsable.ve_vehiculo_id,  "+
                     "ve_vehiculo_responsable.estado AS ve_vehiculo_responsable_estado,  "+
-                    "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable "+
+                    "ve_vehiculo_responsable.fecha AS ve_vehiculo_responsable_fecha, ve_vehiculo_responsable.tipo_responsable  " +
                     "FROM   orden INNER JOIN ve_vehiculo_responsable ON orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id  "+
                     "INNER JOIN ve_vehiculo ON ve_vehiculo_responsable.ve_vehiculo_id = ve_vehiculo.id "+
                     "WHERE orden.estado = @estado "+

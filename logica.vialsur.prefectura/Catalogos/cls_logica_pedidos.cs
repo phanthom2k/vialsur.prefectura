@@ -114,6 +114,18 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
+        public void ActualizarEstado(int pedido_id, bool estado)
+        {
+            try
+            {
+                new cls_data_pedidos().ActualizarEstado(pedido_id, estado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// Retorna las ordenes de pedidos de piezas para ser mostradas en la UI por estado o con incluido el creador
         /// </summary>

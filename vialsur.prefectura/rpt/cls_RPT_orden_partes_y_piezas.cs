@@ -47,6 +47,7 @@ namespace vialsur.prefectura.rpt
                 pdfFormFields.SetField("MECANICO RESPONSABLE", obj_persona.GetFullName);
                 pdfFormFields.SetField("FECHA DE REGISTRO DE SOLICITUD", ((DateTime)obj_pedido.fecha).ToString("dd-MM-yyy"));
                 pdfFormFields.SetField("OBSERVACIONES GENERALES", obj_pedido.observaciones);
+                pdfFormFields.SetField("ESTADO SOLICITUD", obj_pedido.aprobada?"APROBADA":"NO APROBADA");
 
                 /// DATOS GENERALES DEL AUTOMOTOR
                   //info del vehiculo

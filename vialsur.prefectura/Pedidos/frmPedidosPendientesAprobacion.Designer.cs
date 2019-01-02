@@ -250,7 +250,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmPedidosPendientesAprobacion";
-            this.Text = "frmPedidosPendientesAprobacion";
+            this.Text = "Pedidos de Partes y Piezas Pendientes Aprobación";
             this.Load += new System.EventHandler(this.frmPedidosPendientesAprobacion_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

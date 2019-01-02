@@ -275,14 +275,14 @@ GO
         /// <param name="muestra"></param>
         /// <param name="tipoBusqueda">0 <= PLACA, 1 <= PLACA PROVISIONAL, 2<= CODIGO, 3<=CODIGO ANTERIOR</param>
         /// <returns></returns>
-        public entidades.vialsur.prefectura.ve_vehiculo ConsultarVerhiculo(string muestra, int tipoBusqueda)
+        public entidades.vialsur.prefectura.ve_vehiculo ConsultarVerhiculo(string muestra, int tipoBusqueda, bool estado=true)
         {
             try
             {
                 string consulta = "SELECT [id],[ve_vehiculo_modelo_id],[ve_vehiculo_color_id],[anio_fabricacion],[anio_compra]" +
                                     ",[cilindraje],[codigo],[codigo_anterior],[color],[costo],[estado],[PaisCodigo],[placa]" +
                                     ",[placa_provisional],[serie_chasis],[serie_motor] " +
-                                    "FROM [ve_vehiculo] WHERE ";
+                                    "FROM [ve_vehiculo] WHERE [estado] =" + (estado ? 1 : 0) + " AND ";
 
                 if(tipoBusqueda==0 )
                 {
@@ -299,7 +299,7 @@ GO
                 if (tipoBusqueda == 3)
                 {
                     consulta += "[codigo_anterior] = @muestra ";
-                }
+                }  
 
                 SqlParameter parametro = new SqlParameter("@muestra", SqlDbType.VarChar );
                 parametro.Value = muestra;

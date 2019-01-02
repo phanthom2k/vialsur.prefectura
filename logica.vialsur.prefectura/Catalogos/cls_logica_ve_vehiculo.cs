@@ -138,11 +138,11 @@ namespace logica.vialsur.prefectura.Catalogos
         /// <param name="parametro"></param>
         /// <param name="tipoBusqueda">0 <= PLACA, 1 <= PLACA PROVISIONAL, 2<= CODIGO, 3<=CODIGO ANTERIOR</param>
         /// <returns></returns>
-        public ve_vehiculo ConsultarDatosVehiculo(string parametro, int tipoBusqueda)
-        {
+        public ve_vehiculo ConsultarDatosVehiculo(string parametro, int tipoBusqueda, bool estado=true)
+        { 
             try
             {
-                return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(parametro, tipoBusqueda);
+                return new datos.vialsur.prefectura.cls_data_ve_vehiculo().ConsultarVerhiculo(parametro, tipoBusqueda, estado);
 
             }
             catch (Exception ex)

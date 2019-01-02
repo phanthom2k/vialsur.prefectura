@@ -97,6 +97,38 @@ namespace datos.vialsur.prefectura
                 throw new Exception("No se pudo registrar los datos de la persona", ex);
             }
         }
+        /// <summary>
+        /// Actualiza el estado segun su ID
+        /// </summary>
+        /// <param name="pedido_id"></param>
+        /// <param name="estado"></param>
+        public void ActualizarEstado(int pedido_id, bool estado)
+        {
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>();
+
+                #region parametros
+                SqlParameter _pedido_id = new SqlParameter("@pedido_id", SqlDbType.Int);
+                _pedido_id.Value = pedido_id;
+                parameters.Add(_pedido_id);
+
+
+                SqlParameter _aprobada = new SqlParameter("@aprobada", SqlDbType.Bit);
+                _aprobada.Value = estado;
+                parameters.Add(_aprobada);
+                #endregion
+
+                string _sql_UPDATE = "UPDATE[dbo].[pedidos] SET [aprobada] = @aprobada  WHERE [id] = @pedido_id;";
+
+                SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_UPDATE, parameters.ToArray());
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo registrar los datos", ex);
+            }
+        }
 
 
         ///// <summary>

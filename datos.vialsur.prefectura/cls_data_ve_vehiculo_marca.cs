@@ -24,7 +24,7 @@ namespace datos.vialsur.prefectura
             this._con = String.Empty;
         }
 
-        private string sql_Consulta = "SELECT id, nombre, obserbacion FROM ve_vehiculo_marca where activo=1 order by nombre asc;";
+        
 
         /// <summary>
         /// Inserta nuevo registro
@@ -102,8 +102,11 @@ namespace datos.vialsur.prefectura
             }
             return k;                       
         }
-        public SqlDataReader Consultar()
+        public SqlDataReader Consultar(bool activo=true)
         {
+
+            string sql_Consulta =  "SELECT id, nombre, obserbacion FROM ve_vehiculo_marca where activo=1 order by nombre asc;";
+
             try
             {
                 return SqlHelper.ExecuteReader(_con, CommandType.Text, sql_Consulta);

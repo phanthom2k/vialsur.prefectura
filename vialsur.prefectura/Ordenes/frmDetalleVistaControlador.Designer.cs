@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleVistaControlador));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_TipoVehiculo = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,17 +58,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrePS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accion_requerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accion_realizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orden_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -93,6 +82,17 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrePS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accion_requerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accion_realizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orden_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -411,110 +411,6 @@
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // cl_ver
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "#######km";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 57;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Ver";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 57;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modif.";
-            this.cl_modificar.MinimumWidth = 70;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Modif.";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Visible = false;
-            this.cl_modificar.Width = 70;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // nombrePP
-            // 
-            this.nombrePP.DataPropertyName = "nombrePP";
-            this.nombrePP.HeaderText = "Parte Principal";
-            this.nombrePP.MinimumWidth = 80;
-            this.nombrePP.Name = "nombrePP";
-            this.nombrePP.ReadOnly = true;
-            this.nombrePP.Width = 125;
-            // 
-            // nombrePS
-            // 
-            this.nombrePS.DataPropertyName = "nombrePS";
-            this.nombrePS.HeaderText = "Sub Parte";
-            this.nombrePS.MinimumWidth = 100;
-            this.nombrePS.Name = "nombrePS";
-            this.nombrePS.ReadOnly = true;
-            this.nombrePS.Width = 185;
-            // 
-            // accion_requerida
-            // 
-            this.accion_requerida.DataPropertyName = "accion_requerida";
-            this.accion_requerida.HeaderText = "Accion a realizar";
-            this.accion_requerida.MinimumWidth = 135;
-            this.accion_requerida.Name = "accion_requerida";
-            this.accion_requerida.ReadOnly = true;
-            this.accion_requerida.Width = 135;
-            // 
-            // accion_realizada
-            // 
-            this.accion_realizada.DataPropertyName = "accion_realizada";
-            this.accion_realizada.HeaderText = "Accion realizada";
-            this.accion_realizada.MinimumWidth = 135;
-            this.accion_realizada.Name = "accion_realizada";
-            this.accion_realizada.ReadOnly = true;
-            this.accion_realizada.Width = 135;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "Cant.";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 50;
-            // 
-            // observacion
-            // 
-            this.observacion.DataPropertyName = "observacion";
-            this.observacion.HeaderText = "Observacion";
-            this.observacion.MinimumWidth = 150;
-            this.observacion.Name = "observacion";
-            this.observacion.ReadOnly = true;
-            this.observacion.Width = 222;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Width = 60;
-            // 
-            // orden_id
-            // 
-            this.orden_id.DataPropertyName = "orden_id";
-            this.orden_id.HeaderText = "orden_id";
-            this.orden_id.Name = "orden_id";
-            this.orden_id.ReadOnly = true;
-            this.orden_id.Visible = false;
-            // 
             // txtObservacion
             // 
             this.txtObservacion.Location = new System.Drawing.Point(142, 128);
@@ -791,6 +687,111 @@
             this.toolStripButton4.Visible = false;
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // cl_ver
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Modif.";
+            this.cl_modificar.MinimumWidth = 70;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Modif.";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Visible = false;
+            this.cl_modificar.Width = 70;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nombrePP
+            // 
+            this.nombrePP.DataPropertyName = "nombrePP";
+            this.nombrePP.HeaderText = "Parte Principal";
+            this.nombrePP.MinimumWidth = 80;
+            this.nombrePP.Name = "nombrePP";
+            this.nombrePP.ReadOnly = true;
+            this.nombrePP.Width = 125;
+            // 
+            // nombrePS
+            // 
+            this.nombrePS.DataPropertyName = "nombrePS";
+            this.nombrePS.HeaderText = "Sub Parte";
+            this.nombrePS.MinimumWidth = 100;
+            this.nombrePS.Name = "nombrePS";
+            this.nombrePS.ReadOnly = true;
+            this.nombrePS.Width = 185;
+            // 
+            // accion_requerida
+            // 
+            this.accion_requerida.DataPropertyName = "accion_requerida";
+            this.accion_requerida.HeaderText = "Accion a realizar";
+            this.accion_requerida.MinimumWidth = 135;
+            this.accion_requerida.Name = "accion_requerida";
+            this.accion_requerida.ReadOnly = true;
+            this.accion_requerida.Width = 135;
+            // 
+            // accion_realizada
+            // 
+            this.accion_realizada.DataPropertyName = "accion_realizada";
+            this.accion_realizada.HeaderText = "Accion realizada";
+            this.accion_realizada.MinimumWidth = 135;
+            this.accion_realizada.Name = "accion_realizada";
+            this.accion_realizada.ReadOnly = true;
+            this.accion_realizada.Width = 135;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "cantidad";
+            this.cantidad.HeaderText = "Cant.";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 50;
+            // 
+            // observacion
+            // 
+            this.observacion.DataPropertyName = "observacion";
+            this.observacion.HeaderText = "Observacion";
+            this.observacion.MinimumWidth = 150;
+            this.observacion.Name = "observacion";
+            this.observacion.ReadOnly = true;
+            this.observacion.Width = 255;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
+            this.estado.Width = 60;
+            // 
+            // orden_id
+            // 
+            this.orden_id.DataPropertyName = "orden_id";
+            this.orden_id.HeaderText = "orden_id";
+            this.orden_id.Name = "orden_id";
+            this.orden_id.ReadOnly = true;
+            this.orden_id.Visible = false;
+            // 
             // frmDetalleVistaControlador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -869,6 +870,9 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblFechaSalida;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -880,8 +884,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn orden_id;
-        private System.Windows.Forms.Label lblFechaSalida;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }

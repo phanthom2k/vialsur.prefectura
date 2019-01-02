@@ -264,6 +264,24 @@ namespace vialsur.prefectura.Personal
                     e.FormattingApplied = true;
                 }
             }
+            if (e.ColumnIndex == dataGridView1.Columns["tipo_mantenimiento_asignado"].Index)
+            {
+                if ((int)e.Value == (int)entidades.vialsur.prefectura.Tipo_Mantenimiento_Asignado.CORRECTIVO)
+                {
+                    e.CellStyle.Font = new Font("Arial", 9f, FontStyle.Bold);
+                    e.CellStyle.BackColor = Color.GreenYellow;
+                }
+                e.Value = ((entidades.vialsur.prefectura.Tipo_Mantenimiento_Asignado)(int)e.Value).ToString();                                
+                e.FormattingApplied = true;
+
+                //if (e.Value is bool)
+                //{
+                //    bool value = (bool)e.Value;
+                //    e.Value = (value) ? "ACTIVO" : "INACTIVO";
+                //    e.FormattingApplied = true;
+                //}
+
+            }
 
 
 

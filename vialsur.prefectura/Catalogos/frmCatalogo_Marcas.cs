@@ -96,5 +96,18 @@ namespace vialsur.prefectura.Catalogos
                 MessageBox.Show("Ocurrio un error al intentar consultar" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["activo"].Index)
+            {
+                if (e.Value is bool)
+                {
+                    bool value = (bool)e.Value;
+                    e.Value = (value) ? "ACTIVO" : "INACTIVO";
+                    e.FormattingApplied = true;
+                }
+            }
+        }
     }
 }

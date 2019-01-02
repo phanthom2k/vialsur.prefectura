@@ -39,7 +39,7 @@ namespace vialsur.prefectura.Vehiculos
             {
                 DataTable dt = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().ListarVehiculos_UX(parametro);
                 dataGridView1.DataSource = dt;
-                Personalizar(dt);
+               // Personalizar(dt);
             }
             catch (Exception ex)
             {
@@ -170,6 +170,19 @@ namespace vialsur.prefectura.Vehiculos
                 MessageBox.Show("Error al intentar registrar el vehiculo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["cl_estado"].Index)
+            {
+                if (e.Value is bool)
+                {
+                    bool value = (bool)e.Value;
+                    e.Value = (value) ? "ACTIVO" : "INACTIVO";
+                    e.FormattingApplied = true;
+                }
+            }
         }
     }
 }

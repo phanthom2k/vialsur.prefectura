@@ -38,7 +38,8 @@ namespace logica.vialsur.prefectura.Catalogos
                     dt_clonada.Rows[i]["accion_requerida"] = ((Orde_Detalle_ACCION)int.Parse(dt_clonada.Rows[i]["accion_requerida"].ToString())).ToString();
                     int j = 0;
                     int.TryParse(dt_clonada.Rows[i]["accion_realizada"].ToString(), out j);
-                    dt_clonada.Rows[i]["accion_realizada"] = ((Orde_Detalle_ACCION)j).ToString();
+                    if (j != 0) dt_clonada.Rows[i]["accion_realizada"] = ((Orde_Detalle_ACCION)j).ToString();
+                    else dt_clonada.Rows[i]["accion_realizada"] = "";
 
                 }
                 return dt_clonada;

@@ -37,12 +37,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.txt_input = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.uc_Orden_TipoEstadoPedido1 = new vialsur.prefectura.uc.uc_Orden_TipoEstadoPedido();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_aprobar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +50,12 @@
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.txt_input = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.uc_Orden_TipoEstadoPedido1 = new vialsur.prefectura.uc.uc_Orden_TipoEstadoPedido();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -123,80 +123,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1359, 510);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Estado:";
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::vialsur.prefectura.Properties.Resources.broom;
-            this.button2.Location = new System.Drawing.Point(1104, 63);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 33);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Limpiar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.FlatAppearance.BorderSize = 0;
-            this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Buscar.Image = global::vialsur.prefectura.Properties.Resources.search_icon;
-            this.btn_Buscar.Location = new System.Drawing.Point(266, 59);
-            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(84, 33);
-            this.btn_Buscar.TabIndex = 47;
-            this.btn_Buscar.Text = "Buscar";
-            this.btn_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Buscar.UseVisualStyleBackColor = true;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
-            // 
-            // txt_input
-            // 
-            this.txt_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_input.Location = new System.Drawing.Point(626, 66);
-            this.txt_input.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_input.MaxLength = 125;
-            this.txt_input.Name = "txt_input";
-            this.txt_input.Size = new System.Drawing.Size(379, 26);
-            this.txt_input.TabIndex = 46;
-            this.txt_input.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(459, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 17);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Parametro de busqueda:";
-            this.label1.Visible = false;
-            // 
-            // uc_Orden_TipoEstadoPedido1
-            // 
-            this.uc_Orden_TipoEstadoPedido1.Ancho = 121;
-            this.uc_Orden_TipoEstadoPedido1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_Orden_TipoEstadoPedido1.DropDownWidth = 121;
-            this.uc_Orden_TipoEstadoPedido1.FormattingEnabled = true;
-            this.uc_Orden_TipoEstadoPedido1.Location = new System.Drawing.Point(68, 64);
-            this.uc_Orden_TipoEstadoPedido1.Name = "uc_Orden_TipoEstadoPedido1";
-            this.uc_Orden_TipoEstadoPedido1.Size = new System.Drawing.Size(180, 24);
-            this.uc_Orden_TipoEstadoPedido1.TabIndex = 51;
             // 
             // cl_ver
             // 
@@ -323,6 +249,80 @@
             this.modelo.ReadOnly = true;
             this.modelo.Width = 185;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Estado:";
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::vialsur.prefectura.Properties.Resources.broom;
+            this.button2.Location = new System.Drawing.Point(1104, 63);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 33);
+            this.button2.TabIndex = 48;
+            this.button2.Text = "Limpiar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.FlatAppearance.BorderSize = 0;
+            this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Buscar.Image = global::vialsur.prefectura.Properties.Resources.search_icon;
+            this.btn_Buscar.Location = new System.Drawing.Point(266, 59);
+            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(84, 33);
+            this.btn_Buscar.TabIndex = 47;
+            this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // txt_input
+            // 
+            this.txt_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_input.Location = new System.Drawing.Point(626, 66);
+            this.txt_input.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_input.MaxLength = 125;
+            this.txt_input.Name = "txt_input";
+            this.txt_input.Size = new System.Drawing.Size(379, 26);
+            this.txt_input.TabIndex = 46;
+            this.txt_input.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(459, 71);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 17);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Parametro de busqueda:";
+            this.label1.Visible = false;
+            // 
+            // uc_Orden_TipoEstadoPedido1
+            // 
+            this.uc_Orden_TipoEstadoPedido1.Ancho = 121;
+            this.uc_Orden_TipoEstadoPedido1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_Orden_TipoEstadoPedido1.DropDownWidth = 121;
+            this.uc_Orden_TipoEstadoPedido1.FormattingEnabled = true;
+            this.uc_Orden_TipoEstadoPedido1.Location = new System.Drawing.Point(68, 64);
+            this.uc_Orden_TipoEstadoPedido1.Name = "uc_Orden_TipoEstadoPedido1";
+            this.uc_Orden_TipoEstadoPedido1.Size = new System.Drawing.Size(180, 24);
+            this.uc_Orden_TipoEstadoPedido1.TabIndex = 51;
+            // 
             // frmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -337,7 +337,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmPedidos";
-            this.Text = "frmPedidosPendientesAprobacion";
+            this.Text = "Pedidos de Partes y Piezas Realizados";
             this.Load += new System.EventHandler(this.frmPedidosPendientesAprobacion_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
