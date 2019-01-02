@@ -1,6 +1,6 @@
 ﻿namespace vialsur.prefectura.Pedidos
 {
-    partial class frmPedidosPendientesAprobacion
+    partial class frmPedidos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosPendientesAprobacion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,6 +37,12 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.txt_input = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.uc_Orden_TipoEstadoPedido1 = new vialsur.prefectura.uc.uc_Orden_TipoEstadoPedido();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_aprobar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +69,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1304, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(1359, 52);
             this.toolStrip1.TabIndex = 24;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -109,15 +115,88 @@
             this.placa,
             this.nombre,
             this.modelo});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1304, 476);
+            this.dataGridView1.Size = new System.Drawing.Size(1359, 510);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Estado:";
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::vialsur.prefectura.Properties.Resources.broom;
+            this.button2.Location = new System.Drawing.Point(1104, 63);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 33);
+            this.button2.TabIndex = 48;
+            this.button2.Text = "Limpiar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.FlatAppearance.BorderSize = 0;
+            this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Buscar.Image = global::vialsur.prefectura.Properties.Resources.search_icon;
+            this.btn_Buscar.Location = new System.Drawing.Point(266, 59);
+            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(84, 33);
+            this.btn_Buscar.TabIndex = 47;
+            this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // txt_input
+            // 
+            this.txt_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_input.Location = new System.Drawing.Point(626, 66);
+            this.txt_input.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_input.MaxLength = 125;
+            this.txt_input.Name = "txt_input";
+            this.txt_input.Size = new System.Drawing.Size(379, 26);
+            this.txt_input.TabIndex = 46;
+            this.txt_input.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(459, 71);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 17);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Parametro de busqueda:";
+            this.label1.Visible = false;
+            // 
+            // uc_Orden_TipoEstadoPedido1
+            // 
+            this.uc_Orden_TipoEstadoPedido1.Ancho = 121;
+            this.uc_Orden_TipoEstadoPedido1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_Orden_TipoEstadoPedido1.DropDownWidth = 121;
+            this.uc_Orden_TipoEstadoPedido1.FormattingEnabled = true;
+            this.uc_Orden_TipoEstadoPedido1.Location = new System.Drawing.Point(68, 64);
+            this.uc_Orden_TipoEstadoPedido1.Name = "uc_Orden_TipoEstadoPedido1";
+            this.uc_Orden_TipoEstadoPedido1.Size = new System.Drawing.Size(180, 24);
+            this.uc_Orden_TipoEstadoPedido1.TabIndex = 51;
             // 
             // cl_ver
             // 
@@ -143,6 +222,7 @@
             this.cl_aprobar.ReadOnly = true;
             this.cl_aprobar.Text = "Aprobar";
             this.cl_aprobar.UseColumnTextForButtonValue = true;
+            this.cl_aprobar.Visible = false;
             this.cl_aprobar.Width = 70;
             // 
             // id
@@ -151,7 +231,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
             this.id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id.HeaderText = "Orden de pedido No.";
+            this.id.HeaderText = "Orden No.";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
@@ -197,9 +277,10 @@
             // aprobada
             // 
             this.aprobada.DataPropertyName = "aprobada";
-            this.aprobada.HeaderText = "Estado";
+            this.aprobada.HeaderText = "aprobada";
             this.aprobada.Name = "aprobada";
             this.aprobada.ReadOnly = true;
+            this.aprobada.Visible = false;
             // 
             // solicitante
             // 
@@ -242,14 +323,20 @@
             this.modelo.ReadOnly = true;
             this.modelo.Width = 185;
             // 
-            // frmPedidosPendientesAprobacion
+            // frmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 543);
+            this.ClientSize = new System.Drawing.Size(1359, 625);
+            this.Controls.Add(this.uc_Orden_TipoEstadoPedido1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_Buscar);
+            this.Controls.Add(this.txt_input);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "frmPedidosPendientesAprobacion";
+            this.Name = "frmPedidos";
             this.Text = "frmPedidosPendientesAprobacion";
             this.Load += new System.EventHandler(this.frmPedidosPendientesAprobacion_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -266,6 +353,12 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.TextBox txt_input;
+        private System.Windows.Forms.Label label1;
+        private uc.uc_Orden_TipoEstadoPedido uc_Orden_TipoEstadoPedido1;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_aprobar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;

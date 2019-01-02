@@ -115,15 +115,16 @@ namespace logica.vialsur.prefectura.Catalogos
         }
 
         /// <summary>
-        /// Retorna las ordenes de pedidos de piezas para ser mostradas en la UI
+        /// Retorna las ordenes de pedidos de piezas para ser mostradas en la UI por estado o con incluido el creador
         /// </summary>
         /// <param name="estado"></param>
+        /// <param name="Cedula">Por defecto cedula es ""</param>
         /// <returns></returns>
-        public System.Data.DataTable ConnsultarOrdenesSegunEstado_UI_customized(entidades.vialsur.prefectura.Orden_TipoEstadoPedido estado)
+        public System.Data.DataTable ConnsultarOrdenesSegunEstado_UI_customized(entidades.vialsur.prefectura.Orden_TipoEstadoPedido estado, string Cedula="")
         {
             try
             {
-                return new cls_data_pedidos().ObtenerOrdenesByEstado_UI(estado);
+                return new cls_data_pedidos().ObtenerOrdenesByEstado_UI(estado, Cedula); 
                 ///System.Data.DataTable dt = new cls_data_pedidos().ObtenerOrdenesByEstado_UI(estado);
 
                 //System.Data.DataTable dt_clodana = dt.Clone();

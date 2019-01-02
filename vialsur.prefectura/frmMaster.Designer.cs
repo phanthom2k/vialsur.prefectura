@@ -36,6 +36,9 @@
             this.tareasAsignadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tareasPendientesDeAprobarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialDeOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidosDePartesYPiezasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +48,6 @@
             this.catálogoDeModelosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pedidosDePartesYPiezasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaOrdenDePartesYPiezasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +116,29 @@
             this.historialDeOrdenesToolStripMenuItem.Text = "Historial de Ordenes de Mantenimiento";
             this.historialDeOrdenesToolStripMenuItem.Visible = false;
             this.historialDeOrdenesToolStripMenuItem.Click += new System.EventHandler(this.historialDeOrdenesToolStripMenuItem_Click);
+            // 
+            // pedidosDePartesYPiezasToolStripMenuItem
+            // 
+            this.pedidosDePartesYPiezasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem,
+            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem});
+            this.pedidosDePartesYPiezasToolStripMenuItem.Name = "pedidosDePartesYPiezasToolStripMenuItem";
+            this.pedidosDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
+            this.pedidosDePartesYPiezasToolStripMenuItem.Text = "Pedidos de partes y piezas";
+            // 
+            // nuevaOrdenDePartesYPiezasToolStripMenuItem
+            // 
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Name = "nuevaOrdenDePartesYPiezasToolStripMenuItem";
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(336, 26);
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Text = "Aprobar Orden de Partes y Piezas";
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Click += new System.EventHandler(this.nuevaOrdenDePartesYPiezasToolStripMenuItem_Click);
+            // 
+            // ordenesDePartesYPiezasRealizadasToolStripMenuItem
+            // 
+            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Name = "ordenesDePartesYPiezasRealizadasToolStripMenuItem";
+            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(336, 26);
+            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Text = "Ordenes de Partes y Piezas Solicitadas";
+            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Click += new System.EventHandler(this.ordenesDePartesYPiezasRealizadasToolStripMenuItem_Click);
             // 
             // administraciónToolStripMenuItem
             // 
@@ -188,21 +212,6 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // pedidosDePartesYPiezasToolStripMenuItem
-            // 
-            this.pedidosDePartesYPiezasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaOrdenDePartesYPiezasToolStripMenuItem});
-            this.pedidosDePartesYPiezasToolStripMenuItem.Name = "pedidosDePartesYPiezasToolStripMenuItem";
-            this.pedidosDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
-            this.pedidosDePartesYPiezasToolStripMenuItem.Text = "Pedidos de partes y piezas";
-            // 
-            // nuevaOrdenDePartesYPiezasToolStripMenuItem
-            // 
-            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Name = "nuevaOrdenDePartesYPiezasToolStripMenuItem";
-            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
-            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Text = "Aprobar Orden de Partes y Piezas";
-            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Click += new System.EventHandler(this.nuevaOrdenDePartesYPiezasToolStripMenuItem_Click);
-            // 
             // frmMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,5 +259,6 @@
         private System.Windows.Forms.ToolStripMenuItem catálogoDeModelosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosDePartesYPiezasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaOrdenDePartesYPiezasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDePartesYPiezasRealizadasToolStripMenuItem;
     }
 }

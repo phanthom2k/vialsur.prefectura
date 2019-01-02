@@ -106,6 +106,7 @@ namespace vialsur.prefectura
                     personalToolStripMenuItem.Visible = true;
                     historialDeOrdenesToolStripMenuItem.Visible = true;
                     caToolStripMenuItem.Visible = true;
+                    nuevaOrdenDePartesYPiezasToolStripMenuItem.Visible = true;
                 }
 
                 //toolStripStatusLabel1.Text = string.Format("USUARIO: {0} / TIPO USUARIO: {1}",
@@ -257,6 +258,26 @@ namespace vialsur.prefectura
                 Pedidos.frmPedidosPendientesAprobacion objForm = new Pedidos.frmPedidosPendientesAprobacion();
                 objForm.MdiParent = this;
                 objForm.WindowState = FormWindowState.Maximized;
+                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                //objForm.Empleado = Empleado;
+                objForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void ordenesDePartesYPiezasRealizadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pedidos.frmPedidos objForm = new Pedidos.frmPedidos();
+                objForm.MdiParent = this;
+                objForm.WindowState = FormWindowState.Maximized;
+                objForm.Cedula = Empleado.cedula;
+                objForm.Empleado = Empleado;
                 //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
                 //objForm.Empleado = Empleado;
                 objForm.Show();

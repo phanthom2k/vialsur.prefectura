@@ -178,6 +178,12 @@
     <Compile Include="Pedidos\frmPedidosOrdenNuevo.Designer.cs">
       <DependentUpon>frmPedidosOrdenNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedidos\frmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\frmPedidos.Designer.cs">
+      <DependentUpon>frmPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos\frmPedidosPendientesAprobacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="uc\uc_ClaseVehiculo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="uc\uc_Orden_TipoEstadoPedido.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="uc\uc_TipoCombustible.cs">
@@ -335,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\frmPedidosOrdenNuevo.resx">
       <DependentUpon>frmPedidosOrdenNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\frmPedidos.resx">
+      <DependentUpon>frmPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\frmPedidosPendientesAprobacion.resx">
       <DependentUpon>frmPedidosPendientesAprobacion.cs</DependentUpon>

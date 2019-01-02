@@ -216,5 +216,57 @@ namespace vialsur.prefectura.Personal
                 MessageBox.Show("Ocurrio un problema al intentar buscar la persona", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["tipousuario"].Index)
+            {
+                if(e.Value.ToString() == "ADMINISTRADOR")
+                {
+                    //new Font("Times New Roman", 12.0f);
+                    e.CellStyle.Font = new Font("Arial",10f, FontStyle.Bold);
+                    e.CellStyle.BackColor = Color.GreenYellow;
+                    e.FormattingApplied = true;
+                }
+                if (e.Value.ToString() == "MECANICO")
+                {                                        
+                    e.CellStyle.BackColor = Color.Aqua;
+                    e.FormattingApplied = true;
+                }
+                if (e.Value.ToString() == "AYUDANTE DE MECANICA")
+                {
+                    e.CellStyle.BackColor = Color.Aquamarine;
+                    e.FormattingApplied = true;
+                }
+                if (e.Value.ToString() == "SOLDADOR")
+                {
+                    e.CellStyle.BackColor = Color.Yellow;
+                    e.FormattingApplied = true;
+                }
+                if (e.Value.ToString() == "ELECTRICISTA")
+                {
+                    e.CellStyle.BackColor = Color.Orange;
+                    e.FormattingApplied = true;
+                }
+            }
+            
+            if (e.ColumnIndex == dataGridView1.Columns["activo2"].Index)
+            {
+                if (e.Value.ToString() == "ACTIVO")
+                {                    
+                    e.CellStyle.Font = new Font("Arial", 9f, FontStyle.Bold);
+                    e.CellStyle.BackColor = Color.GreenYellow;
+                    e.FormattingApplied = true;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.Red;
+                    e.FormattingApplied = true;
+                }
+            }
+
+
+
+        }
     }
 }

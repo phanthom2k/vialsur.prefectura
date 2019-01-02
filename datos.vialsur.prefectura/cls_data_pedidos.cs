@@ -239,8 +239,9 @@ namespace datos.vialsur.prefectura
         /// Consulta las ordenes DE PEDIDO DE PARTES segun el estado
         /// </summary>
         /// <param name="estado"></param>
+        /// <param name="cedula">POR DEFECTO SE MUESTRA ACORDE AL ESTADO</param>
         /// <returns></returns>
-        public DataTable ObtenerOrdenesByEstado_UI(entidades.vialsur.prefectura.Orden_TipoEstadoPedido estado)
+        public DataTable ObtenerOrdenesByEstado_UI(entidades.vialsur.prefectura.Orden_TipoEstadoPedido estado, string cedula="")
         {
             string consulta_sql =
                                 "SELECT pedidos.id, pedidos.fecha, pedidos.cedula, pedidos.observaciones, pedidos.orden_id, pedidos.aprobada, CONCAT(per_persona.apellidos,', ',per_persona.nombres) solicitante, " +
@@ -248,15 +249,28 @@ namespace datos.vialsur.prefectura
                                 "FROM   pedidos, per_persona, orden, ve_vehiculo_responsable, ve_vehiculo vehiculo, ve_vehiculo_modelo modelo,ve_vehiculo_marca marca " +
                                 "WHERE pedidos.cedula = per_persona.cedula AND pedidos.orden_id = orden.id AND orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
                                 "AND ve_vehiculo_responsable.ve_vehiculo_id = vehiculo.id AND " +
-                                "vehiculo.ve_vehiculo_modelo_id = modelo.id AND modelo.ve_vehiculo_marca_id = marca.id AND pedidos.aprobada=@aprobada";
+                                "vehiculo.ve_vehiculo_modelo_id = modelo.id AND modelo.ve_vehiculo_marca_id = marca.id AND pedidos.aprobada=@aprobada ";
 
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            //        SqlParameter _orden_id = new SqlParameter("@orden_id", SqlDbType.NVarChar, 10);
+            //        _orden_id.Value = orden_id;
+            //        parameters.Add(_orden_id);
+
+            SqlParameter parametro1 = new SqlParameter("@aprobada", SqlDbType.Bit);
+            parametro1.Value = estado;
+            parameters.Add(parametro1);
+
+            if (cedula != "")
+            {
+                consulta_sql += " AND pedidos.cedula = @cedula";
+                SqlParameter _cedula = new SqlParameter("@cedula", SqlDbType.NVarChar, 10);
+                _cedula.Value = cedula;
+                parameters.Add(_cedula);
+            }
             try
             {
-                SqlParameter parametro1 = new SqlParameter("@aprobada", SqlDbType.Bit );
-                parametro1.Value = estado;
-
-
-                return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parametro1).Tables[0];
+                return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parameters.ToArray() ).Tables[0];
+                //return SqlHelper.ExecuteDataset(_con, CommandType.Text, consulta_sql, parametro1).Tables[0];
             }
             catch (Exception ex)
             {

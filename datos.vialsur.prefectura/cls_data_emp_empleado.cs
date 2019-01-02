@@ -357,7 +357,7 @@ namespace datos.vialsur.prefectura
                 if (cedula =="")  //para buscar minimo y maximo
                 {
                     //_sql_consulta += "WHERE emp_empleado.id >= @ID1 AND emp_empleado.id <= @ID2 ";
-                    _sql_consulta += "WHERE E.id >= @ID1 AND E.id <= @ID2 ";
+                    _sql_consulta += "WHERE E.id >= @ID1 AND E.id <= @ID2   ORDER BY apellidos,nombres ";
 
                     SqlParameter _id1 = new SqlParameter("@ID1", SqlDbType.Int );
                     _id1.Value = a;
@@ -369,7 +369,7 @@ namespace datos.vialsur.prefectura
                 }
                 else  //para buscar por el numero de cedula
                 {
-                    _sql_consulta += "WHERE E.cedula = @cedula; ";
+                    _sql_consulta += "WHERE E.cedula = @cedula   ; ";
 
                     SqlParameter _cedula = new SqlParameter("@cedula", SqlDbType.VarChar);
                     _cedula.Value = cedula;

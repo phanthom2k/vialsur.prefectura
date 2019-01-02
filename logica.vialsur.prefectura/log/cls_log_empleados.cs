@@ -24,7 +24,7 @@ namespace logica.vialsur.prefectura.log
             {
                 emp_empleado obj_emp = new datos.vialsur.prefectura.cls_data_emp_empleado().ConsultarEmpEmpleado(cedula);
                 if(obj_emp.cedula == null && obj_emp.pwd == null )
-                    throw new Exception("Usuario y/o clave invalida");
+                    throw new Exception("Usuario y/o clave invalida");               
 
                 if (obj_emp.cedula.Equals(cedula) && obj_emp.pwd.Equals(pwd))
                     EsValido = true;
