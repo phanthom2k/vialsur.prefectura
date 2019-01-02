@@ -392,7 +392,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="template_orden_v1 old1.pdf" />
-    <None Include="template_orden_v1.pdf" />
+    <None Include="template_orden_v1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="template_pedidospiezas_v1.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -470,6 +472,7 @@
     <Content Include="icons\48x48\sign-right-icon48x48.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\logo_vialsur.jpg" />
     <None Include="Resources\22008079_1404910242955688_2294224932610583079_n.png" />
     <None Include="Resources\favicon.ico" />
     <None Include="Resources\Logo2016-1.jpg" />

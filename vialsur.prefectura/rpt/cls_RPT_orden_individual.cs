@@ -59,7 +59,8 @@ namespace vialsur.prefectura.rpt
                 pdfFormFields.SetField("SERIE CHASIS", obj_vehiculo.serie_chasis );
                 pdfFormFields.SetField("PLACA", obj_vehiculo.placa );
                 pdfFormFields.SetField("TIPO VEHICULO", "" );
-                pdfFormFields.SetField("ESTADO", obj_vehiculo.estado.ToString() );
+                //pdfFormFields.SetField("ESTADO", obj_vehiculo.estado.ToString() );
+                pdfFormFields.SetField("ESTADO", ((bool)obj_vehiculo.estado ? "Habilitado" : "Deshabilitado"));
                 pdfFormFields.SetField("MODELO", obj_modelo.modelo );
                 pdfFormFields.SetField("COLOR", obj_col.nombre_comun);
                 pdfFormFields.SetField("PLACA PROVISIONAL", obj_vehiculo.placa_provisional ) ;

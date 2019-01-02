@@ -153,14 +153,14 @@
             // vehiculosToolStripMenuItem
             // 
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.vehiculosToolStripMenuItem.Text = "Vehículos";
             this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Visible = false;
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
@@ -218,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::vialsur.prefectura.Properties.Resources.Logo2016_11;
+            this.BackgroundImage = global::vialsur.prefectura.Properties.Resources.logo_vialsur;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1160, 618);
             this.Controls.Add(this.statusStrip1);

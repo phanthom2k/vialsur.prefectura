@@ -40,10 +40,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::vialsur.prefectura.Properties.Resources.logop_prefectura;
-            this.pictureBox1.Location = new System.Drawing.Point(64, 5);
+            this.pictureBox1.Image = global::vialsur.prefectura.Properties.Resources.logo_vialsur;
+            this.pictureBox1.Location = new System.Drawing.Point(22, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 92);
+            this.pictureBox1.Size = new System.Drawing.Size(323, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -56,7 +57,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CEDULA:";
+            this.label1.Text = "CÉDULA:";
             // 
             // label2
             // 
@@ -104,7 +105,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(193, 160);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 56);
+            this.button1.Size = new System.Drawing.Size(150, 60);
             this.button1.TabIndex = 5;
             this.button1.Text = "Iniciar Sesión";
             this.button1.UseVisualStyleBackColor = false;
@@ -128,7 +129,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(357, 229);
+            this.ClientSize = new System.Drawing.Size(354, 229);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);

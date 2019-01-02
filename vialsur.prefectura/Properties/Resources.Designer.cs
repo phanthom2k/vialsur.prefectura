@@ -93,6 +93,16 @@ namespace vialsur.prefectura.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_vialsur {
+            get {
+                object obj = ResourceManager.GetObject("logo_vialsur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo2016_1 {
             get {
                 object obj = ResourceManager.GetObject("Logo2016-1", resourceCulture);
