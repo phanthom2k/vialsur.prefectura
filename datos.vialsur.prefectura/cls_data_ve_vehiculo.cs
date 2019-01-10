@@ -57,7 +57,10 @@ GO
 
 
              */
-        private string _sql_sec = "SELECT NEXT VALUE FOR dbo.SEC_VEHICULO_ID";
+        //private string _sql_sec = "SELECT NEXT VALUE FOR dbo.SEC_VEHICULO_ID";
+        private string _sql_sec = "SELECT [dbo].[FUN_VEHICULO_SEC]()";
+
+        
         private int Secuencial ()
         {
             try

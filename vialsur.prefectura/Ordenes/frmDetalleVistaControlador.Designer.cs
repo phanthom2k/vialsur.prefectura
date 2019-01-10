@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleVistaControlador));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleVistaControlador));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_TipoVehiculo = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,6 +58,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrePS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accion_requerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accion_realizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orden_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -82,17 +93,6 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrePS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accion_requerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accion_realizada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orden_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -264,7 +264,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(14, 64);
+            this.label15.Location = new System.Drawing.Point(13, 64);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(120, 17);
             this.label15.TabIndex = 33;
@@ -284,7 +284,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 82);
+            this.label13.Location = new System.Drawing.Point(14, 82);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 17);
             this.label13.TabIndex = 31;
@@ -294,7 +294,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(15, 100);
+            this.label10.Location = new System.Drawing.Point(14, 100);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 17);
             this.label10.TabIndex = 29;
@@ -304,7 +304,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 25);
+            this.label7.Location = new System.Drawing.Point(13, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 27;
@@ -334,7 +334,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 46);
+            this.label5.Location = new System.Drawing.Point(14, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 23;
@@ -353,20 +353,22 @@
             // 
             // lblNombresMecanicoResponsable
             // 
+            this.lblNombresMecanicoResponsable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombresMecanicoResponsable.AutoSize = true;
-            this.lblNombresMecanicoResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombresMecanicoResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombresMecanicoResponsable.ForeColor = System.Drawing.Color.Red;
-            this.lblNombresMecanicoResponsable.Location = new System.Drawing.Point(723, 84);
+            this.lblNombresMecanicoResponsable.Location = new System.Drawing.Point(724, 84);
             this.lblNombresMecanicoResponsable.Name = "lblNombresMecanicoResponsable";
-            this.lblNombresMecanicoResponsable.Size = new System.Drawing.Size(251, 17);
+            this.lblNombresMecanicoResponsable.Size = new System.Drawing.Size(248, 16);
             this.lblNombresMecanicoResponsable.TabIndex = 63;
             this.lblNombresMecanicoResponsable.Text = "lblNombresMecanicoResponsable";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 47);
+            this.label6.Location = new System.Drawing.Point(13, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(181, 17);
             this.label6.TabIndex = 62;
@@ -410,282 +412,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(984, 236);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.Location = new System.Drawing.Point(142, 128);
-            this.txtObservacion.MaxLength = 1200;
-            this.txtObservacion.Multiline = true;
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(832, 62);
-            this.txtObservacion.TabIndex = 39;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 17);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "OBSERVACIÓN";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblFechaSalida);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.LBL_ORDENNO);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.LBK_ESTADO);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.numericTextBox1);
-            this.groupBox1.Controls.Add(this.lblKmOut);
-            this.groupBox1.Controls.Add(this.txtObservacion);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.lblKmIn);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.lblFecha);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.lblTipoMantenimiento);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lblNombresMecanicoResponsable);
-            this.groupBox1.Location = new System.Drawing.Point(12, 199);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(987, 203);
-            this.groupBox1.TabIndex = 41;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ORDEN DE MANTENIMIENTO";
-            // 
-            // lblFechaSalida
-            // 
-            this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaSalida.ForeColor = System.Drawing.Color.Red;
-            this.lblFechaSalida.Location = new System.Drawing.Point(641, 65);
-            this.lblFechaSalida.Name = "lblFechaSalida";
-            this.lblFechaSalida.Size = new System.Drawing.Size(114, 17);
-            this.lblFechaSalida.TabIndex = 80;
-            this.lblFechaSalida.Text = "lblFechaSalida";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(515, 65);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(122, 17);
-            this.label23.TabIndex = 79;
-            this.label23.Text = "FECHA SALIDA:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(15, 84);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(174, 17);
-            this.label21.TabIndex = 77;
-            this.label21.Text = "CREADOR DE ORDEN:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(197, 84);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(61, 17);
-            this.label22.TabIndex = 78;
-            this.label22.Text = "label22";
-            // 
-            // LBL_ORDENNO
-            // 
-            this.LBL_ORDENNO.AutoSize = true;
-            this.LBL_ORDENNO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_ORDENNO.ForeColor = System.Drawing.Color.Red;
-            this.LBL_ORDENNO.Location = new System.Drawing.Point(196, 30);
-            this.LBL_ORDENNO.Name = "LBL_ORDENNO";
-            this.LBL_ORDENNO.Size = new System.Drawing.Size(123, 17);
-            this.LBL_ORDENNO.TabIndex = 76;
-            this.LBL_ORDENNO.Text = "LBL_ORDENNO";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(15, 30);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(96, 17);
-            this.label19.TabIndex = 75;
-            this.label19.Text = "ORDEN NO:";
-            // 
-            // LBK_ESTADO
-            // 
-            this.LBK_ESTADO.AutoSize = true;
-            this.LBK_ESTADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBK_ESTADO.ForeColor = System.Drawing.Color.Red;
-            this.LBK_ESTADO.Location = new System.Drawing.Point(699, 30);
-            this.LBK_ESTADO.Name = "LBK_ESTADO";
-            this.LBK_ESTADO.Size = new System.Drawing.Size(109, 17);
-            this.LBK_ESTADO.TabIndex = 69;
-            this.LBK_ESTADO.Text = "LBK_ESTADO";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(516, 30);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(186, 17);
-            this.label20.TabIndex = 68;
-            this.label20.Text = "ESTADO DE LA ORDEN:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(829, 102);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(30, 17);
-            this.label17.TabIndex = 74;
-            this.label17.Text = "Km";
-            // 
-            // numericTextBox1
-            // 
-            this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(731, 100);
-            this.numericTextBox1.MaxLength = 10;
-            this.numericTextBox1.Name = "numericTextBox1";
-            this.numericTextBox1.Size = new System.Drawing.Size(100, 22);
-            this.numericTextBox1.TabIndex = 73;
-            // 
-            // lblKmOut
-            // 
-            this.lblKmOut.AutoSize = true;
-            this.lblKmOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKmOut.ForeColor = System.Drawing.Color.Red;
-            this.lblKmOut.Location = new System.Drawing.Point(904, 100);
-            this.lblKmOut.Name = "lblKmOut";
-            this.lblKmOut.Size = new System.Drawing.Size(61, 17);
-            this.lblKmOut.TabIndex = 72;
-            this.lblKmOut.Text = "label17";
-            this.lblKmOut.Visible = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(516, 103);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(210, 17);
-            this.label18.TabIndex = 71;
-            this.label18.Text = "KILOMETRAJE DE EGRESO";
-            // 
-            // lblKmIn
-            // 
-            this.lblKmIn.AutoSize = true;
-            this.lblKmIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKmIn.ForeColor = System.Drawing.Color.Red;
-            this.lblKmIn.Location = new System.Drawing.Point(239, 103);
-            this.lblKmIn.Name = "lblKmIn";
-            this.lblKmIn.Size = new System.Drawing.Size(61, 17);
-            this.lblKmIn.TabIndex = 70;
-            this.lblKmIn.Text = "label17";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(14, 103);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(220, 17);
-            this.label16.TabIndex = 69;
-            this.label16.Text = "KILOMETRAJE DE INGRESO:";
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.Red;
-            this.lblFecha.Location = new System.Drawing.Point(166, 65);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(69, 17);
-            this.lblFecha.TabIndex = 67;
-            this.lblFecha.Text = "lblFecha";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 65);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(146, 17);
-            this.label11.TabIndex = 66;
-            this.label11.Text = "FECHA CREACIÓN:";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1009, 52);
-            this.toolStrip1.TabIndex = 42;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
-            this.toolStripButton1.Text = "&Salir";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(104, 49);
-            this.toolStripButton2.Text = "&Marcar Salida";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Visible = false;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(118, 49);
-            this.toolStripButton3.Text = "&Cambiar Estado";
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton3.Visible = false;
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(112, 49);
-            this.toolStripButton4.Text = "&Solicitar partes";
-            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton4.Visible = false;
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // cl_ver
             // 
@@ -791,6 +517,281 @@
             this.orden_id.Name = "orden_id";
             this.orden_id.ReadOnly = true;
             this.orden_id.Visible = false;
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Location = new System.Drawing.Point(142, 128);
+            this.txtObservacion.MaxLength = 1200;
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(832, 62);
+            this.txtObservacion.TabIndex = 39;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(118, 17);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "OBSERVACIÓN";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblNombresMecanicoResponsable);
+            this.groupBox1.Controls.Add(this.lblFechaSalida);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.LBL_ORDENNO);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.LBK_ESTADO);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.numericTextBox1);
+            this.groupBox1.Controls.Add(this.lblKmOut);
+            this.groupBox1.Controls.Add(this.txtObservacion);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.lblKmIn);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.lblFecha);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.lblTipoMantenimiento);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 199);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(987, 203);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ORDEN DE MANTENIMIENTO";
+            // 
+            // lblFechaSalida
+            // 
+            this.lblFechaSalida.AutoSize = true;
+            this.lblFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaSalida.ForeColor = System.Drawing.Color.Red;
+            this.lblFechaSalida.Location = new System.Drawing.Point(641, 65);
+            this.lblFechaSalida.Name = "lblFechaSalida";
+            this.lblFechaSalida.Size = new System.Drawing.Size(114, 17);
+            this.lblFechaSalida.TabIndex = 80;
+            this.lblFechaSalida.Text = "lblFechaSalida";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(515, 65);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(122, 17);
+            this.label23.TabIndex = 79;
+            this.label23.Text = "FECHA SALIDA:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(14, 84);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(174, 17);
+            this.label21.TabIndex = 77;
+            this.label21.Text = "CREADOR DE ORDEN:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(189, 84);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(59, 16);
+            this.label22.TabIndex = 78;
+            this.label22.Text = "label22";
+            // 
+            // LBL_ORDENNO
+            // 
+            this.LBL_ORDENNO.AutoSize = true;
+            this.LBL_ORDENNO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_ORDENNO.ForeColor = System.Drawing.Color.Red;
+            this.LBL_ORDENNO.Location = new System.Drawing.Point(196, 30);
+            this.LBL_ORDENNO.Name = "LBL_ORDENNO";
+            this.LBL_ORDENNO.Size = new System.Drawing.Size(123, 17);
+            this.LBL_ORDENNO.TabIndex = 76;
+            this.LBL_ORDENNO.Text = "LBL_ORDENNO";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(14, 30);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(96, 17);
+            this.label19.TabIndex = 75;
+            this.label19.Text = "ORDEN NO:";
+            // 
+            // LBK_ESTADO
+            // 
+            this.LBK_ESTADO.AutoSize = true;
+            this.LBK_ESTADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBK_ESTADO.ForeColor = System.Drawing.Color.Red;
+            this.LBK_ESTADO.Location = new System.Drawing.Point(705, 30);
+            this.LBK_ESTADO.Name = "LBK_ESTADO";
+            this.LBK_ESTADO.Size = new System.Drawing.Size(109, 17);
+            this.LBK_ESTADO.TabIndex = 69;
+            this.LBK_ESTADO.Text = "LBK_ESTADO";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(516, 30);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(186, 17);
+            this.label20.TabIndex = 68;
+            this.label20.Text = "ESTADO DE LA ORDEN:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Red;
+            this.label17.Location = new System.Drawing.Point(836, 102);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(30, 17);
+            this.label17.TabIndex = 74;
+            this.label17.Text = "Km";
+            // 
+            // numericTextBox1
+            // 
+            this.numericTextBox1.AllowSpace = false;
+            this.numericTextBox1.Location = new System.Drawing.Point(737, 100);
+            this.numericTextBox1.MaxLength = 10;
+            this.numericTextBox1.Name = "numericTextBox1";
+            this.numericTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.numericTextBox1.TabIndex = 73;
+            // 
+            // lblKmOut
+            // 
+            this.lblKmOut.AutoSize = true;
+            this.lblKmOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKmOut.ForeColor = System.Drawing.Color.Red;
+            this.lblKmOut.Location = new System.Drawing.Point(904, 100);
+            this.lblKmOut.Name = "lblKmOut";
+            this.lblKmOut.Size = new System.Drawing.Size(61, 17);
+            this.lblKmOut.TabIndex = 72;
+            this.lblKmOut.Text = "label17";
+            this.lblKmOut.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(516, 103);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(210, 17);
+            this.label18.TabIndex = 71;
+            this.label18.Text = "KILOMETRAJE DE EGRESO";
+            // 
+            // lblKmIn
+            // 
+            this.lblKmIn.AutoSize = true;
+            this.lblKmIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKmIn.ForeColor = System.Drawing.Color.Red;
+            this.lblKmIn.Location = new System.Drawing.Point(239, 103);
+            this.lblKmIn.Name = "lblKmIn";
+            this.lblKmIn.Size = new System.Drawing.Size(61, 17);
+            this.lblKmIn.TabIndex = 70;
+            this.lblKmIn.Text = "label17";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(13, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(220, 17);
+            this.label16.TabIndex = 69;
+            this.label16.Text = "KILOMETRAJE DE INGRESO:";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.Red;
+            this.lblFecha.Location = new System.Drawing.Point(161, 65);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(69, 17);
+            this.lblFecha.TabIndex = 67;
+            this.lblFecha.Text = "lblFecha";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(13, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 17);
+            this.label11.TabIndex = 66;
+            this.label11.Text = "FECHA CREACIÓN:";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1009, 52);
+            this.toolStrip1.TabIndex = 42;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
+            this.toolStripButton1.Text = "&Salir";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(104, 49);
+            this.toolStripButton2.Text = "&Marcar Salida";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Visible = false;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(118, 49);
+            this.toolStripButton3.Text = "&Cambiar Estado";
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.Visible = false;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(112, 49);
+            this.toolStripButton4.Text = "&Solicitar partes";
+            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton4.Visible = false;
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // frmDetalleVistaControlador
             // 

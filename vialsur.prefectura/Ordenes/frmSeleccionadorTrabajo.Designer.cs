@@ -52,41 +52,49 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Location = new System.Drawing.Point(6, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 17);
+            this.label1.Size = new System.Drawing.Size(156, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "PARTE PRINCIPAL:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 91);
+            this.label2.Location = new System.Drawing.Point(6, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 17);
+            this.label2.Size = new System.Drawing.Size(175, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "PARTE SECUNDARIA:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 179);
+            this.label3.Location = new System.Drawing.Point(6, 179);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 17);
+            this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "CANTIDAD:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 201);
+            this.label4.Location = new System.Drawing.Point(6, 201);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 17);
+            this.label4.Size = new System.Drawing.Size(126, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "OBSERVACIÓN";
             // 
@@ -104,11 +112,13 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 121);
+            this.label5.Location = new System.Drawing.Point(6, 121);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 17);
+            this.label5.Size = new System.Drawing.Size(189, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "TRABAJO REQUERIDO:";
             // 
@@ -119,7 +129,7 @@
             this.lettersTextBox1.MaxLength = 600;
             this.lettersTextBox1.Multiline = true;
             this.lettersTextBox1.Name = "lettersTextBox1";
-            this.lettersTextBox1.Size = new System.Drawing.Size(487, 121);
+            this.lettersTextBox1.Size = new System.Drawing.Size(492, 121);
             this.lettersTextBox1.TabIndex = 10;
             // 
             // toolStrip1
@@ -158,7 +168,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(188, 174);
+            this.numericUpDown1.Location = new System.Drawing.Point(193, 174);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             25,
             0,
@@ -171,11 +181,13 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 154);
+            this.label6.Location = new System.Drawing.Point(6, 154);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(176, 17);
+            this.label6.Size = new System.Drawing.Size(189, 17);
             this.label6.TabIndex = 63;
             this.label6.Text = "TRABAJO REALIZADO:";
             // 
@@ -201,7 +213,7 @@
             this.uc_Accion2.DropDownWidth = 121;
             this.uc_Accion2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uc_Accion2.FormattingEnabled = true;
-            this.uc_Accion2.Location = new System.Drawing.Point(188, 147);
+            this.uc_Accion2.Location = new System.Drawing.Point(193, 147);
             this.uc_Accion2.Name = "uc_Accion2";
             this.uc_Accion2.Size = new System.Drawing.Size(314, 24);
             this.uc_Accion2.TabIndex = 64;
@@ -213,7 +225,7 @@
             this.uc_Accion1.DropDownWidth = 121;
             this.uc_Accion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uc_Accion1.FormattingEnabled = true;
-            this.uc_Accion1.Location = new System.Drawing.Point(188, 118);
+            this.uc_Accion1.Location = new System.Drawing.Point(193, 118);
             this.uc_Accion1.Name = "uc_Accion1";
             this.uc_Accion1.Size = new System.Drawing.Size(314, 24);
             this.uc_Accion1.TabIndex = 8;
@@ -224,7 +236,7 @@
             this.uc_Catalogo_Parte_Secundaria1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_Catalogo_Parte_Secundaria1.DropDownWidth = 121;
             this.uc_Catalogo_Parte_Secundaria1.FormattingEnabled = true;
-            this.uc_Catalogo_Parte_Secundaria1.Location = new System.Drawing.Point(188, 88);
+            this.uc_Catalogo_Parte_Secundaria1.Location = new System.Drawing.Point(193, 88);
             this.uc_Catalogo_Parte_Secundaria1.Name = "uc_Catalogo_Parte_Secundaria1";
             this.uc_Catalogo_Parte_Secundaria1.Size = new System.Drawing.Size(314, 24);
             this.uc_Catalogo_Parte_Secundaria1.TabIndex = 1;
@@ -235,7 +247,7 @@
             this.uc_Catalogo_Parte_Principal1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uc_Catalogo_Parte_Principal1.DropDownWidth = 121;
             this.uc_Catalogo_Parte_Principal1.FormattingEnabled = true;
-            this.uc_Catalogo_Parte_Principal1.Location = new System.Drawing.Point(188, 58);
+            this.uc_Catalogo_Parte_Principal1.Location = new System.Drawing.Point(193, 58);
             this.uc_Catalogo_Parte_Principal1.Name = "uc_Catalogo_Parte_Principal1";
             this.uc_Catalogo_Parte_Principal1.Size = new System.Drawing.Size(314, 24);
             this.uc_Catalogo_Parte_Principal1.TabIndex = 0;
@@ -246,21 +258,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 380);
-            this.Controls.Add(this.chk_solicitar_repuestos);
             this.Controls.Add(this.uc_Accion2);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.uc_Accion1);
+            this.Controls.Add(this.uc_Catalogo_Parte_Secundaria1);
+            this.Controls.Add(this.uc_Catalogo_Parte_Principal1);
+            this.Controls.Add(this.chk_solicitar_repuestos);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lettersTextBox1);
-            this.Controls.Add(this.uc_Accion1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.uc_Catalogo_Parte_Secundaria1);
-            this.Controls.Add(this.uc_Catalogo_Parte_Principal1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

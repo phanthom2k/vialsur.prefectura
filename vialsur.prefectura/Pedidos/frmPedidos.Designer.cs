@@ -263,10 +263,10 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::vialsur.prefectura.Properties.Resources.broom;
-            this.button2.Location = new System.Drawing.Point(1104, 63);
+            this.button2.Location = new System.Drawing.Point(1013, 64);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 33);
+            this.button2.Size = new System.Drawing.Size(96, 33);
             this.button2.TabIndex = 48;
             this.button2.Text = "Limpiar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -276,13 +276,16 @@
             // 
             // btn_Buscar
             // 
+            this.btn_Buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Buscar.FlatAppearance.BorderSize = 0;
             this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Buscar.Image = global::vialsur.prefectura.Properties.Resources.search_icon;
             this.btn_Buscar.Location = new System.Drawing.Point(266, 59);
             this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(84, 33);
+            this.btn_Buscar.Size = new System.Drawing.Size(104, 33);
             this.btn_Buscar.TabIndex = 47;
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

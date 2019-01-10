@@ -28,29 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVehiculos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVehiculos));
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.lblPagFinal = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblPagActual = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_historiado = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -71,6 +60,17 @@
             this.cl_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_PaisCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.lblPagFinal = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblPagActual = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -81,10 +81,10 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::vialsur.prefectura.Properties.Resources.broom;
-            this.button2.Location = new System.Drawing.Point(671, 62);
+            this.button2.Location = new System.Drawing.Point(681, 62);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 28);
+            this.button2.Size = new System.Drawing.Size(97, 28);
             this.button2.TabIndex = 11;
             this.button2.Text = "Limpiar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -100,7 +100,7 @@
             this.btn_Buscar.Location = new System.Drawing.Point(574, 62);
             this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(89, 28);
+            this.btn_Buscar.Size = new System.Drawing.Size(99, 28);
             this.btn_Buscar.TabIndex = 10;
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -166,121 +166,6 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(1148, 58);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 37);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "<< Anterior";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(1261, 58);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 37);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Siguiente >>";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            // 
-            // lblPagFinal
-            // 
-            this.lblPagFinal.Location = new System.Drawing.Point(997, 68);
-            this.lblPagFinal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPagFinal.Name = "lblPagFinal";
-            this.lblPagFinal.Size = new System.Drawing.Size(52, 16);
-            this.lblPagFinal.TabIndex = 18;
-            this.lblPagFinal.Text = "lblPagFinal";
-            this.lblPagFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPagFinal.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(964, 68);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 17);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "de";
-            this.label3.Visible = false;
-            // 
-            // lblPagActual
-            // 
-            this.lblPagActual.Location = new System.Drawing.Point(893, 68);
-            this.lblPagActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPagActual.Name = "lblPagActual";
-            this.lblPagActual.Size = new System.Drawing.Size(61, 16);
-            this.lblPagActual.TabIndex = 16;
-            this.lblPagActual.Text = "lblPagActual";
-            this.lblPagActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPagActual.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(822, 68);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "PAGINA";
-            this.label2.Visible = false;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 662);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1429, 25);
-            this.statusStrip1.TabIndex = 19;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1429, 52);
-            this.toolStrip1.TabIndex = 20;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
-            this.toolStripButton1.Text = "&Salir";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
-            this.toolStripButton2.Text = "&Nueva";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Visible = false;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // cl_ver
             // 
@@ -490,6 +375,121 @@
             this.cl_PaisCodigo.Name = "cl_PaisCodigo";
             this.cl_PaisCodigo.ReadOnly = true;
             this.cl_PaisCodigo.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1148, 58);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 37);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "<< Anterior";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1261, 58);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 37);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Siguiente >>";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
+            // 
+            // lblPagFinal
+            // 
+            this.lblPagFinal.Location = new System.Drawing.Point(997, 68);
+            this.lblPagFinal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPagFinal.Name = "lblPagFinal";
+            this.lblPagFinal.Size = new System.Drawing.Size(52, 16);
+            this.lblPagFinal.TabIndex = 18;
+            this.lblPagFinal.Text = "lblPagFinal";
+            this.lblPagFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPagFinal.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(964, 68);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 17);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "de";
+            this.label3.Visible = false;
+            // 
+            // lblPagActual
+            // 
+            this.lblPagActual.Location = new System.Drawing.Point(893, 68);
+            this.lblPagActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPagActual.Name = "lblPagActual";
+            this.lblPagActual.Size = new System.Drawing.Size(61, 16);
+            this.lblPagActual.TabIndex = 16;
+            this.lblPagActual.Text = "lblPagActual";
+            this.lblPagActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPagActual.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(822, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "PAGINA";
+            this.label2.Visible = false;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 662);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1429, 25);
+            this.statusStrip1.TabIndex = 19;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1429, 52);
+            this.toolStrip1.TabIndex = 20;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
+            this.toolStripButton1.Text = "&Salir";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
+            this.toolStripButton2.Text = "&Nueva";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Visible = false;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // frmVehiculos
             // 

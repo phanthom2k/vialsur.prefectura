@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosOrden));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosOrden));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pedidos_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -45,12 +51,6 @@
             this.LBL_FECHA = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LBL_ORDEN = new System.Windows.Forms.Label();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pedidos_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,64 @@
             this.dataGridView1.Size = new System.Drawing.Size(783, 332);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // cl_ver
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Modif.";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Modif.";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Elimar";
+            this.cl_modificar.MinimumWidth = 70;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Eliminar";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 70;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // pedidos_id
+            // 
+            this.pedidos_id.DataPropertyName = "pedidos_id";
+            this.pedidos_id.HeaderText = "pedidos_id";
+            this.pedidos_id.Name = "pedidos_id";
+            this.pedidos_id.ReadOnly = true;
+            this.pedidos_id.Visible = false;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // detalle
+            // 
+            this.detalle.DataPropertyName = "detalle";
+            this.detalle.HeaderText = "Detalle";
+            this.detalle.MinimumWidth = 550;
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
+            this.detalle.Width = 550;
             // 
             // toolStrip1
             // 
@@ -127,7 +185,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 63);
+            this.label1.Location = new System.Drawing.Point(8, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 63;
@@ -148,7 +206,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 88);
+            this.label3.Location = new System.Drawing.Point(8, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 65;
@@ -158,7 +216,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 111);
+            this.label4.Location = new System.Drawing.Point(8, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 17);
             this.label4.TabIndex = 66;
@@ -220,64 +278,6 @@
             this.LBL_ORDEN.Size = new System.Drawing.Size(91, 17);
             this.LBL_ORDEN.TabIndex = 72;
             this.LBL_ORDEN.Text = "LBL_ORDEN";
-            // 
-            // cl_ver
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "#######km";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Modif.";
-            this.cl_ver.MinimumWidth = 57;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Modif.";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 57;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Elimar";
-            this.cl_modificar.MinimumWidth = 70;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Eliminar";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 70;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // pedidos_id
-            // 
-            this.pedidos_id.DataPropertyName = "pedidos_id";
-            this.pedidos_id.HeaderText = "pedidos_id";
-            this.pedidos_id.Name = "pedidos_id";
-            this.pedidos_id.ReadOnly = true;
-            this.pedidos_id.Visible = false;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // detalle
-            // 
-            this.detalle.DataPropertyName = "detalle";
-            this.detalle.HeaderText = "Detalle";
-            this.detalle.MinimumWidth = 550;
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
-            this.detalle.Width = 550;
             // 
             // frmPedidosOrden
             // 

@@ -355,9 +355,9 @@
             this.btn_Siguiente.FlatAppearance.BorderSize = 0;
             this.btn_Siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Siguiente.Image = global::vialsur.prefectura.Properties.Resources.sign_right_icon48x48;
-            this.btn_Siguiente.Location = new System.Drawing.Point(670, 368);
+            this.btn_Siguiente.Location = new System.Drawing.Point(663, 368);
             this.btn_Siguiente.Name = "btn_Siguiente";
-            this.btn_Siguiente.Size = new System.Drawing.Size(75, 75);
+            this.btn_Siguiente.Size = new System.Drawing.Size(82, 84);
             this.btn_Siguiente.TabIndex = 14;
             this.btn_Siguiente.Text = "Siguiente";
             this.btn_Siguiente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -370,9 +370,9 @@
             this.btn_Cancelar.FlatAppearance.BorderSize = 0;
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Image = global::vialsur.prefectura.Properties.Resources.sign_error_icon48x48;
-            this.btn_Cancelar.Location = new System.Drawing.Point(589, 368);
+            this.btn_Cancelar.Location = new System.Drawing.Point(572, 368);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(75, 75);
+            this.btn_Cancelar.Size = new System.Drawing.Size(92, 84);
             this.btn_Cancelar.TabIndex = 13;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
