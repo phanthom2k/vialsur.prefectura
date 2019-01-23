@@ -109,7 +109,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 17);
             this.label3.TabIndex = 44;
-            this.label3.Text = "MARCA DE VEHICULO:";
+            this.label3.Text = "MARCA DE VEHÍCULO:";
             // 
             // label4
             // 
@@ -137,7 +137,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 17);
             this.label6.TabIndex = 47;
-            this.label6.Text = "TIPO VEHICULO:";
+            this.label6.Text = "TIPO VEHÍCULO:";
             // 
             // label7
             // 
@@ -146,7 +146,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 17);
             this.label7.TabIndex = 48;
-            this.label7.Text = "CLASE DE VEHICULO:";
+            this.label7.Text = "CLASE DE VEHÍCULO:";
             // 
             // textBox1
             // 

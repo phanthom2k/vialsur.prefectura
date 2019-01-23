@@ -370,7 +370,7 @@ namespace datos.vialsur.prefectura
                 }
                 else  //para buscar por el numero de cedula
                 {
-                    _sql_consulta += "WHERE E.cedula = @cedula   ; ";
+                    _sql_consulta += "WHERE E.cedula = @cedula OR UPPER(p.nombres) LIKE UPPER(CONCAT(@cedula,'%')) OR UPPER(p.apellidos) LIKE UPPER(CONCAT(@cedula,'%')) OR UPPER(p.apellidos) LIKE UPPER(CONCAT('%',@cedula)) ; ";
 
                     SqlParameter _cedula = new SqlParameter("@cedula", SqlDbType.VarChar);
                     _cedula.Value = cedula;

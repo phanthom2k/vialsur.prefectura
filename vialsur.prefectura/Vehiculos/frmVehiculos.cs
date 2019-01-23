@@ -163,8 +163,6 @@ namespace vialsur.prefectura.Vehiculos
                     //frm_Vehiculo.Dispose();
                     //btn_Buscar_Click(sender, e);
                 }
-
-
             }
             catch (Exception ex)
             {

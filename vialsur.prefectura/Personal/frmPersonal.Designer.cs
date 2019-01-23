@@ -139,7 +139,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 29;
-            this.label2.Text = "PAGINA";
+            this.label2.Text = "PÁGINA";
             this.label2.Visible = false;
             // 
             // button5
@@ -282,7 +282,7 @@
             // cedula
             // 
             this.cedula.DataPropertyName = "cedula";
-            this.cedula.HeaderText = "CEDULA";
+            this.cedula.HeaderText = "CÉDULA";
             this.cedula.Name = "cedula";
             this.cedula.ReadOnly = true;
             // 

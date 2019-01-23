@@ -130,7 +130,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 14;
-            this.label7.Text = "CODIGO:";
+            this.label7.Text = "CÓDIGO:";
             // 
             // label8
             // 
@@ -139,7 +139,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(142, 17);
             this.label8.TabIndex = 15;
-            this.label8.Text = "CODIGO ANTERIOR:";
+            this.label8.Text = "CÓDIGO ANTERIOR:";
             // 
             // label9
             // 

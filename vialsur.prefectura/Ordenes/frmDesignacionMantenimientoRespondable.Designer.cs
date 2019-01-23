@@ -117,7 +117,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 17);
             this.label9.TabIndex = 52;
-            this.label9.Text = "TIPO VEHICULO:";
+            this.label9.Text = "TIPO VEHÍCULO:";
             // 
             // lbl_TipoCombustible
             // 
@@ -388,7 +388,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(210, 17);
             this.label11.TabIndex = 17;
-            this.label11.Text = "CUSTODIO DEL VEHICULO:";
+            this.label11.Text = "CUSTODIO DEL VEHÍCULO:";
             this.label11.Visible = false;
             // 
             // label16
@@ -501,6 +501,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDesignacionMantenimientoRespondable";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Orden";
             this.Load += new System.EventHandler(this.frmDesignacionMantenimientoRespondable_Load);

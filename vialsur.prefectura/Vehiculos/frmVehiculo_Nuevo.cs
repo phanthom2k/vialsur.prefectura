@@ -50,6 +50,7 @@ namespace vialsur.prefectura.Vehiculos
         /// <param name="congelar">TRUE por defecto, FALSE para habilitarlos</param>
         void Freeze (bool congelar=true)
         {
+
             atxt_codigo.ReadOnly = atxt_codigoanterior.ReadOnly = atxt_seriemotor.ReadOnly = atxt_seriechasis.ReadOnly = 
             atxt_placa.ReadOnly = atxt_placaprovisional.ReadOnly = ntxt_cilindraje.ReadOnly = dtxt_costo.ReadOnly = congelar;
 
@@ -206,6 +207,7 @@ namespace vialsur.prefectura.Vehiculos
                         _f = new logica.vialsur.prefectura.Catalogos.cls_logica_ve_vehiculo().Nuevo(obj_vehiculo);
                         Freeze();
                         MessageBox.Show("Datos registrados", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        EsNuevo = false;
                     }
                     else
                     {

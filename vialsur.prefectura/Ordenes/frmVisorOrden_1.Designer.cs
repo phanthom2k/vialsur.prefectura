@@ -52,6 +52,7 @@
             this.ClientSize = new System.Drawing.Size(950, 640);
             this.Controls.Add(this.axAcroPDF1);
             this.Name = "frmVisorOrden_1";
+            this.ShowIcon = false;
             this.Text = "Orden de mantenimiento";
             this.Load += new System.EventHandler(this.frmVisorOrden_1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();

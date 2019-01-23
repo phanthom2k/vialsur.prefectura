@@ -169,6 +169,7 @@ namespace vialsur.prefectura
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(MessageBox.Show("¿Desea salir del aplicativo?","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             Application.Exit();
         }
 
@@ -287,6 +288,21 @@ namespace vialsur.prefectura
             {
                 MessageBox.Show("Error" + ex.Message);
             }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+             new AboutBox1().ShowDialog();
+        }
+
+ 
+
+        private void manualToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            var manual = new vialsur.prefectura.Ordenes.frmVisorOrden_1();
+            manual.RutaArchivo = System.Environment.CurrentDirectory + "\\manualdeusuario_v1.pdf";
+            manual.StartPosition = FormStartPosition.CenterScreen;
+            manual.ShowDialog();
         }
     }
 }

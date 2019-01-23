@@ -277,6 +277,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSeleccionadorTrabajo";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccionador de Trabajo";
             this.Load += new System.EventHandler(this.frmSeleccionadorTrabajo_Load);

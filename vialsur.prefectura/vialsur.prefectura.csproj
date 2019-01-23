@@ -70,6 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\frmCatalogo_Marcas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     <Compile Include="Vehiculos\frmVehiculo_Nuevo.Designer.cs">
       <DependentUpon>frmVehiculo_Nuevo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\frmCatalogo_Marcas.resx">
       <DependentUpon>frmCatalogo_Marcas.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,6 +391,9 @@
     <None Include="BD_DESARROLLO\01ENE2019db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\23nov2018db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\db_mantenimiento.bak" />
+    <None Include="manualdeusuario_v1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

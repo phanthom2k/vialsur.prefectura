@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("vialsur.prefectura")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Sistema de Gestion Vehicular")]
+[assembly: AssemblyDescription("Sistema de Gestion Vehicular")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("vialsur.prefectura")]
-[assembly: AssemblyCopyright("Copyright © HP 2018")]
+[assembly: AssemblyCompany("VIALSUR")]
+[assembly: AssemblyProduct("Sistema de Gestion Vehicular")]
+[assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

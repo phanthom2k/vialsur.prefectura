@@ -209,6 +209,7 @@ namespace vialsur.prefectura.Personal
             try
             {
                 pivote = 0;
+                txt_input.Text = "";
                 CargarDatosGrilla();
             }
             catch (Exception EX)

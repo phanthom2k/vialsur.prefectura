@@ -65,7 +65,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +84,7 @@
             this.ve_vehiculo_responsable_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.per_persona_cedula_crea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericTextBox1 = new Vivaldi.UserControls.NumericTextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -189,7 +189,7 @@
             // lbl_TipoVehiculo
             // 
             this.lbl_TipoVehiculo.AutoSize = true;
-            this.lbl_TipoVehiculo.Location = new System.Drawing.Point(819, 99);
+            this.lbl_TipoVehiculo.Location = new System.Drawing.Point(809, 99);
             this.lbl_TipoVehiculo.Name = "lbl_TipoVehiculo";
             this.lbl_TipoVehiculo.Size = new System.Drawing.Size(112, 17);
             this.lbl_TipoVehiculo.TabIndex = 53;
@@ -203,7 +203,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 17);
             this.label9.TabIndex = 52;
-            this.label9.Text = "TIPO VEHICULO:";
+            this.label9.Text = "TIPO VEHÍCULO:";
             // 
             // lbl_TipoCombustible
             // 
@@ -364,7 +364,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 27;
-            this.label7.Text = "CODIGO:";
+            this.label7.Text = "CÓDIGO:";
             // 
             // label3
             // 
@@ -432,14 +432,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1057, 412);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // numericTextBox1
-            // 
-            this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(182, 200);
-            this.numericTextBox1.Name = "numericTextBox1";
-            this.numericTextBox1.Size = new System.Drawing.Size(334, 22);
-            this.numericTextBox1.TabIndex = 39;
             // 
             // cl_ver
             // 
@@ -614,6 +606,14 @@
             this.per_persona_cedula_crea.Name = "per_persona_cedula_crea";
             this.per_persona_cedula_crea.ReadOnly = true;
             this.per_persona_cedula_crea.Width = 175;
+            // 
+            // numericTextBox1
+            // 
+            this.numericTextBox1.AllowSpace = false;
+            this.numericTextBox1.Location = new System.Drawing.Point(182, 200);
+            this.numericTextBox1.Name = "numericTextBox1";
+            this.numericTextBox1.Size = new System.Drawing.Size(334, 22);
+            this.numericTextBox1.TabIndex = 39;
             // 
             // frmHistoriadoVehiculo
             // 

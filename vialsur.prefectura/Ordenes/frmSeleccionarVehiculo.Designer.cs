@@ -91,7 +91,7 @@
             this.radioButton4.Size = new System.Drawing.Size(159, 21);
             this.radioButton4.TabIndex = 3;
             this.radioButton4.Tag = "3";
-            this.radioButton4.Text = "CODIGO ANTERIOR";
+            this.radioButton4.Text = "CÓDIGO ANTERIOR";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
@@ -104,7 +104,7 @@
             this.radioButton3.TabIndex = 2;
             this.radioButton3.TabStop = true;
             this.radioButton3.Tag = "2";
-            this.radioButton3.Text = "CODIGO";
+            this.radioButton3.Text = "CÓDIGO";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -503,6 +503,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSeleccionarVehiculo";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Orden";
             this.Load += new System.EventHandler(this.frmSeleccionarVehiculo_Load);

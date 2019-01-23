@@ -130,6 +130,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmOrdenesCambiarEstado";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambiar Estado";
             this.Load += new System.EventHandler(this.frmOrdenesCambiarEstado_Load);

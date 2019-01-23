@@ -147,7 +147,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 17);
             this.label9.TabIndex = 52;
-            this.label9.Text = "TIPO VEHICULO:";
+            this.label9.Text = "TIPO VEHÍCULO:";
             // 
             // lbl_TipoCombustible
             // 
@@ -382,7 +382,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 17);
             this.label1.TabIndex = 60;
-            this.label1.Text = "MECANICO RESPONSABLE:";
+            this.label1.Text = "MECÁNICO RESPONSABLE:";
             // 
             // dataGridView1
             // 

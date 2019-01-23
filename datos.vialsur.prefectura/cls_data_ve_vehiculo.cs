@@ -77,14 +77,16 @@ GO
             }
         }
 
-        private string _sql_insert =    "INSERT INTO[dbo].[ve_vehiculo]([id],[ve_vehiculo_modelo_id],[ve_vehiculo_color_id],[anio_fabricacion],[anio_compra] " +
-                                        ",[cilindraje],[codigo],[codigo_anterior],[costo],[estado],[PaisCodigo],[placa],[placa_provisional] " +
-                                        ",[serie_chasis],[serie_motor]) " +
-                                        "VALUES(@id, @ve_vehiculo_modelo_id, @ve_vehiculo_color_id, @anio_fabricacion, @anio_compra, " +
-                                        "@cilindraje, @codigo, @codigo_anterior, @costo, @estado, @PaisCodigo, @placa, @placa_provisional, " +
-                                        "@serie_chasis, @serie_motor)";
+        
         public bool Insertar(entidades.vialsur.prefectura.ve_vehiculo _ve_vehiculo)
         {
+            string _sql_insert = "INSERT INTO[dbo].[ve_vehiculo]([id],[ve_vehiculo_modelo_id],[ve_vehiculo_color_id],[anio_fabricacion],[anio_compra] " +
+                                        ",[cilindraje],[codigo],[codigo_anterior],[costo],[estado],[PaisCodigo],[placa],[placa_provisional] " +
+                                        ",[serie_chasis],[serie_motor],[muestra]) " +
+                                        "VALUES(@id, @ve_vehiculo_modelo_id, @ve_vehiculo_color_id, @anio_fabricacion, @anio_compra, " +
+                                        "@cilindraje, @codigo, @codigo_anterior, @costo, @estado, @PaisCodigo, @placa, @placa_provisional, " +
+                                        "@serie_chasis, @serie_motor,'True') ";
+
             bool k = false;
             try
             {

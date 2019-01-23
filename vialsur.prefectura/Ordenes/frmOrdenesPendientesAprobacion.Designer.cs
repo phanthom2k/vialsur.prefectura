@@ -311,6 +311,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmOrdenesPendientesAprobacion";
+            this.ShowIcon = false;
             this.Text = "Ordenes Pendientes de Aprobacion";
             this.Load += new System.EventHandler(this.frmOrdenesPendientesAprobacion_Load);
             this.toolStrip1.ResumeLayout(false);

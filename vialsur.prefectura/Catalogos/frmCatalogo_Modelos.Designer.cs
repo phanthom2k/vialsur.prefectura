@@ -33,6 +33,8 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.uc_VehiculoMarca1 = new vialsur.prefectura.uc.uc_VehiculoMarca();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +49,6 @@
             this.ve_vehiculo_tipo_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clase_vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clase_vehiculo_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.uc_VehiculoMarca1 = new vialsur.prefectura.uc.uc_VehiculoMarca();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +117,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(1068, 534);
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 17);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Marcas registradas:";
+            // 
+            // uc_VehiculoMarca1
+            // 
+            this.uc_VehiculoMarca1.Ancho = 121;
+            this.uc_VehiculoMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_VehiculoMarca1.DropDownWidth = 121;
+            this.uc_VehiculoMarca1.FormattingEnabled = true;
+            this.uc_VehiculoMarca1.Location = new System.Drawing.Point(161, 73);
+            this.uc_VehiculoMarca1.Name = "uc_VehiculoMarca1";
+            this.uc_VehiculoMarca1.Size = new System.Drawing.Size(297, 24);
+            this.uc_VehiculoMarca1.TabIndex = 25;
+            this.uc_VehiculoMarca1.SelectedIndexChanged += new System.EventHandler(this.uc_VehiculoMarca1_SelectedIndexChanged);
             // 
             // cl_ver
             // 
@@ -218,7 +239,7 @@
             // ve_vehiculo_tipo_nombre
             // 
             this.ve_vehiculo_tipo_nombre.DataPropertyName = "ve_vehiculo_tipo_nombre";
-            this.ve_vehiculo_tipo_nombre.HeaderText = "TIPO DE VEHICULO";
+            this.ve_vehiculo_tipo_nombre.HeaderText = "TIPO DE VEHÍCULO";
             this.ve_vehiculo_tipo_nombre.Name = "ve_vehiculo_tipo_nombre";
             this.ve_vehiculo_tipo_nombre.ReadOnly = true;
             this.ve_vehiculo_tipo_nombre.Width = 200;
@@ -234,31 +255,10 @@
             // clase_vehiculo_nombre
             // 
             this.clase_vehiculo_nombre.DataPropertyName = "clase_vehiculo_nombre";
-            this.clase_vehiculo_nombre.HeaderText = "CLASE DE VEHICULO";
+            this.clase_vehiculo_nombre.HeaderText = "CLASE DE VEHÍCULO";
             this.clase_vehiculo_nombre.Name = "clase_vehiculo_nombre";
             this.clase_vehiculo_nombre.ReadOnly = true;
             this.clase_vehiculo_nombre.Width = 200;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 17);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Marcas registradas:";
-            // 
-            // uc_VehiculoMarca1
-            // 
-            this.uc_VehiculoMarca1.Ancho = 121;
-            this.uc_VehiculoMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_VehiculoMarca1.DropDownWidth = 121;
-            this.uc_VehiculoMarca1.FormattingEnabled = true;
-            this.uc_VehiculoMarca1.Location = new System.Drawing.Point(161, 73);
-            this.uc_VehiculoMarca1.Name = "uc_VehiculoMarca1";
-            this.uc_VehiculoMarca1.Size = new System.Drawing.Size(297, 24);
-            this.uc_VehiculoMarca1.TabIndex = 25;
-            this.uc_VehiculoMarca1.SelectedIndexChanged += new System.EventHandler(this.uc_VehiculoMarca1_SelectedIndexChanged);
             // 
             // frmCatalogo_Modelos
             // 

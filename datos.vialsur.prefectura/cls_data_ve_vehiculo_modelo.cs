@@ -230,7 +230,7 @@ namespace datos.vialsur.prefectura
                 parameters.Add(_traccion);
 
                 SqlParameter _tipo_motor = new SqlParameter("@tipo_motor", SqlDbType.Int);
-                _tipo_motor.Value = modelo.tipo_motor;
+                _tipo_motor.Value = modelo.tipo_motor == null ? 0: modelo.tipo_motor;
                 parameters.Add(_tipo_motor);
 
                 SqlParameter _ve_vehiculo_tipo_id = new SqlParameter("@ve_vehiculo_tipo_id", SqlDbType.Int);

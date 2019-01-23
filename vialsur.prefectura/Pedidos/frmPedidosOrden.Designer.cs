@@ -199,7 +199,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 17);
             this.label2.TabIndex = 64;
-            this.label2.Text = "VEHICULO:";
+            this.label2.Text = "VEHÍCULO:";
             this.label2.Visible = false;
             // 
             // label3
