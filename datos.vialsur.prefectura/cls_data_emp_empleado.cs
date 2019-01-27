@@ -78,17 +78,23 @@ namespace datos.vialsur.prefectura
 
                     SqlParameter _observaciones_desactivacion = new SqlParameter("@observaciones_desactivacion", SqlDbType.Text);
                     _observaciones_desactivacion.Value = _emp_empleado.observaciones_desactivacion;
-                    parameters.Add(_observaciones_desactivacion);  
+                    parameters.Add(_observaciones_desactivacion);
+
+                    SqlParameter _tipo_mantenimiento_asignado = new SqlParameter("@tipo_mantenimiento_asignado", SqlDbType.Int);
+                    _tipo_mantenimiento_asignado.Value = _emp_empleado.tipo_mantenimiento_asignado;
+                    parameters.Add(_tipo_mantenimiento_asignado);
+
+                    
 
                     #endregion
 
                     string _sql_insert =    "INSERT INTO [dbo].[emp_empleado] "+
                                             "([cedula],[cargo_id],[pwd],[activo],  "+
                                             "[fecha_activacion],[fecha_desactivacion],[per_persona_cedula_activacion],"+
-                                            "[tipo_usuario],[observaciones_activacion],[observaciones_desactivacion]) "+
+                                            "[tipo_usuario],[observaciones_activacion],[observaciones_desactivacion],[tipo_mantenimiento_asignado]) " +
                                             "VALUES(@cedula,@cargo_id,@pwd,@activo,"+
                                             "@fecha_activacion,@fecha_desactivacion,@per_persona_cedula_activacion,"+
-                                            "@tipo_usuario,@observaciones_activacion,@observaciones_desactivacion)";
+                                            "@tipo_usuario,@observaciones_activacion,@observaciones_desactivacion,@tipo_mantenimiento_asignado)";
 
                     //{"Invalid column name '@cedula'.\r\nInvalid column name '@cargo_id'.
                     //\r\nInvalid column name '@pwd'.\r\nInvalid column name '@activo'.

@@ -99,6 +99,14 @@ namespace vialsur.prefectura.Personal
         {
             try   
             {                                
+                if(ntxt_Cedula.TextLength !=10 | ltxt_Nombres.Text == "" |
+                    ltxt_Apellidos.Text == "" | uc_CARGO1.SelectedIndex == 0 |  
+                    uc_TIPOUSUARIO1.SelectedIndex == 0 | textBox1.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar toda la información");
+                    return;
+                }
+                                
                 //persona = new entidades.vialsur.prefectura.per_persona();
                 persona.cedula = ntxt_Cedula.Text;
                 persona.nombres = ltxt_Nombres.Text.ToUpper();
@@ -126,27 +134,34 @@ namespace vialsur.prefectura.Personal
                 empleado.observaciones_activacion = empleado.observaciones_desactivacion =
                                                     atxt_Observaciones.Text.ToUpper();
 
-                    
-                if (EsNuevo & MessageBox.Show("Desea guardar la información","Atención",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes )
+                if(EsNuevo)
                 {
-                    if (new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().ExisteCedula(ntxt_Cedula.Text) &
-                    new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ExisteCedula(ntxt_Cedula.Text))
+                    if (EsNuevo & MessageBox.Show("Desea guardar la información", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        throw new Exception("Cedula del usuario ya registrada");
+                        if (new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().ExisteCedula(ntxt_Cedula.Text) &
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().ExisteCedula(ntxt_Cedula.Text))
+                        {
+                            throw new Exception("Cedula del usuario ya registrada");
+                        }
+
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Nueva_Per_Persona(persona);
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().Nuevo_Emp_Empleado(empleado);
+
+                        MessageBox.Show("Se registro los datos correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Nueva_Per_Persona(persona);
-                    new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().Nuevo_Emp_Empleado(empleado);
-
-                    MessageBox.Show("Se registro los datos correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if(EsModificar & MessageBox.Show("Desea guardar la información", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if(EsModificar)
                 {
-                    new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Actualizar_Per_Persona(persona);
-                    new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().Actualizar_Emp_Empleado(empleado);
+                    if (EsModificar & MessageBox.Show("Desea guardar la información", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_per_persona().Actualizar_Per_Persona(persona);
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_emp_empleado().Actualizar_Emp_Empleado(empleado);
 
-                    MessageBox.Show("Se registro los datos correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }                
+                        MessageBox.Show("Se registro los datos correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                this.DialogResult = DialogResult.Yes;
+                this.Close();                
             }
             catch (Exception ex)
             {

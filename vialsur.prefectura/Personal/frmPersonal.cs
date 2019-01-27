@@ -37,9 +37,11 @@ namespace vialsur.prefectura.Personal
                 frm_Personal.EmpleadoUsuario = EmpleadoUsuario;
                 frm_Personal.EsNuevo = true;
                 frm_Personal.EsVer = false;
-                frm_Personal.ShowDialog();
-                frm_Personal.Dispose();
-                CargarDatosGrilla();
+                if(frm_Personal.ShowDialog() ==DialogResult.Yes)
+                {
+                    frm_Personal.Dispose();
+                    CargarDatosGrilla();
+                }                
             }
             catch (Exception ex)
             {
