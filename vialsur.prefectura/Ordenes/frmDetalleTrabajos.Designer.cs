@@ -76,6 +76,7 @@
             this.clEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClOrdenId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_agendado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -342,7 +343,8 @@
             this.clObservacion,
             this.clEstado,
             this.ClOrdenId,
-            this.ClOrden});
+            this.ClOrden,
+            this.estado_agendado});
             this.dataGridView1.Location = new System.Drawing.Point(4, 274);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -584,6 +586,14 @@
             this.ClOrden.ReadOnly = true;
             this.ClOrden.Visible = false;
             // 
+            // estado_agendado
+            // 
+            this.estado_agendado.DataPropertyName = "estado_agendado";
+            this.estado_agendado.HeaderText = "estado_agendado";
+            this.estado_agendado.Name = "estado_agendado";
+            this.estado_agendado.ReadOnly = true;
+            this.estado_agendado.Visible = false;
+            // 
             // frmDetalleTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -665,5 +675,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClOrdenId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClOrden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_agendado;
     }
 }

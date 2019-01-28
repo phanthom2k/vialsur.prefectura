@@ -37,7 +37,8 @@ namespace entidades.vialsur.prefectura
         public Nullable<bool> estado { get; set; }
         public Nullable<int> accion_requerida { get; set; }
         public string orden_id { get; set; }
-    
+        public Nullable<bool> estado_agendado { get; set; }
+
         public virtual orden orden { get; set; }
     }
 }

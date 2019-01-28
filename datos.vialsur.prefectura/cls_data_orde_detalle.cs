@@ -155,6 +155,45 @@ namespace datos.vialsur.prefectura
         }
 
         /// <summary>
+        /// Actualiza el estado de un trabajo false=Decartado / True=Programado
+        /// todos los que estan con false no podran ser ejecutados
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Estado"></param>
+        public void Actualizar_orde_detalle_Estado_Agendado(int id, bool Estado)
+        {
+            try
+            {
+                List<SqlParameter> parameters = new List<SqlParameter>();
+
+                #region parametros
+                SqlParameter _id = new SqlParameter("@id", SqlDbType.NChar, 10);
+                //_id.Direction = ParameterDirection.Output;
+                _id.Value = id;
+                parameters.Add(_id);
+
+
+                SqlParameter _estado = new SqlParameter("@estado_agendado", SqlDbType.Bit);
+                _estado.Value = Estado; 
+                parameters.Add(_estado);
+
+                #endregion
+
+                string sql_update = "UPDATE [dbo].[orde_detalle] " +
+                                            "SET [estado_agendado] = @estado_agendado "+
+                                            "WHERE [id] = @id ";
+
+                SqlHelper.ExecuteNonQuery(_con, CommandType.Text, sql_update, parameters.ToArray());
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo actualizar los datos del detalle", ex);
+            }
+        }
+
+
+        /// <summary>
         /// Retorna un DT con informacion para la UI
         /// </summary>
         /// <param name="id_orden"></param>
@@ -163,7 +202,7 @@ namespace datos.vialsur.prefectura
         {
             string consulta_sql = "SELECT orde_detalle.id, catalogo_parte_principal.nombre as nombrePP, catalogo_parte_secundaria.nombre AS nombrePS," +
                                     "orde_detalle.accion_requerida, orde_detalle.accion_realizada, orde_detalle.cantidad, " +
-                                    "orde_detalle.observacion, orde_detalle.estado, orde_detalle.orden_id " +
+                                    "orde_detalle.observacion, orde_detalle.estado, orde_detalle.orden_id, orde_detalle.estado_agendado " +
                                     "FROM     orde_detalle INNER JOIN " +
                                     "catalogo_parte_principal ON orde_detalle.catalogo_parte_principal_id = catalogo_parte_principal.id INNER JOIN " +
                                     "catalogo_parte_secundaria ON orde_detalle.catalogo_parte_secundaria_id = catalogo_parte_secundaria.id AND " +
@@ -195,7 +234,7 @@ namespace datos.vialsur.prefectura
         {
             try
             {
-                string consulta = "SELECT id, catalogo_parte_principal_id, catalogo_parte_secundaria_id, accion_realizada, cantidad, observacion, estado, accion_requerida, orden_id " +
+                string consulta = "SELECT id, catalogo_parte_principal_id, catalogo_parte_secundaria_id, accion_realizada, cantidad, observacion, estado, accion_requerida, orden_id, estado_agendado " +
                                   "FROM orde_detalle where id = @id";
 
                 SqlParameter parametro = new SqlParameter("@id", SqlDbType.NChar,10);
@@ -216,7 +255,8 @@ namespace datos.vialsur.prefectura
                     obj_orde_detalle.observacion = dr_datos["observacion"].ToString();
                     obj_orde_detalle.estado = (bool)dr_datos["estado"];
                     obj_orde_detalle.accion_requerida = int.Parse(dr_datos["accion_requerida"].ToString());
-                    obj_orde_detalle.orden_id = dr_datos["orden_id"].ToString();                    
+                    obj_orde_detalle.orden_id = dr_datos["orden_id"].ToString();
+                    obj_orde_detalle.estado_agendado = (bool)dr_datos["estado_agendado"];
                 }                
                 return obj_orde_detalle;
             }
@@ -236,14 +276,16 @@ namespace datos.vialsur.prefectura
         {
             try
             {
-                string consulta = "SELECT count(accion_realizada) realizadas, count (accion_requerida) requeridas FROM  orde_detalle WHERE orden_id =@id";
+
+                //string consulta = "SELECT count(accion_realizada) realizadas, count (accion_requerida) requeridas FROM  orde_detalle WHERE orden_id =@id";
+                string consulta = "SELECT count(accion_realizada) realizadas, count (accion_requerida) requeridas FROM  orde_detalle WHERE orden_id =@id AND estado_agendado=1";
 
                 SqlParameter parametro = new SqlParameter("@id", SqlDbType.NChar, 10);
                 parametro.Value = id_orden;
 
                 SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
                 int realizadas = 0, requeridas = 0;
-                while(dr_datos.Read())
+                while (dr_datos.Read())
                 {
                     realizadas = int.Parse(dr_datos["realizadas"].ToString());
                     requeridas = int.Parse(dr_datos["requeridas"].ToString());

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleVistaControlador));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_TipoVehiculo = new System.Windows.Forms.Label();
@@ -61,6 +63,7 @@
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_agendado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrePP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrePS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accion_requerida = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +96,8 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -396,6 +401,7 @@
             this.cl_ver,
             this.cl_modificar,
             this.id,
+            this.estado_agendado,
             this.nombrePP,
             this.nombrePS,
             this.accion_requerida,
@@ -409,7 +415,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(984, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(978, 236);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -430,12 +436,15 @@
             // 
             // cl_modificar
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
+            this.cl_modificar.DefaultCellStyle = dataGridViewCellStyle2;
             this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Modif.";
+            this.cl_modificar.HeaderText = "Cambiar estado";
             this.cl_modificar.MinimumWidth = 70;
             this.cl_modificar.Name = "cl_modificar";
             this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Modif.";
+            this.cl_modificar.Text = "Cambiar";
             this.cl_modificar.UseColumnTextForButtonValue = true;
             this.cl_modificar.Visible = false;
             this.cl_modificar.Width = 70;
@@ -448,41 +457,50 @@
             this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
+            // estado_agendado
+            // 
+            this.estado_agendado.DataPropertyName = "estado_agendado";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Yellow;
+            this.estado_agendado.DefaultCellStyle = dataGridViewCellStyle3;
+            this.estado_agendado.HeaderText = "Estado";
+            this.estado_agendado.MinimumWidth = 80;
+            this.estado_agendado.Name = "estado_agendado";
+            this.estado_agendado.ReadOnly = true;
+            this.estado_agendado.Width = 90;
+            // 
             // nombrePP
             // 
             this.nombrePP.DataPropertyName = "nombrePP";
             this.nombrePP.HeaderText = "Parte Principal";
-            this.nombrePP.MinimumWidth = 80;
+            this.nombrePP.MinimumWidth = 90;
             this.nombrePP.Name = "nombrePP";
             this.nombrePP.ReadOnly = true;
-            this.nombrePP.Width = 125;
+            this.nombrePP.Width = 140;
             // 
             // nombrePS
             // 
             this.nombrePS.DataPropertyName = "nombrePS";
             this.nombrePS.HeaderText = "Sub Parte";
-            this.nombrePS.MinimumWidth = 100;
+            this.nombrePS.MinimumWidth = 150;
             this.nombrePS.Name = "nombrePS";
             this.nombrePS.ReadOnly = true;
-            this.nombrePS.Width = 185;
+            this.nombrePS.Width = 200;
             // 
             // accion_requerida
             // 
             this.accion_requerida.DataPropertyName = "accion_requerida";
             this.accion_requerida.HeaderText = "Accion a realizar";
-            this.accion_requerida.MinimumWidth = 135;
+            this.accion_requerida.MinimumWidth = 100;
             this.accion_requerida.Name = "accion_requerida";
             this.accion_requerida.ReadOnly = true;
-            this.accion_requerida.Width = 135;
             // 
             // accion_realizada
             // 
             this.accion_realizada.DataPropertyName = "accion_realizada";
             this.accion_realizada.HeaderText = "Accion realizada";
-            this.accion_realizada.MinimumWidth = 135;
+            this.accion_realizada.MinimumWidth = 100;
             this.accion_realizada.Name = "accion_realizada";
             this.accion_realizada.ReadOnly = true;
-            this.accion_realizada.Width = 135;
             // 
             // cantidad
             // 
@@ -490,7 +508,7 @@
             this.cantidad.HeaderText = "Cant.";
             this.cantidad.Name = "cantidad";
             this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 50;
+            this.cantidad.Width = 60;
             // 
             // observacion
             // 
@@ -499,7 +517,7 @@
             this.observacion.MinimumWidth = 150;
             this.observacion.Name = "observacion";
             this.observacion.ReadOnly = true;
-            this.observacion.Width = 255;
+            this.observacion.Width = 275;
             // 
             // estado
             // 
@@ -743,10 +761,12 @@
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3,
-            this.toolStripButton4});
+            this.toolStripButton4,
+            this.toolStripButton5,
+            this.toolStripButton6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1009, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(1003, 52);
             this.toolStrip1.TabIndex = 42;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -793,11 +813,31 @@
             this.toolStripButton4.Visible = false;
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(143, 49);
+            this.toolStripButton5.Text = "Solicitar &lubricantes";
+            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(115, 49);
+            this.toolStripButton6.Text = "&Imprimir Orden";
+            this.toolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+            // 
             // frmDetalleVistaControlador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 656);
+            this.ClientSize = new System.Drawing.Size(1003, 656);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -874,9 +914,11 @@
         private System.Windows.Forms.Label lblFechaSalida;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_agendado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrePP;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrePS;
         private System.Windows.Forms.DataGridViewTextBoxColumn accion_requerida;
@@ -885,5 +927,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn orden_id;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
     }
 }

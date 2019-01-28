@@ -18,7 +18,9 @@ namespace vialsur.prefectura.Ordenes
             InitializeComponent();
             toolStripButton3.Visible = false;
 
-            
+
+            //printer-icon.png
+
             Resources.clsManejadorImagenes img = new Resources.clsManejadorImagenes();
             toolStrip1.ImageList = img.GetCatalog();            
             img.SetImage48("box-out-icon.png", "mark");           
@@ -33,7 +35,11 @@ namespace vialsur.prefectura.Ordenes
             img.SetImage48("Shopping-basket-add-icon.png", "basket");
             toolStripButton4.ImageKey = "basket";
 
+            img.SetImage48("printer-icon.png", "printer-icon");
+            toolStripButton6.ImageKey = "printer-icon";
 
+            img.SetImage48("oil-drum-icon.png", "oil-drum-icon");
+            toolStripButton5.ImageKey = "oil-drum-icon";
         }
         /// <summary>
         /// Num. CEdula del aprovador
@@ -79,9 +85,14 @@ namespace vialsur.prefectura.Ordenes
                 obj_vehiculo = obj_ve_resp.ve_vehiculo;
 
                 MostrarInformacionVehiculo(obj_vehiculo, obj_orden);
-                //EN EL CASO DE QUE ESTE FINALIZADO
-                if (obj_orden.estado == (int) entidades.vialsur.prefectura.Orden_TipoEstado.FINALIZADO)
-                    toolStripButton4.Visible = toolStripButton2.Enabled = false;
+                //EN EL CASO DE QUE ESTE FINALIZADO O DESCARTADO
+                if (obj_orden.estado == (int) entidades.vialsur.prefectura.Orden_TipoEstado.FINALIZADO |
+                    obj_orden.estado == (int)entidades.vialsur.prefectura.Orden_TipoEstado.DESCARTADO )
+                {
+                    toolStripButton4.Visible = toolStripButton2.Enabled = toolStripButton4.Enabled = false;
+                    //toolStripButton2.Enabled =
+                }
+                
                 //habilita para que el administrador pueda cambiar el estado
                 if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
                      toolStripButton3.Visible = true;
@@ -98,6 +109,16 @@ namespace vialsur.prefectura.Ordenes
                     toolStripButton2.Visible = false;
                     dataGridView1.Columns["cl_ver"].Visible = false;
                 }  //toolStripButton2
+
+                //PARA QUE SE HABILITE LA COLUMNA PARA QUITAR O AÑADIR UN TRABAJO
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario) &
+                    obj_orden.estado == (int)entidades.vialsur.prefectura.Orden_TipoEstado.CREADO )
+                {                    
+                    dataGridView1.Columns["cl_modificar"].Visible = true;
+                }
+
+                
+
 
             }
             catch (Exception ex)
@@ -188,7 +209,7 @@ namespace vialsur.prefectura.Ordenes
 
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
                 {                    
-                    orde_detalle obj_ord_det_temp = new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ConsultarOrde_DetalleById(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());                                        
+                    orde_detalle obj_ord_det_temp = new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().ConsultarOrde_DetalleById(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
                     frmSeleccionadorTrabajo objSelecTrab = new frmSeleccionadorTrabajo();
                     objSelecTrab.Obj_orden_detalle = obj_ord_det_temp;
                     objSelecTrab.Obj_vehiculo = obj_vehiculo;
@@ -197,8 +218,7 @@ namespace vialsur.prefectura.Ordenes
                     if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario) & 
                         obj_orden.ve_vehiculo_responsable.First().per_persona_cedula != Empleado.cedula)
                     {
-                        objSelecTrab.EsLectura = true;
-                        
+                        objSelecTrab.EsLectura = true;                        
                     }
 
                     objSelecTrab.EsMecanicoAtender = objSelecTrab.EsActualizacion = true;
@@ -213,24 +233,36 @@ namespace vialsur.prefectura.Ordenes
                     }
                 }
 
-                /* frmPersonal_Nuevo frm_personal = new frmPersonal_Nuevo();
-                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" & dataGridView1.RowCount > 0)
+              //   frmPersonal_Nuevo frm_personal = new frmPersonal_Nuevo();
+                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
                  {
+                    if (MessageBox.Show("¿Desea cambiar el estado?","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                    {
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_orde_detalle().Actualizar_Estado_Agendado(Convert.ToInt32( dataGridView1.Rows[e.RowIndex].Cells["id"].Value),
+                            dataGridView1.Rows[e.RowIndex].Cells["estado_agendado"].Value.ToString()== "Programado" ? false:true
+                            );
+                        CargarDatosGrilla();
+                    }
+                    //"Programado"True : "Descartado"False
 
-                     frm_personal.EsVer = true;
+
+
+
+
+                 /*    frm_personal.EsVer = true;
                      frm_personal.EsNuevo = false;
                      frm_personal.EsModificar = true;
                      frm_personal.Cedula = dataGridView1.Rows[e.RowIndex].Cells["cedula"].Value.ToString();
+                     */
 
-
-                     //frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
-                     //frm_Vehiculo.EsNuevo = false;
-                     //frm_Vehiculo.Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
-                     //frm_Vehiculo.EsVer = dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" ? true : false;
-                     //frm_Vehiculo.ShowDialog();
-                     //frm_Vehiculo.Dispose();
-                     //btn_Buscar_Click(sender, e);
-                 }  */
+                    //frmVehiculo_Nuevo frm_Vehiculo = new frmVehiculo_Nuevo();
+                    //frm_Vehiculo.EsNuevo = false;
+                    //frm_Vehiculo.Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                    //frm_Vehiculo.EsVer = dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver" ? true : false;
+                    //frm_Vehiculo.ShowDialog();
+                    //frm_Vehiculo.Dispose();
+                    //btn_Buscar_Click(sender, e);
+                }  
 
             }
             catch (Exception ex)
@@ -258,7 +290,7 @@ namespace vialsur.prefectura.Ordenes
                                     this.Close();
                                 }
                                 else
-                                    MessageBox.Show("Aun tiene pendientes trabajos que realizar en la orden");
+                                    MessageBox.Show("Aun tiene trabajos pendientes que realizar en la orden","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                             }
                             else
                             {
@@ -353,6 +385,31 @@ namespace vialsur.prefectura.Ordenes
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);
+            }
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        { ///lubricantes
+
+
+
+
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rpt.cls_RPT_orden_individual objRpt = new rpt.cls_RPT_orden_individual();
+                objRpt.Orden_Id = OrdenID;
+                objRpt.Generar();
+                Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
+                frmVisor.RutaArchivo = @"C:\Temp\1.pdf";
+                frmVisor.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un problema al intentar mostrar la orden","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);                
             }
         }
     }

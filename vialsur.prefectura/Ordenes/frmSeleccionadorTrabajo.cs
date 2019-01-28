@@ -69,13 +69,15 @@ namespace vialsur.prefectura.Ordenes
             {                
                 uc_Accion2.Enabled =  false;
             }
+            if(!(bool)obj_orden_detalle.estado_agendado)
+            {
+                toolStripButton2.Enabled = false;
+            }
 
             //if (entidades.vialsur.prefectura.TipoUsuario.MECANICO != Tipo_Usuario & EsNuevoEdi)
             //{
             //    toolStripButton2.Enabled = uc_Accion2.Enabled = false;
             //}
-
-
 
             //    NO_DEFINIDO = 0,
             //CREADO = 1,
@@ -136,7 +138,8 @@ namespace vialsur.prefectura.Ordenes
                 numericUpDown1.Value = Convert.ToInt32(obj_orden_detalle.cantidad);
                 lettersTextBox1.Text = obj_orden_detalle.observacion;
                 checkBox1.Checked = (bool)obj_orden_detalle.estado;
-
+                label8.Text = (bool)obj_orden_detalle.estado_agendado ? "Programado" : "Decartado";
+                
                 ///uc_Accion2.Enabled = false;  //para q no haya como cambiar la actividad realizada 
             }
             else  //en el caso de que sea nueva

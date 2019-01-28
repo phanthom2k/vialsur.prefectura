@@ -25,8 +25,9 @@ namespace logica.vialsur.prefectura.Catalogos
                 DataTable dt_clonada = dt.Clone();
                 dt_clonada.Columns["accion_realizada"].DataType = typeof(string);
                 dt_clonada.Columns["accion_requerida"].DataType = typeof(string);
+                dt_clonada.Columns["estado_agendado"].DataType = typeof(string);
 
-                foreach(DataRow dr in dt.Rows)
+                foreach (DataRow dr in dt.Rows)
                 {
                     dt_clonada.LoadDataRow(dr.ItemArray, false);
                 }
@@ -40,6 +41,8 @@ namespace logica.vialsur.prefectura.Catalogos
                     int.TryParse(dt_clonada.Rows[i]["accion_realizada"].ToString(), out j);
                     if (j != 0) dt_clonada.Rows[i]["accion_realizada"] = ((Orde_Detalle_ACCION)j).ToString();
                     else dt_clonada.Rows[i]["accion_realizada"] = "";
+
+                    dt_clonada.Rows[i]["estado_agendado"] = Convert.ToBoolean( dt_clonada.Rows[i]["estado_agendado"]) ? "Programado" : "Descartado";
 
                 }
                 return dt_clonada;
@@ -69,6 +72,27 @@ namespace logica.vialsur.prefectura.Catalogos
                 throw ex;
             }
         }
+
+        /// <summary>
+        /// Actualiza el estado del trabjo a realizar
+        /// FALSE=DESCARTADO / TRUE= PROGRAMADO
+        /// LOS QUE ESTAN EN FALSE NO SE DEBE EJECUTAR YA QUE NO SE AUTORIZARON POR EL ADMINISTRADOR
+        /// </summary>
+        /// <param name="Id_Orden"></param>
+        /// <param name="Estado"></param>
+        public void Actualizar_Estado_Agendado(int Id_Orden, bool Estado )
+        {
+            try
+            {
+                new datos.vialsur.prefectura.cls_data_orde_detalle().Actualizar_orde_detalle_Estado_Agendado(Id_Orden, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
         /// <summary>
         /// Actualiza el estado de la orden
