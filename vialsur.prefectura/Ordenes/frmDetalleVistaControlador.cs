@@ -363,9 +363,7 @@ namespace vialsur.prefectura.Ordenes
                     var frmPedido = new vialsur.prefectura.Pedidos.frmPedidosOrden();
                     frmPedido.OrdenID = OrdenID;
                     frmPedido.ShowDialog();
-                }
-                
-                                
+                }                                                
 
                 /*
                 var objFrmCambioEstado = new frmOrdenesCambiarEstado();

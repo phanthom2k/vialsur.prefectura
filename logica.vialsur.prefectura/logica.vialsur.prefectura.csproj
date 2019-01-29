@@ -49,6 +49,7 @@
     <Compile Include="Catalogos\cls_logica_orden.cs" />
     <Compile Include="Catalogos\cls_logica_orde_detalle.cs" />
     <Compile Include="Catalogos\cls_logica_pais.cs" />
+    <Compile Include="Catalogos\cls_logica_fondo_pedido.cs" />
     <Compile Include="Catalogos\cls_logica_per_persona.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_color.cs" />

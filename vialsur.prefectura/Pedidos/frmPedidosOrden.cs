@@ -174,8 +174,32 @@ namespace vialsur.prefectura.Pedidos
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-
+        {   
+            ///DESPLEGA LA VENTA A DE FONDOS ROTATIVOS
+            try
+            {
+                var _pedidoFondo = new entidades.vialsur.prefectura.fondo_pedido();
+                _pedidoFondo.cedula = pedido.cedula; //registra el mecanico que solicita
+                _pedidoFondo.orden_id = pedido.orden_id; //registra el la orden de mantenimiento a la que esta vinculada
+                
+                var objPedido = new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_pedido();
+                //verificar que ya este creado la orden
+                if (objPedido.Consultar_Pedido(OrdenID).cedula == null)
+                {
+                    if (MessageBox.Show("¿Desea solicitar partes?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        objPedido.InsertarPedido(_pedidoFondo);
+                }
+                if (objPedido.Consultar_Pedido(OrdenID).cedula != null)
+                {
+                    var frmPedido = new vialsur.prefectura.PedidosFondoRotativo.frmPedidosFondoRotativoOrden();
+                    frmPedido.OrdenID = OrdenID;
+                    frmPedido.ShowDialog();
+                } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
         }
     }
 }

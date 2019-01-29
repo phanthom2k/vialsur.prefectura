@@ -93,6 +93,7 @@ namespace vialsur.prefectura.Pedidos
                 }
 
 
+
                 //frmDetalleVistaControlador frmDetalle = new frmDetalleVistaControlador();
                 //frmDetalle.OrdenID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
                 //// frmDetalle.EsCambioEstado = true;  ///comento para que se habilite acorde al usuario esto controlo en el frm DetalleVistaCOntrolador
