@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosOrden));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -51,6 +51,7 @@
             this.LBL_FECHA = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LBL_ORDEN = new System.Windows.Forms.Label();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,10 +82,10 @@
             // 
             // cl_ver
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "#######km";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "#######km";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle3;
             this.cl_ver.FillWeight = 55F;
             this.cl_ver.HeaderText = "Modif.";
             this.cl_ver.MinimumWidth = 57;
@@ -144,7 +145,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton3,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(807, 52);
@@ -279,6 +281,16 @@
             this.LBL_ORDEN.TabIndex = 72;
             this.LBL_ORDEN.Text = "LBL_ORDEN";
             // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(206, 49);
+            this.toolStripButton4.Text = "&Solicitar por fondos rotativos";
+            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
             // frmPedidosOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -337,5 +349,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pedidos_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }

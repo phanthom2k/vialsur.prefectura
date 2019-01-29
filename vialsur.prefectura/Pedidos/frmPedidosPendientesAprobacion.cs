@@ -87,7 +87,8 @@ namespace vialsur.prefectura.Pedidos
             {
                 if(MessageBox.Show("¿Desea aprobar la orden?","APROBACIÓN DE ORDEN DE PARTES Y PIEZAS", MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
                 {
-                    new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos().ActualizarEstado(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value), true);
+                    new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos().ActualizarEstado(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value), true,
+                        Empleado.cedula );
                     CargarDatosGrilla();
                 }
 

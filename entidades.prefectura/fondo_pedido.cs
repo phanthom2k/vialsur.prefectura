@@ -12,16 +12,16 @@ namespace entidades.vialsur.prefectura
     using System;
     using System.Collections.Generic;
 
-    /// <summary>
-    /// Representa el estado de la orden de pedido de pieza
-    /// </summary>
-    public enum Orden_TipoEstadoPedido
-    {        
-        CREADO = 0,
-        AUTORIZADO = 1     
-    }
+    ///// <summary>
+    ///// Representa el estado de la orden de pedido de pieza
+    ///// </summary>
+    //public enum Orden_TipoEstadoPedido
+    //{        
+    //    CREADO = 0,
+    //    AUTORIZADO = 1     
+    //}
 
-    public partial class pedidos
+    public partial class fondo_pedido
     {
         public int id { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
@@ -30,7 +30,7 @@ namespace entidades.vialsur.prefectura
         public string orden_id { get; set; }
         public bool aprobada { get; set; }
         public string cedula_autoriza { get; set; }
-        public virtual ICollection<detalle_pedidos> detalle_pedidos { get; set; }
+        public virtual ICollection<fondo_detalle_pedido> fondo_detalle_pedido { get; set; }
 
     }
 }

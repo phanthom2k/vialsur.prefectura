@@ -106,7 +106,14 @@ namespace vialsur.prefectura
                     personalToolStripMenuItem.Visible = true;
                     historialDeOrdenesToolStripMenuItem.Visible = true;
                     caToolStripMenuItem.Visible = true;
-                    nuevaOrdenDePartesYPiezasToolStripMenuItem.Visible = true;
+                    //nuevaOrdenDePartesYPiezasToolStripMenuItem.Visible = true;
+                    ///ocultar fichas que permiten aprobar ordenes
+                    tsmiAprobarOrdenesPartesPiezas.Visible =
+                    tsmiAprobarOrdenesFondoRotativo.Visible = true;
+
+
+
+
                 }
 
                 //toolStripStatusLabel1.Text = string.Format("USUARIO: {0} / TIPO USUARIO: {1}",
@@ -256,12 +263,13 @@ namespace vialsur.prefectura
         {
             try
             {
-                Pedidos.frmPedidosPendientesAprobacion objForm = new Pedidos.frmPedidosPendientesAprobacion();
-                objForm.MdiParent = this;
-                objForm.WindowState = FormWindowState.Maximized;
-                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                //Pedidos.frmPedidosPendientesAprobacion objForm = new Pedidos.frmPedidosPendientesAprobacion();
+                //objForm.MdiParent = this;
+                //objForm.WindowState = FormWindowState.Maximized;
+
+                ////objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
                 //objForm.Empleado = Empleado;
-                objForm.Show();
+                //objForm.Show();
 
             }
             catch (Exception ex)
@@ -274,14 +282,14 @@ namespace vialsur.prefectura
         {
             try
             {
-                Pedidos.frmPedidos objForm = new Pedidos.frmPedidos();
-                objForm.MdiParent = this;
-                objForm.WindowState = FormWindowState.Maximized;
-                objForm.Cedula = Empleado.cedula;
-                objForm.Empleado = Empleado;
-                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                //Pedidos.frmPedidos objForm = new Pedidos.frmPedidos();
+                //objForm.MdiParent = this;
+                //objForm.WindowState = FormWindowState.Maximized;
+                //objForm.Cedula = Empleado.cedula;
                 //objForm.Empleado = Empleado;
-                objForm.Show();
+                ////objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                ////objForm.Empleado = Empleado;
+                //objForm.Show();
 
             }
             catch (Exception ex)
@@ -303,6 +311,69 @@ namespace vialsur.prefectura
             manual.RutaArchivo = System.Environment.CurrentDirectory + "\\manualdeusuario_v1.pdf";
             manual.StartPosition = FormStartPosition.CenterScreen;
             manual.ShowDialog();
+        }
+
+        private void aprobarOrdenDePartesYPiezasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pedidos.frmPedidosPendientesAprobacion objForm = new Pedidos.frmPedidosPendientesAprobacion();
+                objForm.MdiParent = this;
+                objForm.WindowState = FormWindowState.Maximized;
+
+                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                objForm.Empleado = Empleado;
+                objForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void ordenesDePartesYPiezasSolicitadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pedidos.frmPedidos objForm = new Pedidos.frmPedidos();
+                objForm.MdiParent = this;
+                objForm.WindowState = FormWindowState.Maximized;
+                objForm.Cedula = Empleado.cedula;
+                objForm.Empleado = Empleado;
+                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                //objForm.Empleado = Empleado;
+                objForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void tsmiAprobarOrdenesFondoRotativo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ordenesPorFondoRotativosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PedidosFondoRotativo.frmPedidosFondoRotativo objForm = new PedidosFondoRotativo.frmPedidosFondoRotativo();                
+                objForm.MdiParent = this;
+                objForm.WindowState = FormWindowState.Maximized;
+                objForm.Cedula = Empleado.cedula;
+                objForm.Empleado = Empleado;
+                
+                objForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
         }
     }
 }

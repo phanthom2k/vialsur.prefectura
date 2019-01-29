@@ -828,8 +828,8 @@
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(115, 49);
-            this.toolStripButton6.Text = "&Imprimir Orden";
+            this.toolStripButton6.Size = new System.Drawing.Size(177, 49);
+            this.toolStripButton6.Text = "&Imprimir Orden de Mant.";
             this.toolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 

@@ -347,7 +347,7 @@ namespace vialsur.prefectura.Ordenes
             try
             {                
                 var _pedido = new entidades.vialsur.prefectura.pedidos();
-                _pedido.cedula = Cedula_mecanico;
+                _pedido.cedula = Cedula_mecanico;   //ESTA PUESTO PARA QUE REGISTRE EL MECANICO QUE SOLICITA
                 _pedido.orden_id = OrdenID;  //id de la orden de mantenimiento
                     
 

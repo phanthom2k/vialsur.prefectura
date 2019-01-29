@@ -114,11 +114,11 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
-        public void ActualizarEstado(int pedido_id, bool estado)
+        public void ActualizarEstado(int pedido_id, bool estado, string cedula_autoriza)
         {
             try
-            {
-                new cls_data_pedidos().ActualizarEstado(pedido_id, estado);
+            { 
+                new cls_data_pedidos().ActualizarEstado(pedido_id, estado, cedula_autoriza);
             }
             catch (Exception ex)
             {

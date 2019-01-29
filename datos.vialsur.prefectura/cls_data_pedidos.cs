@@ -102,7 +102,7 @@ namespace datos.vialsur.prefectura
         /// </summary>
         /// <param name="pedido_id"></param>
         /// <param name="estado"></param>
-        public void ActualizarEstado(int pedido_id, bool estado)
+        public void ActualizarEstado(int pedido_id, bool estado, string cedula)
         {
             try
             {
@@ -117,9 +117,16 @@ namespace datos.vialsur.prefectura
                 SqlParameter _aprobada = new SqlParameter("@aprobada", SqlDbType.Bit);
                 _aprobada.Value = estado;
                 parameters.Add(_aprobada);
+
+                SqlParameter _cedula = new SqlParameter("@cedula_autoriza", SqlDbType.VarChar, 10);
+                _cedula.Value = cedula;
+                parameters.Add(_cedula);
+
                 #endregion
 
-                string _sql_UPDATE = "UPDATE[dbo].[pedidos] SET [aprobada] = @aprobada  WHERE [id] = @pedido_id;";
+                string _sql_UPDATE = "UPDATE[dbo].[pedidos] SET [aprobada] = @aprobada, [cedula_autoriza] =@cedula_autoriza   WHERE [id] = @pedido_id;";
+                
+                //FALTA INCLUIR QUIEN AUTORIZA EL NUMERO DE CEDULA
 
                 SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_UPDATE, parameters.ToArray());
 

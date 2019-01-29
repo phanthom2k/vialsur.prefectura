@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="catalogo_parte_principal.cs" />
+    <Compile Include="fondo_detalle_pedido.cs" />
     <Compile Include="detalle_pedidos.cs" />
+    <Compile Include="fondo_pedido.cs" />
     <Compile Include="pedidos.cs" />
     <Compile Include="catalogo_parte_secundaria.cs" />
     <Compile Include="emp_empleado.cs" />

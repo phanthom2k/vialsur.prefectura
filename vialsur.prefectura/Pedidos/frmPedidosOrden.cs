@@ -29,6 +29,10 @@ namespace vialsur.prefectura.Pedidos
             //toolStripButton2.ImageKey = "disk";
             toolStripButton2.ImageKey = "new";
 
+            ///por defecto NO es fondo rotativo
+            ///se usa TRUE para cuando mandemos a copiar las columnas para hacer un update
+            ///de los items que van a fondo rotativo
+            FondoRotativo = false;
 
 
         }
@@ -37,6 +41,8 @@ namespace vialsur.prefectura.Pedidos
         /// ID DE LA ORDEN DE TRABAJO
         /// </summary>
         public string OrdenID { get; set; }
+
+        public bool FondoRotativo { get; set; }
 
         entidades.vialsur.prefectura.pedidos pedido;
 
@@ -165,6 +171,11 @@ namespace vialsur.prefectura.Pedidos
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
