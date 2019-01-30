@@ -424,6 +424,7 @@
     <EmbeddedResource Include="Vehiculos\frmVehiculo_Nuevo.resx">
       <DependentUpon>frmVehiculo_Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bd_actualizada_30012019\db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\01ENE2019db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\23nov2018db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\db_mantenimiento.bak" />

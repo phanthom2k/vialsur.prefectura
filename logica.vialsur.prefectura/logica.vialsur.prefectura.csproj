@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Catalogos\cls_logica_catalogo_parte_principal.cs" />
     <Compile Include="Catalogos\cls_logica_catalogo_parte_secundaria.cs" />
+    <Compile Include="Catalogos\cls_logica_fondo_detalle_pedido.cs" />
     <Compile Include="Catalogos\cls_logica_emp_empleado_tipo_mantenimiento_asignado.cs" />
     <Compile Include="Catalogos\cls_logica_emp_empleado_tipo_usuario.cs" />
     <Compile Include="Catalogos\cls_logica_emp_empleado_cargo.cs" />

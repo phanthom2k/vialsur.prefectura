@@ -32,8 +32,10 @@ namespace vialsur.prefectura.PedidosFondoRotativo
 
 
                 pedido = new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_pedido().Consultar_Pedido(OrdenID);
-/*
+
+
                 //pedido = new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos().Consultar_Pedido(OrdenID);
+                LBL_NUMERO_ORDEN.Text = pedido.id.ToString();
                 LBL_FECHA.Text = Convert.ToDateTime(pedido.fecha).ToShortDateString();  //Convert.ToDateTime(row("campofecha")).ToString("dd/MM/yyyy");
                 LBL_ESTADO.Text = pedido.aprobada ? "APROBADO" : "CREADO";
                 if (pedido.aprobada)
@@ -43,8 +45,8 @@ namespace vialsur.prefectura.PedidosFondoRotativo
                 }
                 LBL_ORDEN.Text = OrdenID;
                 lettersTextBox1.Text = pedido.observaciones;
-                CargarDatos();
-*/
+                CargarDatos();  ///implementar
+
             }
             catch (Exception ex)
             {
@@ -53,5 +55,20 @@ namespace vialsur.prefectura.PedidosFondoRotativo
 
            
         }
+
+
+        void CargarDatos()
+        {
+            try
+            {
+                dataGridView1.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_detalle_pedido().ConsultarDetallesByOrden_Id(OrdenID);
+                //dataGridView1.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_detalle_pedidos().ConsultarDetallesByOrden_Id(OrdenID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Existio un error al intentar cargar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

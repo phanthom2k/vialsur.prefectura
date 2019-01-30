@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosFondoRotativoOrden));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LBL_ORDEN = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LBL_FECHA = new System.Windows.Forms.Label();
@@ -51,6 +51,8 @@
             this.pedidos_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.LBL_NUMERO_ORDEN = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             // LBL_ORDEN
             // 
             this.LBL_ORDEN.AutoSize = true;
-            this.LBL_ORDEN.Location = new System.Drawing.Point(652, 118);
+            this.LBL_ORDEN.Location = new System.Drawing.Point(653, 87);
             this.LBL_ORDEN.Name = "LBL_ORDEN";
             this.LBL_ORDEN.Size = new System.Drawing.Size(91, 17);
             this.LBL_ORDEN.TabIndex = 84;
@@ -68,7 +70,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(432, 118);
+            this.label5.Location = new System.Drawing.Point(433, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(226, 17);
             this.label5.TabIndex = 83;
@@ -77,7 +79,7 @@
             // LBL_FECHA
             // 
             this.LBL_FECHA.AutoSize = true;
-            this.LBL_FECHA.Location = new System.Drawing.Point(144, 118);
+            this.LBL_FECHA.Location = new System.Drawing.Point(145, 87);
             this.LBL_FECHA.Name = "LBL_FECHA";
             this.LBL_FECHA.Size = new System.Drawing.Size(86, 17);
             this.LBL_FECHA.TabIndex = 82;
@@ -86,7 +88,7 @@
             // LBL_VEHICULO
             // 
             this.LBL_VEHICULO.AutoSize = true;
-            this.LBL_VEHICULO.Location = new System.Drawing.Point(564, 146);
+            this.LBL_VEHICULO.Location = new System.Drawing.Point(565, 115);
             this.LBL_VEHICULO.Name = "LBL_VEHICULO";
             this.LBL_VEHICULO.Size = new System.Drawing.Size(110, 17);
             this.LBL_VEHICULO.TabIndex = 81;
@@ -96,7 +98,7 @@
             // LBL_ESTADO
             // 
             this.LBL_ESTADO.AutoSize = true;
-            this.LBL_ESTADO.Location = new System.Drawing.Point(144, 143);
+            this.LBL_ESTADO.Location = new System.Drawing.Point(145, 112);
             this.LBL_ESTADO.Name = "LBL_ESTADO";
             this.LBL_ESTADO.Size = new System.Drawing.Size(98, 17);
             this.LBL_ESTADO.TabIndex = 80;
@@ -105,7 +107,7 @@
             // lettersTextBox1
             // 
             this.lettersTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.lettersTextBox1.Location = new System.Drawing.Point(147, 166);
+            this.lettersTextBox1.Location = new System.Drawing.Point(148, 135);
             this.lettersTextBox1.MaxLength = 500;
             this.lettersTextBox1.Multiline = true;
             this.lettersTextBox1.Name = "lettersTextBox1";
@@ -116,7 +118,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 166);
+            this.label4.Location = new System.Drawing.Point(9, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 17);
             this.label4.TabIndex = 78;
@@ -126,7 +128,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 143);
+            this.label3.Location = new System.Drawing.Point(9, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 77;
@@ -136,7 +138,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(432, 146);
+            this.label2.Location = new System.Drawing.Point(433, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 17);
             this.label2.TabIndex = 76;
@@ -147,7 +149,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 118);
+            this.label1.Location = new System.Drawing.Point(9, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 75;
@@ -209,20 +211,20 @@
             this.pedidos_id,
             this.cantidad,
             this.detalle});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 280);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 232);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(783, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(783, 350);
             this.dataGridView1.TabIndex = 73;
             // 
             // cl_ver
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "#######km";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "#######km";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle3;
             this.cl_ver.FillWeight = 55F;
             this.cl_ver.HeaderText = "Modif.";
             this.cl_ver.MinimumWidth = 57;
@@ -275,11 +277,34 @@
             this.detalle.ReadOnly = true;
             this.detalle.Width = 550;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(417, 17);
+            this.label6.TabIndex = 85;
+            this.label6.Text = "PEDIDO DE PARTES POR FONDO ROTATIVO NÚMERO:";
+            // 
+            // LBL_NUMERO_ORDEN
+            // 
+            this.LBL_NUMERO_ORDEN.AutoSize = true;
+            this.LBL_NUMERO_ORDEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_NUMERO_ORDEN.ForeColor = System.Drawing.Color.Blue;
+            this.LBL_NUMERO_ORDEN.Location = new System.Drawing.Point(433, 61);
+            this.LBL_NUMERO_ORDEN.Name = "LBL_NUMERO_ORDEN";
+            this.LBL_NUMERO_ORDEN.Size = new System.Drawing.Size(176, 17);
+            this.LBL_NUMERO_ORDEN.TabIndex = 86;
+            this.LBL_NUMERO_ORDEN.Text = "LBL_NUMERO_ORDEN";
+            // 
             // frmPedidosFondoRotativoOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 623);
+            this.ClientSize = new System.Drawing.Size(809, 594);
+            this.Controls.Add(this.LBL_NUMERO_ORDEN);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.LBL_ORDEN);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.LBL_FECHA);
@@ -326,5 +351,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pedidos_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LBL_NUMERO_ORDEN;
     }
 }
