@@ -36,7 +36,7 @@ namespace datos.vialsur.prefectura
 
                 #region parametros              
    
-                SqlParameter _pedidos_id = new SqlParameter("@pedidos_id", SqlDbType.Int);
+                SqlParameter _pedidos_id = new SqlParameter("@fondo_pedido_id", SqlDbType.Int);
                 _pedidos_id.Value = detalle.fondo_pedido_id;
                 parameters.Add(_pedidos_id);
 
@@ -50,14 +50,14 @@ namespace datos.vialsur.prefectura
 
                 #endregion
 
-                string _sql_insert = "INSERT INTO [dbo].[detalle_pedidos]([id],[pedidos_id],[cantidad],[detalle]) VALUES (dbo.FUN_detalle_pedidos_SEC(),@pedidos_id,@cantidad,@detalle); ";                                                         
+                string _sql_insert = "INSERT INTO [dbo].[fondo_detalle_pedido]([id],[fondo_pedido_id],[cantidad],[detalle]) VALUES (dbo.FUN_fondo_detalle_pedidos_SEC(),@fondo_pedido_id,@cantidad,@detalle); ";                                                         
 
                 SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_insert, parameters.ToArray());
 
             }
             catch (Exception ex)
             {
-                throw new Exception("No se pudo registrar los datos de la persona", ex);
+                throw new Exception("No se pudo registrar los datos de el detalle del pedido Fondo Rotativo", ex);
             }                    
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace datos.vialsur.prefectura
 
                 #endregion
 
-                string _sql_insert = "DELETE FROM [dbo].[detalle_pedidos] WHERE id=@id; ";
+                string _sql_insert = "DELETE FROM [dbo].[fondo_detalle_pedido] WHERE id=@id; ";
 
                 SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_insert, parameters.ToArray());
 
@@ -112,25 +112,27 @@ namespace datos.vialsur.prefectura
 
                 #endregion
 
-                string _sql_UPDATE = "UPDATE [dbo].[detalle_pedidos] SET [cantidad] = @cantidad, [detalle] = @detalle WHERE [id]=@id";
+                string _sql_UPDATE = "UPDATE [dbo].[fondo_detalle_pedido] SET [cantidad] = @cantidad, [detalle] = @detalle WHERE [id]=@id";
 
                 SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_UPDATE, parameters.ToArray());
             }
             catch (Exception ex)
             {
-                throw new Exception("No se pudo registrar los datos de la persona", ex);
+                throw new Exception("No se pudo actualziar los datos del pedido", ex);
             }            
         }
 
         /// <summary>
-        /// Consulta los detalles segun la ORDEN_ID
+        /// Consulta los detalles segun la ORDEN_ID (orden de mantenimiento)
         /// </summary>
         /// <param name="orden_id"></param>
         /// <returns></returns>
         public DataTable ConsultarDetallesByOrden_Id(string orden_id)
         {
-            string sql_Consulta = "SELECT detalle_pedidos.id, detalle_pedidos.pedidos_id, detalle_pedidos.cantidad, detalle_pedidos.detalle " +
-                                  "FROM pedidos INNER JOIN detalle_pedidos ON pedidos.id = detalle_pedidos.pedidos_id AND pedidos.orden_id=@orden_id";
+            string sql_Consulta = /*"SELECT detalle_pedidos.id, detalle_pedidos.pedidos_id, detalle_pedidos.cantidad, detalle_pedidos.detalle " +
+                                  "FROM pedidos INNER JOIN detalle_pedidos ON pedidos.id = detalle_pedidos.pedidos_id AND pedidos.orden_id=@orden_id"; */
+                                "SELECT fondo_detalle_pedido.id, fondo_detalle_pedido.fondo_pedido_id, fondo_detalle_pedido.cantidad, fondo_detalle_pedido.detalle " +
+                                "FROM fondo_pedido INNER JOIN fondo_detalle_pedido ON fondo_pedido.id = fondo_detalle_pedido.fondo_pedido_id AND fondo_pedido.orden_id = @orden_id ";
             try
             {
 
@@ -146,7 +148,7 @@ namespace datos.vialsur.prefectura
             }
             catch (Exception ex)
             {
-                throw new Exception("cls_data_detalle_pedidos:" + ex.Message, ex);
+                throw new Exception("cls_data_fondo_detalle_pedidos:" + ex.Message, ex);
             }
             finally
             {
@@ -161,13 +163,13 @@ namespace datos.vialsur.prefectura
         /// <returns></returns>
         public DataTable ConsultarDetallesBy_PedidoId(int PedidoId)
         {
-            string sql_Consulta = "SELECT id, pedidos_id, cantidad, detalle " +
-                                  "FROM detalle_pedidos WHERE pedidos_id= @pedidos_id";
+            string sql_Consulta = "SELECT id, fondo_pedido_id, cantidad, detalle " +
+                                  "FROM fondo_detalle_pedido WHERE fondo_pedido_id= @fondo_pedido_id";
             try
             {
 
                 List<SqlParameter> parameters = new List<SqlParameter>();
-                SqlParameter _pedidos_id = new SqlParameter("@pedidos_id", SqlDbType.Int);
+                SqlParameter _pedidos_id = new SqlParameter("@fondo_pedido_id", SqlDbType.Int);
                 _pedidos_id.Value = PedidoId;
                 parameters.Add(_pedidos_id);
 
@@ -178,7 +180,7 @@ namespace datos.vialsur.prefectura
             }
             catch (Exception ex)
             {
-                throw new Exception("cls_data_detalle_pedidos:" + ex.Message, ex);
+                throw new Exception("cls_data_fondo_detalle_pedidos:" + ex.Message, ex);
             }
             finally
             {
@@ -219,7 +221,7 @@ namespace datos.vialsur.prefectura
             try
             {
 
-                string consulta = "SELECT [id],[pedidos_id],[cantidad],[detalle] FROM [dbo].[detalle_pedidos] WHERE id = @id";
+                string consulta = "SELECT [id],[fondo_pedido_id],[cantidad],[detalle] FROM [dbo].[fondo_detalle_pedido] WHERE id = @id";
 
                 SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
                 parametro.Value = id;
@@ -231,7 +233,7 @@ namespace datos.vialsur.prefectura
                 while (dr_datos.Read())
                 {
                     obj_det.id = (int)dr_datos["id"];
-                    obj_det.fondo_pedido_id = (int)dr_datos["pedidos_id"];
+                    obj_det.fondo_pedido_id = (int)dr_datos["fondo_pedido_id"];
                     obj_det.cantidad = (int)dr_datos["cantidad"];
                     obj_det.detalle = dr_datos["detalle"].ToString();                    
                 }

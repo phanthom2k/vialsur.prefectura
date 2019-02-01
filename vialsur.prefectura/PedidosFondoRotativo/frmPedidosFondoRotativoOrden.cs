@@ -61,7 +61,7 @@ namespace vialsur.prefectura.PedidosFondoRotativo
         {
             try
             {
-                dataGridView1.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_detalle_pedido().ConsultarDetallesByOrden_Id(OrdenID);
+                dataGridView1.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_detalle_pedido().ConsultarDetallesByOrden_Id(OrdenID, pedido.id);
                 //dataGridView1.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_detalle_pedidos().ConsultarDetallesByOrden_Id(OrdenID);
             }
             catch (Exception ex)
@@ -70,5 +70,54 @@ namespace vialsur.prefectura.PedidosFondoRotativo
             }
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                ///
+                esto hay que implementar
+
+                //if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
+                //{
+
+                //    var detallepedido = new frmPedidosOrdenNuevo();
+                //    detallepedido.EsNuevo = false;
+                //    detallepedido.PedidoId = pedido.id;
+                //    detallepedido.DetallePedidoId = (int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value;
+
+                //    if (detallepedido.ShowDialog() == DialogResult.Yes)
+                //    {
+                //        CargarDatos();
+                //    }
+                //    detallepedido.Dispose();
+
+                //}
+
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
+                {
+                    if (MessageBox.Show("¿Desea Eliminar el suministro ingresado?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        //new logica.vialsur.prefectura.Catalogos.cls_logica_detalle_pedidos().EliminarDetallePedido((int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_detalle_pedido().EliminarDetallePedido((int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+                        CargarDatos();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

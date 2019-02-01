@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosFondoRotativoOrden));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LBL_ORDEN = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LBL_FECHA = new System.Windows.Forms.Label();
@@ -177,6 +177,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
             this.toolStripButton1.Text = "&Salir";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton3
             // 
@@ -186,6 +187,7 @@
             this.toolStripButton3.Size = new System.Drawing.Size(66, 49);
             this.toolStripButton3.Text = "&Guardar";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton2
             // 
@@ -218,13 +220,14 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(783, 350);
             this.dataGridView1.TabIndex = 73;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cl_ver
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "#######km";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
             this.cl_ver.FillWeight = 55F;
             this.cl_ver.HeaderText = "Modif.";
             this.cl_ver.MinimumWidth = 57;
@@ -292,7 +295,7 @@
             this.LBL_NUMERO_ORDEN.AutoSize = true;
             this.LBL_NUMERO_ORDEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_NUMERO_ORDEN.ForeColor = System.Drawing.Color.Blue;
-            this.LBL_NUMERO_ORDEN.Location = new System.Drawing.Point(433, 61);
+            this.LBL_NUMERO_ORDEN.Location = new System.Drawing.Point(429, 61);
             this.LBL_NUMERO_ORDEN.Name = "LBL_NUMERO_ORDEN";
             this.LBL_NUMERO_ORDEN.Size = new System.Drawing.Size(176, 17);
             this.LBL_NUMERO_ORDEN.TabIndex = 86;
@@ -317,7 +320,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPedidosFondoRotativoOrden";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPedidosFondoRotativoOrden";
             this.Load += new System.EventHandler(this.frmPedidosFondoRotativoOrden_Load);
             this.toolStrip1.ResumeLayout(false);

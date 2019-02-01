@@ -136,9 +136,10 @@ namespace logica.vialsur.prefectura.Catalogos
         /// <summary>
         /// CONSULTA EL DETALLE DE UNA ORDEN DE PARTES Y PIEZAS ACORDE AL  ORDEN_ID
         /// </summary>
-        /// <param name="orden_id"></param>
+        /// <param name="orden_id">IR DE LA ORDEN DE TRABAJO</param>
+        /// <param name="id">DE LA ORDEN DE PARTES POR FONDO ROTATIVO</param>
         /// <returns></returns>
-        public DataTable ConsultarDetallesByOrden_Id(string orden_id)
+        public DataTable ConsultarDetallesByOrden_Id(string orden_id, int id=-1)
         {
 
             try
@@ -151,9 +152,12 @@ namespace logica.vialsur.prefectura.Catalogos
                     DataTable dt_detalle_pedido_piezas = new datos.vialsur.prefectura.cls_data_detalle_pedidos().ConsultarDetallesByOrden_Id(orden_id);
                     foreach (DataRow dr in dt_detalle_pedido_piezas.Rows)
                     {
-                        //mando a insertar
-                        string g = dr["detalle"].ToString();
-                        //insert
+                        var insert = new entidades.vialsur.prefectura.fondo_detalle_pedido();
+                        insert.cantidad = int.Parse(dr["cantidad"].ToString());
+                        insert.detalle = dr["detalle"].ToString();
+                        insert.fondo_pedido_id = id;
+
+                        new datos.vialsur.prefectura.cls_data_fondo_detalle_pedido().Insertar(insert);                        
                     }
                     //consulto de nuevo para sacar la informacion
                     dt_partes_fondo_rotativo = new datos.vialsur.prefectura.cls_data_fondo_detalle_pedido().ConsultarDetallesByOrden_Id(orden_id);
