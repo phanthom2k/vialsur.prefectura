@@ -440,6 +440,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="template_fondorotativopartespiezas_v1.pdf" />
     <None Include="template_orden_v1 old1.pdf" />
     <None Include="template_orden_v1.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -51,6 +51,9 @@ namespace vialsur.prefectura.rpt
                 pdfFormFields.SetField("KILOMENTRAJE DE INGRESO", obj_orden.km_ingreso.ToString()+"Km" );
                 pdfFormFields.SetField("KILOMETRAJE DE EGRESO", obj_orden.km_egreso.ToString()+"Km");
                 pdfFormFields.SetField("OBSERVACIONES GENERALES", obj_orden.observacion );
+                string g = ((entidades.vialsur.prefectura.Orden_TipoEstado)(int)obj_orden.estado).ToString();
+
+                pdfFormFields.SetField("ESTADO_ORDEN", g );
 
                 //info del vehiculo
                 pdfFormFields.SetField("CODIGO", obj_vehiculo.codigo);
