@@ -100,14 +100,20 @@ namespace vialsur.prefectura.Ordenes
                 //HABILITA PARA QUE EL MECANICO O EL DESIGNADO PUEDA MARCAR salida y soliictar partes
                 if (entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)
                     || obj_ve_resp.per_persona_cedula == Empleado.cedula  )
-                    toolStripButton4.Visible =  toolStripButton2.Visible = true;
-                
+                {
+                    toolStripButton4.Visible = toolStripButton2.Visible = true;  //pedido de partes
+                    toolStripButton5.Visible = true;    //pedido lubricantes
+                }                    
+
                 ///EN EL CASO DE QUE ESTE EN ESTADO CREADO Y SEA  MECANICO
-                if(entidades.vialsur.prefectura.Orden_TipoEstado.CREADO  == (entidades.vialsur.prefectura.Orden_TipoEstado)((int)obj_orden.estado) &&
+                if (entidades.vialsur.prefectura.Orden_TipoEstado.CREADO  == (entidades.vialsur.prefectura.Orden_TipoEstado)((int)obj_orden.estado) &&
                     entidades.vialsur.prefectura.TipoUsuario.MECANICO == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario)   )
                 {
                     toolStripButton2.Visible = false;
                     dataGridView1.Columns["cl_ver"].Visible = false;
+
+                    toolStripButton4.Visible = false;  //si no esta autorizado no se le permita crear la orden de partes
+                    toolStripButton5.Visible = false; //si no esta autorizado no se le permita crear la roden de lubricantes
                 }  //toolStripButton2
 
                 //PARA QUE SE HABILITE LA COLUMNA PARA QUITAR O AÑADIR UN TRABAJO

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosFondoRotativoOrden));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LBL_ORDEN = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LBL_FECHA = new System.Windows.Forms.Label();
@@ -45,14 +45,14 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.LBL_NUMERO_ORDEN = new System.Windows.Forms.Label();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pedidos_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.LBL_NUMERO_ORDEN = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -223,12 +223,33 @@
             this.dataGridView1.TabIndex = 73;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(417, 17);
+            this.label6.TabIndex = 85;
+            this.label6.Text = "PEDIDO DE PARTES POR FONDO ROTATIVO NÚMERO:";
+            // 
+            // LBL_NUMERO_ORDEN
+            // 
+            this.LBL_NUMERO_ORDEN.AutoSize = true;
+            this.LBL_NUMERO_ORDEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_NUMERO_ORDEN.ForeColor = System.Drawing.Color.Blue;
+            this.LBL_NUMERO_ORDEN.Location = new System.Drawing.Point(429, 61);
+            this.LBL_NUMERO_ORDEN.Name = "LBL_NUMERO_ORDEN";
+            this.LBL_NUMERO_ORDEN.Size = new System.Drawing.Size(176, 17);
+            this.LBL_NUMERO_ORDEN.TabIndex = 86;
+            this.LBL_NUMERO_ORDEN.Text = "LBL_NUMERO_ORDEN";
+            // 
             // cl_ver
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "#######km";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
             this.cl_ver.FillWeight = 55F;
             this.cl_ver.HeaderText = "Modif.";
             this.cl_ver.MinimumWidth = 57;
@@ -259,8 +280,8 @@
             // 
             // pedidos_id
             // 
-            this.pedidos_id.DataPropertyName = "pedidos_id";
-            this.pedidos_id.HeaderText = "pedidos_id";
+            this.pedidos_id.DataPropertyName = "fondo_pedido_id";
+            this.pedidos_id.HeaderText = "fondo_pedido_id";
             this.pedidos_id.Name = "pedidos_id";
             this.pedidos_id.ReadOnly = true;
             this.pedidos_id.Visible = false;
@@ -280,27 +301,6 @@
             this.detalle.Name = "detalle";
             this.detalle.ReadOnly = true;
             this.detalle.Width = 550;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(417, 17);
-            this.label6.TabIndex = 85;
-            this.label6.Text = "PEDIDO DE PARTES POR FONDO ROTATIVO NÚMERO:";
-            // 
-            // LBL_NUMERO_ORDEN
-            // 
-            this.LBL_NUMERO_ORDEN.AutoSize = true;
-            this.LBL_NUMERO_ORDEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_NUMERO_ORDEN.ForeColor = System.Drawing.Color.Blue;
-            this.LBL_NUMERO_ORDEN.Location = new System.Drawing.Point(429, 61);
-            this.LBL_NUMERO_ORDEN.Name = "LBL_NUMERO_ORDEN";
-            this.LBL_NUMERO_ORDEN.Size = new System.Drawing.Size(176, 17);
-            this.LBL_NUMERO_ORDEN.TabIndex = 86;
-            this.LBL_NUMERO_ORDEN.Text = "LBL_NUMERO_ORDEN";
             // 
             // frmPedidosFondoRotativoOrden
             // 
@@ -354,13 +354,13 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LBL_NUMERO_ORDEN;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn pedidos_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label LBL_NUMERO_ORDEN;
     }
 }

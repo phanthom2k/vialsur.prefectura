@@ -821,6 +821,7 @@
             this.toolStripButton5.Size = new System.Drawing.Size(143, 49);
             this.toolStripButton5.Text = "Solicitar &lubricantes";
             this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton5.Visible = false;
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton6

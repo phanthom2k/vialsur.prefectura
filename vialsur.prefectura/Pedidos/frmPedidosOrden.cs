@@ -29,6 +29,11 @@ namespace vialsur.prefectura.Pedidos
             //toolStripButton2.ImageKey = "disk";
             toolStripButton2.ImageKey = "new";
 
+            img.SetImage48("arrow_rotate_clockwise.png", "arrow_rotate_clockwise");
+            //toolStripButton2.ImageKey = "disk";
+            toolStripButton4.ImageKey = "arrow_rotate_clockwise";
+            
+
             ///por defecto NO es fondo rotativo
             ///se usa TRUE para cuando mandemos a copiar las columnas para hacer un update
             ///de los items que van a fondo rotativo

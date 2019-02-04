@@ -63,14 +63,14 @@ namespace vialsur.prefectura.PedidosFondoRotativo
             if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")   ///VER LA ORDEN EN PDF
             {
                 //rpt.cls_RPT_orden_partes_y_piezas objRpt = new rpt.cls_RPT_orden_partes_y_piezas();
-                //objRpt.Orden_Id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
-                //objRpt.Generar();
-                //Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
-                //frmVisor.StartPosition = FormStartPosition.CenterScreen;
-                //frmVisor.Text = "Orden de pedido de piezas";
-                //frmVisor.RutaArchivo = @"C:\Temp\2.pdf";
-                //frmVisor.ShowDialog();
-                MessageBox.Show("");
+                rpt.cls_RPT_orden_fondo_partes_y_piezas objRpt = new rpt.cls_RPT_orden_fondo_partes_y_piezas();
+                objRpt.Orden_Id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+                objRpt.Generar();
+                Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
+                frmVisor.StartPosition = FormStartPosition.CenterScreen;
+                frmVisor.Text = "Orden de pedido de piezas por fondo rotativo";
+                frmVisor.RutaArchivo = @"C:\Temp\3.pdf";
+                frmVisor.ShowDialog();
 
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_aprobar")  //PARA PODER CAMBIAR EL ESTADO A APROBADO

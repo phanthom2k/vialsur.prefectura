@@ -38,7 +38,11 @@
             this.historialDeOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosDePartesYPiezasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaOrdenDePartesYPiezasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAprobarOrdenesPartesPiezas = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDePartesYPiezasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAprobarOrdenesFondoRotativo = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesPorFondoRotativosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,10 +55,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsmiAprobarOrdenesPartesPiezas = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAprobarOrdenesFondoRotativo = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenesPorFondoRotativosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -140,9 +140,24 @@
             this.tsmiAprobarOrdenesPartesPiezas,
             this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem});
             this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Name = "nuevaOrdenDePartesYPiezasToolStripMenuItem";
-            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
-            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Text = "Aprobar Orden de Partes y Piezas";
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Text = "Orden de Partes y Piezas";
             this.nuevaOrdenDePartesYPiezasToolStripMenuItem.Click += new System.EventHandler(this.nuevaOrdenDePartesYPiezasToolStripMenuItem_Click);
+            // 
+            // tsmiAprobarOrdenesPartesPiezas
+            // 
+            this.tsmiAprobarOrdenesPartesPiezas.Name = "tsmiAprobarOrdenesPartesPiezas";
+            this.tsmiAprobarOrdenesPartesPiezas.Size = new System.Drawing.Size(336, 26);
+            this.tsmiAprobarOrdenesPartesPiezas.Text = "Aprobar Orden de Partes y Piezas";
+            this.tsmiAprobarOrdenesPartesPiezas.Visible = false;
+            this.tsmiAprobarOrdenesPartesPiezas.Click += new System.EventHandler(this.aprobarOrdenDePartesYPiezasToolStripMenuItem_Click);
+            // 
+            // ordenesDePartesYPiezasSolicitadasToolStripMenuItem
+            // 
+            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem.Name = "ordenesDePartesYPiezasSolicitadasToolStripMenuItem";
+            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem.Size = new System.Drawing.Size(336, 26);
+            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem.Text = "Ordenes de Partes y Piezas Solicitadas";
+            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem.Click += new System.EventHandler(this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem_Click);
             // 
             // ordenesDePartesYPiezasRealizadasToolStripMenuItem
             // 
@@ -150,9 +165,24 @@
             this.tsmiAprobarOrdenesFondoRotativo,
             this.ordenesPorFondoRotativosToolStripMenuItem});
             this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Name = "ordenesDePartesYPiezasRealizadasToolStripMenuItem";
-            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
+            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
             this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Text = "Fondos Rotativos";
             this.ordenesDePartesYPiezasRealizadasToolStripMenuItem.Click += new System.EventHandler(this.ordenesDePartesYPiezasRealizadasToolStripMenuItem_Click);
+            // 
+            // tsmiAprobarOrdenesFondoRotativo
+            // 
+            this.tsmiAprobarOrdenesFondoRotativo.Name = "tsmiAprobarOrdenesFondoRotativo";
+            this.tsmiAprobarOrdenesFondoRotativo.Size = new System.Drawing.Size(329, 26);
+            this.tsmiAprobarOrdenesFondoRotativo.Text = "Aprobar Orden por Fondos Rotativos";
+            this.tsmiAprobarOrdenesFondoRotativo.Visible = false;
+            this.tsmiAprobarOrdenesFondoRotativo.Click += new System.EventHandler(this.tsmiAprobarOrdenesFondoRotativo_Click);
+            // 
+            // ordenesPorFondoRotativosToolStripMenuItem
+            // 
+            this.ordenesPorFondoRotativosToolStripMenuItem.Name = "ordenesPorFondoRotativosToolStripMenuItem";
+            this.ordenesPorFondoRotativosToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
+            this.ordenesPorFondoRotativosToolStripMenuItem.Text = "Ordenes por Fondo Rotativos";
+            this.ordenesPorFondoRotativosToolStripMenuItem.Click += new System.EventHandler(this.ordenesPorFondoRotativosToolStripMenuItem_Click);
             // 
             // administraciónToolStripMenuItem
             // 
@@ -166,14 +196,14 @@
             // vehiculosToolStripMenuItem
             // 
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.vehiculosToolStripMenuItem.Text = "Vehículos";
             this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Visible = false;
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
@@ -250,36 +280,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(160, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // tsmiAprobarOrdenesPartesPiezas
-            // 
-            this.tsmiAprobarOrdenesPartesPiezas.Name = "tsmiAprobarOrdenesPartesPiezas";
-            this.tsmiAprobarOrdenesPartesPiezas.Size = new System.Drawing.Size(336, 26);
-            this.tsmiAprobarOrdenesPartesPiezas.Text = "Aprobar Orden de Partes y Piezas";
-            this.tsmiAprobarOrdenesPartesPiezas.Visible = false;
-            this.tsmiAprobarOrdenesPartesPiezas.Click += new System.EventHandler(this.aprobarOrdenDePartesYPiezasToolStripMenuItem_Click);
-            // 
-            // ordenesDePartesYPiezasSolicitadasToolStripMenuItem
-            // 
-            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem.Name = "ordenesDePartesYPiezasSolicitadasToolStripMenuItem";
-            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem.Size = new System.Drawing.Size(336, 26);
-            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem.Text = "Ordenes de Partes y Piezas Solicitadas";
-            this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem.Click += new System.EventHandler(this.ordenesDePartesYPiezasSolicitadasToolStripMenuItem_Click);
-            // 
-            // tsmiAprobarOrdenesFondoRotativo
-            // 
-            this.tsmiAprobarOrdenesFondoRotativo.Name = "tsmiAprobarOrdenesFondoRotativo";
-            this.tsmiAprobarOrdenesFondoRotativo.Size = new System.Drawing.Size(329, 26);
-            this.tsmiAprobarOrdenesFondoRotativo.Text = "Aprobar Orden por Fondos Rotativos";
-            this.tsmiAprobarOrdenesFondoRotativo.Visible = false;
-            this.tsmiAprobarOrdenesFondoRotativo.Click += new System.EventHandler(this.tsmiAprobarOrdenesFondoRotativo_Click);
-            // 
-            // ordenesPorFondoRotativosToolStripMenuItem
-            // 
-            this.ordenesPorFondoRotativosToolStripMenuItem.Name = "ordenesPorFondoRotativosToolStripMenuItem";
-            this.ordenesPorFondoRotativosToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
-            this.ordenesPorFondoRotativosToolStripMenuItem.Text = "Ordenes por Fondo Rotativos";
-            this.ordenesPorFondoRotativosToolStripMenuItem.Click += new System.EventHandler(this.ordenesPorFondoRotativosToolStripMenuItem_Click);
             // 
             // frmMaster
             // 

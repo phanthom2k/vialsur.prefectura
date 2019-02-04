@@ -118,5 +118,31 @@ namespace vialsur.prefectura.PedidosFondoRotativo
                 }
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")   ///VER LA ORDEN EN PDF
+                {
+                    rpt.cls_RPT_orden_fondo_partes_y_piezas objRpt = new rpt.cls_RPT_orden_fondo_partes_y_piezas();
+                    objRpt.Orden_Id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+                    objRpt.Generar();
+                    Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
+                    frmVisor.StartPosition = FormStartPosition.CenterScreen;
+                    frmVisor.Text = "Orden de pedido de piezas por fondo rotativo";
+                    frmVisor.RutaArchivo = @"C:\Temp\3.pdf";
+                    frmVisor.ShowDialog();
+                }
+                //if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_solicitar")  //solicitar partes por fondo rotativo
+                //{
+
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un problema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

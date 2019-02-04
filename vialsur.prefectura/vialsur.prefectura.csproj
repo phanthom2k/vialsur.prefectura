@@ -241,6 +241,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\clsManejadorImagenes.cs" />
+    <Compile Include="rpt\cls_RPT_orden_fondo_partes_y_piezas.cs" />
     <Compile Include="rpt\cls_RPT_orden_partes_y_piezas.cs" />
     <Compile Include="rpt\cls_RPT_orden_individual.cs" />
     <Compile Include="uc\uc_Accion.cs">
@@ -424,6 +425,7 @@
     <EmbeddedResource Include="Vehiculos\frmVehiculo_Nuevo.resx">
       <DependentUpon>frmVehiculo_Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bd_actualizada_04022019\db_mantenimiento.bak" />
     <None Include="bd_actualizada_30012019\db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\01ENE2019db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\23nov2018db_mantenimiento.bak" />
@@ -440,7 +442,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="template_fondorotativopartespiezas_v1.pdf" />
+    <None Include="template_fondorotativopartespiezas_v1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="template_orden_v1 old1.pdf" />
     <None Include="template_orden_v1.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -490,6 +494,9 @@
   <ItemGroup>
     <Content Include="icono.ico" />
     <Content Include="icons\48x48\Actions-document-save-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\48x48\arrow_rotate_clockwise.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="icons\48x48\oil-drum-icon.png">
