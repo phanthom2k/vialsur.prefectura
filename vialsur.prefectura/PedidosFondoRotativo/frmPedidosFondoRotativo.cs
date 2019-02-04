@@ -40,7 +40,83 @@ namespace vialsur.prefectura.PedidosFondoRotativo
 
         private void frmPedidosFondoRotativo_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                {   //EN EL CASO DEL ADMINISTRADOR
+                    CargarDatosGrilla(entidades.vialsur.prefectura.Orden_TipoEstadoPedido.AUTORIZADO);
+                }
+                else
+                {   //EN EL CASO DE QUE SE LOGUEE COMO MECANICO U OTRO                    
+                    CargarDatosGrilla(entidades.vialsur.prefectura.Orden_TipoEstadoPedido.AUTORIZADO, Empleado.cedula);
+                }
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show("Ocurrio un problema al intentar consultar los datos." + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        void CargarDatosGrilla(entidades.vialsur.prefectura.Orden_TipoEstadoPedido T, string C = "")
+        {
+            try
+            {
+                //dataGridView1.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos().ConnsultarOrdenesSegunEstado_UI_customized(
+                dataGridView1.DataSource = new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_pedido().ConnsultarOrdenesSegunEstado_UI_customized(
+                                                                                                        T, C
+                                                                                                       );
+                //   DataTable dt = new logica.vialsur.prefectura.Orden.cls_logica_orden().ConnsultarOrdenesSegunEstado_UI_customized(Estado);
+                //  dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                entidades.vialsur.prefectura.Orden_TipoEstadoPedido p =
+                    (entidades.vialsur.prefectura.Orden_TipoEstadoPedido)Enum.Parse(typeof(entidades.vialsur.prefectura.Orden_TipoEstadoPedido),
+                                                                                    uc_Orden_TipoEstadoPedido1.SelectedValue.ToString());
+                //   EmployeeType empType = (EmployeeType)Enum.Parse(typeof(EmployeeType), ddl.SelectedValue);
+
+                CargarDatosGrilla(p, Empleado.cedula);
+
+                if (entidades.vialsur.prefectura.TipoUsuario.ADMINISTRADOR == (entidades.vialsur.prefectura.TipoUsuario)((int)Empleado.tipo_usuario))
+                {   //EN EL CASO DEL ADMINISTRADOR
+                    CargarDatosGrilla(p);
+                }
+                else
+                {   //EN EL CASO DE QUE SE LOGUEE COMO MECANICO U OTRO                    
+                    CargarDatosGrilla(p, Empleado.cedula);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un problema al intentar consultar los datos." + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["aprobada"].Index)
+            {
+                if (e.Value is bool)
+                {
+                    bool value = (bool)e.Value;
+                    e.Value = (value) ? "APROBADA" : "PENDIENTE APROB.";
+                    e.FormattingApplied = true;
+                }
+            }
         }
     }
 }

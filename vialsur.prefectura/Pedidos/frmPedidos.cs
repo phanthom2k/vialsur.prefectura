@@ -125,7 +125,6 @@ namespace vialsur.prefectura.Pedidos
         {
             try
             {
-
                 entidades.vialsur.prefectura.Orden_TipoEstadoPedido p =
                     (entidades.vialsur.prefectura.Orden_TipoEstadoPedido)Enum.Parse(typeof(entidades.vialsur.prefectura.Orden_TipoEstadoPedido),
                                                                                     uc_Orden_TipoEstadoPedido1.SelectedValue.ToString());                                                    
@@ -147,6 +146,19 @@ namespace vialsur.prefectura.Pedidos
                 MessageBox.Show("Ocurrio un problema al intentar consultar los datos." + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["aprobada"].Index)
+            {
+                if (e.Value is bool)
+                {
+                    bool value = (bool)e.Value;
+                    e.Value = (value) ? "APROBADA" : "PENDIENTE APROB.";
+                    e.FormattingApplied = true;
+                }
+            }
         }
     }
 }

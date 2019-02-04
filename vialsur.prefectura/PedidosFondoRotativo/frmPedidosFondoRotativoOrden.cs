@@ -77,47 +77,81 @@ namespace vialsur.prefectura.PedidosFondoRotativo
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-
+            /// guarda
+            try
+            {
+                if (MessageBox.Show("¿Desea guardar los cambios", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    pedido.observaciones = lettersTextBox1.Text.ToUpper();
+                    //new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos().ActualizarObservacion(pedido);
+                    new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_pedido().ActualizarObservacion(pedido);
+                    MessageBox.Show("Datos guardados", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Existio un error al intentar guardar la información.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                ///
-                esto hay que implementar
 
-                //if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
-                //{
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
+                {
+                    var detallepedido = new frmPedidosFondoRotativoNuevo();   //new frmPedidosOrdenNuevo();
+                    detallepedido.EsNuevo = false;
+                    detallepedido.PedidoId = pedido.id;
+                    detallepedido.DetallePedidoId = (int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value;
 
-                //    var detallepedido = new frmPedidosOrdenNuevo();
-                //    detallepedido.EsNuevo = false;
-                //    detallepedido.PedidoId = pedido.id;
-                //    detallepedido.DetallePedidoId = (int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value;
-
-                //    if (detallepedido.ShowDialog() == DialogResult.Yes)
-                //    {
-                //        CargarDatos();
-                //    }
-                //    detallepedido.Dispose();
-
-                //}
+                    if (detallepedido.ShowDialog() == DialogResult.Yes)
+                    {
+                        CargarDatos();
+                    }
+                    detallepedido.Dispose();                    
+                }
 
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
                 {
                     if (MessageBox.Show("¿Desea Eliminar el suministro ingresado?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        //new logica.vialsur.prefectura.Catalogos.cls_logica_detalle_pedidos().EliminarDetallePedido((int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+                    {                        
                         new logica.vialsur.prefectura.Catalogos.cls_logica_fondo_detalle_pedido().EliminarDetallePedido((int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
                         CargarDatos();
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            //NUEVO
+            try
+            {
+                var detallepedido = new frmPedidosFondoRotativoNuevo();  ///new frmPedidosOrdenNuevo();
+                detallepedido.EsNuevo = true;
+                detallepedido.PedidoId = pedido.id;
+                /// detallepedido.DetallePedidoId =  ///este se pone en el caso de que sea actualizacion
+                if (detallepedido.ShowDialog() == DialogResult.Yes)
+                {
+                    CargarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void frmPedidosFondoRotativoOrden_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
         }
     }
 }

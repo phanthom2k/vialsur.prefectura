@@ -53,6 +53,7 @@
             this.orden_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aprobada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoriza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,6 +114,7 @@
             this.orden_id,
             this.aprobada,
             this.solicitante,
+            this.autoriza,
             this.codigo,
             this.placa,
             this.nombre,
@@ -125,6 +127,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1359, 510);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // label2
             // 
@@ -243,9 +246,10 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
             this.id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id.HeaderText = "Orden No.";
+            this.id.HeaderText = "Orden de Partes y Piezas No.";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Width = 125;
             // 
             // fecha
             // 
@@ -289,10 +293,9 @@
             // aprobada
             // 
             this.aprobada.DataPropertyName = "aprobada";
-            this.aprobada.HeaderText = "aprobada";
+            this.aprobada.HeaderText = "Estado";
             this.aprobada.Name = "aprobada";
             this.aprobada.ReadOnly = true;
-            this.aprobada.Visible = false;
             // 
             // solicitante
             // 
@@ -303,6 +306,15 @@
             this.solicitante.Name = "solicitante";
             this.solicitante.ReadOnly = true;
             this.solicitante.Width = 225;
+            // 
+            // autoriza
+            // 
+            this.autoriza.DataPropertyName = "autoriza";
+            this.autoriza.FillWeight = 200F;
+            this.autoriza.HeaderText = "Autorizado por";
+            this.autoriza.Name = "autoriza";
+            this.autoriza.ReadOnly = true;
+            this.autoriza.Width = 225;
             // 
             // codigo
             // 
@@ -381,6 +393,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orden_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn aprobada;
         private System.Windows.Forms.DataGridViewTextBoxColumn solicitante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autoriza;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;

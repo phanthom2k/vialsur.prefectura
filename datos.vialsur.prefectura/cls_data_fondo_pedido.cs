@@ -63,7 +63,7 @@ namespace datos.vialsur.prefectura
         }
 
         
-        public void ActualizarObservacion(entidades.vialsur.prefectura.pedidos pedido)
+        public void ActualizarObservacion(entidades.vialsur.prefectura.fondo_pedido pedido)
         {            
             try
             {
@@ -87,14 +87,14 @@ namespace datos.vialsur.prefectura
                 //parameters.Add(_activo);
                 #endregion
 
-                string _sql_UPDATE = "UPDATE[dbo].[pedidos] SET [observaciones] = @observaciones  WHERE[orden_id] = @orden_id;";
+                string _sql_UPDATE = "UPDATE[dbo].[fondo_pedido] SET [observaciones] = @observaciones  WHERE[orden_id] = @orden_id;";
 
                 SqlHelper.ExecuteNonQuery(_con, CommandType.Text, _sql_UPDATE, parameters.ToArray());
                             
             }
             catch (Exception ex)
             {
-                throw new Exception("No se pudo registrar los datos de la persona", ex);
+                throw new Exception("No se pudo registrar los datos", ex);
             }
         }
         /// <summary>
@@ -124,7 +124,7 @@ namespace datos.vialsur.prefectura
 
                 #endregion
 
-                string _sql_UPDATE = "UPDATE[dbo].[pedidos] SET [aprobada] = @aprobada, [cedula_autoriza] =@cedula_autoriza   WHERE [id] = @pedido_id;";
+                string _sql_UPDATE = "UPDATE[dbo].[fondo_pedido] SET [aprobada] = @aprobada, [cedula_autoriza] =@cedula_autoriza   WHERE [id] = @pedido_id;";
                 
                 //FALTA INCLUIR QUIEN AUTORIZA EL NUMERO DE CEDULA
 
@@ -236,17 +236,18 @@ namespace datos.vialsur.prefectura
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public entidades.vialsur.prefectura.pedidos Consultar_PedidoById(int ID)
+        public entidades.vialsur.prefectura.fondo_pedido Consultar_PedidoById(int ID)
         {
             try
             {
 
-                string consulta = "SELECT [id],[fecha],[cedula],[observaciones],[orden_id],[aprobada] FROM [dbo].[pedidos] WHERE [id] = @id";
+                string consulta = "SELECT [id],[fecha],[cedula],[observaciones],[orden_id],[aprobada] FROM [dbo].[fondo_pedido] WHERE [id] = @id";
 
                 SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
                 parametro.Value = ID;
 
-                entidades.vialsur.prefectura.pedidos obj_pedido = new entidades.vialsur.prefectura.pedidos();
+                //entidades.vialsur.prefectura.pedidos obj_pedido = new entidades.vialsur.prefectura.pedidos();
+                entidades.vialsur.prefectura.fondo_pedido obj_pedido = new entidades.vialsur.prefectura.fondo_pedido();
 
                 SqlDataReader dr_datos = SqlHelper.ExecuteReader(_con, CommandType.Text, consulta, parametro);
                 while (dr_datos.Read())
@@ -283,13 +284,28 @@ namespace datos.vialsur.prefectura
         public DataTable ObtenerOrdenesByEstado_UI(entidades.vialsur.prefectura.Orden_TipoEstadoPedido estado, string cedula="")
         {
             string consulta_sql =
-                                "SELECT pedidos.id, pedidos.fecha, pedidos.cedula, pedidos.observaciones, pedidos.orden_id, pedidos.aprobada, CONCAT(per_persona.apellidos,', ',per_persona.nombres) solicitante, " +
-                                "vehiculo.codigo, vehiculo.placa,  marca.nombre, modelo.modelo " +
-                                "FROM   pedidos, per_persona, orden, ve_vehiculo_responsable, ve_vehiculo vehiculo, ve_vehiculo_modelo modelo,ve_vehiculo_marca marca " +
-                                "WHERE pedidos.cedula = per_persona.cedula AND pedidos.orden_id = orden.id AND orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
+               //"SELECT pedidos.id, pedidos.fecha, pedidos.cedula, pedidos.observaciones, pedidos.orden_id, pedidos.aprobada, CONCAT(per_persona.apellidos,', ',per_persona.nombres) solicitante, " +
+               //"vehiculo.codigo, vehiculo.placa,  marca.nombre, modelo.modelo " +
+               //"FROM   pedidos, per_persona, orden, ve_vehiculo_responsable, ve_vehiculo vehiculo, ve_vehiculo_modelo modelo,ve_vehiculo_marca marca " +
+               //"WHERE pedidos.cedula = per_persona.cedula AND pedidos.orden_id = orden.id AND orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
+               //"AND ve_vehiculo_responsable.ve_vehiculo_id = vehiculo.id AND " +
+               //"vehiculo.ve_vehiculo_modelo_id = modelo.id AND modelo.ve_vehiculo_marca_id = marca.id AND pedidos.aprobada=@aprobada ";
+               entidades.vialsur.prefectura.Orden_TipoEstadoPedido.CREADO == estado ?
+                                "SELECT fondo_pedido.id, fondo_pedido.fecha, fondo_pedido.cedula, fondo_pedido.observaciones, fondo_pedido.orden_id, fondo_pedido.aprobada, CONCAT(per_persona.apellidos,', ',per_persona.nombres) solicitante, " +
+                                "vehiculo.codigo, vehiculo.placa,  marca.nombre, modelo.modelo, '------' autoriza  " +
+                                "FROM   fondo_pedido, per_persona, orden, ve_vehiculo_responsable, ve_vehiculo vehiculo, ve_vehiculo_modelo modelo,ve_vehiculo_marca marca  " +
+                                "WHERE fondo_pedido.cedula = per_persona.cedula AND fondo_pedido.orden_id = orden.id AND orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
                                 "AND ve_vehiculo_responsable.ve_vehiculo_id = vehiculo.id AND " +
-                                "vehiculo.ve_vehiculo_modelo_id = modelo.id AND modelo.ve_vehiculo_marca_id = marca.id AND pedidos.aprobada=@aprobada ";
+                                "vehiculo.ve_vehiculo_modelo_id = modelo.id AND modelo.ve_vehiculo_marca_id = marca.id AND fondo_pedido.aprobada=@aprobada " :
 
+                                "SELECT fondo_pedido.id, fondo_pedido.fecha, fondo_pedido.cedula, fondo_pedido.observaciones, fondo_pedido.orden_id, fondo_pedido.aprobada, CONCAT(per_persona.apellidos,', ',per_persona.nombres) solicitante, " +
+                                "vehiculo.codigo, vehiculo.placa,  marca.nombre, modelo.modelo, CONCAT(p2.apellidos,', ', p2.nombres) autoriza  " +
+                                "FROM   fondo_pedido, per_persona, orden, ve_vehiculo_responsable, ve_vehiculo vehiculo, ve_vehiculo_modelo modelo,ve_vehiculo_marca marca, per_persona p2 " +
+                                "WHERE fondo_pedido.cedula = per_persona.cedula AND fondo_pedido.orden_id = orden.id AND orden.ve_vehiculo_responsable_id = ve_vehiculo_responsable.id " +
+                                "AND ve_vehiculo_responsable.ve_vehiculo_id = vehiculo.id AND p2.cedula=fondo_pedido.cedula_autoriza AND " +
+                                "vehiculo.ve_vehiculo_modelo_id = modelo.id AND modelo.ve_vehiculo_marca_id = marca.id AND fondo_pedido.aprobada=@aprobada ";
+
+            //
             List<SqlParameter> parameters = new List<SqlParameter>();
             //        SqlParameter _orden_id = new SqlParameter("@orden_id", SqlDbType.NVarChar, 10);
             //        _orden_id.Value = orden_id;
@@ -301,7 +317,7 @@ namespace datos.vialsur.prefectura
 
             if (cedula != "")
             {
-                consulta_sql += " AND pedidos.cedula = @cedula";
+                consulta_sql += " AND fondo_pedido.cedula = @cedula";
                 SqlParameter _cedula = new SqlParameter("@cedula", SqlDbType.NVarChar, 10);
                 _cedula.Value = cedula;
                 parameters.Add(_cedula);

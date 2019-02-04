@@ -95,7 +95,6 @@ namespace vialsur.prefectura.Pedidos
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             /// guarda
-
             try
             {
                 if(MessageBox.Show("¿Desea guardar los cambios","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)

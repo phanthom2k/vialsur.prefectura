@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosFondoRotativo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosFondoRotativo));
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_input = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.uc_Orden_TipoEstadoPedido1 = new vialsur.prefectura.uc.uc_Orden_TipoEstadoPedido();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_solicitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_aprobar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -49,14 +53,11 @@
             this.orden_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aprobada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoriza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.uc_Orden_TipoEstadoPedido1 = new vialsur.prefectura.uc.uc_Orden_TipoEstadoPedido();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +101,7 @@
             this.btn_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // txt_input
             // 
@@ -142,6 +144,7 @@
             this.orden_id,
             this.aprobada,
             this.solicitante,
+            this.autoriza,
             this.codigo,
             this.placa,
             this.nombre,
@@ -151,8 +154,53 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1359, 510);
+            this.dataGridView1.Size = new System.Drawing.Size(1294, 406);
             this.dataGridView1.TabIndex = 53;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1306, 52);
+            this.toolStrip1.TabIndex = 52;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
+            this.toolStripButton1.Text = "&Salir";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
+            this.toolStripButton2.Text = "&Nueva";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Visible = false;
+            // 
+            // uc_Orden_TipoEstadoPedido1
+            // 
+            this.uc_Orden_TipoEstadoPedido1.Ancho = 121;
+            this.uc_Orden_TipoEstadoPedido1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uc_Orden_TipoEstadoPedido1.DropDownWidth = 121;
+            this.uc_Orden_TipoEstadoPedido1.FormattingEnabled = true;
+            this.uc_Orden_TipoEstadoPedido1.Location = new System.Drawing.Point(68, 61);
+            this.uc_Orden_TipoEstadoPedido1.Name = "uc_Orden_TipoEstadoPedido1";
+            this.uc_Orden_TipoEstadoPedido1.Size = new System.Drawing.Size(180, 24);
+            this.uc_Orden_TipoEstadoPedido1.TabIndex = 59;
             // 
             // cl_ver
             // 
@@ -197,7 +245,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
             this.id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id.HeaderText = "Orden No.";
+            this.id.HeaderText = "Orden por Fondo Rotativo No.";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
@@ -243,10 +291,9 @@
             // aprobada
             // 
             this.aprobada.DataPropertyName = "aprobada";
-            this.aprobada.HeaderText = "aprobada";
+            this.aprobada.HeaderText = "Estado";
             this.aprobada.Name = "aprobada";
             this.aprobada.ReadOnly = true;
-            this.aprobada.Visible = false;
             // 
             // solicitante
             // 
@@ -257,6 +304,14 @@
             this.solicitante.Name = "solicitante";
             this.solicitante.ReadOnly = true;
             this.solicitante.Width = 225;
+            // 
+            // autoriza
+            // 
+            this.autoriza.DataPropertyName = "autoriza";
+            this.autoriza.HeaderText = "Autorizado por";
+            this.autoriza.Name = "autoriza";
+            this.autoriza.ReadOnly = true;
+            this.autoriza.Width = 225;
             // 
             // codigo
             // 
@@ -289,54 +344,11 @@
             this.modelo.ReadOnly = true;
             this.modelo.Width = 185;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1709, 52);
-            this.toolStrip1.TabIndex = 52;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
-            this.toolStripButton1.Text = "&Salir";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
-            this.toolStripButton2.Text = "&Nueva";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Visible = false;
-            // 
-            // uc_Orden_TipoEstadoPedido1
-            // 
-            this.uc_Orden_TipoEstadoPedido1.Ancho = 121;
-            this.uc_Orden_TipoEstadoPedido1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uc_Orden_TipoEstadoPedido1.DropDownWidth = 121;
-            this.uc_Orden_TipoEstadoPedido1.FormattingEnabled = true;
-            this.uc_Orden_TipoEstadoPedido1.Location = new System.Drawing.Point(68, 61);
-            this.uc_Orden_TipoEstadoPedido1.Name = "uc_Orden_TipoEstadoPedido1";
-            this.uc_Orden_TipoEstadoPedido1.Size = new System.Drawing.Size(180, 24);
-            this.uc_Orden_TipoEstadoPedido1.TabIndex = 59;
-            // 
             // frmPedidosFondoRotativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1709, 760);
+            this.ClientSize = new System.Drawing.Size(1306, 518);
             this.Controls.Add(this.uc_Orden_TipoEstadoPedido1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
@@ -365,6 +377,9 @@
         private System.Windows.Forms.TextBox txt_input;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridViewButtonColumn cl_solicitar;
         private System.Windows.Forms.DataGridViewButtonColumn cl_aprobar;
@@ -375,12 +390,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orden_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn aprobada;
         private System.Windows.Forms.DataGridViewTextBoxColumn solicitante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autoriza;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

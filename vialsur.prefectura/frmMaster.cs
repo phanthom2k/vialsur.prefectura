@@ -354,7 +354,22 @@ namespace vialsur.prefectura
 
         private void tsmiAprobarOrdenesFondoRotativo_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Pedidos.frmPedidosPendientesAprobacion objForm = new Pedidos.frmPedidosPendientesAprobacion();
+                PedidosFondoRotativo.frmPedidosFondoRotativoPendAprobacion objForm  = new PedidosFondoRotativo.frmPedidosFondoRotativoPendAprobacion();
+                objForm.MdiParent = this;
+                objForm.WindowState = FormWindowState.Maximized;
 
+                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                objForm.Empleado = Empleado;
+                objForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
         }
 
         private void ordenesPorFondoRotativosToolStripMenuItem_Click(object sender, EventArgs e)

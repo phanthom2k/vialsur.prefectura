@@ -36,7 +36,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.error_Provider1 = new Vivaldi.UserControls.Error_Provider();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error_Provider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lettersTextBox1
@@ -96,6 +98,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(42, 49);
             this.toolStripButton1.Text = "&Salir";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -105,6 +108,12 @@
             this.toolStripButton2.Size = new System.Drawing.Size(66, 49);
             this.toolStripButton2.Text = "&Guardar";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // error_Provider1
+            // 
+            this.error_Provider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error_Provider1.ContainerControl = this;
             // 
             // frmPedidosFondoRotativoNuevo
             // 
@@ -116,10 +125,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
+            this.KeyPreview = true;
             this.Name = "frmPedidosFondoRotativoNuevo";
             this.Text = "frmPedidosFondoRotativoNuevo";
+            this.Load += new System.EventHandler(this.frmPedidosFondoRotativoNuevo_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPedidosFondoRotativoNuevo_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error_Provider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +147,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private Vivaldi.UserControls.Error_Provider error_Provider1;
     }
 }

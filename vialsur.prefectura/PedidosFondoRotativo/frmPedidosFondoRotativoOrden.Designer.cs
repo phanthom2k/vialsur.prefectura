@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosFondoRotativoOrden));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LBL_ORDEN = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LBL_FECHA = new System.Windows.Forms.Label();
@@ -197,6 +197,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(55, 49);
             this.toolStripButton2.Text = "&Nueva";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // dataGridView1
             // 
@@ -224,10 +225,10 @@
             // 
             // cl_ver
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "#######km";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "#######km";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle2;
             this.cl_ver.FillWeight = 55F;
             this.cl_ver.HeaderText = "Modif.";
             this.cl_ver.MinimumWidth = 57;
@@ -320,12 +321,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView1);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPedidosFondoRotativoOrden";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPedidosFondoRotativoOrden";
             this.Load += new System.EventHandler(this.frmPedidosFondoRotativoOrden_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPedidosFondoRotativoOrden_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

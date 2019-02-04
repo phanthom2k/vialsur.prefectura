@@ -75,11 +75,12 @@ namespace logica.vialsur.prefectura.Catalogos
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public entidades.vialsur.prefectura.pedidos Consultar_PedidoById(int ID)
+        public entidades.vialsur.prefectura.fondo_pedido Consultar_PedidoById(int ID)
         {
             try
             {
-                return new cls_data_pedidos().Consultar_PedidoById(ID);
+                //return new cls_data_pedidos().Consultar_PedidoById(ID);
+                return new cls_data_fondo_pedido().Consultar_PedidoById(ID);
             }
             catch (Exception ex)
             {
@@ -104,11 +105,12 @@ namespace logica.vialsur.prefectura.Catalogos
             }
         }
 
-        public void ActualizarObservacion(entidades.vialsur.prefectura.pedidos pedido)
+        public void ActualizarObservacion(entidades.vialsur.prefectura.fondo_pedido pedido)
         {
             try
             {
-                new cls_data_pedidos().ActualizarObservacion(pedido);
+                //new cls_data_pedidos().ActualizarObservacion(pedido);
+                new cls_data_fondo_pedido().ActualizarObservacion(pedido);
             }
             catch (Exception ex)
             {
@@ -119,8 +121,9 @@ namespace logica.vialsur.prefectura.Catalogos
         public void ActualizarEstado(int pedido_id, bool estado, string cedula_autoriza)
         {
             try
-            { 
-                new cls_data_pedidos().ActualizarEstado(pedido_id, estado, cedula_autoriza);
+            {
+                //new cls_data_pedidos().ActualizarEstado(pedido_id, estado, cedula_autoriza);
+                new cls_data_fondo_pedido().ActualizarEstado(pedido_id, estado, cedula_autoriza);
             }
             catch (Exception ex)
             {
@@ -138,7 +141,8 @@ namespace logica.vialsur.prefectura.Catalogos
         {
             try
             {
-                return new cls_data_pedidos().ObtenerOrdenesByEstado_UI(estado, Cedula); 
+                //return new cls_data_pedidos().ObtenerOrdenesByEstado_UI(estado, Cedula); 
+                return new cls_data_fondo_pedido().ObtenerOrdenesByEstado_UI(estado, Cedula);
                 ///System.Data.DataTable dt = new cls_data_pedidos().ObtenerOrdenesByEstado_UI(estado);
 
                 //System.Data.DataTable dt_clodana = dt.Clone();
