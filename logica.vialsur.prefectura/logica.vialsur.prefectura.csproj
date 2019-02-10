@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Catalogos\cls_logica_catalogo_parte_principal.cs" />
     <Compile Include="Catalogos\cls_logica_catalogo_parte_secundaria.cs" />
+    <Compile Include="Catalogos\cls_logica_detalle_pedidos_aceite.cs" />
     <Compile Include="Catalogos\cls_logica_fondo_detalle_pedido.cs" />
     <Compile Include="Catalogos\cls_logica_emp_empleado_tipo_mantenimiento_asignado.cs" />
     <Compile Include="Catalogos\cls_logica_emp_empleado_tipo_usuario.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Catalogos\cls_logica_orde_detalle.cs" />
     <Compile Include="Catalogos\cls_logica_pais.cs" />
     <Compile Include="Catalogos\cls_logica_fondo_pedido.cs" />
+    <Compile Include="Catalogos\cls_logica_pedidos_aceite.cs" />
     <Compile Include="Catalogos\cls_logica_per_persona.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo.cs" />
     <Compile Include="Catalogos\cls_logica_ve_vehiculo_color.cs" />

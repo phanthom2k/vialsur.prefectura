@@ -393,11 +393,33 @@ namespace vialsur.prefectura.Ordenes
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
-        { ///lubricantes
+        { /// SOLICITUD DE LUBRICANTES
+            try
+            {
+                var _pedido = new entidades.vialsur.prefectura.pedidos_aceite();
+                _pedido.cedula = Cedula_mecanico;   //ESTA PUESTO PARA QUE REGISTRE EL MECANICO QUE SOLICITA
+                _pedido.orden_id = OrdenID;  //id de la orden de mantenimiento
 
 
+                var objPedido = new logica.vialsur.prefectura.Catalogos.cls_logica_pedidos_aceite();
+                //verificar que ya este creado la orden
+                if (objPedido.Consultar_Pedido(OrdenID).cedula == null)
+                {
+                    if (MessageBox.Show("¿Desea solicitar partes?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        objPedido.InsertarPedido(_pedido);
+                }
+                if (objPedido.Consultar_Pedido(OrdenID).cedula != null)
+                {
+                    var frmPedido = new vialsur.prefectura.PedidosLubricantes.frmPedidosLubricantesOrden();
+                    frmPedido.OrdenID = OrdenID;
+                    frmPedido.ShowDialog();
+                }
 
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)

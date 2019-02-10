@@ -43,6 +43,9 @@
             this.ordenesDePartesYPiezasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAprobarOrdenesFondoRotativo = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesPorFondoRotativosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lubricantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aprobarOrdenesDeLubricantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDeLubricantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,7 +132,8 @@
             // 
             this.pedidosDePartesYPiezasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaOrdenDePartesYPiezasToolStripMenuItem,
-            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem});
+            this.ordenesDePartesYPiezasRealizadasToolStripMenuItem,
+            this.lubricantesToolStripMenuItem});
             this.pedidosDePartesYPiezasToolStripMenuItem.Name = "pedidosDePartesYPiezasToolStripMenuItem";
             this.pedidosDePartesYPiezasToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.pedidosDePartesYPiezasToolStripMenuItem.Text = "Pedidos";
@@ -183,6 +187,30 @@
             this.ordenesPorFondoRotativosToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
             this.ordenesPorFondoRotativosToolStripMenuItem.Text = "Ordenes por Fondo Rotativos";
             this.ordenesPorFondoRotativosToolStripMenuItem.Click += new System.EventHandler(this.ordenesPorFondoRotativosToolStripMenuItem_Click);
+            // 
+            // lubricantesToolStripMenuItem
+            // 
+            this.lubricantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aprobarOrdenesDeLubricantesToolStripMenuItem,
+            this.ordenesDeLubricantesToolStripMenuItem});
+            this.lubricantesToolStripMenuItem.Name = "lubricantesToolStripMenuItem";
+            this.lubricantesToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.lubricantesToolStripMenuItem.Text = "Lubricantes";
+            // 
+            // aprobarOrdenesDeLubricantesToolStripMenuItem
+            // 
+            this.aprobarOrdenesDeLubricantesToolStripMenuItem.Name = "aprobarOrdenesDeLubricantesToolStripMenuItem";
+            this.aprobarOrdenesDeLubricantesToolStripMenuItem.Size = new System.Drawing.Size(298, 26);
+            this.aprobarOrdenesDeLubricantesToolStripMenuItem.Text = "Aprobar Ordenes de Lubricantes";
+            this.aprobarOrdenesDeLubricantesToolStripMenuItem.Visible = false;
+            this.aprobarOrdenesDeLubricantesToolStripMenuItem.Click += new System.EventHandler(this.aprobarOrdenesDeLubricantesToolStripMenuItem_Click);
+            // 
+            // ordenesDeLubricantesToolStripMenuItem
+            // 
+            this.ordenesDeLubricantesToolStripMenuItem.Name = "ordenesDeLubricantesToolStripMenuItem";
+            this.ordenesDeLubricantesToolStripMenuItem.Size = new System.Drawing.Size(298, 26);
+            this.ordenesDeLubricantesToolStripMenuItem.Text = "Ordenes de Lubricantes";
+            this.ordenesDeLubricantesToolStripMenuItem.Click += new System.EventHandler(this.ordenesDeLubricantesToolStripMenuItem_Click);
             // 
             // administraciónToolStripMenuItem
             // 
@@ -336,5 +364,8 @@
         private System.Windows.Forms.ToolStripMenuItem ordenesDePartesYPiezasSolicitadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiAprobarOrdenesFondoRotativo;
         private System.Windows.Forms.ToolStripMenuItem ordenesPorFondoRotativosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lubricantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aprobarOrdenesDeLubricantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDeLubricantesToolStripMenuItem;
     }
 }

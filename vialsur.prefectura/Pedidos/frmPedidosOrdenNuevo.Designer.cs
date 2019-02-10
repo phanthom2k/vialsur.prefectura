@@ -77,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 64);
+            this.label1.Location = new System.Drawing.Point(15, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 64;
@@ -86,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(128, 64);
+            this.label2.Location = new System.Drawing.Point(131, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 65;
@@ -95,7 +95,7 @@
             // numericTextBox1
             // 
             this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(15, 84);
+            this.numericTextBox1.Location = new System.Drawing.Point(18, 86);
             this.numericTextBox1.MaxLength = 3;
             this.numericTextBox1.Name = "numericTextBox1";
             this.numericTextBox1.Size = new System.Drawing.Size(74, 22);
@@ -105,7 +105,7 @@
             // lettersTextBox1
             // 
             this.lettersTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.lettersTextBox1.Location = new System.Drawing.Point(113, 84);
+            this.lettersTextBox1.Location = new System.Drawing.Point(116, 86);
             this.lettersTextBox1.Name = "lettersTextBox1";
             this.lettersTextBox1.Size = new System.Drawing.Size(574, 22);
             this.lettersTextBox1.TabIndex = 67;

@@ -50,6 +50,7 @@
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoriza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +109,8 @@
             this.codigo,
             this.placa,
             this.nombre,
-            this.modelo});
+            this.modelo,
+            this.autoriza});
             this.dataGridView1.Location = new System.Drawing.Point(0, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -242,6 +244,14 @@
             this.modelo.ReadOnly = true;
             this.modelo.Width = 185;
             // 
+            // autoriza
+            // 
+            this.autoriza.DataPropertyName = "autoriza";
+            this.autoriza.HeaderText = "autoriza";
+            this.autoriza.Name = "autoriza";
+            this.autoriza.ReadOnly = true;
+            this.autoriza.Visible = false;
+            // 
             // frmPedidosPendientesAprobacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -279,5 +289,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autoriza;
     }
 }

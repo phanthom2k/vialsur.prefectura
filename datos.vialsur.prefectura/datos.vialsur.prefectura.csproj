@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="cls_data_catalogo_parte_principal.cs" />
     <Compile Include="cls_data_catalogo_parte_secundiaria.cs" />
+    <Compile Include="cls_data_detalle_pedidos_aceite.cs" />
     <Compile Include="cls_data_fondo_detalle_pedido.cs" />
     <Compile Include="cls_data_emp_empleado_tipo_mantenimiento_asignado.cs" />
     <Compile Include="cls_data_emp_empleado_tipo_usuario.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="cls_data_pais.cs" />
     <Compile Include="cls_data_detalle_pedidos.cs" />
     <Compile Include="cls_data_fondo_pedido.cs" />
+    <Compile Include="cls_data_pedidos_aceite.cs" />
     <Compile Include="cls_data_per_persona.cs" />
     <Compile Include="cls_data_ve_vehiculo.cs" />
     <Compile Include="cls_data_pedidos.cs" />

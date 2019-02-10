@@ -92,7 +92,7 @@ namespace vialsur.prefectura.PedidosFondoRotativo
                 if (e.Value is bool)
                 {
                     bool value = (bool)e.Value;
-                    e.Value = (value) ? "PENDIENTE" : "APROBADA";
+                    e.Value = (value) ? "APROBADA" : "PENDIENTE";
                     e.FormattingApplied = true;
                 }
             }

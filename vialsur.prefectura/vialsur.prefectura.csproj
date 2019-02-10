@@ -196,6 +196,30 @@
     <Compile Include="PedidosFondoRotativo\frmPedidosFondoRotativoPendAprobacion.Designer.cs">
       <DependentUpon>frmPedidosFondoRotativoPendAprobacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="PedidosLubricantes\frmPedidosLubricantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosLubricantes\frmPedidosLubricantes.Designer.cs">
+      <DependentUpon>frmPedidosLubricantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosLubricantes\frmPedidosLubricantesOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosLubricantes\frmPedidosLubricantesOrden.Designer.cs">
+      <DependentUpon>frmPedidosLubricantesOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosLubricantes\frmPedidosLubricantesOrdenNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosLubricantes\frmPedidosLubricantesOrdenNuevo.Designer.cs">
+      <DependentUpon>frmPedidosLubricantesOrdenNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosLubricantes\frmPedidosLubricantesPendientesAprobacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosLubricantes\frmPedidosLubricantesPendientesAprobacion.Designer.cs">
+      <DependentUpon>frmPedidosLubricantesPendientesAprobacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos\frmPedidosOrden.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +409,18 @@
     <EmbeddedResource Include="PedidosFondoRotativo\frmPedidosFondoRotativoPendAprobacion.resx">
       <DependentUpon>frmPedidosFondoRotativoPendAprobacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PedidosLubricantes\frmPedidosLubricantes.resx">
+      <DependentUpon>frmPedidosLubricantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosLubricantes\frmPedidosLubricantesOrden.resx">
+      <DependentUpon>frmPedidosLubricantesOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosLubricantes\frmPedidosLubricantesOrdenNuevo.resx">
+      <DependentUpon>frmPedidosLubricantesOrdenNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosLubricantes\frmPedidosLubricantesPendientesAprobacion.resx">
+      <DependentUpon>frmPedidosLubricantesPendientesAprobacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\frmPedidosOrden.resx">
       <DependentUpon>frmPedidosOrden.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +462,7 @@
       <DependentUpon>frmVehiculo_Nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bd_actualizada_04022019\db_mantenimiento.bak" />
+    <None Include="bd_actualizada_10022019\db_mantenimiento.bak" />
     <None Include="bd_actualizada_30012019\db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\01ENE2019db_mantenimiento.bak" />
     <None Include="BD_DESARROLLO\23nov2018db_mantenimiento.bak" />

@@ -110,9 +110,7 @@ namespace vialsur.prefectura
                     ///ocultar fichas que permiten aprobar ordenes
                     tsmiAprobarOrdenesPartesPiezas.Visible =
                     tsmiAprobarOrdenesFondoRotativo.Visible = true;
-
-
-
+                    aprobarOrdenesDeLubricantesToolStripMenuItem.Visible = true;
 
                 }
 
@@ -382,6 +380,45 @@ namespace vialsur.prefectura
                 objForm.Cedula = Empleado.cedula;
                 objForm.Empleado = Empleado;
                 
+                objForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void aprobarOrdenesDeLubricantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PedidosLubricantes.frmPedidosLubricantesPendientesAprobacion objForm = new PedidosLubricantes.frmPedidosLubricantesPendientesAprobacion();
+                objForm.MdiParent = this;
+                objForm.WindowState = FormWindowState.Maximized;
+
+                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                objForm.Empleado = Empleado;
+                objForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void ordenesDeLubricantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PedidosLubricantes.frmPedidosLubricantes objForm = new PedidosLubricantes.frmPedidosLubricantes();
+                objForm.MdiParent = this;
+                objForm.WindowState = FormWindowState.Maximized;
+                objForm.Cedula = Empleado.cedula;
+                objForm.Empleado = Empleado;
+                //objForm.Estado = entidades.vialsur.prefectura.Orden_TipoEstado.CREADO;
+                //objForm.Empleado = Empleado;
                 objForm.Show();
 
             }
