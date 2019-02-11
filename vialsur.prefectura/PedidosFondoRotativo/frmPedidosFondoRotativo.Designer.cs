@@ -359,7 +359,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmPedidosFondoRotativo";
-            this.Text = "frmPedidosFondoRotativo";
+            this.Text = "Pedidos por Fondo Rotativo";
             this.Load += new System.EventHandler(this.frmPedidosFondoRotativo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);

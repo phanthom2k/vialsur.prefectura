@@ -152,7 +152,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
             this.id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id.HeaderText = "Orden de pedido No.";
+            this.id.HeaderText = "Orden por Fondo Rotativo No.";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
@@ -259,7 +259,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmPedidosFondoRotativoPendAprobacion";
-            this.Text = "frmPedidosFondoRotativoPendAprobacion";
+            this.Text = "Pedidos por Fondo Rotativo Pendientes de Aprobación";
             this.Load += new System.EventHandler(this.frmPedidosFondoRotativoPendAprobacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);

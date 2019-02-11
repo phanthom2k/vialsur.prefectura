@@ -95,7 +95,7 @@ namespace vialsur.prefectura.Ordenes
                 if (obj_orden.estado == (int) entidades.vialsur.prefectura.Orden_TipoEstado.FINALIZADO |
                     obj_orden.estado == (int)entidades.vialsur.prefectura.Orden_TipoEstado.DESCARTADO )
                 {
-                    toolStripButton4.Visible = toolStripButton2.Enabled = toolStripButton4.Enabled = false;
+                    toolStripButton4.Visible = toolStripButton2.Enabled = toolStripButton4.Enabled = toolStripButton5.Enabled = false;
                     //toolStripButton2.Enabled =
                 }
                 

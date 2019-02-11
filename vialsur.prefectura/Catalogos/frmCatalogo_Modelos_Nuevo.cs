@@ -108,6 +108,7 @@ namespace vialsur.prefectura.Catalogos
                     modelo.tipo_combustible = uc_TipoCombustible1.SelectedIndex;  //1gas 2dies
                     modelo.ve_vehiculo_tipo_id = (int)uc_VehiculoTipo1.SelectedValue;  //1livia  2pesa  3nodef
                     modelo.clase_vehiculo = uc_ClaseVehiculo1.SelectedIndex;  //1camioneta  2auto  3camion  4bus
+                    modelo.tipo_motor = 0;
 
                     if (EsNuevo)
                     {
