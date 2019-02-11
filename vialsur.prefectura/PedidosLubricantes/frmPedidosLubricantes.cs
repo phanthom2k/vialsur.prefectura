@@ -86,24 +86,16 @@ namespace vialsur.prefectura.PedidosLubricantes
             {
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")   ///VER LA ORDEN EN PDF
                 {
-                    // TO DO
-                    /*
-                    rpt.cls_RPT_orden_partes_y_piezas objRpt = new rpt.cls_RPT_orden_partes_y_piezas();
+                    
+                    rpt.cls_RPT_orden_lubicantes objRpt = new rpt.cls_RPT_orden_lubicantes();
                     objRpt.Orden_Id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
                     objRpt.Generar();
                     Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
                     frmVisor.StartPosition = FormStartPosition.CenterScreen;
-                    frmVisor.Text = "Orden de pedido de piezas";
-                    frmVisor.RutaArchivo = @"C:\Temp\2.pdf";
-                    frmVisor.ShowDialog();
-                    */
-
-                    //rpt.cls_RPT_orden_individual objRpt = new rpt.cls_RPT_orden_individual();
-                    //objRpt.Orden_Id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
-                    //objRpt.Generar();
-                    //Ordenes.frmVisorOrden_1 frmVisor = new Ordenes.frmVisorOrden_1();
-                    //frmVisor.RutaArchivo = @"C:\Temp\1.pdf";
-                    //frmVisor.ShowDialog();
+                    frmVisor.Text = "Orden de pedido de lubricantes";
+                    frmVisor.RutaArchivo = @"C:\Temp\4.pdf";
+                    frmVisor.ShowDialog();                   
+                   
                 }
 
                 //if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_aprobar")  //PARA PODER CAMBIAR EL ESTADO A APROBADO

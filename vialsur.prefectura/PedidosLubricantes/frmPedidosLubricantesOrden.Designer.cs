@@ -46,14 +46,14 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pedidos_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LBL_NUMERO_ORDEN = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pedidos_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -221,64 +221,6 @@
             this.toolStrip1.TabIndex = 90;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // detalle
-            // 
-            this.detalle.DataPropertyName = "detalle";
-            this.detalle.HeaderText = "Detalle";
-            this.detalle.MinimumWidth = 550;
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
-            this.detalle.Width = 550;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // pedidos_id
-            // 
-            this.pedidos_id.DataPropertyName = "pedidos_id";
-            this.pedidos_id.HeaderText = "pedidos_id";
-            this.pedidos_id.Name = "pedidos_id";
-            this.pedidos_id.ReadOnly = true;
-            this.pedidos_id.Visible = false;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // cl_modificar
-            // 
-            this.cl_modificar.FillWeight = 55F;
-            this.cl_modificar.HeaderText = "Elimar";
-            this.cl_modificar.MinimumWidth = 70;
-            this.cl_modificar.Name = "cl_modificar";
-            this.cl_modificar.ReadOnly = true;
-            this.cl_modificar.Text = "Eliminar";
-            this.cl_modificar.UseColumnTextForButtonValue = true;
-            this.cl_modificar.Width = 70;
-            // 
-            // cl_ver
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "#######km";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Modif.";
-            this.cl_ver.MinimumWidth = 57;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Modif.";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 57;
-            // 
             // LBL_NUMERO_ORDEN
             // 
             this.LBL_NUMERO_ORDEN.AutoSize = true;
@@ -312,6 +254,65 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(783, 349);
             this.dataGridView1.TabIndex = 89;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // cl_ver
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Modif.";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Modif.";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_modificar
+            // 
+            this.cl_modificar.FillWeight = 55F;
+            this.cl_modificar.HeaderText = "Elimar";
+            this.cl_modificar.MinimumWidth = 70;
+            this.cl_modificar.Name = "cl_modificar";
+            this.cl_modificar.ReadOnly = true;
+            this.cl_modificar.Text = "Eliminar";
+            this.cl_modificar.UseColumnTextForButtonValue = true;
+            this.cl_modificar.Width = 70;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // pedidos_id
+            // 
+            this.pedidos_id.DataPropertyName = "pedidos_aceite_id";
+            this.pedidos_id.HeaderText = "pedidos_id";
+            this.pedidos_id.Name = "pedidos_id";
+            this.pedidos_id.ReadOnly = true;
+            this.pedidos_id.Visible = false;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // detalle
+            // 
+            this.detalle.DataPropertyName = "detalle";
+            this.detalle.HeaderText = "Detalle";
+            this.detalle.MinimumWidth = 550;
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
+            this.detalle.Width = 550;
             // 
             // frmPedidosLubricantesOrden
             // 
@@ -339,7 +340,7 @@
             this.Name = "frmPedidosLubricantesOrden";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPedidosLubricantesOrden";
+            this.Text = "Solicitud de Pedido de Lubricantes";
             this.Load += new System.EventHandler(this.frmPedidosLubricantesOrden_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPedidosLubricantesOrden_KeyDown);
             this.toolStrip1.ResumeLayout(false);
@@ -368,13 +369,13 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pedidos_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.Label LBL_NUMERO_ORDEN;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pedidos_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
     }
 }

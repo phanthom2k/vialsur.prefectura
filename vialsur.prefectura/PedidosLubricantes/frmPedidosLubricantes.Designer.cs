@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosLubricantes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uc_Orden_TipoEstadoPedido1 = new vialsur.prefectura.uc.uc_Orden_TipoEstadoPedido();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_input = new System.Windows.Forms.TextBox();
-            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.autoriza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.aprobada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_aprobar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_solicitar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.orden_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_solicitar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cl_aprobar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orden_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aprobada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoriza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -125,56 +125,6 @@
             this.txt_input.TabIndex = 55;
             this.txt_input.Visible = false;
             // 
-            // modelo
-            // 
-            this.modelo.DataPropertyName = "modelo";
-            this.modelo.HeaderText = "Modelo";
-            this.modelo.Name = "modelo";
-            this.modelo.ReadOnly = true;
-            this.modelo.Width = 185;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Marca";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 150;
-            // 
-            // placa
-            // 
-            this.placa.DataPropertyName = "placa";
-            this.placa.HeaderText = "Placa";
-            this.placa.Name = "placa";
-            this.placa.ReadOnly = true;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "Código del vehículo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 95;
-            // 
-            // autoriza
-            // 
-            this.autoriza.DataPropertyName = "autoriza";
-            this.autoriza.FillWeight = 200F;
-            this.autoriza.HeaderText = "Autorizado por";
-            this.autoriza.Name = "autoriza";
-            this.autoriza.ReadOnly = true;
-            this.autoriza.Width = 225;
-            // 
-            // solicitante
-            // 
-            this.solicitante.DataPropertyName = "solicitante";
-            this.solicitante.FillWeight = 200F;
-            this.solicitante.HeaderText = "Solicitante";
-            this.solicitante.MaxInputLength = 200;
-            this.solicitante.Name = "solicitante";
-            this.solicitante.ReadOnly = true;
-            this.solicitante.Width = 225;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -185,89 +135,6 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "Parametro de busqueda:";
             this.label1.Visible = false;
-            // 
-            // aprobada
-            // 
-            this.aprobada.DataPropertyName = "aprobada";
-            this.aprobada.HeaderText = "Estado";
-            this.aprobada.Name = "aprobada";
-            this.aprobada.ReadOnly = true;
-            // 
-            // observaciones
-            // 
-            this.observaciones.DataPropertyName = "observaciones";
-            dataGridViewCellStyle21.NullValue = "-----------";
-            this.observaciones.DefaultCellStyle = dataGridViewCellStyle21;
-            this.observaciones.FillWeight = 250F;
-            this.observaciones.HeaderText = "Observaciones";
-            this.observaciones.MaxInputLength = 100;
-            this.observaciones.Name = "observaciones";
-            this.observaciones.ReadOnly = true;
-            this.observaciones.Width = 250;
-            // 
-            // cedula
-            // 
-            this.cedula.DataPropertyName = "cedula";
-            this.cedula.HeaderText = "cedula";
-            this.cedula.Name = "cedula";
-            this.cedula.ReadOnly = true;
-            this.cedula.Visible = false;
-            // 
-            // fecha
-            // 
-            this.fecha.DataPropertyName = "fecha";
-            this.fecha.HeaderText = "Fecha de creación";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            this.fecha.Width = 95;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Yellow;
-            this.id.DefaultCellStyle = dataGridViewCellStyle22;
-            this.id.HeaderText = "Orden de Partes y Piezas No.";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 125;
-            // 
-            // cl_aprobar
-            // 
-            this.cl_aprobar.FillWeight = 55F;
-            this.cl_aprobar.HeaderText = "Aprobar";
-            this.cl_aprobar.MinimumWidth = 70;
-            this.cl_aprobar.Name = "cl_aprobar";
-            this.cl_aprobar.ReadOnly = true;
-            this.cl_aprobar.Text = "Aprobar";
-            this.cl_aprobar.UseColumnTextForButtonValue = true;
-            this.cl_aprobar.Visible = false;
-            this.cl_aprobar.Width = 70;
-            // 
-            // cl_solicitar
-            // 
-            this.cl_solicitar.HeaderText = "Solicitar compra por fondo rotativo";
-            this.cl_solicitar.Name = "cl_solicitar";
-            this.cl_solicitar.ReadOnly = true;
-            this.cl_solicitar.Text = "Solicitar";
-            this.cl_solicitar.UseColumnTextForButtonValue = true;
-            this.cl_solicitar.Visible = false;
-            this.cl_solicitar.Width = 115;
-            // 
-            // cl_ver
-            // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.Format = "#######km";
-            dataGridViewCellStyle23.NullValue = "0";
-            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle23;
-            this.cl_ver.FillWeight = 55F;
-            this.cl_ver.HeaderText = "Ver";
-            this.cl_ver.MinimumWidth = 57;
-            this.cl_ver.Name = "cl_ver";
-            this.cl_ver.ReadOnly = true;
-            this.cl_ver.Text = "Ver";
-            this.cl_ver.UseColumnTextForButtonValue = true;
-            this.cl_ver.Width = 57;
             // 
             // dataGridView1
             // 
@@ -303,17 +170,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
-            // orden_id
-            // 
-            this.orden_id.DataPropertyName = "orden_id";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Lime;
-            this.orden_id.DefaultCellStyle = dataGridViewCellStyle24;
-            this.orden_id.HeaderText = "Orden de mantenimiento No.";
-            this.orden_id.Name = "orden_id";
-            this.orden_id.ReadOnly = true;
-            this.orden_id.Width = 115;
-            // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
@@ -347,6 +203,150 @@
             this.toolStrip1.TabIndex = 52;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // cl_ver
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "#######km";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cl_ver.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cl_ver.FillWeight = 55F;
+            this.cl_ver.HeaderText = "Ver";
+            this.cl_ver.MinimumWidth = 57;
+            this.cl_ver.Name = "cl_ver";
+            this.cl_ver.ReadOnly = true;
+            this.cl_ver.Text = "Ver";
+            this.cl_ver.UseColumnTextForButtonValue = true;
+            this.cl_ver.Width = 57;
+            // 
+            // cl_solicitar
+            // 
+            this.cl_solicitar.HeaderText = "Solicitar compra por fondo rotativo";
+            this.cl_solicitar.Name = "cl_solicitar";
+            this.cl_solicitar.ReadOnly = true;
+            this.cl_solicitar.Text = "Solicitar";
+            this.cl_solicitar.UseColumnTextForButtonValue = true;
+            this.cl_solicitar.Visible = false;
+            this.cl_solicitar.Width = 115;
+            // 
+            // cl_aprobar
+            // 
+            this.cl_aprobar.FillWeight = 55F;
+            this.cl_aprobar.HeaderText = "Aprobar";
+            this.cl_aprobar.MinimumWidth = 70;
+            this.cl_aprobar.Name = "cl_aprobar";
+            this.cl_aprobar.ReadOnly = true;
+            this.cl_aprobar.Text = "Aprobar";
+            this.cl_aprobar.UseColumnTextForButtonValue = true;
+            this.cl_aprobar.Visible = false;
+            this.cl_aprobar.Width = 70;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
+            this.id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.id.HeaderText = "Orden de Lubricantes No.";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 125;
+            // 
+            // fecha
+            // 
+            this.fecha.DataPropertyName = "fecha";
+            this.fecha.HeaderText = "Fecha de creación";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            this.fecha.Width = 95;
+            // 
+            // cedula
+            // 
+            this.cedula.DataPropertyName = "cedula";
+            this.cedula.HeaderText = "cedula";
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
+            this.cedula.Visible = false;
+            // 
+            // observaciones
+            // 
+            this.observaciones.DataPropertyName = "observaciones";
+            dataGridViewCellStyle3.NullValue = "-----------";
+            this.observaciones.DefaultCellStyle = dataGridViewCellStyle3;
+            this.observaciones.FillWeight = 250F;
+            this.observaciones.HeaderText = "Observaciones";
+            this.observaciones.MaxInputLength = 100;
+            this.observaciones.Name = "observaciones";
+            this.observaciones.ReadOnly = true;
+            this.observaciones.Width = 250;
+            // 
+            // orden_id
+            // 
+            this.orden_id.DataPropertyName = "orden_id";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Lime;
+            this.orden_id.DefaultCellStyle = dataGridViewCellStyle4;
+            this.orden_id.HeaderText = "Orden de mantenimiento No.";
+            this.orden_id.Name = "orden_id";
+            this.orden_id.ReadOnly = true;
+            this.orden_id.Width = 115;
+            // 
+            // aprobada
+            // 
+            this.aprobada.DataPropertyName = "aprobada";
+            this.aprobada.HeaderText = "Estado";
+            this.aprobada.Name = "aprobada";
+            this.aprobada.ReadOnly = true;
+            // 
+            // solicitante
+            // 
+            this.solicitante.DataPropertyName = "solicitante";
+            this.solicitante.FillWeight = 200F;
+            this.solicitante.HeaderText = "Solicitante";
+            this.solicitante.MaxInputLength = 200;
+            this.solicitante.Name = "solicitante";
+            this.solicitante.ReadOnly = true;
+            this.solicitante.Width = 225;
+            // 
+            // autoriza
+            // 
+            this.autoriza.DataPropertyName = "autoriza";
+            this.autoriza.FillWeight = 200F;
+            this.autoriza.HeaderText = "Autorizado por";
+            this.autoriza.Name = "autoriza";
+            this.autoriza.ReadOnly = true;
+            this.autoriza.Width = 225;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Código del vehículo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 95;
+            // 
+            // placa
+            // 
+            this.placa.DataPropertyName = "placa";
+            this.placa.HeaderText = "Placa";
+            this.placa.Name = "placa";
+            this.placa.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Marca";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 150;
+            // 
+            // modelo
+            // 
+            this.modelo.DataPropertyName = "modelo";
+            this.modelo.HeaderText = "Modelo";
+            this.modelo.Name = "modelo";
+            this.modelo.ReadOnly = true;
+            this.modelo.Width = 185;
+            // 
             // frmPedidosLubricantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,7 +361,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmPedidosLubricantes";
-            this.Text = "frmPedidosLubricantes";
+            this.Text = "Ordenes de Pedidos de Lubricantes";
             this.Load += new System.EventHandler(this.frmPedidosLubricantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -378,25 +378,25 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.TextBox txt_input;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn autoriza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn solicitante;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aprobada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_aprobar;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_solicitar;
-        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orden_id;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_ver;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_solicitar;
+        private System.Windows.Forms.DataGridViewButtonColumn cl_aprobar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orden_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aprobada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn solicitante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autoriza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
     }
 }

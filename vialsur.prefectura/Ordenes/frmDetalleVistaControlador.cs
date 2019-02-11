@@ -38,8 +38,14 @@ namespace vialsur.prefectura.Ordenes
             img.SetImage48("printer-icon.png", "printer-icon");
             toolStripButton6.ImageKey = "printer-icon";
 
-            img.SetImage48("oil-drum-icon.png", "oil-drum-icon");
+            img.SetImage48("oil-icon.png", "oil-drum-icon");
             toolStripButton5.ImageKey = "oil-drum-icon";
+
+            //img.SetImage48("oil-drum-icon.png", "oil-drum-icon");
+            //toolStripButton5.ImageKey = "oil-drum-icon";
+
+            
+
         }
         /// <summary>
         /// Num. CEdula del aprovador

@@ -129,5 +129,39 @@ namespace vialsur.prefectura.PedidosLubricantes
             if (e.KeyCode == Keys.Escape)
                 this.Close();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {           
+            try
+            {
+
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_ver")
+                {                    
+                    var detallepedido = new frmPedidosLubricantesOrdenNuevo();
+                    detallepedido.EsNuevo = false;
+                    detallepedido.PedidoId = pedido.id;
+                    detallepedido.DetallePedidoId = (int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value;
+
+                    if (detallepedido.ShowDialog() == DialogResult.Yes)
+                    {
+                        CargarDatos();
+                    }
+                    detallepedido.Dispose();
+                }
+
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "cl_modificar" & dataGridView1.RowCount > 0)
+                {
+                    if (MessageBox.Show("¿Desea Eliminar el item?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        new logica.vialsur.prefectura.Catalogos.cls_logica_detalle_pedidos_aceite().EliminarDetallePedido((int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+                        CargarDatos();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

@@ -45,14 +45,14 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.LBL_NUMERO_ORDEN = new System.Windows.Forms.Label();
             this.cl_ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cl_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pedidos_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.LBL_NUMERO_ORDEN = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -223,27 +223,6 @@
             this.dataGridView1.TabIndex = 73;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(417, 17);
-            this.label6.TabIndex = 85;
-            this.label6.Text = "PEDIDO DE PARTES POR FONDO ROTATIVO NÚMERO:";
-            // 
-            // LBL_NUMERO_ORDEN
-            // 
-            this.LBL_NUMERO_ORDEN.AutoSize = true;
-            this.LBL_NUMERO_ORDEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_NUMERO_ORDEN.ForeColor = System.Drawing.Color.Blue;
-            this.LBL_NUMERO_ORDEN.Location = new System.Drawing.Point(429, 61);
-            this.LBL_NUMERO_ORDEN.Name = "LBL_NUMERO_ORDEN";
-            this.LBL_NUMERO_ORDEN.Size = new System.Drawing.Size(176, 17);
-            this.LBL_NUMERO_ORDEN.TabIndex = 86;
-            this.LBL_NUMERO_ORDEN.Text = "LBL_NUMERO_ORDEN";
-            // 
             // cl_ver
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -302,6 +281,27 @@
             this.detalle.ReadOnly = true;
             this.detalle.Width = 550;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(417, 17);
+            this.label6.TabIndex = 85;
+            this.label6.Text = "PEDIDO DE PARTES POR FONDO ROTATIVO NÚMERO:";
+            // 
+            // LBL_NUMERO_ORDEN
+            // 
+            this.LBL_NUMERO_ORDEN.AutoSize = true;
+            this.LBL_NUMERO_ORDEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_NUMERO_ORDEN.ForeColor = System.Drawing.Color.Blue;
+            this.LBL_NUMERO_ORDEN.Location = new System.Drawing.Point(429, 61);
+            this.LBL_NUMERO_ORDEN.Name = "LBL_NUMERO_ORDEN";
+            this.LBL_NUMERO_ORDEN.Size = new System.Drawing.Size(176, 17);
+            this.LBL_NUMERO_ORDEN.TabIndex = 86;
+            this.LBL_NUMERO_ORDEN.Text = "LBL_NUMERO_ORDEN";
+            // 
             // frmPedidosFondoRotativoOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,7 +326,7 @@
             this.MinimizeBox = false;
             this.Name = "frmPedidosFondoRotativoOrden";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPedidosFondoRotativoOrden";
+            this.Text = "Solicitud por Fondo Rotativo";
             this.Load += new System.EventHandler(this.frmPedidosFondoRotativoOrden_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPedidosFondoRotativoOrden_KeyDown);
             this.toolStrip1.ResumeLayout(false);

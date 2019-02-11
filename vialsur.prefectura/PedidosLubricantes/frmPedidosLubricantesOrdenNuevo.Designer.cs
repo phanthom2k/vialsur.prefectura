@@ -131,7 +131,7 @@
             this.MinimizeBox = false;
             this.Name = "frmPedidosLubricantesOrdenNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPedidosLubricantesOrdenNuevo";
+            this.Text = "Solicitud de Lubricante";
             this.Load += new System.EventHandler(this.frmPedidosLubricantesOrdenNuevo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPedidosLubricantesOrdenNuevo_KeyDown);
             this.toolStrip1.ResumeLayout(false);

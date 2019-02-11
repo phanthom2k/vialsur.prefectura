@@ -265,6 +265,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\clsManejadorImagenes.cs" />
+    <Compile Include="rpt\cls_RPT_orden_lubicantes.cs" />
     <Compile Include="rpt\cls_RPT_orden_fondo_partes_y_piezas.cs" />
     <Compile Include="rpt\cls_RPT_orden_partes_y_piezas.cs" />
     <Compile Include="rpt\cls_RPT_orden_individual.cs" />
@@ -482,6 +483,9 @@
     <None Include="template_fondorotativopartespiezas_v1.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="template_orden_lubricantes_v1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="template_orden_v1 old1.pdf" />
     <None Include="template_orden_v1.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -537,6 +541,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="icons\48x48\oil-drum-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\48x48\oil-icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="icons\48x48\printer-icon.png">
