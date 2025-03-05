@@ -69,6 +69,7 @@ namespace vialsur.prefectura.Ordenes
             {                
                 uc_Accion2.Enabled =  false;
             }
+            if(obj_orden_detalle.estado_agendado != null) 
             if(!(bool)obj_orden_detalle.estado_agendado)
             {
                 toolStripButton2.Enabled = false;
